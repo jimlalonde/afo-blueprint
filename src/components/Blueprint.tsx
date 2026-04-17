@@ -7,6 +7,7 @@ import Toolbar from "./Toolbar";
 import LayerLegend from "./LayerLegend";
 import Scorecard from "./Scorecard";
 import CoverageSummary from "./CoverageSummary";
+import PlatformFitAnalysis from "./PlatformFitAnalysis";
 import LayerAccordion from "./LayerAccordion";
 import FunctionalPillars from "./FunctionalPillars";
 import GovernanceSidebar from "./GovernanceSidebar";
@@ -53,6 +54,7 @@ export default function Blueprint({ data }: Props) {
 
       <Scorecard data={data} assessments={assessments} />
       <CoverageSummary data={data} />
+      <PlatformFitAnalysis data={data} />
       <LayerLegend />
 
       <Toolbar
