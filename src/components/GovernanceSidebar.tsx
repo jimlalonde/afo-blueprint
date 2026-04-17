@@ -7,6 +7,8 @@ import L2Card from "./L2Card";
 interface Props {
   layer: Layer;
   forceOpen: boolean;
+  navigateTarget: string | null;
+  onNavigateComplete: () => void;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -17,6 +19,8 @@ interface Props {
 function GovL1({
   comp,
   forceOpen,
+  navigateTarget,
+  onNavigateComplete,
   covVisible,
   assessVisible,
   assessments,
@@ -25,6 +29,8 @@ function GovL1({
 }: {
   comp: Props["layer"]["l1_components"][0];
   forceOpen: boolean;
+  navigateTarget: string | null;
+  onNavigateComplete: () => void;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -33,10 +39,18 @@ function GovL1({
 }) {
   const [open, setOpen] = useState(false);
 
+  const hasTarget = navigateTarget
+    ? comp.l2_capabilities.some((cap) => cap.id === navigateTarget)
+    : false;
+
   useEffect(() => {
     if (forceOpen) setOpen(true);
     else setOpen(false);
   }, [forceOpen]);
+
+  useEffect(() => {
+    if (hasTarget) setOpen(true);
+  }, [hasTarget]);
 
   return (
     <div className="border-b border-bd last:border-b-0">
@@ -69,6 +83,8 @@ function GovL1({
               }
               onSetStage={onSetStage}
               onSetNotes={onSetNotes}
+              isNavigateTarget={navigateTarget === cap.id}
+              onNavigateComplete={onNavigateComplete}
             />
           ))}
         </div>
@@ -77,9 +93,17 @@ function GovL1({
   );
 }
 
+function layerContainsCap(layer: Props["layer"], capId: string): boolean {
+  return layer.l1_components.some((c) =>
+    c.l2_capabilities.some((cap) => cap.id === capId)
+  );
+}
+
 export default function GovernanceSidebar({
   layer,
   forceOpen,
+  navigateTarget,
+  onNavigateComplete,
   covVisible,
   assessVisible,
   assessments,
@@ -93,10 +117,18 @@ export default function GovernanceSidebar({
     0
   );
 
+  const hasTarget = navigateTarget
+    ? layerContainsCap(layer, navigateTarget)
+    : false;
+
   useEffect(() => {
     if (forceOpen) setExpanded(true);
     else setExpanded(false);
   }, [forceOpen]);
+
+  useEffect(() => {
+    if (hasTarget) setExpanded(true);
+  }, [hasTarget]);
 
   if (!expanded) {
     return (
@@ -134,11 +166,13 @@ export default function GovernanceSidebar({
           </span>
         </div>
         <div className="flex-1 overflow-y-auto bg-bg">
-          {layer.l1_components.map((comp, ci) => (
+          {layer.l1_components.map((comp) => (
             <GovL1
               key={comp.id}
               comp={comp}
               forceOpen={forceOpen}
+              navigateTarget={navigateTarget}
+              onNavigateComplete={onNavigateComplete}
               covVisible={covVisible}
               assessVisible={assessVisible}
               assessments={assessments}

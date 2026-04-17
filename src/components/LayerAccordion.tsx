@@ -9,6 +9,8 @@ interface Props {
   layer: Layer;
   layerIndex: number;
   forceOpen: boolean;
+  navigateTarget: string | null;
+  onNavigateComplete: () => void;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -16,10 +18,18 @@ interface Props {
   onSetNotes: (capId: string, notes: string) => void;
 }
 
+function layerContainsCap(layer: Layer, capId: string): boolean {
+  return layer.l1_components.some((c) =>
+    c.l2_capabilities.some((cap) => cap.id === capId)
+  );
+}
+
 export default function LayerAccordion({
   layer,
   layerIndex,
   forceOpen,
+  navigateTarget,
+  onNavigateComplete,
   covVisible,
   assessVisible,
   assessments,
@@ -34,10 +44,16 @@ export default function LayerAccordion({
     0
   );
 
+  const hasTarget = navigateTarget ? layerContainsCap(layer, navigateTarget) : false;
+
   useEffect(() => {
     if (forceOpen) setOpen(true);
     else setOpen(false);
   }, [forceOpen]);
+
+  useEffect(() => {
+    if (hasTarget) setOpen(true);
+  }, [hasTarget]);
 
   return (
     <div className="mb-2 border border-bd rounded-lg overflow-hidden">
@@ -78,6 +94,8 @@ export default function LayerAccordion({
               layerIndex={layerIndex}
               compIndex={ci}
               forceOpen={forceOpen}
+              navigateTarget={navigateTarget}
+              onNavigateComplete={onNavigateComplete}
               covVisible={covVisible}
               assessVisible={assessVisible}
               assessments={assessments}

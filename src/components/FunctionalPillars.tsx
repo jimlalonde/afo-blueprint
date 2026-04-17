@@ -8,6 +8,8 @@ import L2Card from "./L2Card";
 interface Props {
   layer: Layer;
   forceOpen: boolean;
+  navigateTarget: string | null;
+  onNavigateComplete: () => void;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -18,6 +20,8 @@ interface Props {
 export default function FunctionalPillars({
   layer,
   forceOpen,
+  navigateTarget,
+  onNavigateComplete,
   covVisible,
   assessVisible,
   assessments,
@@ -33,10 +37,23 @@ export default function FunctionalPillars({
     0
   );
 
+  const targetPillarIndex = navigateTarget
+    ? layer.l1_components.findIndex((comp) =>
+        comp.l2_capabilities.some((cap) => cap.id === navigateTarget)
+      )
+    : -1;
+
   useEffect(() => {
     if (forceOpen) setOpen(true);
     else setOpen(false);
   }, [forceOpen]);
+
+  useEffect(() => {
+    if (targetPillarIndex >= 0) {
+      setOpen(true);
+      setActivePillar(targetPillarIndex);
+    }
+  }, [targetPillarIndex]);
 
   return (
     <div className="mb-2 border border-bd rounded-lg overflow-hidden">
@@ -144,6 +161,8 @@ export default function FunctionalPillars({
                     }
                     onSetStage={onSetStage}
                     onSetNotes={onSetNotes}
+                    isNavigateTarget={navigateTarget === cap.id}
+                    onNavigateComplete={onNavigateComplete}
                   />
                 ))}
               </div>

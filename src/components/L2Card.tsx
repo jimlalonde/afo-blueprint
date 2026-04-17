@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { L2Capability, AssessmentEntry } from "@/types";
 import MaturityIndicators from "./MaturityIndicators";
 import CoveragePills from "./CoveragePills";
@@ -14,6 +15,8 @@ interface Props {
   onSetNotes: (capId: string, notes: string) => void;
   variant?: "standard" | "governance" | "pillar";
   singleColumnMaturity?: boolean;
+  isNavigateTarget?: boolean;
+  onNavigateComplete?: () => void;
 }
 
 const VARIANT_CLASSES = {
@@ -31,9 +34,26 @@ export default function L2Card({
   onSetNotes,
   variant = "standard",
   singleColumnMaturity,
+  isNavigateTarget,
+  onNavigateComplete,
 }: Props) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isNavigateTarget && ref.current) {
+      setTimeout(() => {
+        ref.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+        ref.current?.classList.add("highlight-flash");
+        setTimeout(() => {
+          ref.current?.classList.remove("highlight-flash");
+          onNavigateComplete?.();
+        }, 2000);
+      }, 50);
+    }
+  }, [isNavigateTarget, onNavigateComplete]);
+
   return (
-    <div id={`cap-${cap.id}`} className={VARIANT_CLASSES[variant]}>
+    <div ref={ref} id={`cap-${cap.id}`} className={VARIANT_CLASSES[variant]}>
       <div className="text-[10px] text-tx3 font-mono mb-0.5">{cap.id}</div>
       <div className={`font-medium ${variant === "governance" ? "text-[11px]" : "text-xs"}`}>
         {cap.name}

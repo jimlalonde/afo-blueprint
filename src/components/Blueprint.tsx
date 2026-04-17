@@ -21,6 +21,7 @@ export default function Blueprint({ data }: Props) {
   const [covVisible, setCovVisible] = useState(false);
   const [assessVisible, setAssessVisible] = useState(false);
   const [assessments, setAssessments] = useState<Assessments>({});
+  const [navigateTarget, setNavigateTarget] = useState<string | null>(null);
 
   const govLayer = data.layers.find((l) => l.id === "governance_trust")!;
   const horizontalLayers = data.layers.filter(
@@ -49,17 +50,11 @@ export default function Blueprint({ data }: Props) {
   );
 
   const handleNavigateToCapability = useCallback((capId: string) => {
-    setAllExpanded(true);
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        const el = document.getElementById(`cap-${capId}`);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "center" });
-          el.classList.add("highlight-flash");
-          setTimeout(() => el.classList.remove("highlight-flash"), 2000);
-        }
-      }, 100);
-    });
+    setNavigateTarget(capId);
+  }, []);
+
+  const handleNavigateComplete = useCallback(() => {
+    setNavigateTarget(null);
   }, []);
 
   return (
@@ -88,6 +83,8 @@ export default function Blueprint({ data }: Props) {
                 key={layer.id}
                 layer={layer}
                 forceOpen={allExpanded}
+                navigateTarget={navigateTarget}
+                onNavigateComplete={handleNavigateComplete}
                 covVisible={covVisible}
                 assessVisible={assessVisible}
                 assessments={assessments}
@@ -100,6 +97,8 @@ export default function Blueprint({ data }: Props) {
                 layer={layer}
                 layerIndex={li}
                 forceOpen={allExpanded}
+                navigateTarget={navigateTarget}
+                onNavigateComplete={handleNavigateComplete}
                 covVisible={covVisible}
                 assessVisible={assessVisible}
                 assessments={assessments}
@@ -112,6 +111,8 @@ export default function Blueprint({ data }: Props) {
         <GovernanceSidebar
           layer={govLayer}
           forceOpen={allExpanded}
+          navigateTarget={navigateTarget}
+          onNavigateComplete={handleNavigateComplete}
           covVisible={covVisible}
           assessVisible={assessVisible}
           assessments={assessments}

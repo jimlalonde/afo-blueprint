@@ -9,6 +9,8 @@ interface Props {
   layerIndex: number;
   compIndex: number;
   forceOpen: boolean;
+  navigateTarget: string | null;
+  onNavigateComplete: () => void;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -19,6 +21,8 @@ interface Props {
 export default function L1Accordion({
   comp,
   forceOpen,
+  navigateTarget,
+  onNavigateComplete,
   covVisible,
   assessVisible,
   assessments,
@@ -27,9 +31,17 @@ export default function L1Accordion({
 }: Props) {
   const [open, setOpen] = useState(false);
 
+  const hasTarget = navigateTarget
+    ? comp.l2_capabilities.some((cap) => cap.id === navigateTarget)
+    : false;
+
   useEffect(() => {
     if (forceOpen) setOpen(true);
   }, [forceOpen]);
+
+  useEffect(() => {
+    if (hasTarget) setOpen(true);
+  }, [hasTarget]);
 
   return (
     <div className="border-b border-bd last:border-b-0">
@@ -63,6 +75,8 @@ export default function L1Accordion({
               }
               onSetStage={onSetStage}
               onSetNotes={onSetNotes}
+              isNavigateTarget={navigateTarget === cap.id}
+              onNavigateComplete={onNavigateComplete}
             />
           ))}
         </div>
