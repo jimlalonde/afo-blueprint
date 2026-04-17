@@ -9,7 +9,7 @@ interface Props {
   onNavigate?: (capId: string) => void;
 }
 
-const MAIN_VENDORS = VENDORS.filter((v) => !v.overlay);
+const FIT_VENDORS = VENDORS;
 
 const RATING_RANK: Record<string, number> = {
   strong: 3,
@@ -192,7 +192,7 @@ export default function PlatformFitAnalysis({ data, onNavigate }: Props) {
       {open && (
         <div className="py-3 px-3.5">
           <div className="flex gap-3 mb-3 flex-wrap">
-            {MAIN_VENDORS.map((v) => (
+            {FIT_VENDORS.map((v) => (
               <label
                 key={v.key}
                 className="flex items-center gap-1.5 cursor-pointer select-none"

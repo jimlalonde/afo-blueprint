@@ -57,7 +57,7 @@ export default function CoverageSummary({ data }: Props) {
           Platform coverage summary
         </span>
         <span className="text-[10px] text-tx3">
-          Adobe, Salesforce, AWS, Google, Microsoft + NVIDIA
+          Adobe, Salesforce, AWS, Google, Microsoft + Anthropic, OpenAI, NVIDIA
         </span>
       </div>
       {open && (

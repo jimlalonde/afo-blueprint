@@ -34,6 +34,8 @@ export const VENDORS: Vendor[] = [
   { key: "aws", name: "AWS" },
   { key: "google", name: "Google" },
   { key: "microsoft", name: "Microsoft" },
+  { key: "anthropic", name: "Anthropic", overlay: true },
+  { key: "openai", name: "OpenAI", overlay: true },
   { key: "nvidia", name: "NVIDIA", overlay: true },
 ];
 

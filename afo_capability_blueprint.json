@@ -80,6 +80,24 @@
                     "Amazon Connect"
                   ],
                   "notes": "Conversational AI through Lex with Bedrock Agents for multi-modal interactions; Connect for voice"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude",
+                    "Claude API"
+                  ],
+                  "notes": "Claude provides advanced multi-modal conversational AI across text, image, and code"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "ChatGPT Enterprise",
+                    "Whisper",
+                    "DALL-E"
+                  ],
+                  "notes": "Full multi-modal agent across text, voice, image, and video with native capabilities"
                 }
               },
               "maturity_indicators": {
@@ -139,6 +157,21 @@
                     "Personalize"
                   ],
                   "notes": "Conversational capabilities through Bedrock; no native commerce transaction platform"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can power conversational commerce through API integration; not a standalone commerce agent"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Assistants API"
+                  ],
+                  "notes": "Strong conversational commerce via Assistants API with function calling and retrieval"
                 }
               },
               "maturity_indicators": {
@@ -196,6 +229,22 @@
                     "Bedrock Agents"
                   ],
                   "notes": "Connect is enterprise contact center with AI-powered autonomous resolution through Bedrock Agents"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude",
+                    "Claude API"
+                  ],
+                  "notes": "Strong autonomous agent capabilities with tool use and extended thinking"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Assistants API"
+                  ],
+                  "notes": "Autonomous service agent capabilities through function calling and code interpreter"
                 }
               },
               "maturity_indicators": {
@@ -251,6 +300,22 @@
                     "Lambda"
                   ],
                   "notes": "Serverless workflow orchestration; not purpose-built agentic workflow agents"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API",
+                    "Claude Code"
+                  ],
+                  "notes": "Native support for machine-to-machine workflows via API and tool use"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Assistants API"
+                  ],
+                  "notes": "Native function calling and tool use for machine-to-machine workflows"
                 }
               },
               "maturity_indicators": {
@@ -737,6 +802,21 @@
                     "Bedrock Agents"
                   ],
                   "notes": "Tool use and action groups in Bedrock Agents; multi-protocol support (MCP, A2A, ACP) still emerging"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "API-based agent protocol support; emerging MCP protocol for agent interoperability"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API",
+                    "Assistants API"
+                  ],
+                  "notes": "API-based agent endpoints; emerging agent protocol support"
                 }
               },
               "maturity_indicators": {
@@ -809,6 +889,21 @@
                     "Step Functions"
                   ],
                   "notes": "Multi-agent orchestration through Bedrock Agents with Step Functions for complex workflows"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Multi-agent coordination through tool use, parallel processing, and extended thinking"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Assistants API"
+                  ],
+                  "notes": "Multi-agent coordination via Assistants API with parallel function calling"
                 }
               },
               "maturity_indicators": {
@@ -867,6 +962,21 @@
                     "EventBridge"
                   ],
                   "notes": "Agent patterns within Bedrock; cross-platform conversation protocols still developing"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Advanced conversational patterns with context window up to 200K tokens"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "ChatGPT Enterprise"
+                  ],
+                  "notes": "Advanced conversational patterns with 128K context and structured outputs"
                 }
               },
               "maturity_indicators": {
@@ -926,6 +1036,20 @@
                     "Bedrock Agents"
                   ],
                   "notes": "Step Functions provides enterprise workflow orchestration with Bedrock Agent integration"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can orchestrate process flows via API; requires integration layer for full process automation"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "Assistants API"
+                  ],
+                  "notes": "Can orchestrate process flows via function calling; requires integration layer"
                 }
               },
               "maturity_indicators": {
@@ -981,6 +1105,20 @@
                     "Bedrock Agents"
                   ],
                   "notes": "Human approval through Step Functions; progressive autonomy framework not yet formalized"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Built-in human oversight patterns, constitutional AI alignment"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Moderation API and content filtering; less emphasis on human-in-the-loop patterns"
                 }
               },
               "maturity_indicators": {
@@ -1220,6 +1358,21 @@
                     "Bedrock"
                   ],
                   "notes": "Recommendation engine through Personalize; cross-functional NBA requires custom build"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can power personalization logic; requires data platform for customer context"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT-4o",
+                    "OpenAI API"
+                  ],
+                  "notes": "Can power personalization and NBA logic; requires customer data platform"
                 }
               },
               "maturity_indicators": {
@@ -1383,6 +1536,14 @@
                     "Personalize"
                   ],
                   "notes": "Amazon Personalize is a dedicated real-time recommendation service with proven scale"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT-4o",
+                    "OpenAI API"
+                  ],
+                  "notes": "Can generate recommendations from product data; not a native recommendation engine"
                 }
               },
               "maturity_indicators": {
@@ -1449,6 +1610,22 @@
                     "SageMaker Studio"
                   ],
                   "notes": "AI workbenches for model and agent development; not a marketer-facing orchestration UI"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API",
+                    "Anthropic Workbench"
+                  ],
+                  "notes": "Workbench for prompt engineering and evaluation; not a full AI development platform"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI Playground",
+                    "OpenAI API"
+                  ],
+                  "notes": "Playground and fine-tuning tools; not a full AI workbench"
                 }
               },
               "maturity_indicators": {
@@ -1523,6 +1700,21 @@
                     "Personalize"
                   ],
                   "notes": "Basic audience intelligence; not a full CDP with marketer-facing UI"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can synthesize audience intelligence from data; not a customer data platform"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT-4o",
+                    "OpenAI API"
+                  ],
+                  "notes": "Can synthesize audience insights from data; not a customer data platform"
                 }
               },
               "maturity_indicators": {
@@ -1674,6 +1866,20 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No competitive intelligence; partner required"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Strong at analyzing market data and generating competitive insights when provided data"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Strong analysis and insight generation when provided market data"
                 }
               },
               "maturity_indicators": {
@@ -1881,6 +2087,21 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No GEO capability"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Strong content generation and optimization for generative engine visibility"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "DALL-E"
+                  ],
+                  "notes": "Strong multi-modal content generation for generative engine optimization"
                 }
               },
               "maturity_indicators": {
@@ -1996,6 +2217,20 @@
                     "Comprehend"
                   ],
                   "notes": "NLP sentiment analysis through Comprehend; no social listening or brand monitoring platform"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can analyze sentiment in text; requires data feed integration"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Can analyze sentiment; requires data feed integration for monitoring"
                 }
               },
               "maturity_indicators": {
@@ -2755,6 +2990,21 @@
                     "Bedrock"
                   ],
                   "notes": "Enterprise search through Kendra; knowledge retrieval through Bedrock RAG; not a service knowledge management platform"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Excellent at knowledge retrieval, summarization, and contextual response generation"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Assistants API"
+                  ],
+                  "notes": "Excellent knowledge retrieval and response generation with RAG support"
                 }
               },
               "maturity_indicators": {
@@ -3200,6 +3450,22 @@
                     "Titan Image"
                   ],
                   "notes": "Image generation through Titan and Bedrock; not a professional creative production platform"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Strong text and concept generation; limited visual design capabilities"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "DALL-E",
+                    "Sora"
+                  ],
+                  "notes": "Multi-modal creative generation across text, image, and video"
                 }
               },
               "maturity_indicators": {
@@ -3256,6 +3522,20 @@
                     "Bedrock"
                   ],
                   "notes": "Text generation through Bedrock models; no brand-governed content authoring platform"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Industry-leading content authoring and copy generation across formats"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Industry-leading content authoring and copy generation"
                 }
               },
               "maturity_indicators": {
@@ -3309,6 +3589,20 @@
                     "Translate"
                   ],
                   "notes": "Machine translation through Amazon Translate; not a full localization platform"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Strong multilingual capabilities for localization and versioning"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Strong multilingual capabilities for localization and content versioning"
                 }
               },
               "maturity_indicators": {
@@ -3365,6 +3659,20 @@
                     "Comprehend"
                   ],
                   "notes": "AI classification through Rekognition (images) and Comprehend (text); not content-specific metadata"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can generate metadata and tags; requires integration with DAM systems"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Can generate metadata and tags; requires DAM integration"
                 }
               },
               "maturity_indicators": {
@@ -3884,6 +4192,20 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No GEO content capability"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Strong at generating AI-optimized content for generative engine readiness"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Strong at generating AI-optimized content for GEO readiness"
                 }
               },
               "maturity_indicators": {
@@ -3959,6 +4281,21 @@
                     "Bedrock Knowledge Bases"
                   ],
                   "notes": "Graph database through Neptune; knowledge bases with vector search through Bedrock"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Can reason over knowledge graphs; does not natively build or store them"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API",
+                    "Embeddings API"
+                  ],
+                  "notes": "Embeddings for knowledge representation; does not natively build knowledge graphs"
                 }
               },
               "maturity_indicators": {
@@ -4018,6 +4355,21 @@
                     "Comprehend"
                   ],
                   "notes": "Entity extraction through Comprehend; semantic enrichment through Bedrock embeddings"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Excellent semantic understanding and enrichment of unstructured content"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Embeddings API"
+                  ],
+                  "notes": "Strong semantic enrichment through embeddings and language understanding"
                 }
               },
               "maturity_indicators": {
@@ -4085,6 +4437,21 @@
                     "NeMo Retriever"
                   ],
                   "notes": "NeMo Retriever for RAG pipeline optimization; complements hyperscaler vector search"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Strong RAG capabilities with large context window and precise retrieval"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "Assistants API"
+                  ],
+                  "notes": "Native RAG support through Assistants API with file search"
                 }
               },
               "maturity_indicators": {
@@ -4145,6 +4512,20 @@
                     "S3"
                   ],
                   "notes": "Enterprise data ingestion at scale through Glue ETL, Kinesis streaming, and S3 data lake"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Excellent at extracting structured information from unstructured documents"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Excellent document extraction and structured output generation"
                 }
               },
               "maturity_indicators": {
@@ -4217,6 +4598,20 @@
                     "NVIDIA AI Enterprise"
                   ],
                   "notes": "NIM microservices for optimized model serving; multi-model deployment and routing"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Single provider; can be integrated into multi-model routing architectures"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Single provider with multiple model tiers; can plug into multi-model routers"
                 }
               },
               "maturity_indicators": {
@@ -4282,6 +4677,13 @@
                     "NVIDIA AI Enterprise"
                   ],
                   "notes": "NeMo framework for model customization, fine-tuning, and domain adaptation"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Fine-tuning API for customizing models on domain-specific data"
                 }
               },
               "maturity_indicators": {
@@ -4345,6 +4747,21 @@
                     "NeMo Evaluator"
                   ],
                   "notes": "Model evaluation through NeMo; broader evaluation frameworks require additional tooling"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API",
+                    "Anthropic Workbench"
+                  ],
+                  "notes": "Evaluation tools available; not a full model evaluation platform"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI Evals"
+                  ],
+                  "notes": "Evals framework for model evaluation; not a full MLOps platform"
                 }
               },
               "maturity_indicators": {
@@ -4405,6 +4822,13 @@
                     "NIM"
                   ],
                   "notes": "Triton Inference Server for production model serving; NIM for optimized microservice deployment"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Model versioning and deployment through API; external tooling for full lifecycle"
                 }
               },
               "maturity_indicators": {
@@ -4474,6 +4898,20 @@
                     "H100/B200"
                   ],
                   "notes": "Industry-leading inference infrastructure: Triton serving, TensorRT optimization, purpose-built GPU hardware"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Production-grade inference with high throughput and low latency"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Production-grade inference at scale with multiple model options"
                 }
               },
               "maturity_indicators": {
@@ -4537,6 +4975,22 @@
                     "Bedrock Agents"
                   ],
                   "notes": "Agent development through Bedrock Agents with action groups, knowledge bases, and guardrails"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API",
+                    "Claude Code"
+                  ],
+                  "notes": "Strong agent development capabilities with tool use, computer use, and code execution"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "Assistants API",
+                    "OpenAI API"
+                  ],
+                  "notes": "Full agent development framework with tools, code interpreter, and retrieval"
                 }
               },
               "maturity_indicators": {
@@ -4649,6 +5103,20 @@
                     "API Gateway"
                   ],
                   "notes": "Action groups in Bedrock Agents + API Gateway provide strong tool integration"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Tool use protocol for integrating external tools; not a standalone registry"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "Assistants API"
+                  ],
+                  "notes": "Function calling protocol for tool integration; not a standalone registry"
                 }
               },
               "maturity_indicators": {
@@ -4700,6 +5168,13 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No agent marketplace; emerging area"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "GPT Store"
+                  ],
+                  "notes": "GPT Store as a marketplace for custom GPTs; limited enterprise scope"
                 }
               },
               "maturity_indicators": {
@@ -4763,6 +5238,22 @@
                     "Bedrock"
                   ],
                   "notes": "Prompt management within Bedrock; cross-agent prompt governance requires additional tooling"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API",
+                    "Anthropic Workbench"
+                  ],
+                  "notes": "Advanced prompt management with system prompts, caching, and intent handling"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "OpenAI API",
+                    "Assistants API"
+                  ],
+                  "notes": "Advanced prompt management with system messages, structured outputs, and function calling"
                 }
               },
               "maturity_indicators": {
@@ -4817,6 +5308,20 @@
                     "Bedrock Agents"
                   ],
                   "notes": "Session state within Bedrock; cross-platform continuity requires integration"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Excellent session continuity with 200K token context window"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "Assistants API"
+                  ],
+                  "notes": "Thread-based session continuity with persistent context"
                 }
               },
               "maturity_indicators": {
@@ -4873,6 +5378,20 @@
                     "DynamoDB"
                   ],
                   "notes": "Memory through Bedrock session handling and DynamoDB; enterprise agent memory still developing"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "In-context memory within sessions; persistent memory requires external storage"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "Assistants API"
+                  ],
+                  "notes": "Thread-level memory; cross-session persistence requires external storage"
                 }
               },
               "maturity_indicators": {
@@ -4942,6 +5461,22 @@
                     "Riva"
                   ],
                   "notes": "Riva for speech AI; NIM for multimodal model serving; focused on inference optimization"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Multi-modal capabilities across text, image, and code"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o",
+                    "DALL-E",
+                    "Whisper"
+                  ],
+                  "notes": "Comprehensive multi-modal: text, image generation, vision, speech, and video"
                 }
               },
               "maturity_indicators": {
@@ -4997,6 +5532,20 @@
                     "Bedrock"
                   ],
                   "notes": "Infrastructure monitoring through CloudWatch; dedicated GenAI ops still developing"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "API-level operations support; full GenAI ops requires additional tooling"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "API management and usage tracking; full GenAI ops needs additional tooling"
                 }
               },
               "maturity_indicators": {
@@ -5062,6 +5611,21 @@
                     "SageMaker Clarify"
                   ],
                   "notes": "Bias detection through Clarify; content filtering through Bedrock Guardrails"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Constitutional AI framework with built-in bias detection and mitigation"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API",
+                    "Moderation API"
+                  ],
+                  "notes": "Moderation API and safety filters; less formal bias detection framework"
                 }
               },
               "maturity_indicators": {
@@ -5119,6 +5683,21 @@
                     "Bedrock Guardrails"
                   ],
                   "notes": "Bedrock Guardrails provide content filtering, topic avoidance, PII redaction, and custom policy enforcement"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Industry-leading safety guardrails via Constitutional AI and RLHF"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API",
+                    "Moderation API"
+                  ],
+                  "notes": "Content moderation and safety layers; usage policies rather than configurable guardrails"
                 }
               },
               "maturity_indicators": {
@@ -5177,6 +5756,20 @@
                     "CloudWatch"
                   ],
                   "notes": "API-level audit through CloudTrail; dedicated decision reasoning trace requires additional configuration"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Transparent reasoning with extended thinking; limited formal audit tooling"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Some transparency through logprobs; limited formal explainability tooling"
                 }
               },
               "maturity_indicators": {
@@ -5230,6 +5823,20 @@
                     "SageMaker Clarify"
                   ],
                   "notes": "Model interpretability through Clarify; formal model risk management frameworks require additional governance"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Safety-focused model design; formal risk management requires external frameworks"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Safety-oriented model design; formal risk management requires external frameworks"
                 }
               },
               "maturity_indicators": {
@@ -5298,6 +5905,20 @@
                     "NVIDIA AI Enterprise"
                   ],
                   "notes": "GPU cluster management through Base Command; MLOps focused on training and inference optimization"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "API management and versioning; full MLOps/LLMOps requires external platforms"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Fine-tuning and model management APIs; full MLOps/LLMOps requires external platforms"
                 }
               },
               "maturity_indicators": {
@@ -5353,6 +5974,13 @@
                     "CloudWatch"
                   ],
                   "notes": "Infrastructure cost tracking; AI-specific cost-per-outcome governance requires additional tooling"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Usage tracking and rate limits; detailed cost governance requires external tooling"
                 }
               },
               "maturity_indicators": {
@@ -5473,6 +6101,20 @@
                     "CloudTrail"
                   ],
                   "notes": "Comprehensive observability: CloudWatch metrics, X-Ray tracing, CloudTrail audit"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Usage analytics available; comprehensive observability requires external tooling"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "OpenAI API"
+                  ],
+                  "notes": "Usage dashboards available; comprehensive observability requires external tooling"
                 }
               },
               "maturity_indicators": {
