@@ -15,10 +15,9 @@ export default function Header({ metadata, layerCount }: HeaderProps) {
 
   return (
     <>
-      <h1 className="text-xl font-medium mb-1">Agentic Front Office (AFO) Capability Blueprint</h1>
+      <h1 className="text-3xl tracking-tight mb-1 text-[#D04A02]" style={{ fontFamily: '"Arial Black", "Arial Bold", Gadget, sans-serif', fontWeight: 900 }}>Agentic Front Office (AFO) Capability Blueprint</h1>
       <p className="text-xs text-tx3 mb-5">
-        L1/L2 capability decomposition of the Agentic Front Office reference
-        architecture
+        Explore, assess, and plan your agentic front office capabilities
       </p>
       <div className="flex gap-3 mb-3 flex-wrap">
         {stats.map((s) => (

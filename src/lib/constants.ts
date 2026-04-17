@@ -3,18 +3,18 @@ import { Vendor } from "@/types";
 export const LAYER_COLORS: Record<string, string> = {
   experience: "#534AB7",
   orchestration_aeo: "#7F77DD",
-  functional_pillars: "#D85A30",
+  functional_pillars: "#993556",
   content_operations_ico: "#0F6E56",
   commercial_brain: "#185FA5",
   enterprise_data: "#888780",
-  governance_trust: "#993556",
+  governance_trust: "#D04A02",
 };
 
 export const PILLAR_COLORS: Record<string, string> = {
   pillar_marketing: "#534AB7",
   pillar_sales: "#185FA5",
   pillar_commerce: "#0F6E56",
-  pillar_service: "#D85A30",
+  pillar_service: "#D04A02",
   pillar_pricing: "#BA7517",
 };
 

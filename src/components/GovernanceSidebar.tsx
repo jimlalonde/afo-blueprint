@@ -134,17 +134,17 @@ export default function GovernanceSidebar({
     return (
       <div className="flex items-stretch">
         <div
-          className="w-11 rounded-lg bg-[#993556] cursor-pointer select-none flex flex-col items-center justify-center gap-1.5 transition-opacity hover:opacity-90"
+          className="w-11 rounded-lg bg-[#D04A02] cursor-pointer select-none flex flex-col items-center justify-center gap-1.5 transition-opacity hover:opacity-90"
           onClick={() => setExpanded(true)}
         >
-          <span className="text-[10px] text-[#F4C0D1]">&#9654;</span>
-          <span className="[writing-mode:vertical-lr] [text-orientation:mixed] text-[11px] font-medium tracking-wider uppercase text-[#FBEAF0]">
+          <span className="text-[10px] text-[#FDDCC8]">&#9654;</span>
+          <span className="[writing-mode:vertical-lr] [text-orientation:mixed] text-[11px] font-medium tracking-wider uppercase text-[#FFF1E8]">
             Governance &amp; trust
           </span>
-          <span className="[writing-mode:vertical-lr] [text-orientation:mixed] text-[9px] text-[#F4C0D1]">
+          <span className="[writing-mode:vertical-lr] [text-orientation:mixed] text-[9px] text-[#FDDCC8]">
             {l1Count} L1 / {l2Count} L2
           </span>
-          <span className="text-[10px] text-[#F4C0D1]">&#9654;</span>
+          <span className="text-[10px] text-[#FDDCC8]">&#9654;</span>
         </div>
       </div>
     );
@@ -152,9 +152,9 @@ export default function GovernanceSidebar({
 
   return (
     <div className="w-[340px] flex-shrink-0 flex flex-col">
-      <div className="rounded-lg border border-[#993556] overflow-hidden flex flex-col flex-1">
+      <div className="rounded-lg border border-[#D04A02] overflow-hidden flex flex-col flex-1">
         <div
-          className="bg-[#993556] text-[#FBEAF0] py-3 px-3.5 flex items-center gap-2 cursor-pointer select-none hover:bg-[#7a2a45]"
+          className="bg-[#D04A02] text-[#FFF1E8] py-3 px-3.5 flex items-center gap-2 cursor-pointer select-none hover:bg-[#B03E02]"
           onClick={() => setExpanded(false)}
         >
           <span className="text-[11px] opacity-70">&#9664;</span>

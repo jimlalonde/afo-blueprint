@@ -120,6 +120,15 @@ export default function Blueprint({ data }: Props) {
           onSetNotes={handleSetNotes}
         />
       </div>
+
+      <footer className="mt-8 pt-4 border-t border-bd text-center">
+        <p className="text-[11px] text-tx3 leading-relaxed">
+          &copy; {new Date().getFullYear()} PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity.
+        </p>
+        <p className="text-[10px] text-tx3 mt-1 opacity-70">
+          This tool is proprietary to PwC and intended for internal and client use only.
+        </p>
+      </footer>
     </div>
   );
 }
