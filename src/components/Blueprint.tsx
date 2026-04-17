@@ -48,13 +48,27 @@ export default function Blueprint({ data }: Props) {
     []
   );
 
+  const handleNavigateToCapability = useCallback((capId: string) => {
+    setAllExpanded(true);
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const el = document.getElementById(`cap-${capId}`);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+          el.classList.add("highlight-flash");
+          setTimeout(() => el.classList.remove("highlight-flash"), 2000);
+        }
+      }, 100);
+    });
+  }, []);
+
   return (
     <div className="max-w-[1200px] mx-auto bg-bg rounded-xl py-7 px-6">
       <Header metadata={data.metadata} layerCount={data.layers.length} />
 
       <Scorecard data={data} assessments={assessments} />
       <CoverageSummary data={data} />
-      <PlatformFitAnalysis data={data} />
+      <PlatformFitAnalysis data={data} onNavigate={handleNavigateToCapability} />
       <LayerLegend />
 
       <Toolbar
@@ -97,6 +111,7 @@ export default function Blueprint({ data }: Props) {
         </div>
         <GovernanceSidebar
           layer={govLayer}
+          forceOpen={allExpanded}
           covVisible={covVisible}
           assessVisible={assessVisible}
           assessments={assessments}

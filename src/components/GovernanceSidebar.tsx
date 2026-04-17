@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Layer, AssessmentEntry } from "@/types";
 import L2Card from "./L2Card";
 
 interface Props {
   layer: Layer;
+  forceOpen: boolean;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -15,7 +16,7 @@ interface Props {
 
 function GovL1({
   comp,
-  compIndex,
+  forceOpen,
   covVisible,
   assessVisible,
   assessments,
@@ -23,7 +24,7 @@ function GovL1({
   onSetNotes,
 }: {
   comp: Props["layer"]["l1_components"][0];
-  compIndex: number;
+  forceOpen: boolean;
   covVisible: boolean;
   assessVisible: boolean;
   assessments: Record<string, AssessmentEntry>;
@@ -31,6 +32,11 @@ function GovL1({
   onSetNotes: Props["onSetNotes"];
 }) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (forceOpen) setOpen(true);
+    else setOpen(false);
+  }, [forceOpen]);
 
   return (
     <div className="border-b border-bd last:border-b-0">
@@ -73,6 +79,7 @@ function GovL1({
 
 export default function GovernanceSidebar({
   layer,
+  forceOpen,
   covVisible,
   assessVisible,
   assessments,
@@ -85,6 +92,11 @@ export default function GovernanceSidebar({
     (s, c) => s + c.l2_capabilities.length,
     0
   );
+
+  useEffect(() => {
+    if (forceOpen) setExpanded(true);
+    else setExpanded(false);
+  }, [forceOpen]);
 
   if (!expanded) {
     return (
@@ -126,7 +138,7 @@ export default function GovernanceSidebar({
             <GovL1
               key={comp.id}
               comp={comp}
-              compIndex={ci}
+              forceOpen={forceOpen}
               covVisible={covVisible}
               assessVisible={assessVisible}
               assessments={assessments}

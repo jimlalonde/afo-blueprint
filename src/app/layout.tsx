@@ -9,7 +9,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AFO Capability Blueprint",
+  title: "Agentic Front Office (AFO) Capability Blueprint",
   description:
     "L1/L2 capability decomposition of the Agentic Front Office reference architecture",
 };

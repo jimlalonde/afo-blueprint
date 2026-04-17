@@ -79,3 +79,13 @@ body {
   color: var(--color-tx);
   line-height: 1.5;
 }
+
+@keyframes flash-highlight {
+  0% { background-color: rgba(15, 110, 86, 0.15); }
+  100% { background-color: transparent; }
+}
+
+.highlight-flash {
+  animation: flash-highlight 2s ease-out;
+  border-radius: 4px;
+}

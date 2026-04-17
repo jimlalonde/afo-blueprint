@@ -7,15 +7,15 @@ interface HeaderProps {
 
 export default function Header({ metadata, layerCount }: HeaderProps) {
   const stats = [
-    { value: metadata.total_l2_capabilities, label: "L2 capabilities" },
-    { value: metadata.total_l1_components, label: "L1 components" },
     { value: layerCount, label: "Architecture layers" },
+    { value: metadata.total_l1_components, label: "L1 components" },
+    { value: metadata.total_l2_capabilities, label: "L2 capabilities" },
     { value: `v${metadata.version}`, label: metadata.status },
   ];
 
   return (
     <>
-      <h1 className="text-xl font-medium mb-1">AFO capability blueprint</h1>
+      <h1 className="text-xl font-medium mb-1">Agentic Front Office (AFO) Capability Blueprint</h1>
       <p className="text-xs text-tx3 mb-5">
         L1/L2 capability decomposition of the Agentic Front Office reference
         architecture

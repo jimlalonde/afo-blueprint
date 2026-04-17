@@ -6,6 +6,7 @@ import { VENDORS, LAYER_COLORS, LAYER_NAMES } from "@/lib/constants";
 
 interface Props {
   data: BlueprintData;
+  onNavigate?: (capId: string) => void;
 }
 
 const MAIN_VENDORS = VENDORS.filter((v) => !v.overlay);
@@ -27,18 +28,72 @@ function bestRating(ratings: string[]): "strong" | "partial" | "gap" | null {
   return "gap";
 }
 
-interface GapCapability {
+interface CapRef {
   id: string;
   name: string;
 }
 
-interface GapGroup {
+interface LayerGroup {
   layerId: string;
   layerName: string;
-  capabilities: GapCapability[];
+  capabilities: CapRef[];
 }
 
-export default function PlatformFitAnalysis({ data }: Props) {
+function CollapsibleLayerGroup({
+  group,
+  onNavigate,
+}: {
+  group: LayerGroup;
+  onNavigate?: (capId: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div>
+      <div
+        className="flex items-center gap-1 cursor-pointer select-none"
+        onClick={() => setOpen(!open)}
+      >
+        <span
+          className={`text-[9px] text-tx3 transition-transform ${open ? "rotate-90" : ""}`}
+        >
+          &#9654;
+        </span>
+        <span
+          className="text-[10px] font-medium"
+          style={{ color: LAYER_COLORS[group.layerId] || "#888" }}
+        >
+          {group.layerName} ({group.capabilities.length})
+        </span>
+      </div>
+      {open && (
+        <div className="space-y-px mt-0.5 ml-3">
+          {group.capabilities.map((cap) => (
+            <div
+              key={cap.id}
+              className="flex items-baseline gap-1.5 py-0.5 px-2"
+            >
+              <span className="text-[9px] text-tx3 font-mono shrink-0">
+                {cap.id}
+              </span>
+              <button
+                className="text-[10px] text-tx2 hover:text-tx hover:underline cursor-pointer text-left bg-transparent border-none p-0"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onNavigate?.(cap.id);
+                }}
+              >
+                {cap.name}
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function PlatformFitAnalysis({ data, onNavigate }: Props) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState<Set<string>>(new Set());
 
@@ -58,10 +113,12 @@ export default function PlatformFitAnalysis({ data }: Props) {
     let partial = 0;
     let gap = 0;
     let total = 0;
-    const gaps: GapGroup[] = [];
+    const gaps: LayerGroup[] = [];
+    const partials: LayerGroup[] = [];
 
     for (const layer of data.layers) {
-      const layerGaps: GapCapability[] = [];
+      const layerGaps: CapRef[] = [];
+      const layerPartials: CapRef[] = [];
 
       for (const comp of layer.l1_components) {
         for (const cap of comp.l2_capabilities) {
@@ -73,28 +130,45 @@ export default function PlatformFitAnalysis({ data }: Props) {
           }
 
           const combined = bestRating(ratings);
-          if (combined === "strong") strong++;
-          else if (combined === "partial") partial++;
-          else {
+          if (combined === "strong") {
+            strong++;
+          } else if (combined === "partial") {
+            partial++;
+            layerPartials.push({ id: cap.id, name: cap.name });
+          } else {
             gap++;
             layerGaps.push({ id: cap.id, name: cap.name });
           }
         }
       }
 
+      const layerName = LAYER_NAMES[layer.id] || layer.name;
       if (layerGaps.length > 0) {
-        gaps.push({
+        gaps.push({ layerId: layer.id, layerName, capabilities: layerGaps });
+      }
+      if (layerPartials.length > 0) {
+        partials.push({
           layerId: layer.id,
-          layerName: LAYER_NAMES[layer.id] || layer.name,
-          capabilities: layerGaps,
+          layerName,
+          capabilities: layerPartials,
         });
       }
     }
 
     const addressed = strong + partial;
-    const pctAddressed = total > 0 ? Math.round((addressed / total) * 100) : 0;
+    const pctAddressed =
+      total > 0 ? Math.round((addressed / total) * 100) : 0;
 
-    return { strong, partial, gap, total, addressed, pctAddressed, gaps };
+    return {
+      strong,
+      partial,
+      gap,
+      total,
+      addressed,
+      pctAddressed,
+      gaps,
+      partials,
+    };
   }, [data, selected]);
 
   return (
@@ -182,46 +256,65 @@ export default function PlatformFitAnalysis({ data }: Props) {
                   {analysis.pctAddressed}%
                 </span>{" "}
                 of capabilities (
-                <span className="font-medium text-tx">{analysis.strong}</span>{" "}
+                <span className="font-medium text-tx">
+                  {analysis.strong}
+                </span>{" "}
                 at production strength).{" "}
+                <span className="font-medium text-tx">
+                  {analysis.partial}
+                </span>{" "}
+                require deeper evaluation.{" "}
                 <span className="font-medium text-tx">{analysis.gap}</span>{" "}
                 capabilities require additional solutions.
               </p>
 
-              {/* Gap list */}
-              {analysis.gaps.length > 0 && (
-                <div className="border-t border-bd pt-2">
-                  <div className="text-[11px] font-medium mb-1.5">
-                    Gap capabilities ({analysis.gap})
-                  </div>
-                  <div className="max-h-[240px] overflow-y-auto space-y-2">
-                    {analysis.gaps.map((group) => (
-                      <div key={group.layerId}>
-                        <div
-                          className="text-[10px] font-medium mb-0.5"
-                          style={{
-                            color: LAYER_COLORS[group.layerId] || "#888",
-                          }}
-                        >
-                          {group.layerName} ({group.capabilities.length})
-                        </div>
-                        <div className="space-y-px">
-                          {group.capabilities.map((cap) => (
-                            <div
-                              key={cap.id}
-                              className="flex items-baseline gap-1.5 py-0.5 px-2"
-                            >
-                              <span className="text-[9px] text-tx3 font-mono shrink-0">
-                                {cap.id}
-                              </span>
-                              <span className="text-[10px] text-tx2">
-                                {cap.name}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
+              {/* Two-column: Gaps + Partials */}
+              {(analysis.gaps.length > 0 || analysis.partials.length > 0) && (
+                <div className="border-t border-bd pt-2 grid grid-cols-2 gap-4">
+                  {/* Gap column */}
+                  <div>
+                    <div className="text-[11px] font-medium mb-1.5 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cov-gap-dot" />
+                      Gap capabilities ({analysis.gap})
+                    </div>
+                    {analysis.gaps.length > 0 ? (
+                      <div className="max-h-[280px] overflow-y-auto space-y-1.5">
+                        {analysis.gaps.map((group) => (
+                          <CollapsibleLayerGroup
+                            key={group.layerId}
+                            group={group}
+                            onNavigate={onNavigate}
+                          />
+                        ))}
                       </div>
-                    ))}
+                    ) : (
+                      <p className="text-[10px] text-tx3 italic">
+                        No gaps with selected platforms.
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Partial column */}
+                  <div>
+                    <div className="text-[11px] font-medium mb-1.5 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cov-partial-dot" />
+                      Partial capabilities ({analysis.partial})
+                    </div>
+                    {analysis.partials.length > 0 ? (
+                      <div className="max-h-[280px] overflow-y-auto space-y-1.5">
+                        {analysis.partials.map((group) => (
+                          <CollapsibleLayerGroup
+                            key={group.layerId}
+                            group={group}
+                            onNavigate={onNavigate}
+                          />
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-[10px] text-tx3 italic">
+                        No partial capabilities with selected platforms.
+                      </p>
+                    )}
                   </div>
                 </div>
               )}

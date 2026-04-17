@@ -33,7 +33,7 @@ export default function L2Card({
   singleColumnMaturity,
 }: Props) {
   return (
-    <div className={VARIANT_CLASSES[variant]}>
+    <div id={`cap-${cap.id}`} className={VARIANT_CLASSES[variant]}>
       <div className="text-[10px] text-tx3 font-mono mb-0.5">{cap.id}</div>
       <div className={`font-medium ${variant === "governance" ? "text-[11px]" : "text-xs"}`}>
         {cap.name}
