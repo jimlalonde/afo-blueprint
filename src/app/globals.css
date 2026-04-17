@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #fff;
+  --color-bg2: #f5f4f0;
+  --color-bg3: #eae9e4;
+  --color-tx: #1a1a18;
+  --color-tx2: #5f5e5a;
+  --color-tx3: #888780;
+  --color-bd: rgba(0, 0, 0, 0.1);
+  --color-bd2: rgba(0, 0, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1a18;
+    --color-bg2: #2c2c2a;
+    --color-bg3: #222220;
+    --color-tx: #e8e6df;
+    --color-tx2: #b4b2a9;
+    --color-tx3: #888780;
+    --color-bd: rgba(255, 255, 255, 0.1);
+    --color-bd2: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-bg2: var(--color-bg2);
+  --color-bg3: var(--color-bg3);
+  --color-tx: var(--color-tx);
+  --color-tx2: var(--color-tx2);
+  --color-tx3: var(--color-tx3);
+  --color-bd: var(--color-bd);
+  --color-bd2: var(--color-bd2);
+
+  --color-cov-strong-bg: #EAF3DE;
+  --color-cov-strong-text: #27500A;
+  --color-cov-strong-border: #97C459;
+  --color-cov-strong-dot: #639922;
+  --color-cov-partial-bg: #FAEEDA;
+  --color-cov-partial-text: #633806;
+  --color-cov-partial-border: #FAC775;
+  --color-cov-partial-dot: #EF9F27;
+  --color-cov-gap-bg: #FCEBEB;
+  --color-cov-gap-text: #791F1F;
+  --color-cov-gap-border: #F09595;
+  --color-cov-gap-dot: #E24B4A;
+
+  --color-assess-2-bg: #EEEDFE;
+  --color-assess-2: #534AB7;
+  --color-assess-3-bg: #E1F5EE;
+  --color-assess-3: #0F6E56;
+  --color-assess-4-bg: #E6F1FB;
+  --color-assess-4: #185FA5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-cov-strong-bg: #27500A;
+    --color-cov-strong-text: #C0DD97;
+    --color-cov-strong-border: #639922;
+    --color-cov-partial-bg: #633806;
+    --color-cov-partial-text: #FAC775;
+    --color-cov-partial-border: #EF9F27;
+    --color-cov-gap-bg: #501313;
+    --color-cov-gap-text: #F7C1C1;
+    --color-cov-gap-border: #E24B4A;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", system-ui, sans-serif;
+  background: var(--color-bg3);
+  color: var(--color-tx);
+  line-height: 1.5;
+}
