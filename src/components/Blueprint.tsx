@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { BlueprintData, Assessments } from "@/types";
 import Header from "./Header";
 import Toolbar from "./Toolbar";
@@ -16,11 +16,31 @@ interface Props {
   data: BlueprintData;
 }
 
+function loadInitialAssessments(data: BlueprintData): Assessments {
+  const initial: Assessments = {};
+  for (const layer of data.layers) {
+    for (const l1 of layer.l1_components) {
+      for (const l2 of l1.l2_capabilities) {
+        const ca = l2.client_assessment;
+        if (ca?.assessed && ca.current_stage != null) {
+          initial[l2.id] = {
+            current: ca.current_stage,
+            target: ca.target_stage,
+            notes: ca.notes || "",
+          };
+        }
+      }
+    }
+  }
+  return initial;
+}
+
 export default function Blueprint({ data }: Props) {
+  const initialAssessments = useMemo(() => loadInitialAssessments(data), [data]);
   const [allExpanded, setAllExpanded] = useState(false);
   const [covVisible, setCovVisible] = useState(false);
   const [assessVisible, setAssessVisible] = useState(false);
-  const [assessments, setAssessments] = useState<Assessments>({});
+  const [assessments, setAssessments] = useState<Assessments>(initialAssessments);
   const [navigateTarget, setNavigateTarget] = useState<string | null>(null);
 
   const govLayer = data.layers.find((l) => l.id === "governance_trust")!;

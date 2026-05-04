@@ -115,10 +115,10 @@
                 "stage_4": "Fully autonomous experience agent adapting modality to customer preference in real time"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No conversational AI or multi-modal agent visible in architecture.",
+                "assessed": true
               }
             },
             {
@@ -197,10 +197,10 @@
                 "stage_4": "Autonomous commerce agent handling negotiation and custom pricing"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No conversational commerce capability. Hybris is traditional storefront.",
+                "assessed": true
               }
             },
             {
@@ -278,10 +278,10 @@
                 "stage_4": "Proactive service agent detecting and resolving issues before customer contact"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Service Cloud handles cases but no autonomous service agent visible.",
+                "assessed": true
               }
             },
             {
@@ -357,10 +357,10 @@
                 "stage_4": "Self-optimizing workflow agents redesigning processes based on outcomes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No machine workflow agent or agentic automation visible.",
+                "assessed": true
               }
             }
           ]
@@ -421,10 +421,10 @@
                 "stage_4": "Autonomous web experiences that self-optimize layout, content, and interaction patterns per visitor"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "CCEX unified portal with micro frontends provides CMS-managed web experience.",
+                "assessed": true
               }
             },
             {
@@ -483,10 +483,10 @@
                 "stage_4": "Autonomous email agents composing and optimizing messages in real time per recipient"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No marketing automation platform visible. Email likely manual or through Salesforce basic functionality.",
+                "assessed": true
               }
             },
             {
@@ -542,10 +542,10 @@
                 "stage_4": "Autonomous mobile engagement agents adapting channel, timing, and content to individual preference"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No SMS/push capability visible in the architecture.",
+                "assessed": true
               }
             },
             {
@@ -603,10 +603,10 @@
                 "stage_4": "Autonomous media agents continuously optimizing spend across platforms against commercial outcomes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No paid media platform visible.",
+                "assessed": true
               }
             },
             {
@@ -658,10 +658,10 @@
                 "stage_4": "Autonomous search presence management optimizing for both traditional and AI-mediated discovery"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No search and display advertising capability visible.",
+                "assessed": true
               }
             },
             {
@@ -714,10 +714,10 @@
                 "stage_4": "Autonomous event orchestration agents managing personalized experiences across physical and virtual formats"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No events platform visible.",
+                "assessed": true
               }
             },
             {
@@ -766,10 +766,10 @@
                 "stage_4": "Autonomous print production triggered by journey events with fully personalized physical collateral"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No print/physical channel management visible.",
+                "assessed": true
               }
             }
           ]
@@ -837,10 +837,10 @@
                 "stage_4": "Autonomous agent-to-agent commerce with multi-party negotiation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Apigee API Management and Experience APIs/Gateway provide machine-readable APIs for commerce and service.",
+                "assessed": true
               }
             },
             {
@@ -914,10 +914,10 @@
                 "stage_4": "Full agent interoperability with discovery, negotiation, and governance across organizational boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent protocol endpoints (A2A, MCP) visible.",
+                "assessed": true
               }
             }
           ]
@@ -1008,10 +1008,10 @@
                 "stage_4": "Autonomous multi-agent networks with self-organizing task allocation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No multi-agent coordination framework visible.",
+                "assessed": true
               }
             },
             {
@@ -1088,10 +1088,10 @@
                 "stage_4": "Adaptive patterns that self-optimize based on workflow performance"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agentic conversation patterns. Direct API calls between systems.",
+                "assessed": true
               }
             },
             {
@@ -1169,10 +1169,10 @@
                 "stage_4": "Self-designing process flows optimizing based on outcome data"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agentic process flow. Workflows are manual per platform.",
+                "assessed": true
               }
             },
             {
@@ -1246,10 +1246,10 @@
                 "stage_4": "Self-calibrating autonomy earning trust through demonstrated outcomes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No human-AI balance framework. All processes appear human-driven.",
+                "assessed": true
               }
             },
             {
@@ -1316,10 +1316,10 @@
                 "stage_4": "Predictive routing anticipating signals before they occur"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS provides basic event-driven integration but not experience-aware routing.",
+                "assessed": true
               }
             }
           ]
@@ -1382,10 +1382,10 @@
                 "stage_4": "Autonomous journey design creating and optimizing based on outcome patterns"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No journey orchestration platform. No marketing automation visible.",
+                "assessed": true
               }
             },
             {
@@ -1449,10 +1449,10 @@
                 "stage_4": "Segment-of-one with predictive intent modeling"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No dynamic segmentation capability. No CDP or marketing platform.",
+                "assessed": true
               }
             },
             {
@@ -1531,10 +1531,10 @@
                 "stage_4": "Autonomous decisioning with real-time optimization and self-learning"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM provides basic rule-based recommendations for sales reps.",
+                "assessed": true
               }
             },
             {
@@ -1590,10 +1590,10 @@
                 "stage_4": "Dynamic offer generation with autonomous pricing within governed boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No offer optimization. Static promotional calendar likely.",
+                "assessed": true
               }
             },
             {
@@ -1651,10 +1651,10 @@
                 "stage_4": "Continuous autonomous optimization across all touchpoints"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No experience optimization or experimentation platform visible.",
+                "assessed": true
               }
             },
             {
@@ -1725,10 +1725,10 @@
                 "stage_4": "Autonomous recommendation agents negotiating with buyer agents on optimal product fit"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris provides basic rule-based product recommendations (bestsellers, related).",
+                "assessed": true
               }
             }
           ]
@@ -1812,10 +1812,10 @@
                 "stage_4": "Self-configuring workbench adapting to user role and priorities"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No AI workbench. Separate admin consoles per platform.",
+                "assessed": true
               }
             }
           ]
@@ -1909,10 +1909,10 @@
                 "stage_4": "Self-updating customer intelligence graph with autonomous insight generation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Customer data fragmented across Salesforce CRM, SAP ECC, and Hybris. No CDP.",
+                "assessed": true
               }
             },
             {
@@ -1961,10 +1961,10 @@
                 "stage_4": "Autonomous strategy agents recommending positioning shifts based on market dynamics"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No brand/experience strategy tooling visible.",
+                "assessed": true
               }
             },
             {
@@ -2025,10 +2025,10 @@
                 "stage_4": "Autonomous campaign agents designing, launching, and optimizing campaigns end-to-end"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No campaign planning or orchestration platform. No marketing automation.",
+                "assessed": true
               }
             },
             {
@@ -2091,10 +2091,10 @@
                 "stage_4": "Predictive competitive intelligence anticipating market moves before they happen"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No market/competitor insights platform visible.",
+                "assessed": true
               }
             },
             {
@@ -2153,10 +2153,10 @@
                 "stage_4": "AI-generated micro-personas with real-time journey adaptation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No persona mapping or journey design tooling visible.",
+                "assessed": true
               }
             },
             {
@@ -2214,10 +2214,10 @@
                 "stage_4": "Autonomous ABM agents orchestrating personalized account journeys across all touchpoints"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM provides basic account-level data but no ABM platform.",
+                "assessed": true
               }
             },
             {
@@ -2269,10 +2269,10 @@
                 "stage_4": "Autonomous budget agents continuously optimizing spend against commercial outcomes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No marketing budget/resource planning tool visible.",
+                "assessed": true
               }
             },
             {
@@ -2339,10 +2339,10 @@
                 "stage_4": "Autonomous GEO optimization with real-time monitoring of AI-mediated brand representation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No GEO strategy or tooling.",
+                "assessed": true
               }
             },
             {
@@ -2408,10 +2408,10 @@
                 "stage_4": "Real-time attribution with autonomous spend optimization based on incremental value"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No channel attribution or marketing analytics platform visible.",
+                "assessed": true
               }
             },
             {
@@ -2480,10 +2480,10 @@
                 "stage_4": "Proactive reputation management agents detecting and addressing sentiment shifts autonomously"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No sentiment analysis or brand monitoring capability visible.",
+                "assessed": true
               }
             }
           ]
@@ -2548,10 +2548,10 @@
                 "stage_4": "Autonomous pipeline development agents sourcing and qualifying leads without human intervention"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM (Sales Cloud) provides AI-scored leads with automated routing. Accounts/Contacts/Opportunities managed.",
+                "assessed": true
               }
             },
             {
@@ -2606,10 +2606,10 @@
                 "stage_4": "Autonomous deal execution for standard transactions with human sellers focused on strategic relationships"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM with CPQ supports opportunity tracking and deal configuration. Key flow: Lead > Opportunity > Configure & Price > Order.",
+                "assessed": true
               }
             },
             {
@@ -2665,10 +2665,10 @@
                 "stage_4": "Autonomous forecasting agents with self-correcting models and scenario simulation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM provides CRM-driven forecasting. SAP ECC provides back-office financial data.",
+                "assessed": true
               }
             },
             {
@@ -2724,10 +2724,10 @@
                 "stage_4": "Autonomous retention agents executing save programs and expansion plays within governed boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM tracks accounts but renewal/expansion appears reactive based on architecture.",
+                "assessed": true
               }
             },
             {
@@ -2782,10 +2782,10 @@
                 "stage_4": "Autonomous coaching agents adapting development plans to individual rep performance patterns"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No dedicated sales enablement platform visible. Basic CRM-based activity tracking.",
+                "assessed": true
               }
             },
             {
@@ -2840,10 +2840,10 @@
                 "stage_4": "Autonomous account strategy agents orchestrating personalized engagement across all stakeholders"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM tracks account relationships but no formal ABM/ABS tooling visible.",
+                "assessed": true
               }
             }
           ]
@@ -2906,10 +2906,10 @@
                 "stage_4": "Autonomous digital shelf agents continuously optimizing listings based on performance and competitive signals"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris provides B2B/B2C storefront with product catalog management and centralized product content.",
+                "assessed": true
               }
             },
             {
@@ -2967,10 +2967,10 @@
                 "stage_4": "Self-maintaining product catalog with autonomous content generation and quality assurance"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris + SAP ECC provide centralized PIM with product/material master data syndication. Master Data Foundation visible.",
+                "assessed": true
               }
             },
             {
@@ -3025,10 +3025,10 @@
                 "stage_4": "Autonomous commerce operations with self-optimizing conversion paths and predictive inventory management"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris handles checkout with SAP ECC fulfillment integration. Commerce flow: Browse > Catalog > Shop & Checkout > Order > Fulfillment > Order.",
+                "assessed": true
               }
             },
             {
@@ -3089,10 +3089,10 @@
                 "stage_4": "Autonomous merchandising agents optimizing product mix based on demand signals and margin targets"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris provides pricing & promotions, rule-based merchandising.",
+                "assessed": true
               }
             },
             {
@@ -3147,10 +3147,10 @@
                 "stage_4": "Full agent-to-agent commerce with autonomous negotiation, dynamic pricing, and multi-party transactions"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No machine-readable commerce interfaces or agent-to-agent commerce readiness.",
+                "assessed": true
               }
             }
           ]
@@ -3216,10 +3216,10 @@
                 "stage_4": "Predictive routing that pre-positions resolution resources before the customer makes contact"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce Service Cloud provides intent-based routing with skill matching. Key flow shows case creation and dispatch.",
+                "assessed": true
               }
             },
             {
@@ -3275,10 +3275,10 @@
                 "stage_4": "Autonomous service operations with continuous experience optimization and predictive quality management"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce Service Cloud provides integrated case management with entitlements, service contracts, and cases.",
+                "assessed": true
               }
             },
             {
@@ -3355,10 +3355,10 @@
                 "stage_4": "Self-maintaining knowledge graph that learns from resolutions and autonomously creates and retires content"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "CCEX includes Knowledge & Self Service. Static knowledge base likely with manual maintenance.",
+                "assessed": true
               }
             },
             {
@@ -3423,10 +3423,10 @@
                 "stage_4": "Autonomous proactive service agents resolving issues before customer awareness with cross-functional coordination"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce Field Service provides basic IoT/asset-oriented proactive service. Work orders and parts usage tracked.",
+                "assessed": true
               }
             },
             {
@@ -3484,10 +3484,10 @@
                 "stage_4": "Autonomous signal agents synthesizing service, usage, and sentiment data into actionable commercial intelligence in real time"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CRM (optional) in Commerce view suggests basic service-to-sales handoff but no systematic signal routing.",
+                "assessed": true
               }
             }
           ]
@@ -3553,10 +3553,10 @@
                 "stage_4": "Autonomous pricing agents continuously optimizing across channels within governed margin boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP ECC pricing conditions (SD module) provide rule-based pricing with segment differentiation. Zuora handles subscription rate plans.",
+                "assessed": true
               }
             },
             {
@@ -3609,10 +3609,10 @@
                 "stage_4": "Autonomous quoting agents producing optimized proposals instantly with human review only for exceptions"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Salesforce CPQ + SAP CPQ (optional) provide CPQ with complex config, engineering rules, pricing simulation, and approval workflows.",
+                "assessed": true
               }
             },
             {
@@ -3666,10 +3666,10 @@
                 "stage_4": "Autonomous discount governance with predictive margin modeling and self-adjusting policy boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP ECC provides pricing conditions and discount governance. CPQ enforces discount approval workflows.",
+                "assessed": true
               }
             },
             {
@@ -3723,10 +3723,10 @@
                 "stage_4": "Autonomous revenue assurance agents continuously monitoring and resolving pricing discrepancies in real time"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP ECC FI/CO module provides GL accounting, AR/AP, revenue recognition. Zuora handles subscription billing and invoicing.",
+                "assessed": true
               }
             },
             {
@@ -3782,10 +3782,10 @@
                 "stage_4": "Autonomous promotional agents designing and executing offers based on demand and margin signals"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris Commerce supports promotional pricing. SAP ECC pricing conditions manage planned promotions.",
+                "assessed": true
               }
             }
           ]
@@ -3876,10 +3876,10 @@
                 "stage_4": "Autonomous creative agents generating production-ready assets from briefs with minimal human review"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No creative design tools or content platform visible.",
+                "assessed": true
               }
             },
             {
@@ -3953,10 +3953,10 @@
                 "stage_4": "Autonomous content agents producing, testing, and optimizing copy across channels in real time"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content authoring platform visible. CCEX is a portal, not a content system.",
+                "assessed": true
               }
             },
             {
@@ -4025,10 +4025,10 @@
                 "stage_4": "Autonomous localization agents producing market-ready content at creation time with no separate localization step"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No localization or versioning platform visible.",
+                "assessed": true
               }
             },
             {
@@ -4102,10 +4102,10 @@
                 "stage_4": "Self-organizing content taxonomy that adapts classification based on usage patterns and retrieval effectiveness"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP Hybris provides basic product content tagging. No general content tagging system.",
+                "assessed": true
               }
             }
           ]
@@ -4161,10 +4161,10 @@
                 "stage_4": "Autonomous compliance agents validating every content asset in real time across all production channels"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No brand/legal compliance tooling for content.",
+                "assessed": true
               }
             },
             {
@@ -4213,10 +4213,10 @@
                 "stage_4": "Autonomous regulated content orchestration with real-time policy updates and cross-jurisdiction compliance"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No regulated content orchestration.",
+                "assessed": true
               }
             },
             {
@@ -4272,10 +4272,10 @@
                 "stage_4": "Autonomous approval for low-risk content with human review reserved for high-impact or novel assets"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content approval workflows visible.",
+                "assessed": true
               }
             }
           ]
@@ -4332,10 +4332,10 @@
                 "stage_4": "Autonomous content supply chain with self-scheduling production and real-time demand-based prioritization"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content production platform visible.",
+                "assessed": true
               }
             },
             {
@@ -4386,10 +4386,10 @@
                 "stage_4": "Self-curating DAM that autonomously organizes, versions, and retires assets based on performance and relevance"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No digital asset management visible.",
+                "assessed": true
               }
             },
             {
@@ -4440,10 +4440,10 @@
                 "stage_4": "Autonomous production orchestration dynamically allocating work between human and AI resources"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content supply chain workflow visible.",
+                "assessed": true
               }
             },
             {
@@ -4499,10 +4499,10 @@
                 "stage_4": "Autonomous content optimization agents continuously testing, adapting, and replacing underperforming content"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content performance analytics visible.",
+                "assessed": true
               }
             }
           ]
@@ -4558,10 +4558,10 @@
                 "stage_4": "Autonomous content strategy agents continuously adjusting editorial plans based on performance and demand signals"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content strategy tooling visible.",
+                "assessed": true
               }
             },
             {
@@ -4618,10 +4618,10 @@
                 "stage_4": "Predictive content intelligence anticipating audience needs and automatically commissioning content to fill gaps"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No content intelligence platform visible.",
+                "assessed": true
               }
             },
             {
@@ -4687,10 +4687,10 @@
                 "stage_4": "Autonomous GEO content agents monitoring and optimizing brand representation across AI discovery surfaces"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No GEO content readiness.",
+                "assessed": true
               }
             }
           ]
@@ -4785,10 +4785,10 @@
                 "stage_4": "Self-evolving knowledge graph that discovers new entity relationships and optimizes query patterns autonomously"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No knowledge graph or graph database visible.",
+                "assessed": true
               }
             },
             {
@@ -4866,10 +4866,10 @@
                 "stage_4": "Autonomous enrichment agents continuously discovering and encoding new contextual relationships"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No semantic enrichment. Raw data consumed from ECC and CRM.",
+                "assessed": true
               }
             },
             {
@@ -4956,10 +4956,10 @@
                 "stage_4": "Self-optimizing RAG with adaptive retrieval strategies that learn which knowledge sources produce the best outcomes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No RAG or semantic search visible.",
+                "assessed": true
               }
             },
             {
@@ -5038,10 +5038,10 @@
                 "stage_4": "Autonomous ingestion agents discovering and onboarding new data sources with self-configuring extraction"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS handles automated data ingestion pipelines for structured sources.",
+                "assessed": true
               }
             }
           ]
@@ -5131,10 +5131,10 @@
                 "stage_4": "Self-optimizing model routing that continuously benchmarks and shifts traffic to best-performing models"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No AI model infrastructure visible.",
+                "assessed": true
               }
             },
             {
@@ -5210,10 +5210,10 @@
                 "stage_4": "Continuous model adaptation with automated retraining triggered by performance drift and new data availability"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No model training or fine-tuning capability.",
+                "assessed": true
               }
             },
             {
@@ -5295,10 +5295,10 @@
                 "stage_4": "Continuous autonomous evaluation with self-correcting feedback loops and automated model retirement"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No model evaluation framework.",
+                "assessed": true
               }
             },
             {
@@ -5369,10 +5369,10 @@
                 "stage_4": "Autonomous deployment agents managing the full model lifecycle including capacity planning and cost optimization"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No model deployment infrastructure.",
+                "assessed": true
               }
             },
             {
@@ -5459,10 +5459,10 @@
                 "stage_4": "Self-scaling inference with predictive capacity management and automatic hardware optimization"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No model inferencing endpoints.",
+                "assessed": true
               }
             }
           ]
@@ -5546,10 +5546,10 @@
                 "stage_4": "Autonomous agent composition where new agents are assembled from existing capabilities without custom development"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent development capability visible.",
+                "assessed": true
               }
             },
             {
@@ -5605,10 +5605,10 @@
                 "stage_4": "Self-maintaining registry with automatic capability discovery and cross-agent dependency management"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent registry.",
+                "assessed": true
               }
             },
             {
@@ -5685,10 +5685,10 @@
                 "stage_4": "Self-curating tools ecosystem where agents discover, evaluate, and adopt new tools autonomously"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No tools registry. Hard-coded integrations between systems.",
+                "assessed": true
               }
             },
             {
@@ -5748,10 +5748,10 @@
                 "stage_4": "Autonomous agent-to-agent discovery and negotiation across organizational boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent marketplace or discovery.",
+                "assessed": true
               }
             }
           ]
@@ -5835,10 +5835,10 @@
                 "stage_4": "Self-optimizing prompt intelligence that evolves instructions based on outcome data"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No prompt or intent management.",
+                "assessed": true
               }
             },
             {
@@ -5910,10 +5910,10 @@
                 "stage_4": "Autonomous context management that anticipates information needs and pre-loads relevant state"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No session continuity framework.",
+                "assessed": true
               }
             },
             {
@@ -5985,10 +5985,10 @@
                 "stage_4": "Self-organizing memory with autonomous relevance assessment and cross-agent knowledge sharing"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent memory management.",
+                "assessed": true
               }
             },
             {
@@ -6077,10 +6077,10 @@
                 "stage_4": "Seamless modality switching where agents automatically select the optimal modality for each interaction"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No multimodal AI services.",
+                "assessed": true
               }
             },
             {
@@ -6153,10 +6153,10 @@
                 "stage_4": "Self-healing GenAI operations with autonomous issue detection, remediation, and capacity optimization"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No GenAI operations.",
+                "assessed": true
               }
             }
           ]
@@ -6240,10 +6240,10 @@
                 "stage_4": "Proactive bias prevention with real-time detection and autonomous correction at the inference layer"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No bias detection or mitigation.",
+                "assessed": true
               }
             },
             {
@@ -6320,10 +6320,10 @@
                 "stage_4": "Adaptive guardrails that evolve with new risk patterns while maintaining architectural enforcement"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No ethical guardrails for AI.",
+                "assessed": true
               }
             },
             {
@@ -6399,10 +6399,10 @@
                 "stage_4": "Real-time explainability with on-demand reasoning trace for any agent decision across the full workflow"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No explainability or audit infrastructure for AI.",
+                "assessed": true
               }
             },
             {
@@ -6474,10 +6474,10 @@
                 "stage_4": "Continuous autonomous risk assessment with self-adjusting governance as agent capabilities and regulatory requirements evolve"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No model risk management.",
+                "assessed": true
               }
             }
           ]
@@ -6563,10 +6563,10 @@
                 "stage_4": "Self-managing operations with autonomous deployment, scaling, and lifecycle management across the full agent network"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No MLOps or LLMOps.",
+                "assessed": true
               }
             },
             {
@@ -6633,10 +6633,10 @@
                 "stage_4": "Autonomous cost optimization agents routing tasks to minimize cost while maintaining quality targets"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No AI cost governance.",
+                "assessed": true
               }
             },
             {
@@ -6700,10 +6700,10 @@
                 "stage_4": "Self-configuring integration layer that adapts to new protocols and platforms autonomously"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS + Apigee provide API-based integration with protocol support and connectors.",
+                "assessed": true
               }
             },
             {
@@ -6781,10 +6781,10 @@
                 "stage_4": "Predictive observability detecting degradation patterns before they impact performance"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent-specific observability. Basic application monitoring only.",
+                "assessed": true
               }
             }
           ]
@@ -6861,10 +6861,10 @@
                 "stage_4": "Self-healing data quality with autonomous correction and continuous profiling"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS Data Quality provides automated validation rules on critical data fields.",
+                "assessed": true
               }
             },
             {
@@ -6927,10 +6927,10 @@
                 "stage_4": "Autonomous identity resolution maintaining unified records in real time across all data sources"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS Master Data Management provides matching rules for entity resolution and deduplication.",
+                "assessed": true
               }
             },
             {
@@ -6992,10 +6992,10 @@
                 "stage_4": "Self-evolving data models that adapt schema to new data patterns and agent requirements"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Master Data Foundation visible with documented schemas: Customer/Business Partner, Product/Material, Pricing/Conditions, Units/Currency.",
+                "assessed": true
               }
             },
             {
@@ -7059,10 +7059,10 @@
                 "stage_4": "Autonomous data fabric with self-optimizing distribution and caching based on consumption patterns"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS provides ETL-based data integration with scheduled batch processing. Data flows documented.",
+                "assessed": true
               }
             },
             {
@@ -7123,10 +7123,10 @@
                 "stage_4": "Autonomous privacy management adapting data usage in real time based on consent, regulation, and context"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No dedicated consent management platform visible. Basic controls likely in CCEX.",
+                "assessed": true
               }
             }
           ]
@@ -7194,10 +7194,10 @@
                 "stage_4": "Self-enriching customer profile that autonomously discovers and integrates new data signals"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Customer data fragmented across Salesforce CRM, SAP ECC, and Hybris. No CDP for unification.",
+                "assessed": true
               }
             },
             {
@@ -7258,10 +7258,10 @@
                 "stage_4": "Predictive experience profile anticipating customer needs before they manifest as signals"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No real-time behavioral profile. Batch-updated segments only via ECC/CRM sync.",
+                "assessed": true
               }
             },
             {
@@ -7320,10 +7320,10 @@
                 "stage_4": "Autonomous identity graph maintaining real-time resolution across all enterprise and partner systems"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica MDM provides basic deterministic matching on known identifiers.",
+                "assessed": true
               }
             }
           ]
@@ -7395,10 +7395,10 @@
                 "stage_4": "Autonomous analytical environments that proactively surface insights and generate hypotheses"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP BW/S4HANA provides dedicated analytical warehouse with scheduled refreshes from ECC.",
+                "assessed": true
               }
             },
             {
@@ -7461,10 +7461,10 @@
                 "stage_4": "Predictive journey analytics recommending journey redesigns based on outcome patterns"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Channel-specific reporting likely. No cross-channel journey view without CDP.",
+                "assessed": true
               }
             },
             {
@@ -7526,10 +7526,10 @@
                 "stage_4": "Autonomous reporting agents generating and distributing insights based on stakeholder context and priorities"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP BW and Salesforce provide automated dashboards. Analytics & Insights visible in CCEX.",
+                "assessed": true
               }
             }
           ]
@@ -7601,10 +7601,10 @@
                 "stage_4": "Self-scaling event infrastructure with predictive capacity management and intelligent event prioritization"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS provides event-driven integration patterns. Real-time APIs noted in integration patterns.",
+                "assessed": true
               }
             },
             {
@@ -7666,10 +7666,10 @@
                 "stage_4": "Self-optimizing batch infrastructure that adjusts scheduling and resource allocation based on data volumes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS provides scheduled ETL jobs. Batch/bulk and master data sync patterns documented.",
+                "assessed": true
               }
             },
             {
@@ -7729,10 +7729,10 @@
                 "stage_4": "Self-documenting API ecosystem with autonomous connector generation for new data sources"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Apigee API Management provides API gateway, security, access control, rate limiting, traffic management, developer portal.",
+                "assessed": true
               }
             },
             {
@@ -7793,10 +7793,10 @@
                 "stage_4": "Autonomous integration orchestration that self-configures mappings and adapts to schema changes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica IICS Application Integration and Data Integration provide configurable mappings and orchestration.",
+                "assessed": true
               }
             }
           ]
@@ -7870,10 +7870,10 @@
                 "stage_4": "Dynamic autonomy that self-adjusts based on agent performance history and situational risk assessment"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No AI agents in architecture. No autonomy tier definitions.",
+                "assessed": true
               }
             },
             {
@@ -7936,10 +7936,10 @@
                 "stage_4": "Predictive escalation that pre-routes complex scenarios before they reach decision boundaries"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Basic escalation via Salesforce Service Cloud case escalation rules. Not agent-specific.",
+                "assessed": true
               }
             },
             {
@@ -7989,10 +7989,10 @@
                 "stage_4": "Self-calibrating autonomy with continuous trust scoring and automated rollback on performance degradation"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No progressive autonomy management. No AI agents deployed.",
+                "assessed": true
               }
             }
           ]
@@ -8062,10 +8062,10 @@
                 "stage_4": "Real-time decision audit with on-demand reasoning trace and automated compliance verification"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Platform-level audit logging in Salesforce and SAP ECC. No AI decision logging.",
+                "assessed": true
               }
             },
             {
@@ -8126,10 +8126,10 @@
                 "stage_4": "Autonomous compliance agents adapting governance rules as regulations evolve across jurisdictions"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "SAP ECC provides basic regulatory compliance for financial processes (SOX, etc.). No AI-specific compliance.",
+                "assessed": true
               }
             },
             {
@@ -8189,10 +8189,10 @@
                 "stage_4": "Self-enforcing cross-platform governance that automatically extends to new platforms and agent deployments"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Governance applied per platform (Salesforce, SAP) with manual coordination between them.",
+                "assessed": true
               }
             }
           ]
@@ -8259,10 +8259,10 @@
                 "stage_4": "Autonomous cost optimization with real-time spend-to-value monitoring and automatic routing adjustments"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No AI inference costs to govern. No AI infrastructure.",
+                "assessed": true
               }
             },
             {
@@ -8320,10 +8320,10 @@
                 "stage_4": "Predictive performance management detecting degradation patterns before they impact outcomes"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "No agent performance to monitor. No AI agents deployed.",
+                "assessed": true
               }
             },
             {
@@ -8375,10 +8375,10 @@
                 "stage_4": "Self-adjusting SLAs that adapt targets based on workload, complexity, and customer value"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Basic SLAs likely on Service Cloud and Field Service response times. Not agent-driven.",
+                "assessed": true
               }
             }
           ]
@@ -8450,10 +8450,10 @@
                 "stage_4": "Zero-trust agent identity with dynamic permission adjustment based on context and risk assessment"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Apigee provides API-level security, SSO, and rate limiting. Platform-level auth in Salesforce/SAP.",
+                "assessed": true
               }
             },
             {
@@ -8519,10 +8519,10 @@
                 "stage_4": "Dynamic data access with context-aware permissions that adapt based on task, customer consent, and risk"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Informatica Data Governance provides basic data access controls. SAP ECC authorization objects.",
+                "assessed": true
               }
             },
             {
@@ -8585,10 +8585,10 @@
                 "stage_4": "Predictive security with autonomous threat detection and automated containment of compromised agents"
               },
               "client_assessment": {
-                "current_stage": null,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "",
-                "assessed": false
+                "notes": "Apigee provides traffic management and basic anomaly detection on API calls.",
+                "assessed": true
               }
             }
           ]
