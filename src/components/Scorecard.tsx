@@ -2,11 +2,63 @@
 
 import { useState, useMemo } from "react";
 import { BlueprintData, Assessments } from "@/types";
-import { LAYER_COLORS, LAYER_NAMES } from "@/lib/constants";
+import { LAYER_COLORS, LAYER_NAMES, STAGE_NAMES } from "@/lib/constants";
 
 interface Props {
   data: BlueprintData;
   assessments: Assessments;
+}
+
+function buildReportBody(
+  data: BlueprintData,
+  assessments: Assessments,
+  stats: { assessed: number; avgScore: number; gapCount: number; layerScores: Record<string, { score: number; assessed: number; total: number }> }
+): string {
+  const lines: string[] = [
+    "AFO CAPABILITY BLUEPRINT — ASSESSMENT REPORT",
+    `Generated ${new Date().toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" })}`,
+    "",
+    "SUMMARY",
+    `  Avg. current stage: ${stats.avgScore.toFixed(1)}`,
+    `  Capabilities assessed: ${stats.assessed} of 123`,
+    `  Remaining: ${123 - stats.assessed}`,
+    `  Gaps (current < target): ${stats.gapCount}`,
+    "",
+    "BY LAYER",
+  ];
+
+  for (const layer of data.layers) {
+    const ls = stats.layerScores[layer.id];
+    if (ls.assessed > 0) {
+      lines.push(`  ${LAYER_NAMES[layer.id] || layer.name}: ${ls.score.toFixed(1)} avg (${ls.assessed}/${ls.total} assessed)`);
+    }
+  }
+
+  lines.push("", "CAPABILITY DETAILS", "");
+
+  for (const layer of data.layers) {
+    const layerName = LAYER_NAMES[layer.id] || layer.name;
+    let hasAny = false;
+    for (const l1 of layer.l1_components) {
+      for (const l2 of l1.l2_capabilities) {
+        const a = assessments[l2.id];
+        if (!a?.current && !a?.target) continue;
+        if (!hasAny) {
+          lines.push(`--- ${layerName} ---`);
+          hasAny = true;
+        }
+        const current = a?.current ? `Stage ${a.current} (${STAGE_NAMES[a.current]})` : "—";
+        const target = a?.target ? `Stage ${a.target} (${STAGE_NAMES[a.target]})` : "—";
+        const gap = a?.current && a?.target && a.target > a.current ? ` [GAP: +${a.target - a.current}]` : "";
+        lines.push(`  ${l2.name}`);
+        lines.push(`    Current: ${current}  |  Target: ${target}${gap}`);
+        if (a?.notes) lines.push(`    Notes: ${a.notes}`);
+      }
+    }
+    if (hasAny) lines.push("");
+  }
+
+  return lines.join("\n");
 }
 
 export default function Scorecard({ data, assessments }: Props) {
@@ -137,6 +189,18 @@ export default function Scorecard({ data, assessments }: Props) {
                 </div>
               );
             })}
+          </div>
+
+          <div className="mt-3.5 pt-3 border-t border-bd flex items-center gap-2">
+            <span className="text-[11px] text-tx3 flex-1">
+              Email assessment results as a report
+            </span>
+            <a
+              href={`mailto:?subject=${encodeURIComponent("AFO Capability Blueprint — Assessment Report")}&body=${encodeURIComponent(buildReportBody(data, assessments, stats))}`}
+              className="text-xs font-medium px-4 py-1.5 rounded-md border bg-bg2 text-tx border-bd hover:border-bd2 cursor-pointer no-underline"
+            >
+              Send report
+            </a>
           </div>
         </div>
       )}
