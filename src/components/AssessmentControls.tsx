@@ -12,6 +12,7 @@ interface Props {
 }
 
 const BTN_SELECTED: Record<number, string> = {
+  0: "bg-cov-gap-bg text-cov-gap-text border-cov-gap-border",
   1: "bg-bg3 text-tx border-tx3",
   2: "bg-assess-2-bg text-assess-2 border-assess-2",
   3: "bg-assess-3-bg text-assess-3 border-assess-3",
@@ -31,7 +32,7 @@ function StageRow({
     <div className="flex items-center gap-2 mb-1.5">
       <div className="text-[10px] text-tx3 min-w-[52px]">{label}</div>
       <div className="flex gap-[3px]">
-        {[1, 2, 3, 4].map((s) => {
+        {[0, 1, 2, 3, 4].map((s) => {
           const isSelected = selected === s;
           return (
             <button
@@ -48,7 +49,7 @@ function StageRow({
           );
         })}
       </div>
-      {selected && (
+      {selected != null && (
         <span className="text-[9px] text-tx3 ml-1.5">
           {STAGE_NAMES[selected]}
         </span>

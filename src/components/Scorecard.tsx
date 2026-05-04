@@ -145,18 +145,18 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
     for (const l1 of layer.l1_components) {
       for (const l2 of l1.l2_capabilities) {
         const a = assessments[l2.id];
-        if (!a?.current && !a?.target) continue;
+        if (a?.current == null && a?.target == null) continue;
         const mi = l2.maturity_indicators;
 
-        const currentLabel = a?.current ? `Stage ${a.current}: ${STAGE_NAMES[a.current]}` : "—";
-        const currentDef = a?.current ? mi[`stage_${a.current}` as keyof typeof mi] : "";
+        const currentLabel = a?.current != null ? `Stage ${a.current}: ${STAGE_NAMES[a.current]}` : "—";
+        const currentDef = a?.current != null ? (mi[`stage_${a.current}` as keyof typeof mi] || "") : "";
         const currentCell = currentDef ? `${currentLabel}\n${currentDef}` : currentLabel;
 
-        const targetLabel = a?.target ? `Stage ${a.target}: ${STAGE_NAMES[a.target]}` : "—";
-        const targetDef = a?.target ? mi[`stage_${a.target}` as keyof typeof mi] : "";
+        const targetLabel = a?.target != null ? `Stage ${a.target}: ${STAGE_NAMES[a.target]}` : "—";
+        const targetDef = a?.target != null ? (mi[`stage_${a.target}` as keyof typeof mi] || "") : "";
         const targetCell = targetDef ? `${targetLabel}\n${targetDef}` : targetLabel;
 
-        const gap = a?.current && a?.target && a.target > a.current ? `+${a.target - a.current}` : "";
+        const gap = a?.current != null && a?.target != null && a.target > a.current ? `+${a.target - a.current}` : "";
 
         capTableBody.push([layerName, l2.name, currentCell, targetCell, gap, a?.notes || ""]);
       }
@@ -245,19 +245,19 @@ export default function Scorecard({ data, assessments }: Props) {
         for (const cap of comp.l2_capabilities) {
           lt++;
           const a = assessments[cap.id];
-          if (a?.current) {
+          if (a?.current != null) {
             assessed++;
             totalScore += a.current;
             ls += a.current;
             lc++;
           }
-          if (a?.target) {
+          if (a?.target != null) {
             totalTarget += a.target;
             targetCount++;
             lt_score += a.target;
             ltc++;
           }
-          if (a?.current && a?.target && a.target > a.current) {
+          if (a?.current != null && a?.target != null && a.target > a.current) {
             gapCount++;
           }
         }

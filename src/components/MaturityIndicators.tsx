@@ -7,6 +7,7 @@ interface Props {
 }
 
 const BORDER_COLORS: Record<string, string> = {
+  s0: "#E24B4A",
   s1: "var(--color-tx3)",
   s2: "#534AB7",
   s3: "#0F6E56",

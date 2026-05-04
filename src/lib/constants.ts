@@ -41,6 +41,7 @@ export const VENDORS: Vendor[] = [
 ];
 
 export const STAGE_NAMES: Record<number, string> = {
+  0: "Not established",
   1: "Distributed",
   2: "Functional",
   3: "Unified",
@@ -48,6 +49,7 @@ export const STAGE_NAMES: Record<number, string> = {
 };
 
 export const STAGE_COLORS: Record<number, string> = {
+  0: "#E24B4A",
   1: "var(--color-tx3)",
   2: "#534AB7",
   3: "#0F6E56",
@@ -55,6 +57,7 @@ export const STAGE_COLORS: Record<number, string> = {
 };
 
 export const STAGE_LABELS = [
+  { key: "stage_0", label: "Stage 0: Not established", cls: "s0" },
   { key: "stage_1", label: "Stage 1: Distributed", cls: "s1" },
   { key: "stage_2", label: "Stage 2: Functional", cls: "s2" },
   { key: "stage_3", label: "Stage 3: Unified (target)", cls: "s3" },
