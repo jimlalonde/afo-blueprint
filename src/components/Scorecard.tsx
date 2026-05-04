@@ -12,15 +12,16 @@ interface Props {
 interface Stats {
   assessed: number;
   avgScore: number;
+  avgTarget: number;
   gapCount: number;
-  layerScores: Record<string, { score: number; assessed: number; total: number }>;
+  layerScores: Record<string, { score: number; targetScore: number; assessed: number; total: number }>;
 }
 
 async function generatePdf(data: BlueprintData, assessments: Assessments, stats: Stats) {
   const { jsPDF } = await import("jspdf");
   const autoTable = (await import("jspdf-autotable")).default;
 
-  const doc = new jsPDF({ orientation: "portrait", unit: "pt", format: "a4" });
+  const doc = new jsPDF({ orientation: "landscape", unit: "pt", format: "a4" });
   const pageWidth = doc.internal.pageSize.getWidth();
   const margin = 40;
   const contentWidth = pageWidth - margin * 2;
@@ -51,13 +52,17 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
   y += 24;
 
   // Summary cards
+  const delta = stats.avgTarget - stats.avgScore;
+  const deltaStr = delta > 0 ? `+${delta.toFixed(1)}` : delta.toFixed(1);
   const cardData = [
     { value: stats.avgScore.toFixed(1), label: "Avg. current stage" },
+    { value: stats.avgTarget.toFixed(1), label: "Avg. target stage" },
+    { value: deltaStr, label: "Avg. delta" },
     { value: String(stats.assessed), label: "Assessed" },
     { value: String(123 - stats.assessed), label: "Remaining" },
     { value: String(stats.gapCount), label: "Gaps" },
   ];
-  const cardW = (contentWidth - 18) / 4;
+  const cardW = (contentWidth - 30) / 6;
   const cardH = 48;
   cardData.forEach((card, i) => {
     const x = margin + i * (cardW + 6);
@@ -85,9 +90,14 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
   for (const layer of data.layers) {
     const ls = stats.layerScores[layer.id];
     const layerName = LAYER_NAMES[layer.id] || layer.name;
+    const layerDelta = ls.assessed > 0 && ls.targetScore > 0
+      ? `+${(ls.targetScore - ls.score).toFixed(1)}`
+      : "—";
     layerTableBody.push([
       layerName,
       ls.assessed > 0 ? ls.score.toFixed(1) : "—",
+      ls.assessed > 0 && ls.targetScore > 0 ? ls.targetScore.toFixed(1) : "—",
+      layerDelta,
       `${ls.assessed} / ${ls.total}`,
     ]);
   }
@@ -95,20 +105,32 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
   autoTable(doc, {
     startY: y,
     margin: { left: margin, right: margin },
-    head: [["Layer", "Avg. stage", "Assessed / Total"]],
+    head: [["Layer", "Avg. current", "Avg. target", "Delta", "Assessed / Total"]],
     body: layerTableBody,
     styles: { fontSize: 8, cellPadding: 5, textColor: [26, 26, 24] },
     headStyles: { fillColor: [208, 74, 2], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 8 },
     alternateRowStyles: { fillColor: [245, 244, 240] },
     columnStyles: {
-      0: { cellWidth: contentWidth * 0.5 },
-      1: { cellWidth: contentWidth * 0.25, halign: "center" },
-      2: { cellWidth: contentWidth * 0.25, halign: "center" },
+      0: { cellWidth: contentWidth * 0.35 },
+      1: { cellWidth: contentWidth * 0.15, halign: "center" },
+      2: { cellWidth: contentWidth * 0.15, halign: "center" },
+      3: { cellWidth: contentWidth * 0.15, halign: "center" },
+      4: { cellWidth: contentWidth * 0.2, halign: "center" },
     },
   });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   y = (doc as any).lastAutoTable.finalY + 20;
+
+  // Build a lookup for L2 maturity indicators
+  const l2Lookup: Record<string, { maturity_indicators: { stage_1: string; stage_2: string; stage_3: string; stage_4: string } }> = {};
+  for (const layer of data.layers) {
+    for (const l1 of layer.l1_components) {
+      for (const l2 of l1.l2_capabilities) {
+        l2Lookup[l2.id] = l2;
+      }
+    }
+  }
 
   // Capability details
   doc.setFontSize(11);
@@ -117,17 +139,26 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
   doc.text("Capability details", margin, y);
   y += 14;
 
-  const capTableBody: string[][] = [];
+  const capTableBody: (string | { content: string; styles?: Record<string, unknown> })[][] = [];
   for (const layer of data.layers) {
     const layerName = LAYER_NAMES[layer.id] || layer.name;
     for (const l1 of layer.l1_components) {
       for (const l2 of l1.l2_capabilities) {
         const a = assessments[l2.id];
         if (!a?.current && !a?.target) continue;
-        const current = a?.current ? `${a.current} - ${STAGE_NAMES[a.current]}` : "—";
-        const target = a?.target ? `${a.target} - ${STAGE_NAMES[a.target]}` : "—";
+        const mi = l2.maturity_indicators;
+
+        const currentLabel = a?.current ? `Stage ${a.current}: ${STAGE_NAMES[a.current]}` : "—";
+        const currentDef = a?.current ? mi[`stage_${a.current}` as keyof typeof mi] : "";
+        const currentCell = currentDef ? `${currentLabel}\n${currentDef}` : currentLabel;
+
+        const targetLabel = a?.target ? `Stage ${a.target}: ${STAGE_NAMES[a.target]}` : "—";
+        const targetDef = a?.target ? mi[`stage_${a.target}` as keyof typeof mi] : "";
+        const targetCell = targetDef ? `${targetLabel}\n${targetDef}` : targetLabel;
+
         const gap = a?.current && a?.target && a.target > a.current ? `+${a.target - a.current}` : "";
-        capTableBody.push([layerName, l2.name, current, target, gap, a?.notes || ""]);
+
+        capTableBody.push([layerName, l2.name, currentCell, targetCell, gap, a?.notes || ""]);
       }
     }
   }
@@ -136,18 +167,27 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
     autoTable(doc, {
       startY: y,
       margin: { left: margin, right: margin },
-      head: [["Layer", "Capability", "Current", "Target", "Gap", "Notes"]],
+      head: [["Layer", "Capability", "Current state", "Target state", "Gap", "Notes"]],
       body: capTableBody,
-      styles: { fontSize: 7, cellPadding: 4, textColor: [26, 26, 24], overflow: "linebreak" },
+      styles: { fontSize: 7, cellPadding: 5, textColor: [26, 26, 24], overflow: "linebreak", lineWidth: 0.5 },
       headStyles: { fillColor: [208, 74, 2], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 7 },
       alternateRowStyles: { fillColor: [245, 244, 240] },
       columnStyles: {
-        0: { cellWidth: 70 },
-        1: { cellWidth: 120 },
-        2: { cellWidth: 65, halign: "center" },
-        3: { cellWidth: 65, halign: "center" },
+        0: { cellWidth: 75 },
+        1: { cellWidth: 110 },
+        2: { cellWidth: 160 },
+        3: { cellWidth: 160 },
         4: { cellWidth: 30, halign: "center" },
-        5: { cellWidth: contentWidth - 350 },
+        5: { cellWidth: contentWidth - 535 },
+      },
+      didParseCell: (hookData: { section: string; column: { index: number }; cell: { styles: Record<string, unknown> }; row: { raw: unknown[] } }) => {
+        if (hookData.section === "body" && (hookData.column.index === 2 || hookData.column.index === 3)) {
+          const raw = String(hookData.row.raw[hookData.column.index]);
+          if (raw.includes("\n")) {
+            hookData.cell.styles.fontSize = 6.5;
+            hookData.cell.styles.cellPadding = { top: 4, right: 5, bottom: 4, left: 5 };
+          }
+        }
       },
     });
   }
@@ -188,15 +228,19 @@ export default function Scorecard({ data, assessments }: Props) {
   const stats = useMemo(() => {
     let assessed = 0;
     let totalScore = 0;
+    let totalTarget = 0;
+    let targetCount = 0;
     let gapCount = 0;
     const layerScores: Record<
       string,
-      { score: number; assessed: number; total: number }
+      { score: number; targetScore: number; assessed: number; total: number }
     > = {};
 
     for (const layer of data.layers) {
       let ls = 0,
+        lt_score = 0,
         lc = 0,
+        ltc = 0,
         lt = 0;
       for (const comp of layer.l1_components) {
         for (const cap of comp.l2_capabilities) {
@@ -208,6 +252,12 @@ export default function Scorecard({ data, assessments }: Props) {
             ls += a.current;
             lc++;
           }
+          if (a?.target) {
+            totalTarget += a.target;
+            targetCount++;
+            lt_score += a.target;
+            ltc++;
+          }
           if (a?.current && a?.target && a.target > a.current) {
             gapCount++;
           }
@@ -215,6 +265,7 @@ export default function Scorecard({ data, assessments }: Props) {
       }
       layerScores[layer.id] = {
         score: lc > 0 ? ls / lc : 0,
+        targetScore: ltc > 0 ? lt_score / ltc : 0,
         assessed: lc,
         total: lt,
       };
@@ -223,6 +274,7 @@ export default function Scorecard({ data, assessments }: Props) {
     return {
       assessed,
       avgScore: assessed > 0 ? totalScore / assessed : 0,
+      avgTarget: targetCount > 0 ? totalTarget / targetCount : 0,
       gapCount,
       layerScores,
     };
