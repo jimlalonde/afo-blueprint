@@ -180,12 +180,11 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
         4: { cellWidth: 30, halign: "center" },
         5: { cellWidth: contentWidth - 535 },
       },
-      didParseCell: (hookData: { section: string; column: { index: number }; cell: { styles: Record<string, unknown> }; row: { raw: unknown[] } }) => {
+      didParseCell: (hookData) => {
         if (hookData.section === "body" && (hookData.column.index === 2 || hookData.column.index === 3)) {
-          const raw = String(hookData.row.raw[hookData.column.index]);
+          const raw = String((hookData.row.raw as string[])[hookData.column.index]);
           if (raw.includes("\n")) {
             hookData.cell.styles.fontSize = 6.5;
-            hookData.cell.styles.cellPadding = { top: 4, right: 5, bottom: 4, left: 5 };
           }
         }
       },
