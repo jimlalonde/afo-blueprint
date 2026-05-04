@@ -423,7 +423,7 @@
               "client_assessment": {
                 "current_stage": 2,
                 "target_stage": null,
-                "notes": "CCEX unified portal with micro frontends provides CMS-managed web experience.",
+                "notes": "CCEX unified portal + Adobe Experience Manager (SPS Automation Site) + SAP Hybris storefronts across business units.",
                 "assessed": true
               }
             },
@@ -483,9 +483,9 @@
                 "stage_4": "Autonomous email agents composing and optimizing messages in real time per recipient"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "No marketing automation platform visible. Email likely manual or through Salesforce basic functionality.",
+                "notes": "Marketo deployed across all three stacks (SPS, HPS, HCE) provides triggered emails with dynamic content and segmentation.",
                 "assessed": true
               }
             },
@@ -542,9 +542,9 @@
                 "stage_4": "Autonomous mobile engagement agents adapting channel, timing, and content to individual preference"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No SMS/push capability visible in the architecture.",
+                "notes": "Marketo provides basic SMS/push capabilities alongside email campaigns.",
                 "assessed": true
               }
             },
@@ -603,9 +603,9 @@
                 "stage_4": "Autonomous media agents continuously optimizing spend across platforms against commercial outcomes"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No paid media platform visible.",
+                "notes": "Marketo provides basic paid media audience syndication and ad network integration.",
                 "assessed": true
               }
             },
@@ -1382,9 +1382,9 @@
                 "stage_4": "Autonomous journey design creating and optimizing based on outcome patterns"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No journey orchestration platform. No marketing automation visible.",
+                "notes": "Marketo provides campaign-based journey sequences across email and web channels.",
                 "assessed": true
               }
             },
@@ -1449,9 +1449,9 @@
                 "stage_4": "Segment-of-one with predictive intent modeling"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No dynamic segmentation capability. No CDP or marketing platform.",
+                "notes": "Marketo provides static rule-based segments updated periodically from CRM and web activity.",
                 "assessed": true
               }
             },
@@ -1533,7 +1533,7 @@
               "client_assessment": {
                 "current_stage": 1,
                 "target_stage": null,
-                "notes": "Salesforce CRM provides basic rule-based recommendations for sales reps.",
+                "notes": "Marketo + Salesforce CRM provide basic rule-based recommendations and lead scoring.",
                 "assessed": true
               }
             },
@@ -1590,9 +1590,9 @@
                 "stage_4": "Dynamic offer generation with autonomous pricing within governed boundaries"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No offer optimization. Static promotional calendar likely.",
+                "notes": "Marketo provides basic promotional calendar and rule-based offer selection.",
                 "assessed": true
               }
             },
@@ -1651,9 +1651,9 @@
                 "stage_4": "Continuous autonomous optimization across all touchpoints"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No experience optimization or experimentation platform visible.",
+                "notes": "Marketo provides manual A/B testing on email subject lines and landing pages.",
                 "assessed": true
               }
             },
@@ -1911,7 +1911,7 @@
               "client_assessment": {
                 "current_stage": 1,
                 "target_stage": null,
-                "notes": "Customer data fragmented across Salesforce CRM, SAP ECC, and Hybris. No CDP.",
+                "notes": "Customer data across Salesforce CRM, SAP ECC, and Marketo. Marketo provides behavioral tracking but no unified CDP.",
                 "assessed": true
               }
             },
@@ -2025,9 +2025,9 @@
                 "stage_4": "Autonomous campaign agents designing, launching, and optimizing campaigns end-to-end"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "No campaign planning or orchestration platform. No marketing automation.",
+                "notes": "Marketo deployed across SPS, HPS, and HCE stacks provides platform-orchestrated campaigns with automation and nurture programs.",
                 "assessed": true
               }
             },
@@ -2153,9 +2153,9 @@
                 "stage_4": "AI-generated micro-personas with real-time journey adaptation"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No persona mapping or journey design tooling visible.",
+                "notes": "Marketo provides basic persona-based segmentation and lead lifecycle stages.",
                 "assessed": true
               }
             },
@@ -2214,9 +2214,9 @@
                 "stage_4": "Autonomous ABM agents orchestrating personalized account journeys across all touchpoints"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "Salesforce CRM provides basic account-level data but no ABM platform.",
+                "notes": "Marketo + Salesforce CRM provide account-based campaigns with account scoring and targeted nurtures.",
                 "assessed": true
               }
             },
@@ -2269,9 +2269,9 @@
                 "stage_4": "Autonomous budget agents continuously optimizing spend against commercial outcomes"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No marketing budget/resource planning tool visible.",
+                "notes": "Marketo provides basic campaign performance data for budget decisions. Annual budget allocation with quarterly reviews.",
                 "assessed": true
               }
             },
@@ -2408,9 +2408,9 @@
                 "stage_4": "Real-time attribution with autonomous spend optimization based on incremental value"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 2,
                 "target_stage": null,
-                "notes": "No channel attribution or marketing analytics platform visible.",
+                "notes": "Marketo provides multi-touch attribution with cross-channel dashboards (email, web, forms, events).",
                 "assessed": true
               }
             },
@@ -2480,9 +2480,9 @@
                 "stage_4": "Proactive reputation management agents detecting and addressing sentiment shifts autonomously"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No sentiment analysis or brand monitoring capability visible.",
+                "notes": "Marketo provides basic engagement scoring and activity monitoring. No dedicated sentiment/brand monitoring platform.",
                 "assessed": true
               }
             }
@@ -2608,7 +2608,7 @@
               "client_assessment": {
                 "current_stage": 2,
                 "target_stage": null,
-                "notes": "Salesforce CRM with CPQ supports opportunity tracking and deal configuration. Key flow: Lead > Opportunity > Configure & Price > Order.",
+                "notes": "Salesforce CRM + Steelbrick CPQ (SPS) + SAP CPQ provide deal configuration across business units. Multiple quoting tools by stack.",
                 "assessed": true
               }
             },
@@ -3553,9 +3553,9 @@
                 "stage_4": "Autonomous pricing agents continuously optimizing across channels within governed margin boundaries"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 3,
                 "target_stage": null,
-                "notes": "SAP ECC pricing conditions (SD module) provide rule-based pricing with segment differentiation. Zuora handles subscription rate plans.",
+                "notes": "PROS deployed across SPS and HPS provides ML-driven dynamic pricing with real-time optimization beyond rule-based segmentation.",
                 "assessed": true
               }
             },
@@ -3611,7 +3611,7 @@
               "client_assessment": {
                 "current_stage": 2,
                 "target_stage": null,
-                "notes": "Salesforce CPQ + SAP CPQ (optional) provide CPQ with complex config, engineering rules, pricing simulation, and approval workflows.",
+                "notes": "Salesforce CPQ (Steelbrick in SPS) + SAP CPQ across stacks provide mature bid/quote management with approval workflows.",
                 "assessed": true
               }
             },
@@ -3784,7 +3784,7 @@
               "client_assessment": {
                 "current_stage": 2,
                 "target_stage": null,
-                "notes": "SAP Hybris Commerce supports promotional pricing. SAP ECC pricing conditions manage planned promotions.",
+                "notes": "PROS + SAP Hybris provide data-driven promotional pricing with impact analysis.",
                 "assessed": true
               }
             }
@@ -3876,9 +3876,9 @@
                 "stage_4": "Autonomous creative agents generating production-ready assets from briefs with minimal human review"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No creative design tools or content platform visible.",
+                "notes": "Adobe Experience Manager in SPS stack provides template-based content creation for the Automation Site.",
                 "assessed": true
               }
             },
@@ -3953,9 +3953,9 @@
                 "stage_4": "Autonomous content agents producing, testing, and optimizing copy across channels in real time"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No content authoring platform visible. CCEX is a portal, not a content system.",
+                "notes": "Adobe AEM provides basic content authoring for web experiences. Marketo provides email content creation.",
                 "assessed": true
               }
             },
@@ -4386,9 +4386,9 @@
                 "stage_4": "Self-curating DAM that autonomously organizes, versions, and retires assets based on performance and relevance"
               },
               "client_assessment": {
-                "current_stage": 0,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "No digital asset management visible.",
+                "notes": "Adobe AEM provides basic digital asset management for the SPS Automation Site.",
                 "assessed": true
               }
             },

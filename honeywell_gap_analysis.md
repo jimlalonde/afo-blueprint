@@ -2,48 +2,53 @@
 
 **Date:** May 4, 2026
 **Prepared by:** PwC Agentic Front Office Practice
-**Assessment basis:** Enterprise Context architecture diagram (current state)
+**Assessment basis:** Enterprise Context architecture diagram + HON IA-HPS Commercial System Landscape (current state)
 
 ---
 
 ## Executive Summary
 
-Honeywell's current commercial technology architecture is anchored on a **traditional, ERP-centric stack** built around SAP ECC as the system of record, Salesforce as the CX engagement layer, and Informatica as the integration backbone. The architecture effectively supports three well-defined process views — Quote-to-Cash, Service Lifecycle, and Commerce — but has **no agentic, GenAI, or AI-native capabilities** deployed.
+Honeywell's current commercial technology architecture spans **three distinct tech stacks** — SPS (~$1.5B), HPS (~$6.0B), and legacy HCE (~$0.2B) — built around SAP ECC as the system of record, Salesforce as the CRM layer, and Informatica as the integration backbone. The Commercial System Landscape reveals a richer platform footprint than initially assessed: **Marketo** is deployed across all three stacks for marketing automation, **PROS** provides ML-driven dynamic pricing in SPS and HPS, and **Adobe Experience Manager** powers the SPS Automation Site. Despite this depth, the architecture has **no agentic, GenAI, or AI-native capabilities** deployed, and the multi-stack fragmentation creates significant complexity.
 
-**Overall current-state maturity: 0.7 avg (Stage 0–1)**
+**Overall current-state maturity: 0.9 avg (Stage 0–1)**
 
 Of 123 L2 capabilities assessed:
-- **70 (57%)** rated Stage 0 — Not established
-- **26 (21%)** rated Stage 1 — Distributed
-- **27 (22%)** rated Stage 2 — Functional
-- **0** rated Stage 3 or 4
+- **56 (46%)** rated Stage 0 — Not established
+- **36 (29%)** rated Stage 1 — Distributed
+- **30 (24%)** rated Stage 2 — Functional
+- **1 (1%)** rated Stage 3 — Unified (PROS dynamic pricing)
 
-The strongest capabilities are in **Enterprise Data Foundation** (integration infrastructure, data management) and **Functional Pillars** (Sales, Commerce, Service, Pricing) where established platforms are operational. The largest gaps are in **Agentic Orchestration**, **Commercial Brain**, **Intelligent Content Operations**, and **Marketing** — all of which have minimal or no platform coverage.
+The strongest capabilities are in **Enterprise Data Foundation** (integration infrastructure, data management), **Pricing** (PROS + CPQ + Zuora), and **Functional Pillars** (Sales, Commerce, Service) where established platforms are operational. The largest gaps are in **Agentic Orchestration**, **Commercial Brain**, **Intelligent Content Operations**, and **Governance** — all of which have minimal or no platform coverage. Marketing, previously identified as a critical gap, is now understood to have a **Marketo foundation** that elevates several marketing capabilities to Stage 1–2.
 
 ---
 
 ## Current Architecture Stack
 
-| Platform | Role | Layers Served |
-|---|---|---|
-| **SAP ECC** | System of record (SD, MM/LE, PP/QM, Billing, FI/CO, QM/PM) | Enterprise Data, Pricing, Commerce |
-| **SAP Hybris Commerce Cloud** | B2B/B2C digital commerce | Experience, Commerce |
-| **Salesforce CRM (Sales Cloud)** | Lead, opportunity, and account management | Sales |
-| **Salesforce CPQ** | Configure-price-quote | Sales, Pricing |
-| **SAP CPQ (optional)** | Complex configuration with engineering rules | Sales, Pricing |
-| **Salesforce Service Cloud** | Case management, entitlements, service contracts | Service |
-| **Salesforce Field Service** | Work orders, scheduling, dispatching, parts | Service |
-| **Informatica IICS** | Data integration, app integration, data quality, MDM, data governance | Enterprise Data, Commercial Brain (integration only) |
-| **Google Apigee** | API management, gateway, security, traffic management | Enterprise Data, Experience (APIs) |
-| **Zuora** | Subscription billing, rate plans, invoicing | Pricing |
-| **Honeywell CCEX** | Custom unified portal, micro frontends, self-service | Experience |
-| **SAP BW / S4HANA** | Reporting, analytics | Enterprise Data |
+| Platform | Role | Stacks | Layers Served |
+|---|---|---|---|
+| **SAP ECC** | System of record (SD, MM/LE, PP/QM, Billing, FI/CO, QM/PM) | All | Enterprise Data, Pricing, Commerce |
+| **SAP Hybris Commerce Cloud** | B2B/B2C digital commerce storefronts | SPS, HPS | Experience, Commerce |
+| **Adobe Experience Manager** | Web content management (Automation Site) | SPS | Experience, ICO |
+| **Marketo** | Marketing automation, campaigns, nurtures | SPS, HPS, HCE | Marketing, AEO, Experience |
+| **PROS** | ML-driven dynamic pricing optimization | SPS, HPS | Pricing |
+| **Salesforce CRM (Sales Cloud)** | Lead, opportunity, and account management | SPS, HPS, HCE | Sales |
+| **Salesforce CPQ (Steelbrick)** | Configure-price-quote | SPS | Sales, Pricing |
+| **SAP CPQ** | Complex configuration with engineering rules | SPS, HPS, HCE | Sales, Pricing |
+| **Salesforce Service Cloud** | Case management, entitlements, service contracts | All | Service |
+| **Salesforce Field Service** | Work orders, scheduling, dispatching, parts | All | Service |
+| **SalesLogix** | Legacy CRM | HCE | Sales |
+| **Informatica IICS** | Data integration, app integration, data quality, MDM, data governance | All | Enterprise Data, Commercial Brain (integration only) |
+| **Google Apigee** | API management, gateway, security, traffic management | All | Enterprise Data, Experience (APIs) |
+| **Zuora** | Subscription billing, rate plans, invoicing | SPS, HPS | Pricing |
+| **Honeywell CCEX** | Custom unified portal, micro frontends, self-service | All | Experience |
+| **SAP BW / S4HANA** | Reporting, analytics | All | Enterprise Data |
+| **Sparta + Matrikon Sites** | Legacy web properties (Apache-based) | HCE | Experience |
 
 ---
 
 ## Layer-by-Layer Assessment
 
-### 1. Experience Layer — Avg: 0.5
+### 1. Experience Layer — Avg: 0.7
 
 | Capability | Stage | Platform | Notes |
 |---|---|---|---|
@@ -51,19 +56,19 @@ The strongest capabilities are in **Enterprise Data Foundation** (integration in
 | Conversational commerce agent | 0 | — | No conversational commerce |
 | Autonomous service agent | 0 | — | Cases are human-handled |
 | Machine workflow agent | 0 | — | No agentic automation |
-| Web | **2** | CCEX | Unified portal with micro frontends |
-| Email | 1 | Salesforce (basic) | No marketing automation |
-| SMS / Push | 0 | — | Not present |
-| Paid media | 0 | — | Not present |
+| Web | **2** | CCEX + AEM | Unified portal + Adobe AEM (SPS Automation Site) + SAP Hybris storefronts |
+| Email | **2** | Marketo | Marketo provides triggered emails with dynamic content and segmentation across all stacks |
+| SMS / Push | 1 | Marketo | Marketo provides basic SMS/push alongside email campaigns |
+| Paid media | 1 | Marketo | Basic audience syndication and ad network integration via Marketo |
 | Search & display | 0 | — | Not present |
 | Events & experiential | 0 | — | Not present |
 | Print & physical | 0 | — | Not present |
 | API commerce endpoints | **2** | Apigee | Experience APIs/Gateway documented |
 | Agent protocol endpoints | 0 | — | No A2A/MCP support |
 
-**Key finding:** The experience layer is built around a custom portal (CCEX) and API gateway (Apigee). There are no conversational, agentic, or multi-channel marketing touchpoints. The channel mix is narrow — essentially web, email, and APIs.
+**Key finding:** The experience layer is stronger than initially assessed. CCEX and Apigee provide the web/API backbone, but **Marketo across all three stacks** adds email automation, basic SMS/push, and paid media syndication. Adobe AEM in SPS adds content-managed web experiences. The remaining gaps are in conversational, agentic, and advanced paid media channels.
 
-### 2. Autonomous Experience Orchestration (AEO) — Avg: 0.2
+### 2. Autonomous Experience Orchestration (AEO) — Avg: 0.4
 
 | Capability | Stage | Notes |
 |---|---|---|
@@ -72,33 +77,33 @@ The strongest capabilities are in **Enterprise Data Foundation** (integration in
 | Agentic process flow | 0 | Manual workflows |
 | Human-AI balance | 0 | Fully human-driven |
 | Event-driven routing | 1 | Informatica provides basic event integration |
-| Journey orchestration | 0 | No marketing automation |
-| Dynamic segmentation | 0 | No CDP |
-| Personalization & NBA | 1 | Basic CRM recommendations |
-| Offer optimization | 0 | Static promotions |
-| Experience optimization | 0 | No experimentation platform |
+| Journey orchestration | 1 | Marketo provides campaign-based journey sequences across email and web channels |
+| Dynamic segmentation | 1 | Marketo provides static rule-based segments updated periodically from CRM and web activity |
+| Personalization & NBA | 1 | Marketo + Salesforce CRM provide basic rule-based recommendations and lead scoring |
+| Offer optimization | 1 | Marketo provides basic promotional calendar and rule-based offer selection |
+| Experience optimization | 1 | Marketo provides manual A/B testing on email subject lines and landing pages |
 | Product recommendation | 1 | Hybris basic rules |
 | AI workbench | 0 | Separate admin consoles |
 
-**Key finding:** This is the single largest gap area. No orchestration layer exists between the customer touchpoints and the functional platforms. This means every cross-system journey is either manual or hard-coded in integration logic.
+**Key finding:** Still a major gap area, but Marketo provides a **Stage 1 baseline** for journey orchestration, segmentation, and A/B testing that was previously invisible. No true AI-driven orchestration exists, but the Marketo foundation means journey and segmentation capabilities don't need to start from zero.
 
-### 3. Functional Pillars — Avg: 1.2
+### 3. Functional Pillars — Avg: 1.5
 
-**Marketing (Avg: 0.2)** — Critical gap. No marketing automation, no CDP, no campaign orchestration, no attribution. Only basic CRM account data provides any marketing-adjacent capability.
+**Marketing (Avg: 1.1)** — Elevated from initial assessment. **Marketo across all three stacks** provides campaign execution (Stage 2), account-based marketing (Stage 2), multi-touch attribution (Stage 2), and basic audience segmentation (Stage 1). Remaining gaps: no CDP for unified customer data (Stage 1), no AI-driven intent signals, and budget optimization is manual.
 
-**Sales (Avg: 1.5)** — Moderate maturity. Salesforce CRM + CPQ provide Stage 2 lead management, deal execution, and forecasting. Weaker on retention/expansion and account-based selling (Stage 1).
+**Sales (Avg: 1.5)** — Moderate maturity. Salesforce CRM + Steelbrick CPQ (SPS) + SAP CPQ (HPS/HCE) provide Stage 2 lead management, deal execution, and forecasting. The multi-CPQ landscape across stacks adds complexity.
 
-**Commerce (Avg: 1.6)** — Moderate maturity. SAP Hybris provides a functional B2B/B2C storefront with catalog, checkout, and merchandising. Gap on agent-to-agent commerce readiness (Stage 0).
+**Commerce (Avg: 1.6)** — Moderate maturity. SAP Hybris provides functional B2B/B2C storefronts. Gap on agent-to-agent commerce readiness (Stage 0).
 
 **Service (Avg: 1.4)** — Moderate maturity. Salesforce Service Cloud + Field Service provide Stage 2 routing and case management. Knowledge management and proactive service are Stage 1.
 
-**Pricing (Avg: 2.0)** — Strongest functional area. SAP ECC pricing conditions, Salesforce/SAP CPQ, and Zuora subscription billing provide end-to-end pricing governance at Stage 2 across all capabilities.
+**Pricing (Avg: 2.2)** — Strongest functional area. **PROS ML-driven dynamic pricing** (Stage 3) in SPS and HPS elevates this beyond rule-based. Salesforce/SAP CPQ and Zuora subscription billing provide Stage 2 quote management and billing. PROS is a standout platform — one of the few capabilities approaching unified maturity.
 
-### 4. Intelligent Content Operations (ICO) — Avg: 0.1
+### 4. Intelligent Content Operations (ICO) — Avg: 0.3
 
-13 of 14 capabilities are Stage 0 (Not established). Only basic product content tagging in Hybris (Stage 1). No DAM, no creative tools, no content governance, no content strategy tooling. Content is likely produced ad hoc through agencies.
+11 of 14 capabilities are Stage 0. **Adobe AEM in SPS** provides basic content authoring and template-based creation (Stage 1), and **Marketo** adds email content creation capabilities. Basic digital asset management exists within AEM for the Automation Site. No DAM enterprise-wide, no creative tools, no content governance, no content strategy tooling.
 
-**Key finding:** ICO is an almost complete greenfield. Any agentic front office strategy will require standing up a content operations capability from scratch.
+**Key finding:** ICO is largely greenfield, but the AEM and Marketo foundations provide a starting point for content creation and web content management. A comprehensive content operations capability still needs to be established.
 
 ### 5. Commercial Brain — Avg: 0.1
 
@@ -129,15 +134,15 @@ Mostly Stage 0-1. Basic platform-level governance exists (Salesforce audit logs,
 **Impact:** Blocks personalization, segmentation, journey orchestration, and any agentic use case that needs customer context.
 **Recommendation:** Deploy a CDP (e.g., Salesforce Data Cloud or SAP CDP) to create a unified customer 360 profile. This is the foundational enabler for nearly everything else.
 
-### Priority 2: Marketing Automation
-**Gap:** No marketing automation platform. 8 of 10 marketing capabilities are Stage 0.
-**Impact:** No campaign orchestration, no audience segmentation, no channel attribution, no journey automation.
-**Recommendation:** Deploy a marketing automation platform (e.g., Salesforce Marketing Cloud, SAP Emarsys, or Adobe) connected to the CDP. This unlocks the entire marketing pillar and journey orchestration layer.
+### Priority 2: Marketing Platform Consolidation & Elevation
+**Gap:** Marketo provides a solid Stage 1–2 foundation, but it is deployed **independently across three stacks** with no unified customer data layer. No CDP, no AI-driven intent modeling, no cross-stack campaign orchestration.
+**Impact:** Marketing operates in silos per business unit. Campaign insights and audience segments are not shared across SPS, HPS, and HCE. Cannot deliver unified customer journeys.
+**Recommendation:** Unify Marketo instances or migrate to a consolidated platform (e.g., Marketo Engage with unified instance, Adobe Marketing Cloud, or Salesforce Marketing Cloud) connected to the CDP. Layer AI-driven intent signals and predictive segmentation on top of the existing Marketo campaign infrastructure.
 
 ### Priority 3: Intelligent Content Operations
-**Gap:** No content platform, DAM, or creative tooling. 13 of 14 ICO capabilities are Stage 0.
-**Impact:** Content is likely the bottleneck for any personalization or multi-channel strategy.
-**Recommendation:** Stand up a content operations stack (Adobe Experience Manager or equivalent) with DAM, content authoring, and governance workflows.
+**Gap:** Adobe AEM exists in SPS only, and Marketo handles email content. 11 of 14 ICO capabilities are Stage 0. No enterprise DAM, no creative tools, no content governance.
+**Impact:** Content is produced in silos — AEM for SPS web, Marketo for email, ad hoc for everything else. This bottlenecks personalization and multi-channel strategy.
+**Recommendation:** Extend Adobe AEM across stacks and stand up an enterprise DAM. Establish content governance workflows to support both human-authored and future AI-generated content.
 
 ### Priority 4: AI/Agent Foundation
 **Gap:** No GenAI, ML, or agent infrastructure. 25 of 26 Commercial Brain capabilities are Stage 0.
@@ -162,4 +167,4 @@ Mostly Stage 0-1. Basic platform-level governance exists (Salesforce audit logs,
 
 ---
 
-*This assessment is based on the Enterprise Context architecture diagram and represents an initial current-state evaluation. Ratings should be validated and refined during facilitated assessment workshops with Honeywell stakeholders.*
+*This assessment is based on the Enterprise Context architecture diagram and the HON IA-HPS Commercial System Landscape diagram. It represents an initial current-state evaluation. Ratings should be validated and refined during facilitated assessment workshops with Honeywell stakeholders.*
