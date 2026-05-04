@@ -55,6 +55,14 @@
                   ],
                   "notes": "Agentforce provides native conversational agent framework across text and voice"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Joule",
+                    "SAP Business AI"
+                  ],
+                  "notes": "Joule provides conversational AI but limited multi-modal experience composition compared to native CX platforms."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -134,6 +142,14 @@
                   ],
                   "notes": "Commerce platform with emerging conversational commerce through Agentforce"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP Joule"
+                  ],
+                  "notes": "Commerce Cloud supports conversational commerce via integration; not natively agentic."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -204,6 +220,14 @@
                     "Service Cloud"
                   ],
                   "notes": "Strong autonomous service agent capabilities through Agentforce built on Service Cloud"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Service Cloud",
+                    "SAP Joule"
+                  ],
+                  "notes": "Service Cloud handles case automation; Joule adds AI assist but autonomous agent capabilities are early."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -277,6 +301,14 @@
                     "Flow"
                   ],
                   "notes": "Workflow automation through Flow and MuleSoft; not purpose-built agentic workflow agents"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Integration Suite",
+                    "SAP Build Process Automation"
+                  ],
+                  "notes": "SAP Build Process Automation handles machine workflows; agent-native patterns emerging."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -357,6 +389,13 @@
                   ],
                   "notes": "Portal and community sites; not a full CMS for marketing websites"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "Commerce Cloud provides full headless and storefront web experience management."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -408,6 +447,13 @@
                     "Marketing Cloud"
                   ],
                   "notes": "Full email capabilities across campaign and journey-triggered"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys is a strong email marketing and automation platform with deep personalization."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -461,6 +507,13 @@
                     "Marketing Cloud"
                   ],
                   "notes": "SMS and push messaging through Marketing Cloud"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys provides native SMS, push notification, and mobile messaging capabilities."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -516,6 +569,13 @@
                   ],
                   "notes": "Audience activation to paid media; not a media buying platform"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys supports paid media audience syndication; not a full media buying platform."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -566,6 +626,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No native SEO/GEO optimization; partner required"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native search and display advertising product. Relies on partner integrations."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -618,6 +683,11 @@
                   ],
                   "notes": "Event-adjacent marketing automation; not a dedicated event platform"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native events and experiential marketing platform."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -667,6 +737,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No print/physical production capability"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native print and physical channel management."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -724,6 +799,14 @@
                   ],
                   "notes": "Commerce APIs through Commerce Cloud; not yet designed for autonomous agent transactions"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "Commerce Cloud exposes OCC APIs; Integration Suite provides API management. Not purpose-built for agent commerce."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -779,6 +862,11 @@
                     "MuleSoft"
                   ],
                   "notes": "ACP protocol support emerging; MuleSoft for API integration"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native agent protocol endpoint support (A2A, MCP). Early exploration via SAP Business AI."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -866,6 +954,13 @@
                   ],
                   "notes": "Native multi-agent coordination within Salesforce ecosystem through Agentforce"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [
+                    "SAP Joule"
+                  ],
+                  "notes": "Joule is single-agent; no multi-agent coordination framework yet."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -938,6 +1033,13 @@
                     "Platform Events"
                   ],
                   "notes": "Agentic patterns within Salesforce; cross-platform conversation patterns require MuleSoft"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [
+                    "SAP Joule"
+                  ],
+                  "notes": "Joule supports conversational patterns but not agentic conversation orchestration across agents."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -1013,6 +1115,14 @@
                   ],
                   "notes": "Strong agentic process flow through Agentforce + Flow automation framework"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Build Process Automation",
+                    "SAP Joule"
+                  ],
+                  "notes": "SAP Build provides process flow; Joule adds AI-driven steps. Not fully agentic orchestration."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -1085,6 +1195,14 @@
                   ],
                   "notes": "Human-in-the-loop controls and escalation built into Agentforce framework"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Joule",
+                    "SAP Build Process Automation"
+                  ],
+                  "notes": "Human-in-the-loop supported in SAP Build workflows; Joule provides escalation. Basic balance controls."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -1155,6 +1273,14 @@
                   ],
                   "notes": "Real-time event-driven architecture through Platform Events and Data Cloud streaming"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Integration Suite",
+                    "SAP Event Mesh"
+                  ],
+                  "notes": "Event Mesh provides event-driven architecture; routing is infrastructure-level, not experience-aware."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -1222,6 +1348,13 @@
                   ],
                   "notes": "Journey Builder for marketing journeys; not cross-functional orchestration across sales/service/commerce"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys provides mature journey orchestration with multi-channel automation and AI-driven triggers."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -1275,6 +1408,14 @@
                     "Marketing Cloud"
                   ],
                   "notes": "Real-time segmentation through Data Cloud with activation across channels"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Emarsys",
+                    "SAP CDP"
+                  ],
+                  "notes": "Emarsys and CDP provide robust dynamic segmentation with real-time audience computation."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -1334,6 +1475,14 @@
                     "Agentforce"
                   ],
                   "notes": "Einstein NBA across sales, service, and marketing with Agentforce decisioning"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Emarsys",
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "Emarsys provides next-best-action and personalization; Commerce Cloud adds product-level personalization."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -1408,6 +1557,14 @@
                   ],
                   "notes": "Offer management within marketing; cross-functional offer optimization limited"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys",
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "Basic offer optimization via Emarsys campaigns and Commerce promotions. Not ML-driven optimization."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -1458,6 +1615,13 @@
                     "Marketing Cloud"
                   ],
                   "notes": "A/B testing within marketing; cross-channel experimentation less mature than dedicated testing platforms"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys supports A/B testing and campaign experimentation. No full experience optimization platform."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -1514,6 +1678,14 @@
                     "Commerce Cloud"
                   ],
                   "notes": "Product recommendations in commerce; cross-channel recommendation less mature"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Commerce Cloud provides product recommendation engine; Emarsys adds cross-channel recommendations."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -1586,6 +1758,11 @@
                     "Lightning"
                   ],
                   "notes": "Agentforce builder and Lightning platform; focused on Salesforce ecosystem, not cross-platform workbench"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No dedicated AI workbench for business users to build and test agentic experiences."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -1678,6 +1855,14 @@
                   ],
                   "notes": "Unified customer profiles through Data Cloud with marketing audience intelligence"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP CDP",
+                    "SAP Emarsys"
+                  ],
+                  "notes": "SAP CDP provides unified customer profiles; Emarsys adds audience intelligence and segmentation."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -1748,6 +1933,11 @@
                   "products": [],
                   "notes": "No dedicated brand or experience strategy tooling"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native brand and experience strategy tooling. Consulting-led capability."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -1797,6 +1987,13 @@
                     "Marketing Cloud"
                   ],
                   "notes": "Campaign planning and execution through Marketing Cloud / Account Engagement"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys provides comprehensive campaign planning, orchestration, and automation."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -1848,6 +2045,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No native competitive intelligence; partner required"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native market and competitor insights platform. Relies on third-party integrations."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -1915,6 +2117,14 @@
                   ],
                   "notes": "Data-driven segments that inform personas; no dedicated persona management"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys",
+                    "SAP CDP"
+                  ],
+                  "notes": "Emarsys supports persona-based segmentation and journey mapping. Not a dedicated design tool."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -1970,6 +2180,14 @@
                   ],
                   "notes": "Account Engagement (Pardot) is strong ABM; tightly integrated with Sales Cloud account model"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys",
+                    "SAP Sales Cloud"
+                  ],
+                  "notes": "Emarsys supports account-based campaigns; Sales Cloud provides account intelligence. Not a unified ABM platform."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -2020,6 +2238,11 @@
                   "products": [],
                   "notes": "No native marketing budget optimization; partner required"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native marketing budget and resource planning tool."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -2069,6 +2292,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No GEO capability; partner required"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native generative engine optimization capabilities."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -2140,6 +2368,13 @@
                   ],
                   "notes": "Marketing analytics through Datorama/Intelligence; less depth than dedicated attribution platforms"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys"
+                  ],
+                  "notes": "Emarsys provides channel-level attribution and marketing analytics. Not full cross-channel attribution."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -2197,6 +2432,11 @@
                     "Einstein"
                   ],
                   "notes": "Sentiment within service interactions; social listening and brand monitoring requires partner (Sprinklr)"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native sentiment analysis or brand monitoring product. Relies on partner integrations."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -2275,6 +2515,13 @@
                   ],
                   "notes": "Core capability: lead scoring, routing, and pipeline development with AI enrichment"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Sales Cloud"
+                  ],
+                  "notes": "Sales Cloud provides lead scoring, pipeline management, and AI-assisted lead generation."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -2324,6 +2571,14 @@
                     "Agentforce"
                   ],
                   "notes": "Industry-leading CRM with Agentforce deal coaching and next-best-action"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Sales Cloud",
+                    "SAP CPQ"
+                  ],
+                  "notes": "Sales Cloud provides guided selling, opportunity management; CPQ handles complex deal configuration."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2375,6 +2630,14 @@
                     "Tableau"
                   ],
                   "notes": "AI-powered forecasting with pipeline analytics and scenario modeling"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Sales Cloud",
+                    "SAP Analytics Cloud"
+                  ],
+                  "notes": "Sales Cloud provides forecasting; Analytics Cloud adds predictive analytics and planning."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2429,6 +2692,13 @@
                   ],
                   "notes": "Renewal management, churn detection through Einstein, and AI-driven retention workflows"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Sales Cloud"
+                  ],
+                  "notes": "Sales Cloud covers account management and renewal tracking. Cross-sell/upsell intelligence is basic."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -2477,6 +2747,14 @@
                     "Agentforce"
                   ],
                   "notes": "Conversation intelligence, call coaching, and AI-powered enablement through Einstein"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Sales Cloud",
+                    "SAP SuccessFactors"
+                  ],
+                  "notes": "SuccessFactors provides sales enablement and coaching. Not deeply integrated with Sales Cloud."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2528,6 +2806,13 @@
                     "Sales Cloud"
                   ],
                   "notes": "Account teams, buying committee mapping, relationship intelligence, and multi-threaded engagement"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Sales Cloud"
+                  ],
+                  "notes": "Sales Cloud supports account-based selling workflows. Not as mature as dedicated ABM platforms."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -2588,6 +2873,13 @@
                   ],
                   "notes": "Commerce platform capabilities; marketplace-level digital shelf less mature"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "Commerce Cloud provides full digital shelf management with product display, search, and merchandising."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -2639,6 +2931,14 @@
                     "Commerce Cloud"
                   ],
                   "notes": "Product catalog within Commerce Cloud; no dedicated PIM"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP Product Lifecycle Management"
+                  ],
+                  "notes": "Strong PIM capabilities in Commerce Cloud with deep S/4HANA product master integration."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -2692,6 +2992,14 @@
                   ],
                   "notes": "Full B2B and B2C commerce with checkout, order management, and fulfillment"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP S/4HANA"
+                  ],
+                  "notes": "End-to-end checkout, order management, fulfillment, and returns with S/4HANA backend integration."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -2743,6 +3051,13 @@
                     "Einstein"
                   ],
                   "notes": "AI-driven merchandising and product recommendations through Commerce Cloud + Einstein"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "Strong merchandising rules engine, promotions, and commerce strategy tooling."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -2797,6 +3112,11 @@
                     "MuleSoft"
                   ],
                   "notes": "Commerce APIs exist; purpose-built agent-to-agent commerce still emerging"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native agent-to-agent commerce framework. Commerce Cloud APIs are traditional, not agent-protocol-ready."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -2858,6 +3178,13 @@
                   ],
                   "notes": "Industry-leading omnichannel routing with AI-powered skills-based assignment and Agentforce autonomous handling"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Service Cloud"
+                  ],
+                  "notes": "Service Cloud provides intelligent ticket routing with skill-based and priority-based assignment."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -2911,6 +3238,13 @@
                     "Service Cloud"
                   ],
                   "notes": "Core capability: case management, feedback, satisfaction tracking, and quality monitoring"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Service Cloud"
+                  ],
+                  "notes": "Comprehensive case management, customer feedback, and satisfaction tracking."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2966,6 +3300,13 @@
                     "Einstein"
                   ],
                   "notes": "Knowledge management with AI-recommended articles, auto-categorization, and gap detection"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Service Cloud"
+                  ],
+                  "notes": "Service Cloud includes knowledge base. Not as advanced as dedicated KM platforms for RAG patterns."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -3042,6 +3383,14 @@
                   ],
                   "notes": "Proactive service through predictive signals from Data Cloud with Agentforce automated outreach"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Service Cloud",
+                    "SAP S/4HANA"
+                  ],
+                  "notes": "IoT-driven proactive service via S/4HANA integration. Signal capture is asset-oriented, not behavior-oriented."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -3102,6 +3451,14 @@
                   ],
                   "notes": "Native integration between service and sales with AI-detected commercial signals routed to sales"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Service Cloud",
+                    "SAP Sales Cloud"
+                  ],
+                  "notes": "Basic service-to-sales handoff. Not as deeply integrated as Salesforce Service-to-Sales."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -3156,6 +3513,14 @@
                     "Revenue Cloud"
                   ],
                   "notes": "Basic pricing capabilities through Revenue Cloud; not a dynamic pricing optimization engine"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP S/4HANA",
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "S/4HANA condition-based pricing is industry-leading. Commerce Cloud adds digital channel pricing."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3212,6 +3577,13 @@
                   ],
                   "notes": "Salesforce CPQ is a leading quote-to-cash solution with approval workflows and configuration"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP CPQ"
+                  ],
+                  "notes": "SAP CPQ provides mature bid, quote, and proposal management with complex configuration support."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -3261,6 +3633,14 @@
                   ],
                   "notes": "Discount schedules, approval workflows, and margin guardrails built into CPQ"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP S/4HANA",
+                    "SAP CPQ"
+                  ],
+                  "notes": "S/4HANA pricing conditions and CPQ discount governance are enterprise-grade."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -3309,6 +3689,14 @@
                     "Billing"
                   ],
                   "notes": "Contract and billing management; revenue leakage detection requires additional configuration"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP S/4HANA",
+                    "SAP Billing and Revenue Innovation Management"
+                  ],
+                  "notes": "BRIM and S/4HANA provide comprehensive revenue assurance, billing accuracy, and margin analysis."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3360,6 +3748,14 @@
                     "CPQ"
                   ],
                   "notes": "Promotional offers through marketing; pricing-level promotional management is basic"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP S/4HANA"
+                  ],
+                  "notes": "Strong promotional pricing via Commerce Cloud promotions engine and S/4HANA pricing conditions."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3426,6 +3822,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No native creative design or AI content generation; partner required (Adobe Creative Cloud, Canva)"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native creative design tools. Relies on Adobe or other partner integrations."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3502,6 +3903,13 @@
                   ],
                   "notes": "AI copy generation for emails and messages within Marketing Cloud; not a full content authoring platform"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [
+                    "SAP Joule"
+                  ],
+                  "notes": "Joule can assist with copy generation but no dedicated content authoring platform."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -3569,6 +3977,11 @@
                   "products": [],
                   "notes": "No native localization or content versioning; partner required"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native localization and versioning platform for marketing content."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -3635,6 +4048,13 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No native content tagging or metadata management; partner required"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Commerce Cloud"
+                  ],
+                  "notes": "Commerce Cloud supports product content tagging and metadata. Not a general-purpose content tagging system."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3713,6 +4133,11 @@
                   "products": [],
                   "notes": "No native brand compliance validation; partner required"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native brand and legal compliance tooling for content."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -3759,6 +4184,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No regulated content orchestration capability; partner required"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No regulated content orchestration capabilities."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -3808,6 +4238,13 @@
                     "Flow"
                   ],
                   "notes": "Basic approval workflows through Flow; not purpose-built for content production governance"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Build Process Automation"
+                  ],
+                  "notes": "SAP Build can model content approval workflows but is not purpose-built for content governance."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3867,6 +4304,11 @@
                   "products": [],
                   "notes": "No native content production pipeline management; partner required (Adobe Workfront, Monday)"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native content production and activation platform."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -3913,6 +4355,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No native DAM; partner required (Adobe AEM Assets, Bynder)"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native digital asset management. Relies on partner DAM integrations."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3961,6 +4408,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No content supply chain workflow management; partner required"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native content supply chain workflow management."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -4015,6 +4467,11 @@
                     "Data Cloud"
                   ],
                   "notes": "Email and campaign content performance; broader content performance analytics limited"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native content performance analytics."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -4073,6 +4530,11 @@
                   "products": [],
                   "notes": "No content strategy tooling; partner required"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native content strategy planning tools."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -4124,6 +4586,11 @@
                   ],
                   "notes": "Campaign content analytics; dedicated content intelligence requires partner"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native content intelligence and analytics platform."
+                },
                 "microsoft": {
                   "rating": "gap",
                   "products": [],
@@ -4174,6 +4641,11 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No GEO content capability; partner required"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No GEO content readiness capabilities."
                 },
                 "microsoft": {
                   "rating": "gap",
@@ -4256,6 +4728,14 @@
                   ],
                   "notes": "Entity modeling in Data Cloud; not a general-purpose knowledge graph platform"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Datasphere",
+                    "SAP HANA Cloud"
+                  ],
+                  "notes": "SAP HANA Cloud supports graph processing; Datasphere provides semantic layer. Not a purpose-built knowledge graph."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -4332,6 +4812,13 @@
                   ],
                   "notes": "Computed attributes and enrichment in Data Cloud; broader semantic enrichment limited"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Datasphere"
+                  ],
+                  "notes": "Datasphere provides semantic modeling and data enrichment. Not AI-native semantic enrichment."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -4405,6 +4892,14 @@
                     "Data Cloud"
                   ],
                   "notes": "Grounding through Data Cloud; production RAG pipeline capabilities emerging"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core",
+                    "SAP Joule"
+                  ],
+                  "notes": "SAP AI Core supports vector search and RAG patterns. Joule uses grounding. Still maturing."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -4487,6 +4982,14 @@
                   ],
                   "notes": "Data Cloud ingestion + MuleSoft connectors handle broad data source integration"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Datasphere",
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "Datasphere and Integration Suite handle data ingestion. Document extraction capabilities are basic."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -4568,6 +5071,13 @@
                   ],
                   "notes": "Model selection within Agentforce framework; not a general-purpose model switchboard"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core supports multiple model providers (OpenAI, Google, etc.) via generative AI hub. Basic routing."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -4647,6 +5157,13 @@
                   ],
                   "notes": "Einstein model customization; broader foundation model fine-tuning requires hyperscaler"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core supports model training and fine-tuning pipelines. Not as mature as hyperscaler ML platforms."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -4717,6 +5234,13 @@
                     "Einstein"
                   ],
                   "notes": "Model evaluation within Einstein; cross-model evaluation requires additional tooling"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "Basic model metrics available. No comprehensive evaluation and feedback loop framework."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -4792,6 +5316,13 @@
                   "products": [],
                   "notes": "No native model deployment management; hyperscaler required"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core provides model deployment and serving infrastructure on BTP."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -4863,6 +5394,13 @@
                     "Einstein"
                   ],
                   "notes": "Inference for Einstein models; multi-model inference requires hyperscaler infrastructure"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core provides inference endpoints via generative AI hub. Relies on partner foundation models."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -4953,6 +5491,14 @@
                   ],
                   "notes": "Agent builder with configuration, testing, and deployment within Salesforce ecosystem"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Joule",
+                    "SAP Build"
+                  ],
+                  "notes": "Joule extensibility and SAP Build enable agent development. Framework is evolving."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -5025,6 +5571,11 @@
                   ],
                   "notes": "Agent catalog within Agentforce; cross-platform registry requires integration"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No formal agent registry and management system."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -5079,6 +5630,14 @@
                     "Agentforce"
                   ],
                   "notes": "MuleSoft API catalog + Agentforce tool registration; strong tool ecosystem"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Build",
+                    "SAP BTP"
+                  ],
+                  "notes": "BTP provides service catalog and API management that can serve as tools registry. Not agent-native."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -5150,6 +5709,11 @@
                   ],
                   "notes": "AppExchange model for agent distribution; true agent marketplace still emerging"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No agent marketplace."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -5216,6 +5780,14 @@
                     "Agentforce"
                   ],
                   "notes": "Prompt management within Agentforce; cross-platform prompt governance requires additional tooling"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core",
+                    "SAP Joule"
+                  ],
+                  "notes": "AI Core generative AI hub provides prompt management. Basic intent handling via Joule."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -5288,6 +5860,13 @@
                   ],
                   "notes": "Session state within Salesforce; cross-platform continuity requires integration"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Joule"
+                  ],
+                  "notes": "Joule maintains session context within conversations. Cross-session stitching is limited."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -5356,6 +5935,11 @@
                     "Data Cloud"
                   ],
                   "notes": "Customer memory through Data Cloud profiles; agent memory infrastructure still emerging"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No dedicated memory management system for agent long-term memory."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -5427,6 +6011,13 @@
                     "Einstein"
                   ],
                   "notes": "Text-focused AI; multimodal generation capabilities less mature than dedicated creative AI platforms"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core supports multimodal model access via generative AI hub. Not a native multimodal platform."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -5509,6 +6100,13 @@
                   ],
                   "notes": "Einstein trust layer provides some operational monitoring; dedicated GenAI ops limited"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core provides basic GenAI operations monitoring and lifecycle management."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -5588,6 +6186,13 @@
                   ],
                   "notes": "Trust Layer provides data masking and toxicity detection; broader bias monitoring across all agents limited"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "Basic bias detection available in AI Core. Not a comprehensive bias mitigation framework."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -5661,6 +6266,14 @@
                   ],
                   "notes": "Trust Layer enforces guardrails including PII masking, toxicity filtering, and grounding validation"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core",
+                    "SAP Joule"
+                  ],
+                  "notes": "SAP applies ethical guardrails to Joule; AI Core provides content filtering. Framework is maturing."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -5733,6 +6346,13 @@
                   ],
                   "notes": "Audit trail within Salesforce through Shield; cross-platform decision audit requires integration"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "Basic explainability features in AI Core. Not comprehensive audit infrastructure."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -5801,6 +6421,14 @@
                     "Einstein Trust Layer"
                   ],
                   "notes": "Trust Layer provides foundational risk controls; formal model risk management frameworks require additional governance"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP GRC",
+                    "SAP AI Core"
+                  ],
+                  "notes": "SAP GRC provides risk management framework; AI Core adds model-level risk tracking. Integration is evolving."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -5873,6 +6501,13 @@
                   "rating": "gap",
                   "products": [],
                   "notes": "No native MLOps/LLMOps; hyperscaler required"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core"
+                  ],
+                  "notes": "AI Core provides MLOps pipelines. LLMOps capabilities are emerging."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -5953,6 +6588,14 @@
                   ],
                   "notes": "Usage monitoring within Einstein; granular cost-per-outcome governance requires additional tooling"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP AI Core",
+                    "SAP BTP"
+                  ],
+                  "notes": "BTP provides cost tracking. AI Core adds inference cost visibility. Not unified cost governance."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -6016,6 +6659,13 @@
                   ],
                   "notes": "MuleSoft is industry-leading integration platform; ACP protocol support emerging through Agentforce"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "SAP Integration Suite is a mature integration protocol management platform with 400+ prebuilt connectors."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -6075,6 +6725,13 @@
                     "Tableau"
                   ],
                   "notes": "Platform monitoring within Salesforce; unified cross-platform observability requires additional tooling"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Cloud ALM"
+                  ],
+                  "notes": "SAP Cloud ALM provides application monitoring and observability. Not AI/agent-specific monitoring."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -6164,6 +6821,14 @@
                   ],
                   "notes": "Data validation within Data Cloud; enterprise-wide quality management requires dedicated tooling"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Datasphere",
+                    "SAP Master Data Governance"
+                  ],
+                  "notes": "SAP Master Data Governance provides enterprise-grade data quality, validation, and profiling."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -6222,6 +6887,14 @@
                   ],
                   "notes": "Identity resolution and entity matching is core Data Cloud capability"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Master Data Governance",
+                    "SAP Datasphere"
+                  ],
+                  "notes": "MDG provides comprehensive data standardization, matching, and linking across enterprise data domains."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -6278,6 +6951,14 @@
                     "Data Cloud"
                   ],
                   "notes": "Data model within Salesforce ecosystem; not a general-purpose enterprise data modeling platform"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Datasphere",
+                    "SAP HANA Cloud"
+                  ],
+                  "notes": "Datasphere provides semantic business layer; HANA Cloud supports flexible schema modeling."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -6336,6 +7017,13 @@
                     "Data Cloud"
                   ],
                   "notes": "MuleSoft + Data Cloud provide strong data syndication and real-time integration"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Datasphere"
+                  ],
+                  "notes": "Datasphere provides data fabric architecture with federation and replication across hybrid landscapes."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -6396,6 +7084,14 @@
                     "Data Cloud"
                   ],
                   "notes": "Consent management built into Data Cloud with preference tracking and privacy controls"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP CDP",
+                    "SAP Emarsys"
+                  ],
+                  "notes": "SAP CDP handles consent management for customer data. Not as comprehensive as dedicated consent platforms."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -6459,6 +7155,14 @@
                   ],
                   "notes": "Unified customer profiles with cross-cloud data unification"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP CDP",
+                    "SAP S/4HANA"
+                  ],
+                  "notes": "SAP CDP provides unified customer profile combining CX, ERP, and third-party data."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -6516,6 +7220,13 @@
                   ],
                   "notes": "Real-time streaming profiles with continuous behavioral updates"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP CDP"
+                  ],
+                  "notes": "SAP CDP supports real-time profile updates. Not as real-time as dedicated CDP platforms for experience activation."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -6571,6 +7282,13 @@
                     "Data Cloud"
                   ],
                   "notes": "Identity resolution across devices and channels with deterministic and probabilistic matching"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP CDP"
+                  ],
+                  "notes": "SAP CDP provides identity resolution with deterministic and probabilistic matching. Maturing capability."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -6635,6 +7353,15 @@
                   ],
                   "notes": "Tableau provides analytical workspace; Data Cloud provides governed analytical access"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Datasphere",
+                    "SAP HANA Cloud",
+                    "SAP Analytics Cloud"
+                  ],
+                  "notes": "Datasphere and HANA Cloud provide enterprise analytical data stores; Analytics Cloud adds self-service analysis."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -6694,6 +7421,14 @@
                   ],
                   "notes": "Journey analytics within Marketing Cloud; cross-functional journey analysis less mature than dedicated tools"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Emarsys",
+                    "SAP Analytics Cloud"
+                  ],
+                  "notes": "Emarsys provides journey-level analytics. Analytics Cloud adds cross-channel journey analysis. Not unified."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -6752,6 +7487,13 @@
                     "CRM Analytics"
                   ],
                   "notes": "Industry-leading analytics and dashboarding through Tableau with AI-powered insights"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Analytics Cloud"
+                  ],
+                  "notes": "SAP Analytics Cloud provides comprehensive reporting, dashboards, and predictive analytics."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -6817,6 +7559,14 @@
                   ],
                   "notes": "Real-time event streaming through Platform Events and Data Cloud Change Data Capture"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Event Mesh",
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "SAP Event Mesh provides enterprise event bus; Integration Suite adds event-driven integration patterns."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -6877,6 +7627,13 @@
                   ],
                   "notes": "MuleSoft handles enterprise batch integration at scale"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "SAP Integration Suite provides mature batch and scheduled integration with extensive prebuilt content."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -6934,6 +7691,14 @@
                   ],
                   "notes": "MuleSoft is the industry-leading API management and connector platform"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Integration Suite",
+                    "SAP API Management"
+                  ],
+                  "notes": "SAP Integration Suite with API Management provides comprehensive API lifecycle management and 400+ connectors."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -6988,6 +7753,13 @@
                     "MuleSoft"
                   ],
                   "notes": "Data transformation, mapping, and orchestration is core MuleSoft capability"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "SAP Integration Suite provides data mapping, transformation, and orchestration capabilities."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -7061,6 +7833,14 @@
                   ],
                   "notes": "Autonomy tiers and guardrails built into Agentforce agent configuration"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP GRC",
+                    "SAP Build Process Automation"
+                  ],
+                  "notes": "SAP GRC provides authorization governance. Autonomy tier concepts for AI agents are not yet native."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -7117,6 +7897,13 @@
                   ],
                   "notes": "Human escalation controls native to Agentforce with Flow-based routing"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Build Process Automation"
+                  ],
+                  "notes": "SAP Build supports escalation workflows. Not purpose-built for AI agent escalation protocols."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -7171,6 +7958,11 @@
                     "Agentforce"
                   ],
                   "notes": "Progressive trust within Agentforce; formal autonomy expansion framework still emerging"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No progressive autonomy management framework for AI agents."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -7230,6 +8022,14 @@
                   ],
                   "notes": "Comprehensive audit through Shield with Trust Layer decision logging"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP GRC",
+                    "SAP Cloud ALM"
+                  ],
+                  "notes": "SAP GRC provides comprehensive audit logging and decision traceability across enterprise processes."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -7287,6 +8087,13 @@
                   ],
                   "notes": "Audit and compliance within Salesforce; industry-specific AI regulatory frameworks require additional governance"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP GRC"
+                  ],
+                  "notes": "SAP GRC is industry-leading for regulatory compliance frameworks across global jurisdictions."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -7342,6 +8149,13 @@
                     "Agentforce"
                   ],
                   "notes": "Strong governance within Salesforce ecosystem; cross-platform enforcement requires integration"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP GRC"
+                  ],
+                  "notes": "SAP GRC provides governance enforcement within SAP landscape. Cross-platform enforcement requires integration."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -7405,6 +8219,14 @@
                   ],
                   "notes": "Usage reporting within Einstein; granular inference cost governance requires additional tooling"
                 },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP BTP",
+                    "SAP AI Core"
+                  ],
+                  "notes": "BTP provides resource metering; AI Core tracks inference usage. Not unified inference cost governance."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -7462,6 +8284,11 @@
                   ],
                   "notes": "Agent performance monitoring within Agentforce; cross-platform monitoring requires integration"
                 },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native agent performance monitoring framework. General application monitoring via Cloud ALM."
+                },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
@@ -7515,6 +8342,13 @@
                     "Service Cloud"
                   ],
                   "notes": "Service SLA management in Service Cloud; agentic SLA management across all functions is emerging"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Cloud ALM"
+                  ],
+                  "notes": "SAP Cloud ALM provides SLA monitoring for applications. Not agent-specific service quality management."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -7574,6 +8408,14 @@
                     "Shield"
                   ],
                   "notes": "Enterprise-grade identity and access management within Salesforce ecosystem"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Identity Authentication",
+                    "SAP GRC"
+                  ],
+                  "notes": "SAP Identity Authentication and GRC provide enterprise-grade identity and access management."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -7635,6 +8477,14 @@
                   ],
                   "notes": "Field-level security, data classification, and access governance across the platform"
                 },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP GRC",
+                    "SAP Data Custodian"
+                  ],
+                  "notes": "SAP GRC and Data Custodian provide comprehensive data access governance and data sovereignty controls."
+                },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
@@ -7694,6 +8544,13 @@
                     "Event Monitoring"
                   ],
                   "notes": "Comprehensive security monitoring and threat detection within Salesforce ecosystem"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Enterprise Threat Detection"
+                  ],
+                  "notes": "SAP Enterprise Threat Detection provides security monitoring for SAP landscapes. Not AI-agent-specific."
                 },
                 "microsoft": {
                   "rating": "strong",

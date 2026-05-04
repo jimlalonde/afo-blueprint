@@ -31,6 +31,7 @@ export const LAYER_NAMES: Record<string, string> = {
 export const VENDORS: Vendor[] = [
   { key: "adobe", name: "Adobe" },
   { key: "salesforce", name: "Salesforce" },
+  { key: "sap", name: "SAP" },
   { key: "aws", name: "AWS" },
   { key: "google", name: "Google" },
   { key: "microsoft", name: "Microsoft" },
