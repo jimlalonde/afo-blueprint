@@ -301,13 +301,21 @@ export default function Scorecard({ data, assessments }: Props) {
       </div>
       {open && (
         <div className="p-3.5">
-          <div className="grid grid-cols-4 gap-2 mb-3.5">
+          <div className="grid grid-cols-5 gap-2 mb-3.5">
             <div className="bg-bg2 rounded-md py-2 px-2.5 text-center">
               <div className="text-xl font-medium">
                 {stats.avgScore.toFixed(1)}
               </div>
               <div className="text-[10px] text-tx3 mt-0.5">
                 Avg. current stage
+              </div>
+            </div>
+            <div className="bg-bg2 rounded-md py-2 px-2.5 text-center">
+              <div className="text-xl font-medium">
+                {stats.avgTarget > 0 ? stats.avgTarget.toFixed(1) : "—"}
+              </div>
+              <div className="text-[10px] text-tx3 mt-0.5">
+                Avg. target stage
               </div>
             </div>
             <div className="bg-bg2 rounded-md py-2 px-2.5 text-center">
