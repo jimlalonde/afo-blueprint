@@ -483,9 +483,9 @@
                 "stage_4": "Autonomous email agents composing and optimizing messages in real time per recipient"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "Marketo deployed across all three stacks (SPS, HPS, HCE) provides triggered emails with dynamic content and segmentation.",
+                "notes": "6 Marketo instances provide per-SBG email campaigns, but maturity varies. Campaigns can't be consolidated or measured. No unified lead scoring across instances.",
                 "assessed": true
               }
             },
@@ -1382,9 +1382,9 @@
                 "stage_4": "Autonomous journey design creating and optimizing based on outcome patterns"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "Marketo provides campaign-based journey sequences across email and web channels.",
+                "notes": "6 separate Marketo instances mean journey orchestration is siloed per SBG. No cross-SBG customer journey. No unified touchpoint coordination.",
                 "assessed": true
               }
             },
@@ -1449,9 +1449,9 @@
                 "stage_4": "Segment-of-one with predictive intent modeling"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "Marketo provides static rule-based segments updated periodically from CRM and web activity.",
+                "notes": "No CDP or identity layer. Segmentation fragmented across 6 Marketo instances and 4-5 SFDC instances. E-commerce blocked by disparate entitlements.",
                 "assessed": true
               }
             },
@@ -1651,9 +1651,9 @@
                 "stage_4": "Continuous autonomous optimization across all touchpoints"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "Marketo provides manual A/B testing on email subject lines and landing pages.",
+                "notes": "Adobe Analytics broken \u2014 marketers blind on content engagement. No person-centric analytics, only browser-level tracking. A/B testing unreliable without valid data.",
                 "assessed": true
               }
             },
@@ -2025,9 +2025,9 @@
                 "stage_4": "Autonomous campaign agents designing, launching, and optimizing campaigns end-to-end"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "Marketo deployed across SPS, HPS, and HCE stacks provides platform-orchestrated campaigns with automation and nurture programs.",
+                "notes": "6 Marketo instances at varying maturity across SBGs. Campaigns cannot be consolidated or measured cross-SBG. Each instance operates independently with separate lead scoring.",
                 "assessed": true
               }
             },
@@ -2155,7 +2155,7 @@
               "client_assessment": {
                 "current_stage": 1,
                 "target_stage": null,
-                "notes": "Marketo provides basic persona-based segmentation and lead lifecycle stages.",
+                "notes": "Marketo provides basic persona-based segmentation but fragmented across 6 instances. No unified audience model. E-commerce blocked by disparate customer entitlements.",
                 "assessed": true
               }
             },
@@ -2214,9 +2214,9 @@
                 "stage_4": "Autonomous ABM agents orchestrating personalized account journeys across all touchpoints"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "Marketo + Salesforce CRM provide account-based campaigns with account scoring and targeted nurtures.",
+                "notes": "ABM capabilities limited by fragmented Marketo/SFDC instances. Account-based targeting happens per SBG, not enterprise-wide. No unified account intent signals.",
                 "assessed": true
               }
             },
@@ -2269,9 +2269,9 @@
                 "stage_4": "Autonomous budget agents continuously optimizing spend against commercial outcomes"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "Marketo provides basic campaign performance data for budget decisions. Annual budget allocation with quarterly reviews.",
+                "notes": "Marketing budget allocation is manual and siloed by SBG. No unified view of campaign ROI across 6 Marketo instances. No cross-SBG investment optimization.",
                 "assessed": true
               }
             },
@@ -2408,9 +2408,9 @@
                 "stage_4": "Real-time attribution with autonomous spend optimization based on incremental value"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "Marketo provides multi-touch attribution with cross-channel dashboards (email, web, forms, events).",
+                "notes": "6 Marketo instances provide campaign-level attribution, but Adobe Analytics is broken (hit-level data missing, no person-centric tracking). Attribution is incomplete and fragmented across instances.",
                 "assessed": true
               }
             },
@@ -2480,9 +2480,9 @@
                 "stage_4": "Proactive reputation management agents detecting and addressing sentiment shifts autonomously"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "Marketo provides basic engagement scoring and activity monitoring. No dedicated sentiment/brand monitoring platform.",
+                "notes": "Adobe Analytics non-functional for engagement analysis. No brand monitoring or sentiment analysis platform. Browser-level tracking only \u2014 no individual identity resolution.",
                 "assessed": true
               }
             }
@@ -2548,9 +2548,9 @@
                 "stage_4": "Autonomous pipeline development agents sourcing and qualifying leads without human intervention"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "Salesforce CRM (Sales Cloud) provides AI-scored leads with automated routing. Accounts/Contacts/Opportunities managed.",
+                "notes": "4-5 Salesforce instances \u2014 no unified customer record across SBGs. SQLs arrive without account context or intent signals. No unified lead handoff process.",
                 "assessed": true
               }
             },
@@ -2606,9 +2606,9 @@
                 "stage_4": "Autonomous deal execution for standard transactions with human sellers focused on strategic relationships"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "Salesforce CRM + Steelbrick CPQ (SPS) + SAP CPQ provide deal configuration across business units. Multiple quoting tools by stack.",
+                "notes": "No enterprise CPQ \u2014 reps manually build quotes in Excel in some SBGs. Pricing rules in spreadsheets per SBG. Steelbrick CPQ in SPS only, SAP CPQ in others.",
                 "assessed": true
               }
             },
@@ -2784,7 +2784,7 @@
               "client_assessment": {
                 "current_stage": 1,
                 "target_stage": null,
-                "notes": "No dedicated sales enablement platform visible. Basic CRM-based activity tracking.",
+                "notes": "4-5 SFDC instances provide per-SBG forecasting, but no shared forecasting or unified pipeline across the enterprise. SBGs compete rather than cross-sell.",
                 "assessed": true
               }
             },
@@ -2842,7 +2842,7 @@
               "client_assessment": {
                 "current_stage": 1,
                 "target_stage": null,
-                "notes": "Salesforce CRM tracks account relationships but no formal ABM/ABS tooling visible.",
+                "notes": "No renewal or expansion triggers across SBG portfolio. Reps miss upsell moments. No pull-through incentive model for integrated solution selling.",
                 "assessed": true
               }
             }
@@ -2967,9 +2967,9 @@
                 "stage_4": "Self-maintaining product catalog with autonomous content generation and quality assurance"
               },
               "client_assessment": {
-                "current_stage": 2,
+                "current_stage": 1,
                 "target_stage": null,
-                "notes": "SAP Hybris + SAP ECC provide centralized PIM with product/material master data syndication. Master Data Foundation visible.",
+                "notes": "52+ friction points in inquiry-to-order. Manual order re-entry across SAP, SFDC, and portal. Account hierarchy disconnected \u2014 manual patching at order time.",
                 "assessed": true
               }
             },
@@ -3357,7 +3357,7 @@
               "client_assessment": {
                 "current_stage": 1,
                 "target_stage": null,
-                "notes": "CCEX includes Knowledge & Self Service. Static knowledge base likely with manual maintenance.",
+                "notes": "No single customer record \u2014 service agents open 3 tabs to answer one question. Returns and warranty fully manual with no case tracking or SLA visibility.",
                 "assessed": true
               }
             },
@@ -7194,9 +7194,9 @@
                 "stage_4": "Self-enriching customer profile that autonomously discovers and integrates new data signals"
               },
               "client_assessment": {
-                "current_stage": 1,
+                "current_stage": 0,
                 "target_stage": null,
-                "notes": "Customer data fragmented across Salesforce CRM, SAP ECC, and Hybris. No CDP for unification.",
+                "notes": "No CDP or identity layer. Customer data fragmented across 4-5 SFDC instances, 6 Marketo instances, SAP ECC, and Hybris. No unified customer record. E-commerce blocked.",
                 "assessed": true
               }
             },

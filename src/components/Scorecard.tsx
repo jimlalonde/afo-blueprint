@@ -27,10 +27,10 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
   const contentWidth = pageWidth - margin * 2;
   let y = margin;
 
-  const pwcOrange = "#D04A02";
+  const brandRed = "#CF202F";
 
   // Header bar
-  doc.setFillColor(pwcOrange);
+  doc.setFillColor(brandRed);
   doc.rect(0, 0, pageWidth, 56, "F");
   doc.setFont("helvetica", "bold");
   doc.setFontSize(18);
@@ -108,7 +108,7 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
     head: [["Layer", "Avg. current", "Avg. target", "Delta", "Assessed / Total"]],
     body: layerTableBody,
     styles: { fontSize: 8, cellPadding: 5, textColor: [26, 26, 24] },
-    headStyles: { fillColor: [208, 74, 2], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 8 },
+    headStyles: { fillColor: [207, 32, 47], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 8 },
     alternateRowStyles: { fillColor: [245, 244, 240] },
     columnStyles: {
       0: { cellWidth: contentWidth * 0.35 },
@@ -170,7 +170,7 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
       head: [["Layer", "Capability", "Current state", "Target state", "Gap", "Notes"]],
       body: capTableBody,
       styles: { fontSize: 7, cellPadding: 5, textColor: [26, 26, 24], overflow: "linebreak", lineWidth: 0.5 },
-      headStyles: { fillColor: [208, 74, 2], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 7 },
+      headStyles: { fillColor: [207, 32, 47], textColor: [255, 255, 255], fontStyle: "bold", fontSize: 7 },
       alternateRowStyles: { fillColor: [245, 244, 240] },
       columnStyles: {
         0: { cellWidth: 75 },
@@ -214,6 +214,7 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
 export default function Scorecard({ data, assessments }: Props) {
   const [open, setOpen] = useState(false);
   const [generating, setGenerating] = useState(false);
+  const [generatingGap, setGeneratingGap] = useState(false);
 
   const handleCreateReport = useCallback(async (s: Stats) => {
     setGenerating(true);
@@ -221,6 +222,16 @@ export default function Scorecard({ data, assessments }: Props) {
       await generatePdf(data, assessments, s);
     } finally {
       setGenerating(false);
+    }
+  }, [data, assessments]);
+
+  const handleCreateGapAnalysis = useCallback(async () => {
+    setGeneratingGap(true);
+    try {
+      const { generateGapAnalysisPdf } = await import("@/lib/generateGapAnalysisPdf");
+      await generateGapAnalysisPdf(data, assessments);
+    } finally {
+      setGeneratingGap(false);
     }
   }, [data, assessments]);
 
@@ -373,14 +384,21 @@ export default function Scorecard({ data, assessments }: Props) {
 
           <div className="mt-3.5 pt-3 border-t border-bd flex items-center gap-2">
             <span className="text-[11px] text-tx3 flex-1">
-              Download assessment results as a PDF report
+              Download assessment results or gap analysis as PDF
             </span>
+            <button
+              onClick={handleCreateGapAnalysis}
+              disabled={generatingGap}
+              className="text-xs font-medium px-4 py-1.5 rounded-md border bg-bg2 text-tx border-bd hover:border-bd2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {generatingGap ? "Creating..." : "Gap analysis"}
+            </button>
             <button
               onClick={() => handleCreateReport(stats)}
               disabled={generating}
               className="text-xs font-medium px-4 py-1.5 rounded-md border bg-bg2 text-tx border-bd hover:border-bd2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              {generating ? "Creating..." : "Create report"}
+              {generating ? "Creating..." : "Assessment report"}
             </button>
           </div>
         </div>

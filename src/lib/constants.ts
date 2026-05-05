@@ -3,11 +3,11 @@ import { Vendor } from "@/types";
 export const LAYER_COLORS: Record<string, string> = {
   experience: "#534AB7",
   orchestration_aeo: "#7F77DD",
-  functional_pillars: "#993556",
+  functional_pillars: "#D04A02",
   content_operations_ico: "#0F6E56",
   commercial_brain: "#185FA5",
   enterprise_data: "#888780",
-  governance_trust: "#D04A02",
+  governance_trust: "#CF202F",
 };
 
 export const PILLAR_COLORS: Record<string, string> = {

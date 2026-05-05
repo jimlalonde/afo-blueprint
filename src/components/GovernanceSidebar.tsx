@@ -134,7 +134,7 @@ export default function GovernanceSidebar({
     return (
       <div className="flex items-stretch">
         <div
-          className="w-11 rounded-lg bg-[#D04A02] cursor-pointer select-none flex flex-col items-center justify-center gap-1.5 transition-opacity hover:opacity-90"
+          className="w-11 rounded-lg bg-[#CF202F] cursor-pointer select-none flex flex-col items-center justify-center gap-1.5 transition-opacity hover:opacity-90"
           onClick={() => setExpanded(true)}
         >
           <span className="text-[10px] text-[#FDDCC8]">&#9654;</span>
@@ -152,9 +152,9 @@ export default function GovernanceSidebar({
 
   return (
     <div className="w-[340px] flex-shrink-0 flex flex-col">
-      <div className="rounded-lg border border-[#D04A02] overflow-hidden flex flex-col flex-1">
+      <div className="rounded-lg border border-[#CF202F] overflow-hidden flex flex-col flex-1">
         <div
-          className="bg-[#D04A02] text-[#FFF1E8] py-3 px-3.5 flex items-center gap-2 cursor-pointer select-none hover:bg-[#B03E02]"
+          className="bg-[#CF202F] text-[#FFF1E8] py-3 px-3.5 flex items-center gap-2 cursor-pointer select-none hover:bg-[#A81A26]"
           onClick={() => setExpanded(false)}
         >
           <span className="text-[11px] opacity-70">&#9664;</span>
