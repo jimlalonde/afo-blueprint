@@ -1,8 +1,8 @@
 {
   "metadata": {
     "title": "AFO Capability Blueprint",
-    "version": "0.2",
-    "status": "Working Draft",
+    "version": "1.0",
+    "status": "Released",
     "description": "L1/L2 capability decomposition of the Agentic Front Office reference architecture. Single source of truth for capability assessment, platform mapping, and maturity diagnostics.",
     "total_l1_components": 29,
     "total_l2_capabilities": 123,
