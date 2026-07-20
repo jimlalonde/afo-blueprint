@@ -9,9 +9,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Agentic Front Office (AFO) Capability Blueprint",
+  title: "Intelligent Customer Edge Capability Blueprint",
   description:
-    "L1/L2 capability decomposition of the Agentic Front Office reference architecture",
+    "L1/L2 capability decomposition of the Intelligent Customer Edge reference architecture",
 };
 
 export default function RootLayout({

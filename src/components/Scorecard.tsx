@@ -35,7 +35,7 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
   doc.setFont("helvetica", "bold");
   doc.setFontSize(18);
   doc.setTextColor(255, 255, 255);
-  doc.text("AFO Capability Blueprint", margin, 36);
+  doc.text("Intelligent Customer Edge Capability Blueprint", margin, 36);
   doc.setFontSize(10);
   doc.setFont("helvetica", "normal");
   doc.text("Assessment Report", pageWidth - margin, 36, { align: "right" });
@@ -200,7 +200,7 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
     doc.setTextColor(170, 170, 170);
     const footerY = doc.internal.pageSize.getHeight() - 20;
     doc.text(
-      `© ${new Date().getFullYear()} PwC. All rights reserved. This report was generated from the AFO Capability Blueprint tool.`,
+      `© ${new Date().getFullYear()} PwC. All rights reserved. This report was generated from the Intelligent Customer Edge Capability Blueprint tool.`,
       pageWidth / 2,
       footerY,
       { align: "center" }
@@ -208,7 +208,7 @@ async function generatePdf(data: BlueprintData, assessments: Assessments, stats:
     doc.text(`Page ${i} of ${pageCount}`, pageWidth - margin, footerY, { align: "right" });
   }
 
-  doc.save("AFO_Assessment_Report.pdf");
+  doc.save("ICE_Assessment_Report.pdf");
 }
 
 export default function Scorecard({ data, assessments }: Props) {
