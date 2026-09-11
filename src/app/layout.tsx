@@ -4,14 +4,14 @@ import "./globals.css";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
   title: "Intelligent Customer Edge Capability Blueprint",
   description:
-    "L1/L2 capability decomposition of the Intelligent Customer Edge reference architecture",
+    "Explore, assess, and plan your agentic front office capabilities",
 };
 
 export default function RootLayout({
@@ -21,7 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={dmSans.variable}>
-      <body className="min-h-screen p-4 sm:p-6">{children}</body>
+      <body className="min-h-screen" style={{ fontFamily: "var(--font-dm-sans), system-ui, sans-serif" }}>
+        {children}
+      </body>
     </html>
   );
 }
