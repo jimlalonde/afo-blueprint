@@ -5,7 +5,7 @@
     "status": "Released",
     "description": "L1/L2 capability decomposition of the Agentic Front Office reference architecture. Single source of truth for capability assessment, platform mapping, and maturity diagnostics.",
     "total_l1_components": 29,
-    "total_l2_capabilities": 123,
+    "total_l2_capabilities": 126,
     "assessment_schema": {
       "description": "Per-client maturity assessment overlay. Empty in template, populated during Sprint engagements.",
       "fields": {
@@ -4706,8 +4706,90 @@
         {
           "id": "brain_knowledge",
           "name": "Knowledge engine",
-          "description": "Transforms enterprise data into governed, contextualized, retrievable knowledge",
+          "description": "Transforms enterprise data into contextualized knowledge and reasons over it to produce grounded, auditable decisions",
           "l2_capabilities": [
+            {
+              "id": "brain_ke_04",
+              "name": "Ingestion & extraction",
+              "description": "Automated ingestion of structured and unstructured data sources with entity extraction, relationship detection, and knowledge graph population",
+              "platform_coverage": {
+                "adobe": {
+                  "rating": "strong",
+                  "products": [
+                    "AEP"
+                  ],
+                  "notes": "AEP data collection and ingestion framework handles structured and semi-structured sources at scale"
+                },
+                "salesforce": {
+                  "rating": "strong",
+                  "products": [
+                    "Data Cloud",
+                    "MuleSoft"
+                  ],
+                  "notes": "Data Cloud ingestion + MuleSoft connectors handle broad data source integration"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Datasphere",
+                    "SAP Integration Suite"
+                  ],
+                  "notes": "Datasphere and Integration Suite handle data ingestion. Document extraction capabilities are basic."
+                },
+                "microsoft": {
+                  "rating": "strong",
+                  "products": [
+                    "Fabric",
+                    "Azure Data Factory"
+                  ],
+                  "notes": "Enterprise data ingestion at scale through Fabric and Azure Data Factory"
+                },
+                "google": {
+                  "rating": "strong",
+                  "products": [
+                    "Dataflow",
+                    "BigQuery",
+                    "Pub/Sub"
+                  ],
+                  "notes": "Enterprise data ingestion at scale through streaming and batch infrastructure"
+                },
+                "aws": {
+                  "rating": "strong",
+                  "products": [
+                    "Glue",
+                    "Kinesis",
+                    "S3"
+                  ],
+                  "notes": "Enterprise data ingestion at scale through Glue ETL, Kinesis streaming, and S3 data lake"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude API"
+                  ],
+                  "notes": "Excellent at extracting structured information from unstructured documents"
+                },
+                "openai": {
+                  "rating": "strong",
+                  "products": [
+                    "GPT-4o"
+                  ],
+                  "notes": "Excellent document extraction and structured output generation"
+                }
+              },
+              "maturity_indicators": {
+                "stage_1": "Manual data loading with custom ETL scripts",
+                "stage_2": "Automated ingestion pipelines for structured data sources",
+                "stage_3": "AI-powered ingestion handling structured and unstructured sources with entity extraction and relationship detection",
+                "stage_4": "Autonomous ingestion agents discovering and onboarding new data sources with self-configuring extraction"
+              },
+              "client_assessment": {
+                "current_stage": null,
+                "target_stage": null,
+                "notes": "",
+                "assessed": false
+              }
+            },
             {
               "id": "brain_ke_01",
               "name": "Knowledge graph & representation",
@@ -4963,79 +5045,231 @@
               }
             },
             {
-              "id": "brain_ke_04",
-              "name": "Ingestion & extraction",
-              "description": "Automated ingestion of structured and unstructured data sources with entity extraction, relationship detection, and knowledge graph population",
+              "id": "brain_ke_06",
+              "name": "Evidence assembly & grounding",
+              "description": "Curation and ranking of retrieved knowledge into structured, citable evidence for a specific reasoning task, ensuring every decision is grounded rather than hallucinated",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "strong",
-                  "products": [
-                    "AEP"
-                  ],
-                  "notes": "AEP data collection and ingestion framework handles structured and semi-structured sources at scale"
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native evidence assembly or grounding capabilities for reasoning tasks"
                 },
                 "salesforce": {
-                  "rating": "strong",
-                  "products": [
-                    "Data Cloud",
-                    "MuleSoft"
-                  ],
-                  "notes": "Data Cloud ingestion + MuleSoft connectors handle broad data source integration"
-                },
-                "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Datasphere",
-                    "SAP Integration Suite"
+                    "Data Cloud",
+                    "Einstein"
                   ],
-                  "notes": "Datasphere and Integration Suite handle data ingestion. Document extraction capabilities are basic."
+                  "notes": "Data Cloud provides data grounding for Einstein; limited structured evidence assembly for complex reasoning"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native evidence assembly capabilities for AI reasoning tasks"
                 },
                 "microsoft": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
+                    "Azure AI Search",
                     "Fabric",
-                    "Azure Data Factory"
+                    "Semantic Kernel"
                   ],
-                  "notes": "Enterprise data ingestion at scale through Fabric and Azure Data Factory"
+                  "notes": "Azure AI Search with semantic ranking; Semantic Kernel supports grounded generation but evidence assembly requires custom orchestration"
                 },
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Dataflow",
-                    "BigQuery",
-                    "Pub/Sub"
+                    "Vertex AI Search",
+                    "Gemini Grounding",
+                    "Knowledge Graph"
                   ],
-                  "notes": "Enterprise data ingestion at scale through streaming and batch infrastructure"
+                  "notes": "Gemini grounding with Google Search and enterprise data; Vertex AI Search provides ranked evidence retrieval with citations"
                 },
                 "aws": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
-                    "Glue",
-                    "Kinesis",
-                    "S3"
+                    "Bedrock Knowledge Bases",
+                    "Kendra"
                   ],
-                  "notes": "Enterprise data ingestion at scale through Glue ETL, Kinesis streaming, and S3 data lake"
+                  "notes": "Bedrock Knowledge Bases provide grounded retrieval with source attribution; Kendra for enterprise search ranking"
+                },
+                "anthropic": {
+                  "rating": "partial",
+                  "products": [
+                    "Claude API",
+                    "Citations"
+                  ],
+                  "notes": "Claude provides source citations in responses; evidence assembly and grounding require external orchestration"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "Assistants API",
+                    "File Search"
+                  ],
+                  "notes": "Assistants API with file search provides retrieval with citations; evidence ranking and assembly require custom implementation"
+                }
+              },
+              "maturity_indicators": {
+                "stage_1": "Raw data passed directly to models without curation, ranking, or source attribution",
+                "stage_2": "Basic retrieval with keyword or vector search providing relevant documents as reasoning context",
+                "stage_3": "Multi-source evidence assembly combining graph traversals, semantic search, and structured data with relevance ranking and citation tracking for every reasoning step",
+                "stage_4": "Adaptive evidence assembly that learns optimal retrieval strategies per question type, automatically identifies evidence gaps, and cross-validates sources before reasoning"
+              },
+              "client_assessment": {
+                "current_stage": null,
+                "target_stage": null,
+                "notes": "",
+                "assessed": false
+              }
+            },
+            {
+              "id": "brain_ke_05",
+              "name": "Reasoning & decision logic",
+              "description": "Multi-step reasoning over contextualized knowledge to produce decisions with rationale, supporting chain-of-thought, hybrid rule-LLM logic, and dynamic strategy selection",
+              "platform_coverage": {
+                "adobe": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native chain-of-thought or multi-step reasoning orchestration capabilities"
+                },
+                "salesforce": {
+                  "rating": "partial",
+                  "products": [
+                    "Agentforce",
+                    "Einstein"
+                  ],
+                  "notes": "Agentforce provides basic reasoning flows; limited multi-step deliberation and hybrid rule-LLM logic"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native multi-step reasoning orchestration capabilities"
+                },
+                "microsoft": {
+                  "rating": "partial",
+                  "products": [
+                    "Semantic Kernel",
+                    "Azure AI Foundry",
+                    "Copilot Studio"
+                  ],
+                  "notes": "Semantic Kernel supports planning and chain-of-thought patterns; Copilot Studio provides low-code reasoning flows"
+                },
+                "google": {
+                  "rating": "partial",
+                  "products": [
+                    "Vertex AI Agent Builder",
+                    "Gemini"
+                  ],
+                  "notes": "Gemini supports multi-step reasoning; Agent Builder provides orchestration but limited hybrid rule-LLM logic"
+                },
+                "aws": {
+                  "rating": "partial",
+                  "products": [
+                    "Bedrock Agents",
+                    "Step Functions"
+                  ],
+                  "notes": "Bedrock Agents support chain-of-thought with ReAct; Step Functions for deterministic orchestration but integration is manual"
                 },
                 "anthropic": {
                   "rating": "strong",
                   "products": [
-                    "Claude API"
+                    "Claude",
+                    "Claude API",
+                    "Extended Thinking"
                   ],
-                  "notes": "Excellent at extracting structured information from unstructured documents"
+                  "notes": "Claude's extended thinking provides native chain-of-thought reasoning with transparent deliberation steps"
                 },
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o"
+                    "o-series models",
+                    "OpenAI API",
+                    "Assistants API"
                   ],
-                  "notes": "Excellent document extraction and structured output generation"
+                  "notes": "o-series models provide native multi-step reasoning; Assistants API supports structured reasoning workflows"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Manual data loading with custom ETL scripts",
-                "stage_2": "Automated ingestion pipelines for structured data sources",
-                "stage_3": "AI-powered ingestion handling structured and unstructured sources with entity extraction and relationship detection",
-                "stage_4": "Autonomous ingestion agents discovering and onboarding new data sources with self-configuring extraction"
+                "stage_1": "Ad hoc prompt engineering with single-turn model calls and no structured reasoning patterns",
+                "stage_2": "Documented prompt chains with basic chain-of-thought patterns applied to common decision types",
+                "stage_3": "Orchestrated multi-step reasoning with dynamic strategy selection, hybrid rule-LLM logic, and structured output tied to knowledge graph context",
+                "stage_4": "Self-optimizing reasoning that adapts its deliberation depth and strategy based on question complexity, confidence thresholds, and outcome feedback"
+              },
+              "client_assessment": {
+                "current_stage": null,
+                "target_stage": null,
+                "notes": "",
+                "assessed": false
+              }
+            },
+            {
+              "id": "brain_ke_07",
+              "name": "Decision trace & auditability generation",
+              "description": "Structured trace generation capturing context used, reasoning steps taken, alternatives considered, and rationale for each decision",
+              "platform_coverage": {
+                "adobe": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native decision trace generation capabilities"
+                },
+                "salesforce": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "Einstein provides basic explanations but no structured decision trace generation"
+                },
+                "sap": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native decision trace generation capabilities for AI reasoning"
+                },
+                "microsoft": {
+                  "rating": "partial",
+                  "products": [
+                    "Azure AI Foundry",
+                    "Semantic Kernel"
+                  ],
+                  "notes": "Semantic Kernel provides step-level logging; Azure AI Foundry offers evaluation traces but not structured decision audit trails"
+                },
+                "google": {
+                  "rating": "partial",
+                  "products": [
+                    "Vertex AI",
+                    "Gemini"
+                  ],
+                  "notes": "Vertex AI provides model explanation capabilities; Gemini grounding includes source attribution but not full decision trace generation"
+                },
+                "aws": {
+                  "rating": "partial",
+                  "products": [
+                    "Bedrock Agents",
+                    "CloudWatch"
+                  ],
+                  "notes": "Bedrock Agents provide trace logging of reasoning steps; requires custom implementation for structured audit trails"
+                },
+                "anthropic": {
+                  "rating": "strong",
+                  "products": [
+                    "Claude",
+                    "Extended Thinking",
+                    "Citations"
+                  ],
+                  "notes": "Extended thinking exposes reasoning chain natively; citations provide evidence attribution; strong foundation for decision trace generation"
+                },
+                "openai": {
+                  "rating": "partial",
+                  "products": [
+                    "o-series models",
+                    "OpenAI API"
+                  ],
+                  "notes": "o-series models generate reasoning summaries; full trace export requires custom implementation"
+                }
+              },
+              "maturity_indicators": {
+                "stage_1": "No decision audit trail; model outputs treated as black-box answers",
+                "stage_2": "Basic logging of prompts and responses with manual annotation of reasoning rationale",
+                "stage_3": "Automated trace generation capturing context used, reasoning steps, alternatives considered, and confidence levels for every decision with integration to audit infrastructure",
+                "stage_4": "Rich decision traces with counterfactual analysis, uncertainty quantification, and automated compliance mapping integrated into governance workflows"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -5219,7 +5453,7 @@
             {
               "id": "brain_mh_03",
               "name": "Model evaluation & feedback loop",
-              "description": "Continuous assessment of model performance against quality benchmarks with automated evaluation and A/B testing",
+              "description": "Continuous assessment of model performance and reasoning quality against benchmarks with automated evaluation, A/B testing, and outcome-based calibration",
               "platform_coverage": {
                 "adobe": {
                   "rating": "partial",
@@ -6329,7 +6563,7 @@
             {
               "id": "brain_rai_03",
               "name": "Explainability & audit infrastructure",
-              "description": "Decision audit logging capturing inputs, reasoning chain, retrieved knowledge, and outputs for every agent action",
+              "description": "Decision audit logging, storage, retrieval, and regulatory compliance reporting capturing inputs, reasoning chains, and outputs for every agent action",
               "platform_coverage": {
                 "adobe": {
                   "rating": "partial",
