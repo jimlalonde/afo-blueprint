@@ -4,10 +4,16 @@ import { useState, useMemo } from "react";
 import { BlueprintData, Layer, L1Component, L2Capability } from "@/types";
 import { VENDORS } from "@/lib/constants";
 
-const PWC_ORANGE = "#C74E23";
+const PWC_EMBER = "#C74E23";
 const PWC_GOLD = "#FFB600";
-const PWC_BLACK = "#2D2D2D";
-const LAYER_BAR_COLORS = [PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE];
+const PWC_INK = "#1C1A17";
+const PWC_DEEP = "#14110F";
+const PWC_CREAM = "#F2EEE8";
+const PWC_PEACH = "#FBEDE6";
+const PWC_PEACH_BORDER = "#E9C4B4";
+const PWC_GOLD_LIGHT = "#FEF3D6";
+const PWC_LINE = "#E3DFD8";
+const LAYER_BAR_COLORS = [PWC_EMBER, PWC_GOLD, PWC_INK, PWC_EMBER, PWC_GOLD, PWC_INK, PWC_EMBER];
 
 interface CapEntry {
   cap: L2Capability;
@@ -112,22 +118,25 @@ export default function CoverageView({ data, allCapabilities }: Props) {
               value={analysis.strong.length}
               total={totalCaps}
               label="Strong coverage"
-              color="#C74E23"
-              bgColor="#FBEDE6"
+              color="#FFFFFF"
+              bgColor={PWC_EMBER}
+              isDark
             />
             <StatCard
               value={analysis.partials.length}
               total={totalCaps}
               label="Partial coverage"
-              color="#BA8D00"
-              bgColor="#FFF8E0"
+              color={PWC_INK}
+              bgColor={PWC_PEACH}
+              borderColor={PWC_PEACH_BORDER}
             />
             <StatCard
               value={analysis.gaps.length}
               total={totalCaps}
               label="Coverage gaps"
-              color="#1C1A17"
-              bgColor="#F0EFED"
+              color={PWC_CREAM}
+              bgColor={PWC_DEEP}
+              isDark
             />
           </div>
 
@@ -137,13 +146,13 @@ export default function CoverageView({ data, allCapabilities }: Props) {
               title="Coverage Gaps"
               description="Capabilities not covered by selected platforms"
               entries={analysis.gaps}
-              accentColor="#1C1A17"
+              accentColor={PWC_INK}
             />
             <CapabilityList
               title="Partial Coverage"
               description="Capabilities with limited platform support"
               entries={analysis.partials}
-              accentColor="#BA8D00"
+              accentColor="#A38200"
             />
           </div>
         </>
@@ -157,15 +166,15 @@ export default function CoverageView({ data, allCapabilities }: Props) {
         {/* Legend */}
         <div className="flex items-center gap-5 mb-4 text-[12px]">
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-sm" style={{ background: "#C74E23" }} />
+            <span className="w-3 h-3 rounded-sm" style={{ background: PWC_EMBER }} />
             <span className="text-tx2">Strong</span>
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-sm" style={{ background: "#FFB600" }} />
+            <span className="w-3 h-3 rounded-sm" style={{ background: PWC_PEACH, border: `1.5px solid ${PWC_PEACH_BORDER}` }} />
             <span className="text-tx2">Partial</span>
           </span>
           <span className="flex items-center gap-1.5">
-            <span className="w-3 h-3 rounded-sm" style={{ background: "#E8E4DD", border: "1.5px solid #1C1A17" }} />
+            <span className="w-3 h-3 rounded-sm" style={{ background: PWC_DEEP }} />
             <span className="text-tx2">Gap</span>
           </span>
         </div>
@@ -178,33 +187,33 @@ export default function CoverageView({ data, allCapabilities }: Props) {
                   <span className="text-[16px] font-medium">{v.name}</span>
                 </div>
                 <div className="flex items-center gap-4 text-[14px] font-medium">
-                  <span className="flex items-center gap-1.5" style={{ color: "#C74E23" }}>
-                    <span className="w-2 h-2 rounded-full" style={{ background: "#C74E23" }} />
+                  <span className="flex items-center gap-1.5" style={{ color: PWC_EMBER }}>
+                    <span className="w-2 h-2 rounded-full" style={{ background: PWC_EMBER }} />
                     {v.strong}
                   </span>
-                  <span className="flex items-center gap-1.5" style={{ color: "#BA8D00" }}>
-                    <span className="w-2 h-2 rounded-full" style={{ background: "#FFB600" }} />
+                  <span className="flex items-center gap-1.5" style={{ color: PWC_PEACH_BORDER }}>
+                    <span className="w-2 h-2 rounded-full" style={{ background: PWC_PEACH, border: `1.5px solid ${PWC_PEACH_BORDER}` }} />
                     {v.partial}
                   </span>
-                  <span className="flex items-center gap-1.5" style={{ color: "#1C1A17" }}>
-                    <span className="w-2 h-2 rounded-full" style={{ background: "#E8E4DD", border: "1.5px solid #1C1A17" }} />
+                  <span className="flex items-center gap-1.5" style={{ color: PWC_INK }}>
+                    <span className="w-2 h-2 rounded-full" style={{ background: PWC_DEEP }} />
                     {v.gap}
                   </span>
                 </div>
               </div>
-              <div className="flex h-2.5 rounded-full overflow-hidden" style={{ border: "1.5px solid #1C1A17", background: "#E8E4DD" }}>
+              <div className="flex h-2.5 rounded-full overflow-hidden" style={{ background: PWC_DEEP }}>
                 <div
                   className="transition-all duration-500"
                   style={{
                     width: `${v.strongPct}%`,
-                    background: "#C74E23",
+                    background: PWC_EMBER,
                   }}
                 />
                 <div
                   className="transition-all duration-500"
                   style={{
                     width: `${v.partialPct}%`,
-                    background: "#FFB600",
+                    background: PWC_PEACH_BORDER,
                   }}
                 />
               </div>
@@ -222,19 +231,28 @@ function StatCard({
   label,
   color,
   bgColor,
+  borderColor,
+  isDark = false,
 }: {
   value: number;
   total: number;
   label: string;
   color: string;
   bgColor: string;
+  borderColor?: string;
+  isDark?: boolean;
 }) {
   const pct = Math.round((value / total) * 100);
+  const subColor = isDark ? "rgba(255,255,255,0.7)" : undefined;
+  const subColorMuted = isDark ? "rgba(255,255,255,0.5)" : undefined;
   return (
-    <div className="rounded-xl p-5 border border-bd" style={{ background: bgColor }}>
+    <div
+      className={`rounded-xl p-5 ${!isDark && !borderColor ? "border border-bd" : ""}`}
+      style={{ background: bgColor, border: borderColor ? `1.5px solid ${borderColor}` : undefined }}
+    >
       <div className="text-[32px] font-bold" style={{ color }}>{value}</div>
-      <div className="text-[15px] text-tx2 mt-0.5">{label}</div>
-      <div className="text-[14px] text-tx3 mt-1">{pct}% of {total} capabilities</div>
+      <div className={`text-[15px] mt-0.5 ${isDark || borderColor ? "" : "text-tx2"}`} style={subColor ? { color: subColor } : undefined}>{label}</div>
+      <div className={`text-[14px] mt-1 ${isDark || borderColor ? "" : "text-tx3"}`} style={subColorMuted ? { color: subColorMuted } : undefined}>{pct}% of {total} capabilities</div>
     </div>
   );
 }

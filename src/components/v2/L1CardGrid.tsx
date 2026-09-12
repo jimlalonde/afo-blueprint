@@ -39,7 +39,7 @@ export default function L1CardGrid({ layer, onSelectL1 }: Props) {
               <div className="text-[17px] font-semibold mb-1.5 group-hover:text-accent transition-colors" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>
                 {comp.name}
               </div>
-              <div className="text-[15px] text-tx2 leading-relaxed line-clamp-2 mb-4">
+              <div className="text-[15px] text-tx2 leading-relaxed mb-4">
                 {comp.description}
               </div>
               <div className="text-[14px] text-tx3">

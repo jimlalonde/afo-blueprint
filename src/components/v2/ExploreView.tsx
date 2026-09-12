@@ -96,7 +96,7 @@ export default function ExploreView({ data }: Props) {
                   ← Back to {selectedLayer.name}
                 </button>
                 <h2 className="text-[26px] font-semibold tracking-tight" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>{selectedL1.name}</h2>
-                <p className="text-[16px] text-tx2 mt-1 max-w-[600px]">{selectedL1.description}</p>
+                <p className="text-[16px] text-tx2 mt-1">{selectedL1.description}</p>
               </div>
 
               {/* L2 capability list */}
@@ -112,7 +112,7 @@ export default function ExploreView({ data }: Props) {
                         <div className="text-[17px] font-medium group-hover:text-accent transition-colors">
                           {cap.name}
                         </div>
-                        <div className="text-[15px] text-tx2 mt-1 line-clamp-2 leading-relaxed">
+                        <div className="text-[15px] text-tx2 mt-1 leading-relaxed">
                           {cap.description}
                         </div>
                       </div>
