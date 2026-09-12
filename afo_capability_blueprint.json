@@ -42,10 +42,11 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator",
+                    "CX Enterprise Coworker",
+                    "AEP",
                     "GenStudio"
                   ],
-                  "notes": "Emerging conversational capabilities through Agent Orchestrator; not a primary chat/voice platform"
+                  "notes": "CX Enterprise Coworker provides agentic orchestration across Adobe apps; GenStudio for multimodal content"
                 },
                 "salesforce": {
                   "rating": "strong",
@@ -61,7 +62,7 @@
                     "SAP Joule",
                     "SAP Business AI"
                   ],
-                  "notes": "Joule provides conversational AI but limited multi-modal experience composition compared to native CX platforms."
+                  "notes": "Joule provides conversational AI across SAP applications; limited multi-modal experience composition compared to native CX platforms"
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -76,7 +77,7 @@
                   "products": [
                     "Dialogflow CX",
                     "Gemini",
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
                   "notes": "Strong conversational AI through Dialogflow CX with Gemini multimodal capabilities"
                 },
@@ -100,8 +101,8 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "ChatGPT Enterprise",
+                    "GPT-5",
+                    "ChatGPT Work",
                     "Whisper",
                     "DALL-E"
                   ],
@@ -130,7 +131,7 @@
                   "rating": "partial",
                   "products": [
                     "Adobe Commerce",
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Commerce platform exists but conversational commerce is emerging, not mature"
                 },
@@ -184,10 +185,10 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
-                  "notes": "Strong conversational commerce via Assistants API with function calling and retrieval"
+                  "notes": "Strong conversational commerce via Responses API with function calling and retrieval"
                 }
               },
               "maturity_indicators": {
@@ -217,9 +218,9 @@
                   "rating": "strong",
                   "products": [
                     "Agentforce",
-                    "Service Cloud"
+                    "Agentforce Service"
                   ],
-                  "notes": "Strong autonomous service agent capabilities through Agentforce built on Service Cloud"
+                  "notes": "Strong autonomous service agent capabilities through Agentforce built on Agentforce Service"
                 },
                 "sap": {
                   "rating": "partial",
@@ -227,7 +228,7 @@
                     "SAP Service Cloud",
                     "SAP Joule"
                   ],
-                  "notes": "Service Cloud handles case automation; Joule adds AI assist but autonomous agent capabilities are early."
+                  "notes": "Agentforce Service handles case automation; Joule adds AI assist but autonomous agent capabilities are early."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -242,7 +243,7 @@
                   "products": [
                     "Dialogflow CX",
                     "CCAI",
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
                   "notes": "Contact Center AI with autonomous agent capabilities and live agent handoff"
                 },
@@ -265,8 +266,8 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
                   "notes": "Autonomous service agent capabilities through function calling and code interpreter"
                 }
@@ -344,8 +345,8 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
                   "notes": "Native function calling and tool use for machine-to-machine workflows"
                 }
@@ -444,14 +445,14 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
                   "notes": "Full email capabilities across campaign and journey-triggered"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys is a strong email marketing and automation platform with deep personalization."
                 },
@@ -504,14 +505,14 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
-                  "notes": "SMS and push messaging through Marketing Cloud"
+                  "notes": "SMS and push messaging through Agentforce Marketing"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys provides native SMS, push notification, and mobile messaging capabilities."
                 },
@@ -557,22 +558,22 @@
                   "rating": "strong",
                   "products": [
                     "RT-CDP",
-                    "Audience Manager"
+                    "AEP"
                   ],
                   "notes": "Strong activation to paid media through CDP audience syndication"
                 },
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud",
-                    "Data Cloud"
+                    "Agentforce Marketing",
+                    "Data 360"
                   ],
                   "notes": "Audience activation to paid media; not a media buying platform"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys supports paid media audience syndication; not a full media buying platform."
                 },
@@ -679,7 +680,7 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
                   "notes": "Event-adjacent marketing automation; not a dedicated event platform"
                 },
@@ -851,9 +852,9 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
-                  "notes": "MCP support emerging through Agent Orchestrator; A2A/ACP support TBD"
+                  "notes": "MCP support emerging through CX Enterprise Coworker; A2A/ACP support TBD"
                 },
                 "salesforce": {
                   "rating": "partial",
@@ -879,10 +880,10 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Agentspace",
+                    "Gemini Enterprise",
                     "A2A Protocol"
                   ],
-                  "notes": "Google developed the A2A protocol; native support through Agentspace"
+                  "notes": "Google developed the A2A protocol; native support through Gemini Enterprise"
                 },
                 "aws": {
                   "rating": "partial",
@@ -902,7 +903,7 @@
                   "rating": "partial",
                   "products": [
                     "OpenAI API",
-                    "Assistants API"
+                    "Responses API"
                   ],
                   "notes": "API-based agent endpoints; emerging agent protocol support"
                 }
@@ -943,9 +944,9 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
-                  "notes": "Emerging multi-agent coordination through Agent Orchestrator; cross-platform orchestration still developing"
+                  "notes": "Emerging multi-agent coordination through CX Enterprise Coworker; cross-platform orchestration still developing"
                 },
                 "salesforce": {
                   "rating": "strong",
@@ -972,10 +973,10 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Agentspace",
-                    "Vertex AI"
+                    "Gemini Enterprise",
+                    "Agent Platform"
                   ],
-                  "notes": "Multi-agent orchestration through Agentspace with Vertex AI agent framework"
+                  "notes": "Multi-agent orchestration through Gemini Enterprise with Agent Platform agent framework"
                 },
                 "aws": {
                   "rating": "strong",
@@ -995,10 +996,10 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
-                  "notes": "Multi-agent coordination via Assistants API with parallel function calling"
+                  "notes": "Multi-agent coordination via Responses API with parallel function calling"
                 }
               },
               "maturity_indicators": {
@@ -1022,7 +1023,7 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Agentic patterns supported within Adobe ecosystem; cross-platform conversation patterns require integration"
                 },
@@ -1052,7 +1053,7 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Agentspace",
+                    "Gemini Enterprise",
                     "A2A Protocol"
                   ],
                   "notes": "A2A protocol designed specifically for agent conversation patterns; native support"
@@ -1075,8 +1076,8 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "ChatGPT Enterprise"
+                    "GPT-5",
+                    "ChatGPT Work"
                   ],
                   "notes": "Advanced conversational patterns with 128K context and structured outputs"
                 }
@@ -1103,7 +1104,7 @@
                   "rating": "strong",
                   "products": [
                     "AJO",
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Strong journey/process flow capabilities within Adobe ecosystem"
                 },
@@ -1134,10 +1135,10 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Agentspace",
+                    "Gemini Enterprise",
                     "Cloud Workflows"
                   ],
-                  "notes": "Agentic process flows through Agentspace with Cloud Workflows for orchestration"
+                  "notes": "Agentic process flows through Gemini Enterprise with Cloud Workflows for orchestration"
                 },
                 "aws": {
                   "rating": "strong",
@@ -1157,7 +1158,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "Assistants API"
+                    "Responses API"
                   ],
                   "notes": "Can orchestrate process flows via function calling; requires integration layer"
                 }
@@ -1184,7 +1185,7 @@
                   "rating": "partial",
                   "products": [
                     "AJO",
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Human approval steps in journeys; progressive autonomy framework still emerging"
                 },
@@ -1213,9 +1214,9 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
-                  "notes": "Human-in-the-loop controls within Agentspace; framework still maturing"
+                  "notes": "Human-in-the-loop controls within Gemini Enterprise; framework still maturing"
                 },
                 "aws": {
                   "rating": "partial",
@@ -1269,9 +1270,9 @@
                   "rating": "strong",
                   "products": [
                     "Platform Events",
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Real-time event-driven architecture through Platform Events and Data Cloud streaming"
+                  "notes": "Real-time event-driven architecture through Platform Events and Data 360 streaming"
                 },
                 "sap": {
                   "rating": "partial",
@@ -1344,14 +1345,14 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
                   "notes": "Journey Builder for marketing journeys; not cross-functional orchestration across sales/service/commerce"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys provides mature journey orchestration with multi-channel automation and AI-driven triggers."
                 },
@@ -1404,15 +1405,15 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud",
-                    "Marketing Cloud"
+                    "Data 360",
+                    "Agentforce Marketing"
                   ],
-                  "notes": "Real-time segmentation through Data Cloud with activation across channels"
+                  "notes": "Real-time segmentation through Data 360 with activation across channels"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Emarsys",
+                    "SAP Engagement Cloud",
                     "SAP CDP"
                   ],
                   "notes": "Emarsys and CDP provide robust dynamic segmentation with real-time audience computation."
@@ -1479,7 +1480,7 @@
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Emarsys",
+                    "SAP Engagement Cloud",
                     "SAP Commerce Cloud"
                   ],
                   "notes": "Emarsys provides next-best-action and personalization; Commerce Cloud adds product-level personalization."
@@ -1495,10 +1496,10 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "GA4"
                   ],
-                  "notes": "ML models for recommendations through Vertex AI; no native cross-functional NBA engine"
+                  "notes": "ML models for recommendations through Agent Platform; no native cross-functional NBA engine"
                 },
                 "aws": {
                   "rating": "partial",
@@ -1518,7 +1519,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "OpenAI API"
                   ],
                   "notes": "Can power personalization and NBA logic; requires customer data platform"
@@ -1553,14 +1554,14 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
                   "notes": "Offer management within marketing; cross-functional offer optimization limited"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys",
+                    "SAP Engagement Cloud",
                     "SAP Commerce Cloud"
                   ],
                   "notes": "Basic offer optimization via Emarsys campaigns and Commerce promotions. Not ML-driven optimization."
@@ -1612,14 +1613,14 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
                   "notes": "A/B testing within marketing; cross-channel experimentation less mature than dedicated testing platforms"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys supports A/B testing and campaign experimentation. No full experience optimization platform."
                 },
@@ -1683,7 +1684,7 @@
                   "rating": "strong",
                   "products": [
                     "SAP Commerce Cloud",
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Commerce Cloud provides product recommendation engine; Emarsys adds cross-channel recommendations."
                 },
@@ -1697,7 +1698,7 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "Recommendations AI"
                   ],
                   "notes": "Recommendations AI is a dedicated product recommendation service with real-time personalization"
@@ -1712,7 +1713,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "OpenAI API"
                   ],
                   "notes": "Can generate recommendations from product data; not a native recommendation engine"
@@ -1775,10 +1776,10 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace",
-                    "Vertex AI Studio"
+                    "Gemini Enterprise",
+                    "Agent Studio"
                   ],
-                  "notes": "Agent and model workbench through Vertex AI Studio; Agentspace for enterprise agent management"
+                  "notes": "Agent and model workbench through Agent Platform Studio; Gemini Enterprise for enterprise agent management"
                 },
                 "aws": {
                   "rating": "partial",
@@ -1792,14 +1793,14 @@
                   "rating": "partial",
                   "products": [
                     "Claude API",
-                    "Anthropic Workbench"
+                    "Claude Platform"
                   ],
                   "notes": "Workbench for prompt engineering and evaluation; not a full AI development platform"
                 },
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "OpenAI Playground",
+                    "OpenAI Platform",
                     "OpenAI API"
                   ],
                   "notes": "Playground and fine-tuning tools; not a full AI workbench"
@@ -1850,16 +1851,16 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud",
-                    "Marketing Cloud"
+                    "Data 360",
+                    "Agentforce Marketing"
                   ],
-                  "notes": "Unified customer profiles through Data Cloud with marketing audience intelligence"
+                  "notes": "Unified customer profiles through Data 360 with marketing audience intelligence"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
                     "SAP CDP",
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "SAP CDP provides unified customer profiles; Emarsys adds audience intelligence and segmentation."
                 },
@@ -1896,7 +1897,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "OpenAI API"
                   ],
                   "notes": "Can synthesize audience insights from data; not a customer data platform"
@@ -1984,14 +1985,14 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Marketing Cloud"
+                    "Agentforce Marketing"
                   ],
-                  "notes": "Campaign planning and execution through Marketing Cloud / Account Engagement"
+                  "notes": "Campaign planning and execution through Agentforce Marketing / Account Engagement"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys provides comprehensive campaign planning, orchestration, and automation."
                 },
@@ -2079,7 +2080,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Strong analysis and insight generation when provided market data"
                 }
@@ -2113,14 +2114,14 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Data-driven segments that inform personas; no dedicated persona management"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys",
+                    "SAP Engagement Cloud",
                     "SAP CDP"
                   ],
                   "notes": "Emarsys supports persona-based segmentation and journey mapping. Not a dedicated design tool."
@@ -2175,18 +2176,18 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Marketing Cloud",
-                    "Sales Cloud"
+                    "Agentforce Marketing",
+                    "Agentforce Sales"
                   ],
-                  "notes": "Account Engagement (Pardot) is strong ABM; tightly integrated with Sales Cloud account model"
+                  "notes": "Account Engagement (Pardot) is strong ABM; tightly integrated with Agentforce Sales account model"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys",
+                    "SAP Engagement Cloud",
                     "SAP Sales Cloud"
                   ],
-                  "notes": "Emarsys supports account-based campaigns; Sales Cloud provides account intelligence. Not a unified ABM platform."
+                  "notes": "Emarsys supports account-based campaigns; Agentforce Sales provides account intelligence. Not a unified ABM platform."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -2307,7 +2308,7 @@
                   "rating": "strong",
                   "products": [
                     "Google Search",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Google owns the search ecosystem; best positioned for GEO strategy given AI Overviews and SGE"
                 },
@@ -2326,7 +2327,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "DALL-E"
                   ],
                   "notes": "Strong multi-modal content generation for generative engine optimization"
@@ -2362,8 +2363,8 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud",
-                    "Data Cloud",
+                    "Agentforce Marketing",
+                    "Data 360",
                     "Tableau"
                   ],
                   "notes": "Marketing analytics through Datorama/Intelligence; less depth than dedicated attribution platforms"
@@ -2371,7 +2372,7 @@
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "Emarsys provides channel-level attribution and marketing analytics. Not full cross-channel attribution."
                 },
@@ -2468,7 +2469,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Can analyze sentiment; requires data feed integration for monitoring"
                 }
@@ -2509,9 +2510,9 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Sales Cloud",
+                    "Agentforce Sales",
                     "Einstein",
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Core capability: lead scoring, routing, and pipeline development with AI enrichment"
                 },
@@ -2520,7 +2521,7 @@
                   "products": [
                     "SAP Sales Cloud"
                   ],
-                  "notes": "Sales Cloud provides lead scoring, pipeline management, and AI-assisted lead generation."
+                  "notes": "Agentforce Sales provides lead scoring, pipeline management, and AI-assisted lead generation."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2567,7 +2568,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Sales Cloud",
+                    "Agentforce Sales",
                     "Agentforce"
                   ],
                   "notes": "Industry-leading CRM with Agentforce deal coaching and next-best-action"
@@ -2578,7 +2579,7 @@
                     "SAP Sales Cloud",
                     "SAP CPQ"
                   ],
-                  "notes": "Sales Cloud provides guided selling, opportunity management; CPQ handles complex deal configuration."
+                  "notes": "Agentforce Sales provides guided selling, opportunity management; CPQ handles complex deal configuration."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2625,7 +2626,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Sales Cloud",
+                    "Agentforce Sales",
                     "Einstein",
                     "Tableau"
                   ],
@@ -2637,7 +2638,7 @@
                     "SAP Sales Cloud",
                     "SAP Analytics Cloud"
                   ],
-                  "notes": "Sales Cloud provides forecasting; Analytics Cloud adds predictive analytics and planning."
+                  "notes": "Agentforce Sales provides forecasting; Analytics Cloud adds predictive analytics and planning."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2687,7 +2688,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Sales Cloud",
+                    "Agentforce Sales",
                     "Agentforce"
                   ],
                   "notes": "Renewal management, churn detection through Einstein, and AI-driven retention workflows"
@@ -2697,7 +2698,7 @@
                   "products": [
                     "SAP Sales Cloud"
                   ],
-                  "notes": "Sales Cloud covers account management and renewal tracking. Cross-sell/upsell intelligence is basic."
+                  "notes": "Agentforce Sales covers account management and renewal tracking. Cross-sell/upsell intelligence is basic."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -2754,7 +2755,7 @@
                     "SAP Sales Cloud",
                     "SAP SuccessFactors"
                   ],
-                  "notes": "SuccessFactors provides sales enablement and coaching. Not deeply integrated with Sales Cloud."
+                  "notes": "SuccessFactors provides sales enablement and coaching. Not deeply integrated with Agentforce Sales."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2803,7 +2804,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Sales Cloud"
+                    "Agentforce Sales"
                   ],
                   "notes": "Account teams, buying committee mapping, relationship intelligence, and multi-threaded engagement"
                 },
@@ -2812,7 +2813,7 @@
                   "products": [
                     "SAP Sales Cloud"
                   ],
-                  "notes": "Sales Cloud supports account-based selling workflows. Not as mature as dedicated ABM platforms."
+                  "notes": "Agentforce Sales supports account-based selling workflows. Not as mature as dedicated ABM platforms."
                 },
                 "microsoft": {
                   "rating": "partial",
@@ -3168,12 +3169,12 @@
                 "adobe": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No native service routing; partner required (Salesforce Service Cloud, ServiceNow)"
+                  "notes": "No native service routing; partner required (Salesforce Agentforce Service, ServiceNow)"
                 },
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Service Cloud",
+                    "Agentforce Service",
                     "Agentforce"
                   ],
                   "notes": "Industry-leading omnichannel routing with AI-powered skills-based assignment and Agentforce autonomous handling"
@@ -3183,7 +3184,7 @@
                   "products": [
                     "SAP Service Cloud"
                   ],
-                  "notes": "Service Cloud provides intelligent ticket routing with skill-based and priority-based assignment."
+                  "notes": "Agentforce Service provides intelligent ticket routing with skill-based and priority-based assignment."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -3235,7 +3236,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Service Cloud"
+                    "Agentforce Service"
                   ],
                   "notes": "Core capability: case management, feedback, satisfaction tracking, and quality monitoring"
                 },
@@ -3258,14 +3259,14 @@
                   "products": [
                     "CCAI"
                   ],
-                  "notes": "Contact center capabilities; not a full case management platform like Service Cloud"
+                  "notes": "Contact center capabilities; not a full case management platform like Agentforce Service"
                 },
                 "aws": {
                   "rating": "partial",
                   "products": [
                     "Amazon Connect"
                   ],
-                  "notes": "Contact center case handling through Connect; not a full case management platform like Service Cloud"
+                  "notes": "Contact center case handling through Connect; not a full case management platform like Agentforce Service"
                 }
               },
               "maturity_indicators": {
@@ -3296,7 +3297,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Service Cloud",
+                    "Agentforce Service",
                     "Einstein"
                   ],
                   "notes": "Knowledge management with AI-recommended articles, auto-categorization, and gap detection"
@@ -3306,7 +3307,7 @@
                   "products": [
                     "SAP Service Cloud"
                   ],
-                  "notes": "Service Cloud includes knowledge base. Not as advanced as dedicated KM platforms for RAG patterns."
+                  "notes": "Agentforce Service includes knowledge base. Not as advanced as dedicated KM platforms for RAG patterns."
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -3320,14 +3321,14 @@
                   "rating": "partial",
                   "products": [
                     "CCAI",
-                    "Vertex AI Search"
+                    "Agent Search"
                   ],
-                  "notes": "AI-powered knowledge search through Vertex AI Search; not a service knowledge management platform"
+                  "notes": "AI-powered knowledge search through Agent Platform Search; not a service knowledge management platform"
                 },
                 "aws": {
                   "rating": "partial",
                   "products": [
-                    "Kendra",
+                    "Amazon Quick",
                     "Bedrock"
                   ],
                   "notes": "Enterprise search through Kendra; knowledge retrieval through Bedrock RAG; not a service knowledge management platform"
@@ -3342,8 +3343,8 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
                   "notes": "Excellent knowledge retrieval and response generation with RAG support"
                 }
@@ -3377,11 +3378,11 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Service Cloud",
+                    "Agentforce Service",
                     "Agentforce",
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Proactive service through predictive signals from Data Cloud with Agentforce automated outreach"
+                  "notes": "Proactive service through predictive signals from Data 360 with Agentforce automated outreach"
                 },
                 "sap": {
                   "rating": "partial",
@@ -3403,9 +3404,9 @@
                   "rating": "partial",
                   "products": [
                     "BigQuery",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
-                  "notes": "Predictive models possible through Vertex AI; no native proactive service framework"
+                  "notes": "Predictive models possible through Agent Platform; no native proactive service framework"
                 },
                 "aws": {
                   "rating": "partial",
@@ -3445,8 +3446,8 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Service Cloud",
-                    "Sales Cloud",
+                    "Agentforce Service",
+                    "Agentforce Sales",
                     "Einstein"
                   ],
                   "notes": "Native integration between service and sales with AI-detected commercial signals routed to sales"
@@ -3510,7 +3511,7 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Revenue Cloud"
+                    "Agentforce Revenue Management"
                   ],
                   "notes": "Basic pricing capabilities through Revenue Cloud; not a dynamic pricing optimization engine"
                 },
@@ -3532,7 +3533,7 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "BigQuery"
                   ],
                   "notes": "ML infrastructure for building pricing models; no native pricing optimization engine"
@@ -3573,7 +3574,7 @@
                   "rating": "strong",
                   "products": [
                     "CPQ",
-                    "Revenue Cloud"
+                    "Agentforce Revenue Management"
                   ],
                   "notes": "Salesforce CPQ is a leading quote-to-cash solution with approval workflows and configuration"
                 },
@@ -3629,7 +3630,7 @@
                   "rating": "strong",
                   "products": [
                     "CPQ",
-                    "Revenue Cloud"
+                    "Agentforce Revenue Management"
                   ],
                   "notes": "Discount schedules, approval workflows, and margin guardrails built into CPQ"
                 },
@@ -3685,7 +3686,7 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Revenue Cloud",
+                    "Agentforce Revenue Management",
                     "Billing"
                   ],
                   "notes": "Contract and billing management; revenue leakage detection requires additional configuration"
@@ -3744,7 +3745,7 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud",
+                    "Agentforce Marketing",
                     "CPQ"
                   ],
                   "notes": "Promotional offers through marketing; pricing-level promotional management is basic"
@@ -3862,7 +3863,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "DALL-E",
                     "Sora"
                   ],
@@ -3901,7 +3902,7 @@
                     "Einstein",
                     "Agentforce"
                   ],
-                  "notes": "AI copy generation for emails and messages within Marketing Cloud; not a full content authoring platform"
+                  "notes": "AI copy generation for emails and messages within Agentforce Marketing; not a full content authoring platform"
                 },
                 "sap": {
                   "rating": "gap",
@@ -3941,7 +3942,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Industry-leading content authoring and copy generation"
                 }
@@ -4013,7 +4014,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Strong multilingual capabilities for localization and content versioning"
                 }
@@ -4040,7 +4041,7 @@
                   "rating": "strong",
                   "products": [
                     "AEM Assets",
-                    "Sensei"
+                    "Adobe AI"
                   ],
                   "notes": "AI auto-tagging and smart metadata enrichment through Sensei in AEM Assets"
                 },
@@ -4068,7 +4069,7 @@
                   "rating": "partial",
                   "products": [
                     "Cloud Vision AI",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "AI classification and labeling; not purpose-built for content metadata enrichment"
                 },
@@ -4090,7 +4091,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Can generate metadata and tags; requires DAM integration"
                 }
@@ -4463,8 +4464,8 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud",
-                    "Data Cloud"
+                    "Agentforce Marketing",
+                    "Data 360"
                   ],
                   "notes": "Email and campaign content performance; broader content performance analytics limited"
                 },
@@ -4581,7 +4582,7 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud",
+                    "Agentforce Marketing",
                     "Tableau"
                   ],
                   "notes": "Campaign content analytics; dedicated content intelligence requires partner"
@@ -4656,7 +4657,7 @@
                   "rating": "strong",
                   "products": [
                     "Google Search",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Owns the AI discovery surface (AI Overviews, SGE); best positioned for GEO content optimization insights"
                 },
@@ -4675,7 +4676,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Strong at generating AI-optimized content for GEO readiness"
                 }
@@ -4723,10 +4724,10 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud",
+                    "Data 360",
                     "MuleSoft"
                   ],
-                  "notes": "Data Cloud ingestion + MuleSoft connectors handle broad data source integration"
+                  "notes": "Data 360 ingestion + MuleSoft connectors handle broad data source integration"
                 },
                 "sap": {
                   "rating": "partial",
@@ -4772,7 +4773,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o"
+                    "GPT-5"
                   ],
                   "notes": "Excellent document extraction and structured output generation"
                 }
@@ -4806,9 +4807,10 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud"
+                    "Data 360",
+                    "Tableau Semantics"
                   ],
-                  "notes": "Entity modeling in Data Cloud; not a general-purpose knowledge graph platform"
+                  "notes": "Data 360 with Tableau Semantics provides semantic data modeling; Intelligent Context for unstructured data"
                 },
                 "sap": {
                   "rating": "partial",
@@ -4831,7 +4833,7 @@
                   "rating": "strong",
                   "products": [
                     "Knowledge Graph",
-                    "Vertex AI",
+                    "Agent Platform",
                     "Neo4j on GCP"
                   ],
                   "notes": "Enterprise Knowledge Graph, graph database support, and AI-powered entity resolution"
@@ -4882,17 +4884,18 @@
                   "rating": "partial",
                   "products": [
                     "AEP",
-                    "Sensei"
+                    "Adobe AI"
                   ],
                   "notes": "Profile enrichment and computed attributes in AEP; broader semantic enrichment requires additional infrastructure"
                 },
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud",
-                    "Einstein"
+                    "Data 360",
+                    "Einstein",
+                    "Tableau Semantics"
                   ],
-                  "notes": "Computed attributes and enrichment in Data Cloud; broader semantic enrichment limited"
+                  "notes": "Tableau Semantics translates data into business language with standardized semantics across clouds"
                 },
                 "sap": {
                   "rating": "partial",
@@ -4912,7 +4915,7 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "BigQuery ML"
                   ],
                   "notes": "AI enrichment services with entity extraction, NLP, and embedding generation at scale"
@@ -4935,7 +4938,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "Embeddings API"
                   ],
                   "notes": "Strong semantic enrichment through embeddings and language understanding"
@@ -4971,9 +4974,9 @@
                   "rating": "partial",
                   "products": [
                     "Einstein",
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Grounding through Data Cloud; production RAG pipeline capabilities emerging"
+                  "notes": "Grounding through Data 360; production RAG pipeline capabilities emerging"
                 },
                 "sap": {
                   "rating": "partial",
@@ -4994,19 +4997,19 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI Search",
-                    "Vertex AI"
+                    "Agent Search",
+                    "Agent Platform"
                   ],
-                  "notes": "Enterprise-grade RAG through Vertex AI Search with grounding capabilities in Gemini"
+                  "notes": "Enterprise-grade RAG through Agent Platform Search with grounding capabilities in Gemini"
                 },
                 "aws": {
                   "rating": "strong",
                   "products": [
                     "Bedrock Knowledge Bases",
-                    "Kendra",
+                    "Amazon Quick",
                     "OpenSearch"
                   ],
-                  "notes": "Production RAG through Bedrock Knowledge Bases with Kendra enterprise search and OpenSearch vector"
+                  "notes": "Bedrock Knowledge Bases with auto-sync scheduling; Amazon Quick for enterprise search; Web Search for grounding"
                 },
                 "nvidia": {
                   "rating": "partial",
@@ -5025,10 +5028,10 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
-                  "notes": "Native RAG support through Assistants API with file search"
+                  "notes": "Native RAG support through Responses API with file search"
                 }
               },
               "maturity_indicators": {
@@ -5057,10 +5060,10 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud",
+                    "Data 360",
                     "Einstein"
                   ],
-                  "notes": "Data Cloud provides data grounding for Einstein; limited structured evidence assembly for complex reasoning"
+                  "notes": "Data 360 provides data grounding for Einstein; limited structured evidence assembly for complex reasoning"
                 },
                 "sap": {
                   "rating": "gap",
@@ -5079,35 +5082,37 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI Search",
+                    "Agent Search",
                     "Gemini Grounding",
                     "Knowledge Graph"
                   ],
-                  "notes": "Gemini grounding with Google Search and enterprise data; Vertex AI Search provides ranked evidence retrieval with citations"
+                  "notes": "Gemini grounding with Google Search and enterprise data; Agent Search provides ranked evidence retrieval with citations"
                 },
                 "aws": {
                   "rating": "partial",
                   "products": [
                     "Bedrock Knowledge Bases",
-                    "Kendra"
+                    "Amazon Quick",
+                    "Bedrock Agents"
                   ],
-                  "notes": "Bedrock Knowledge Bases provide grounded retrieval with source attribution; Kendra for enterprise search ranking"
+                  "notes": "Bedrock Web Search provides grounded retrieval with citations; Knowledge Bases for enterprise data grounding"
                 },
                 "anthropic": {
                   "rating": "partial",
                   "products": [
                     "Claude API",
-                    "Citations"
+                    "Citations",
+                    "MCP"
                   ],
-                  "notes": "Claude provides source citations in responses; evidence assembly and grounding require external orchestration"
+                  "notes": "Claude provides source citations; MCP enables connection to enterprise data sources for grounding; evidence assembly requires orchestration"
                 },
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "Assistants API",
+                    "Responses API",
                     "File Search"
                   ],
-                  "notes": "Assistants API with file search provides retrieval with citations; evidence ranking and assembly require custom implementation"
+                  "notes": "Responses API with file search provides retrieval with citations; evidence ranking and assembly require custom implementation"
                 }
               },
               "maturity_indicators": {
@@ -5137,9 +5142,9 @@
                   "rating": "partial",
                   "products": [
                     "Agentforce",
-                    "Einstein"
+                    "Atlas Reasoning Engine"
                   ],
-                  "notes": "Agentforce provides basic reasoning flows; limited multi-step deliberation and hybrid rule-LLM logic"
+                  "notes": "Atlas Reasoning Engine provides hybrid reasoning with improved grounding and predictability; not full multi-step chain-of-thought"
                 },
                 "sap": {
                   "rating": "gap",
@@ -5150,7 +5155,7 @@
                   "rating": "partial",
                   "products": [
                     "Semantic Kernel",
-                    "Azure AI Foundry",
+                    "Microsoft Foundry",
                     "Copilot Studio"
                   ],
                   "notes": "Semantic Kernel supports planning and chain-of-thought patterns; Copilot Studio provides low-code reasoning flows"
@@ -5158,7 +5163,7 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI Agent Builder",
+                    "Agent Platform",
                     "Gemini"
                   ],
                   "notes": "Gemini supports multi-step reasoning; Agent Builder provides orchestration but limited hybrid rule-LLM logic"
@@ -5176,18 +5181,18 @@
                   "products": [
                     "Claude",
                     "Claude API",
-                    "Extended Thinking"
+                    "Adaptive Thinking"
                   ],
-                  "notes": "Claude's extended thinking provides native chain-of-thought reasoning with transparent deliberation steps"
+                  "notes": "Claude Sonnet 5 and Opus 4.8 provide native adaptive thinking with transparent multi-step reasoning and deliberation"
                 },
                 "openai": {
                   "rating": "strong",
                   "products": [
                     "o-series models",
-                    "OpenAI API",
-                    "Assistants API"
+                    "GPT-5",
+                    "Responses API"
                   ],
-                  "notes": "o-series models provide native multi-step reasoning; Assistants API supports structured reasoning workflows"
+                  "notes": "o-series models (o3, o4-mini) provide native multi-step reasoning; GPT-5/6 family with improved deliberation capabilities"
                 }
               },
               "maturity_indicators": {
@@ -5226,18 +5231,18 @@
                 "microsoft": {
                   "rating": "partial",
                   "products": [
-                    "Azure AI Foundry",
+                    "Microsoft Foundry",
                     "Semantic Kernel"
                   ],
-                  "notes": "Semantic Kernel provides step-level logging; Azure AI Foundry offers evaluation traces but not structured decision audit trails"
+                  "notes": "Semantic Kernel provides step-level logging; Microsoft Foundry offers evaluation traces but not structured decision audit trails"
                 },
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "Gemini"
                   ],
-                  "notes": "Vertex AI provides model explanation capabilities; Gemini grounding includes source attribution but not full decision trace generation"
+                  "notes": "Agent Platform provides model explanation capabilities; Gemini grounding includes source attribution but not full decision trace generation"
                 },
                 "aws": {
                   "rating": "partial",
@@ -5251,18 +5256,18 @@
                   "rating": "strong",
                   "products": [
                     "Claude",
-                    "Extended Thinking",
+                    "Adaptive Thinking",
                     "Citations"
                   ],
-                  "notes": "Extended thinking exposes reasoning chain natively; citations provide evidence attribution; strong foundation for decision trace generation"
+                  "notes": "Adaptive thinking natively exposes reasoning chains; citations provide evidence attribution; strong foundation for decision trace generation"
                 },
                 "openai": {
                   "rating": "partial",
                   "products": [
                     "o-series models",
-                    "OpenAI API"
+                    "Responses API"
                   ],
-                  "notes": "o-series models generate reasoning summaries; full trace export requires custom implementation"
+                  "notes": "o-series models generate reasoning summaries; Responses API provides structured output with tool call traces; full audit trail requires custom implementation"
                 }
               },
               "maturity_indicators": {
@@ -5293,9 +5298,9 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
-                  "notes": "Agent Orchestrator provides some model routing; not a general-purpose model switchboard across all foundation models"
+                  "notes": "CX Enterprise Coworker provides some model routing; not a general-purpose model switchboard across all foundation models"
                 },
                 "salesforce": {
                   "rating": "partial",
@@ -5315,7 +5320,7 @@
                 "microsoft": {
                   "rating": "strong",
                   "products": [
-                    "Azure AI Foundry",
+                    "Microsoft Foundry",
                     "Azure OpenAI",
                     "Semantic Kernel"
                   ],
@@ -5324,9 +5329,11 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI Model Garden"
+                    "Agent Platform",
+                    "Model Garden",
+                    "Gemini"
                   ],
-                  "notes": "Model Garden with 150+ models including Gemini, open-source, and partner models with routing capabilities"
+                  "notes": "Model Garden hosts 200+ models including Gemini, Claude, and open models with dynamic routing"
                 },
                 "aws": {
                   "rating": "strong",
@@ -5353,9 +5360,10 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "OpenAI API"
+                    "OpenAI API",
+                    "Responses API"
                   ],
-                  "notes": "Single provider with multiple model tiers; can plug into multi-model routers"
+                  "notes": "Model selection across GPT and o-series families; reasoning effort parameter for dynamic compute allocation; single-vendor routing only"
                 }
               },
               "maturity_indicators": {
@@ -5379,7 +5387,7 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "Sensei",
+                    "Adobe AI",
                     "Firefly"
                   ],
                   "notes": "Fine-tuning for Firefly models (custom styles); broader foundation model training requires hyperscaler infrastructure"
@@ -5401,7 +5409,7 @@
                 "microsoft": {
                   "rating": "strong",
                   "products": [
-                    "Azure AI Foundry",
+                    "Microsoft Foundry",
                     "Azure ML"
                   ],
                   "notes": "Fine-tuning infrastructure for Azure OpenAI models and open-source models on Azure ML"
@@ -5409,7 +5417,7 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Full fine-tuning and training infrastructure for Gemini and open-source models"
                 },
@@ -5458,7 +5466,7 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "Sensei"
+                    "Adobe AI"
                   ],
                   "notes": "Model evaluation within Sensei ecosystem; cross-model evaluation requires additional tooling"
                 },
@@ -5479,7 +5487,7 @@
                 "microsoft": {
                   "rating": "strong",
                   "products": [
-                    "Azure AI Foundry",
+                    "Microsoft Foundry",
                     "Azure ML"
                   ],
                   "notes": "Model evaluation frameworks with benchmarking and A/B testing infrastructure"
@@ -5487,7 +5495,7 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Model evaluation with automated benchmarking, human evaluation, and side-by-side comparison"
                 },
@@ -5500,17 +5508,19 @@
                   "notes": "Model evaluation with automated benchmarking through Bedrock and SageMaker experiments"
                 },
                 "nvidia": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "NeMo Evaluator"
+                    "NeMo",
+                    "NeMo Evaluator",
+                    "NIM"
                   ],
-                  "notes": "Model evaluation through NeMo; broader evaluation frameworks require additional tooling"
+                  "notes": "NeMo provides comprehensive model and reasoning quality evaluation with continuous feedback loops; NIM for optimized inference benchmarking"
                 },
                 "anthropic": {
                   "rating": "partial",
                   "products": [
                     "Claude API",
-                    "Anthropic Workbench"
+                    "Claude Platform"
                   ],
                   "notes": "Evaluation tools available; not a full model evaluation platform"
                 },
@@ -5560,15 +5570,15 @@
                 "microsoft": {
                   "rating": "strong",
                   "products": [
-                    "Azure ML",
-                    "Azure AI Foundry"
+                    "Microsoft Foundry",
+                    "Azure ML"
                   ],
-                  "notes": "Full model deployment lifecycle management with blue-green, shadow, and canary deployments"
+                  "notes": "Microsoft Foundry provides version-controlled model deployment with managed inference endpoints and blue-green transitions"
                 },
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Full model deployment lifecycle with endpoints, traffic splitting, and model monitoring"
                 },
@@ -5617,7 +5627,7 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "Sensei",
+                    "Adobe AI",
                     "Firefly API"
                   ],
                   "notes": "Inference for Adobe-native models; multi-model inference infrastructure requires hyperscaler"
@@ -5647,7 +5657,7 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "Cloud TPU",
                     "Cloud GPU"
                   ],
@@ -5714,16 +5724,17 @@
                 "adobe": {
                   "rating": "strong",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
-                  "notes": "Agent development and deployment framework through Agent Orchestrator"
+                  "notes": "Agent development and deployment framework through CX Enterprise Coworker"
                 },
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Agentforce"
+                    "Agentforce",
+                    "Agentforce Builder"
                   ],
-                  "notes": "Agent builder with configuration, testing, and deployment within Salesforce ecosystem"
+                  "notes": "Agentforce Builder provides low-code agent development with version control and deployment automation"
                 },
                 "sap": {
                   "rating": "partial",
@@ -5744,33 +5755,38 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Agentspace",
-                    "Vertex AI"
+                    "Agent Platform",
+                    "ADK",
+                    "Agent Studio"
                   ],
-                  "notes": "Agent development through Agentspace and Vertex AI agent builder"
+                  "notes": "ADK v1.0 provides stable multi-language agent development framework; Agent Studio for no-code agent building"
                 },
                 "aws": {
                   "rating": "strong",
                   "products": [
-                    "Bedrock Agents"
+                    "AgentCore",
+                    "Bedrock Agents",
+                    "Strands SDK"
                   ],
-                  "notes": "Agent development through Bedrock Agents with action groups, knowledge bases, and guardrails"
+                  "notes": "AgentCore managed platform for building agents; Strands open-source SDK for agent development with deployment flexibility"
                 },
                 "anthropic": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
+                    "Claude Code",
                     "Claude API",
-                    "Claude Code"
+                    "MCP"
                   ],
-                  "notes": "Strong agent development capabilities with tool use, computer use, and code execution"
+                  "notes": "Claude Code provides agentic development capabilities; MCP enables tool integration; requires external orchestration for full lifecycle"
                 },
                 "openai": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
-                    "Assistants API",
-                    "OpenAI API"
+                    "Agents SDK",
+                    "Responses API",
+                    "Codex"
                   ],
-                  "notes": "Full agent development framework with tools, code interpreter, and retrieval"
+                  "notes": "Agents SDK for orchestration; Responses API replaces Assistants with agentic tool loops; Codex for autonomous coding tasks"
                 }
               },
               "maturity_indicators": {
@@ -5794,16 +5810,17 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Agent catalog within Adobe ecosystem; cross-platform registry requires integration layer"
                 },
                 "salesforce": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "Agentforce"
+                    "Agentforce",
+                    "Agentforce Builder"
                   ],
-                  "notes": "Agent catalog within Agentforce; cross-platform registry requires integration"
+                  "notes": "Agentforce provides centralized agent catalog with capability descriptions and governance controls"
                 },
                 "sap": {
                   "rating": "gap",
@@ -5820,16 +5837,17 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
-                  "notes": "Agent management within Agentspace; cross-platform registry requires integration"
+                  "notes": "Agent management within Gemini Enterprise; cross-platform registry requires integration"
                 },
                 "aws": {
                   "rating": "partial",
                   "products": [
-                    "Bedrock"
+                    "AgentCore",
+                    "Bedrock Agents"
                   ],
-                  "notes": "Agent management within Bedrock; cross-platform registry requires integration"
+                  "notes": "AgentCore provides agent lifecycle management with runtime instances; Bedrock Agents for managed agent configurations"
                 }
               },
               "maturity_indicators": {
@@ -5853,9 +5871,9 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
-                  "notes": "Tool registration within Agent Orchestrator; cross-platform tool discovery requires MCP integration"
+                  "notes": "Tool registration within CX Enterprise Coworker; cross-platform tool discovery requires MCP integration"
                 },
                 "salesforce": {
                   "rating": "strong",
@@ -5884,10 +5902,10 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace",
+                    "Gemini Enterprise",
                     "Apigee"
                   ],
-                  "notes": "Tool registration through Agentspace; API catalog through Apigee"
+                  "notes": "Tool registration through Gemini Enterprise; API catalog through Apigee"
                 },
                 "aws": {
                   "rating": "strong",
@@ -5907,7 +5925,7 @@
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "Assistants API"
+                    "Responses API"
                   ],
                   "notes": "Function calling protocol for tool integration; not a standalone registry"
                 }
@@ -5958,9 +5976,9 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
-                  "notes": "Agent discovery within Agentspace; broader marketplace still developing"
+                  "notes": "Agent discovery within Gemini Enterprise; broader marketplace still developing"
                 },
                 "aws": {
                   "rating": "gap",
@@ -6004,7 +6022,7 @@
                   "rating": "partial",
                   "products": [
                     "GenStudio",
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Prompt management within GenStudio for content; broader prompt governance across all agents requires additional tooling"
                 },
@@ -6024,19 +6042,20 @@
                   "notes": "AI Core generative AI hub provides prompt management. Basic intent handling via Joule."
                 },
                 "microsoft": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "Azure AI Foundry",
+                    "Copilot Studio",
+                    "Microsoft Foundry",
                     "Semantic Kernel"
                   ],
-                  "notes": "Prompt management through Foundry; cross-agent prompt governance still developing"
+                  "notes": "Copilot Studio with prompt management; Semantic Kernel for programmatic prompt chaining; Microsoft Foundry for prompt versioning"
                 },
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
-                  "notes": "Prompt management within Vertex AI Studio; cross-agent governance requires additional tooling"
+                  "notes": "Prompt management within Agent Platform Studio; cross-agent governance requires additional tooling"
                 },
                 "aws": {
                   "rating": "partial",
@@ -6049,17 +6068,18 @@
                   "rating": "strong",
                   "products": [
                     "Claude API",
-                    "Anthropic Workbench"
+                    "Claude Platform"
                   ],
                   "notes": "Advanced prompt management with system prompts, caching, and intent handling"
                 },
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "OpenAI API",
-                    "Assistants API"
+                    "Responses API",
+                    "OpenAI Platform",
+                    "Prompts"
                   ],
-                  "notes": "Advanced prompt management with system messages, structured outputs, and function calling"
+                  "notes": "Prompts provide versioned instruction management replacing Assistants; Responses API with built-in tool orchestration"
                 }
               },
               "maturity_indicators": {
@@ -6088,11 +6108,12 @@
                   "notes": "Session state within AEP-powered interactions; cross-platform session continuity requires integration"
                 },
                 "salesforce": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "Data Cloud"
+                    "Agentforce",
+                    "Data 360"
                   ],
-                  "notes": "Session state within Salesforce; cross-platform continuity requires integration"
+                  "notes": "Agentforce 360 maintains conversation continuity and context across agent interactions with Data 360 grounding"
                 },
                 "sap": {
                   "rating": "partial",
@@ -6111,9 +6132,9 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
-                  "notes": "Session state within Agentspace; cross-platform continuity requires integration"
+                  "notes": "Session state within Gemini Enterprise; cross-platform continuity requires integration"
                 },
                 "aws": {
                   "rating": "partial",
@@ -6123,16 +6144,17 @@
                   "notes": "Session state within Bedrock; cross-platform continuity requires integration"
                 },
                 "anthropic": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
-                    "Claude API"
+                    "Claude API",
+                    "Claude Cowork"
                   ],
-                  "notes": "Excellent session continuity with 200K token context window"
+                  "notes": "Claude Cowork maintains persistent sessions; API supports conversation continuity through context management"
                 },
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "Assistants API"
+                    "Responses API"
                   ],
                   "notes": "Thread-based session continuity with persistent context"
                 }
@@ -6166,9 +6188,9 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Customer memory through Data Cloud profiles; agent memory infrastructure still emerging"
+                  "notes": "Customer memory through Data 360 profiles; agent memory infrastructure still emerging"
                 },
                 "sap": {
                   "rating": "gap",
@@ -6185,7 +6207,7 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Memory abstractions emerging; enterprise agent memory still developing"
                 },
@@ -6200,14 +6222,16 @@
                 "anthropic": {
                   "rating": "partial",
                   "products": [
-                    "Claude API"
+                    "Claude API",
+                    "Claude Cowork",
+                    "MCP"
                   ],
-                  "notes": "In-context memory within sessions; persistent memory requires external storage"
+                  "notes": "Claude Cowork provides persistent memory across sessions; context compaction for effective long-context management"
                 },
                 "openai": {
                   "rating": "partial",
                   "products": [
-                    "Assistants API"
+                    "Responses API"
                   ],
                   "notes": "Thread-level memory; cross-session persistence requires external storage"
                 }
@@ -6235,7 +6259,7 @@
                   "products": [
                     "Firefly",
                     "GenStudio",
-                    "Sensei"
+                    "Adobe AI"
                   ],
                   "notes": "Strong multimodal generation (image, video, text) through Firefly and GenStudio"
                 },
@@ -6265,7 +6289,7 @@
                   "rating": "strong",
                   "products": [
                     "Gemini",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Industry-leading multimodal through Gemini with native vision, audio, video, and code capabilities"
                 },
@@ -6297,7 +6321,7 @@
                 "openai": {
                   "rating": "strong",
                   "products": [
-                    "GPT-4o",
+                    "GPT-5",
                     "DALL-E",
                     "Whisper"
                   ],
@@ -6345,7 +6369,7 @@
                   "rating": "partial",
                   "products": [
                     "Azure Monitor",
-                    "Azure AI Foundry"
+                    "Microsoft Foundry"
                   ],
                   "notes": "Infrastructure monitoring through Azure Monitor; dedicated GenAI ops tooling still developing"
                 },
@@ -6353,7 +6377,7 @@
                   "rating": "partial",
                   "products": [
                     "Cloud Monitoring",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Infrastructure monitoring; dedicated GenAI ops tooling still developing"
                 },
@@ -6408,7 +6432,7 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "Sensei",
+                    "Adobe AI",
                     "Firefly"
                   ],
                   "notes": "Content credentials and bias considerations built into Firefly; broader agent bias monitoring requires additional tooling"
@@ -6438,10 +6462,10 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "Responsible AI Toolkit"
                   ],
-                  "notes": "Model Card Toolkit, What-If Tool, and fairness evaluation built into Vertex AI"
+                  "notes": "Model Card Toolkit, What-If Tool, and fairness evaluation built into Agent Platform"
                 },
                 "aws": {
                   "rating": "partial",
@@ -6519,10 +6543,10 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI",
+                    "Agent Platform",
                     "Gemini"
                   ],
-                  "notes": "Safety filters, content classification, and guardrails built into Gemini and Vertex AI"
+                  "notes": "Safety filters, content classification, and guardrails built into Gemini and Agent Platform"
                 },
                 "aws": {
                   "rating": "strong",
@@ -6591,7 +6615,7 @@
                   "rating": "partial",
                   "products": [
                     "Azure Monitor",
-                    "Azure AI Foundry"
+                    "Microsoft Foundry"
                   ],
                   "notes": "Logging through Azure infrastructure; dedicated decision audit trail requires additional configuration"
                 },
@@ -6599,7 +6623,7 @@
                   "rating": "partial",
                   "products": [
                     "Cloud Logging",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Logging infrastructure; dedicated decision audit trail requires additional configuration"
                 },
@@ -6675,7 +6699,7 @@
                   "rating": "strong",
                   "products": [
                     "Responsible AI Toolkit",
-                    "Vertex AI"
+                    "Agent Platform"
                   ],
                   "notes": "Comprehensive responsible AI framework with model cards, fairness assessment, and interpretability"
                 },
@@ -6747,17 +6771,17 @@
                   "rating": "strong",
                   "products": [
                     "Azure ML",
-                    "Azure AI Foundry"
+                    "Microsoft Foundry"
                   ],
                   "notes": "Full MLOps lifecycle through Azure ML with pipelines, monitoring, and automated retraining"
                 },
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Vertex AI Pipelines",
+                    "Agent Platform Pipelines",
                     "MLflow on GCP"
                   ],
-                  "notes": "Full MLOps lifecycle through Vertex AI Pipelines with model monitoring and retraining"
+                  "notes": "Full MLOps lifecycle through Agent Platform Pipelines with model monitoring and retraining"
                 },
                 "aws": {
                   "rating": "strong",
@@ -6881,7 +6905,7 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "MCP support emerging; multi-protocol management and abstraction layer requires integration work"
                 },
@@ -6911,11 +6935,11 @@
                 "google": {
                   "rating": "strong",
                   "products": [
-                    "Apigee",
-                    "Pub/Sub",
-                    "A2A Protocol"
+                    "A2A Protocol",
+                    "Agent Platform",
+                    "Apigee"
                   ],
-                  "notes": "A2A protocol originator; strong API management through Apigee; enterprise messaging through Pub/Sub"
+                  "notes": "A2A Protocol v1.0 in production at 150+ organizations; MCP servers natively supported; Apigee as API-to-agent bridge"
                 },
                 "aws": {
                   "rating": "strong",
@@ -7051,9 +7075,9 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Data validation within Data Cloud; enterprise-wide quality management requires dedicated tooling"
+                  "notes": "Data validation within Data 360; enterprise-wide quality management requires dedicated tooling"
                 },
                 "sap": {
                   "rating": "strong",
@@ -7117,9 +7141,9 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Identity resolution and entity matching is core Data Cloud capability"
+                  "notes": "Identity resolution and entity matching is core Data 360 capability"
                 },
                 "sap": {
                   "rating": "strong",
@@ -7182,7 +7206,7 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Data model within Salesforce ecosystem; not a general-purpose enterprise data modeling platform"
                 },
@@ -7248,9 +7272,9 @@
                   "rating": "strong",
                   "products": [
                     "MuleSoft",
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "MuleSoft + Data Cloud provide strong data syndication and real-time integration"
+                  "notes": "MuleSoft + Data 360 provide strong data syndication and real-time integration"
                 },
                 "sap": {
                   "rating": "strong",
@@ -7315,15 +7339,15 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Consent management built into Data Cloud with preference tracking and privacy controls"
+                  "notes": "Consent management built into Data 360 with preference tracking and privacy controls"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
                     "SAP CDP",
-                    "SAP Emarsys"
+                    "SAP Engagement Cloud"
                   ],
                   "notes": "SAP CDP handles consent management for customer data. Not as comprehensive as dedicated consent platforms."
                 },
@@ -7385,7 +7409,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Unified customer profiles with cross-cloud data unification"
                 },
@@ -7402,7 +7426,7 @@
                   "products": [
                     "Dynamics 365 Customer Insights"
                   ],
-                  "notes": "Customer profiles through Customer Insights; less CDP depth than Adobe RT-CDP or Salesforce Data Cloud"
+                  "notes": "Customer profiles through Customer Insights; less CDP depth than Adobe RT-CDP or Salesforce Data 360"
                 },
                 "google": {
                   "rating": "partial",
@@ -7450,7 +7474,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Real-time streaming profiles with continuous behavioral updates"
                 },
@@ -7513,7 +7537,7 @@
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Identity resolution across devices and channels with deterministic and probabilistic matching"
                 },
@@ -7583,9 +7607,9 @@
                   "rating": "strong",
                   "products": [
                     "Tableau",
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Tableau provides analytical workspace; Data Cloud provides governed analytical access"
+                  "notes": "Tableau provides analytical workspace; Data 360 provides governed analytical access"
                 },
                 "sap": {
                   "rating": "strong",
@@ -7608,7 +7632,7 @@
                   "rating": "strong",
                   "products": [
                     "BigQuery",
-                    "Vertex AI Workbench"
+                    "Agent Platform Workbench"
                   ],
                   "notes": "Industry-leading analytical data warehouse with AI/ML notebook environments"
                 },
@@ -7650,15 +7674,15 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Marketing Cloud",
-                    "Data Cloud"
+                    "Agentforce Marketing",
+                    "Data 360"
                   ],
-                  "notes": "Journey analytics within Marketing Cloud; cross-functional journey analysis less mature than dedicated tools"
+                  "notes": "Journey analytics within Agentforce Marketing; cross-functional journey analysis less mature than dedicated tools"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Emarsys",
+                    "SAP Engagement Cloud",
                     "SAP Analytics Cloud"
                   ],
                   "notes": "Emarsys provides journey-level analytics. Analytics Cloud adds cross-channel journey analysis. Not unified."
@@ -7789,9 +7813,9 @@
                   "rating": "strong",
                   "products": [
                     "Platform Events",
-                    "Data Cloud"
+                    "Data 360"
                   ],
-                  "notes": "Real-time event streaming through Platform Events and Data Cloud Change Data Capture"
+                  "notes": "Real-time event streaming through Platform Events and Data 360 Change Data Capture"
                 },
                 "sap": {
                   "rating": "strong",
@@ -7857,7 +7881,7 @@
                   "rating": "strong",
                   "products": [
                     "MuleSoft",
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "MuleSoft handles enterprise batch integration at scale"
                 },
@@ -8056,9 +8080,9 @@
                 "adobe": {
                   "rating": "partial",
                   "products": [
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
-                  "notes": "Emerging autonomy controls within Agent Orchestrator; comprehensive tier management requires enterprise governance framework"
+                  "notes": "Emerging autonomy controls within CX Enterprise Coworker; comprehensive tier management requires enterprise governance framework"
                 },
                 "salesforce": {
                   "rating": "strong",
@@ -8085,9 +8109,9 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace"
+                    "Gemini Enterprise"
                   ],
-                  "notes": "Autonomy controls within Agentspace; comprehensive tier management framework still developing"
+                  "notes": "Autonomy controls within Gemini Enterprise; comprehensive tier management framework still developing"
                 },
                 "aws": {
                   "rating": "partial",
@@ -8119,7 +8143,7 @@
                   "rating": "partial",
                   "products": [
                     "AJO",
-                    "AEP Agent Orchestrator"
+                    "CX Enterprise Coworker"
                   ],
                   "notes": "Human approval steps in journeys and agent flows; structured escalation framework still emerging"
                 },
@@ -8149,10 +8173,10 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Agentspace",
+                    "Gemini Enterprise",
                     "Cloud Workflows"
                   ],
-                  "notes": "Escalation within Agentspace; structured framework still developing"
+                  "notes": "Escalation within Gemini Enterprise; structured framework still developing"
                 },
                 "aws": {
                   "rating": "partial",
@@ -8534,9 +8558,9 @@
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Vertex AI Model Monitoring"
+                    "Agent Platform Monitoring"
                   ],
-                  "notes": "Model monitoring through Vertex AI; agent-specific quality monitoring requires configuration"
+                  "notes": "Model monitoring through Agent Platform; agent-specific quality monitoring requires configuration"
                 },
                 "aws": {
                   "rating": "partial",
@@ -8573,9 +8597,9 @@
                 "salesforce": {
                   "rating": "partial",
                   "products": [
-                    "Service Cloud"
+                    "Agentforce Service"
                   ],
-                  "notes": "Service SLA management in Service Cloud; agentic SLA management across all functions is emerging"
+                  "notes": "Service SLA management in Agentforce Service; agentic SLA management across all functions is emerging"
                 },
                 "sap": {
                   "rating": "partial",
@@ -8654,8 +8678,7 @@
                 "microsoft": {
                   "rating": "strong",
                   "products": [
-                    "Entra ID",
-                    "Azure AD"
+                    "Microsoft Entra ID"
                   ],
                   "notes": "Enterprise-grade identity platform with conditional access and zero-trust framework"
                 },
@@ -8707,7 +8730,7 @@
                   "rating": "strong",
                   "products": [
                     "Shield",
-                    "Data Cloud"
+                    "Data 360"
                   ],
                   "notes": "Field-level security, data classification, and access governance across the platform"
                 },
