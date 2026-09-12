@@ -55,32 +55,32 @@ export default function L2DetailPanel({ cap }: Props) {
         <div className="eyebrow mb-4">Platform Coverage</div>
         <div className="grid grid-cols-3 gap-2">
           {sortedVendors(cap).map(({ vendor, cov }) => {
-            const color = cov.rating === "strong" ? "#C74E23"
-              : cov.rating === "partial" ? "#BA8D00"
-              : "#1C1A17";
+            const isStrong = cov.rating === "strong";
+            const isPartial = cov.rating === "partial";
+
+            const tileBg = isStrong ? "#C74E23" : isPartial ? "#FBEDE6" : "#14110F";
+            const tileBorder = isStrong ? "#C74E23" : isPartial ? "#E9C4B4" : "#14110F";
+            const titleColor = isStrong ? "#fff" : isPartial ? "#1C1A17" : "#F2EEE8";
+            const labelColor = isStrong ? "rgba(255,255,255,0.8)" : isPartial ? "#C74E23" : "#E9C4B4";
+            const productColor = isStrong ? "rgba(255,255,255,0.7)" : isPartial ? "#6B6560" : "#9A9188";
 
             return (
               <div
                 key={vendor.key}
                 className="rounded-xl p-3.5 border transition-all"
-                style={{
-                  borderColor: cov.rating === "gap" ? "#1C1A17" : `${color}50`,
-                  background: cov.rating === "strong" ? "#F5DDD0"
-                    : cov.rating === "partial" ? "#F5EDDA"
-                    : "#E8E4DD",
-                }}
+                style={{ borderColor: tileBorder, background: tileBg }}
               >
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-[15px] font-semibold">{vendor.name}</span>
+                  <span className="text-[15px] font-semibold" style={{ color: titleColor }}>{vendor.name}</span>
                   <span
                     className="text-[12px] font-semibold uppercase tracking-wide"
-                    style={{ color }}
+                    style={{ color: labelColor }}
                   >
                     {cov.rating}
                   </span>
                 </div>
                 {cov.products.length > 0 && (
-                  <div className="text-[13px] text-tx3 leading-snug">
+                  <div className="text-[13px] leading-snug" style={{ color: productColor }}>
                     {cov.products.join(" · ")}
                   </div>
                 )}

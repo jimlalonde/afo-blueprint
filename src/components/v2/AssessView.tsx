@@ -5,9 +5,7 @@ import { BlueprintData, Layer, L1Component, Assessments, AssessmentEntry } from 
 import { STAGE_NAMES } from "@/lib/constants";
 
 const PWC_ORANGE = "#C74E23";
-const PWC_GOLD = "#FFB600";
-const PWC_BLACK = "#2D2D2D";
-const LAYER_BAR_COLORS = [PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE];
+const INACTIVE_BAR = "#D4CFC6";
 
 interface Props {
   data: BlueprintData;
@@ -70,8 +68,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
           <div className="space-y-1">
             {data.layers.map((layer) => {
               const isActive = layer.id === selectedLayerId;
-              const layerIdx = data.layers.findIndex((l) => l.id === layer.id);
-              const color = LAYER_BAR_COLORS[layerIdx % LAYER_BAR_COLORS.length];
+              const barColor = isActive ? PWC_ORANGE : INACTIVE_BAR;
               const layerAssessed = layer.l1_components.reduce(
                 (s, c) =>
                   s +
@@ -99,11 +96,14 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
                   }`}
                 >
                   <div
-                    className="w-[3px] h-8 rounded-full flex-shrink-0"
-                    style={{ background: color, opacity: isActive ? 1 : 0.4 }}
+                    className="w-[3px] h-8 rounded-full flex-shrink-0 transition-all duration-200"
+                    style={{ background: barColor, opacity: isActive ? 1 : 0.6 }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className={`text-[15px] font-medium ${isActive ? "text-tx" : "text-tx2"}`}>
+                    <div
+                      className={`text-[15px] font-semibold ${isActive ? "text-tx" : "text-tx2"}`}
+                      style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}
+                    >
                       {layer.name}
                     </div>
                     <div className="text-[13px] text-tx3 mt-0.5">
@@ -191,6 +191,7 @@ function AssessmentCard({
   onSetNotes: (capId: string, notes: string) => void;
 }) {
   const [showNotes, setShowNotes] = useState(false);
+  const [showGuide, setShowGuide] = useState(false);
   const stages = [1, 2, 3, 4];
 
   return (
@@ -200,13 +201,68 @@ function AssessmentCard({
           <div className="text-[16px] font-medium">{cap.name}</div>
           <div className="text-[14px] text-tx3 mt-0.5 line-clamp-1">{cap.description}</div>
         </div>
-        <button
-          onClick={() => setShowNotes(!showNotes)}
-          className="text-[13px] text-tx3 hover:text-accent cursor-pointer flex-shrink-0 transition-colors"
-        >
-          {showNotes ? "Hide notes" : "Notes"}
-        </button>
+        <div className="flex items-center gap-3 flex-shrink-0">
+          <button
+            onClick={() => setShowGuide(!showGuide)}
+            className="text-[13px] text-tx3 hover:text-accent cursor-pointer transition-colors"
+          >
+            {showGuide ? "Hide maturity stages" : "View maturity stages"}
+          </button>
+          <button
+            onClick={() => setShowNotes(!showNotes)}
+            className="text-[13px] text-tx3 hover:text-accent cursor-pointer transition-colors"
+          >
+            {showNotes ? "Hide notes" : "Notes"}
+          </button>
+        </div>
       </div>
+
+      {/* Expandable maturity guide */}
+      {showGuide && (
+        <div className="grid grid-cols-2 gap-2 mb-4 animate-fade-in">
+          {stages.map((num) => {
+            const key = `stage_${num}` as keyof typeof cap.maturity_indicators;
+            const text = cap.maturity_indicators[key];
+            const isCurrent = assessment.current === num;
+            const isTarget = assessment.target === num;
+
+            let cardStyle = "border-[#E9C4B4] bg-[#FBEDE6]";
+            let badgeStyle = "bg-[#E9C4B4]/40 text-[#C74E23]";
+            let titleStyle = "text-[#1C1A17]";
+            let label = "";
+
+            if (isCurrent) {
+              cardStyle = "border-[#14110F]/20 bg-[#14110F]";
+              badgeStyle = "bg-white/20 text-white";
+              titleStyle = "text-[#F2EEE8]";
+              label = "(Current)";
+            } else if (isTarget) {
+              cardStyle = "border-[#C74E23]/30 bg-[#C74E23]";
+              badgeStyle = "bg-white/20 text-white";
+              titleStyle = "text-white";
+              label = "(Target)";
+            }
+
+            return (
+              <div
+                key={num}
+                className={`rounded-lg px-4 py-3 border transition-all ${cardStyle}`}
+              >
+                <div className="flex items-center gap-2 mb-1">
+                  <span className={`text-[12px] font-bold w-5 h-5 rounded-full flex items-center justify-center ${badgeStyle}`}>
+                    {num}
+                  </span>
+                  <span className={`text-[13px] font-semibold ${titleStyle}`}>
+                    {STAGE_NAMES[num]}
+                    {label && <span className="ml-1.5">{label}</span>}
+                  </span>
+                </div>
+                <p className={`text-[12px] leading-relaxed pl-7 ${isCurrent ? "text-[#B0A99E]" : isTarget ? "text-white/80" : "text-[#6B6560]"}`}>{text}</p>
+              </div>
+            );
+          })}
+        </div>
+      )}
 
       {/* Stage selectors */}
       <div className="grid grid-cols-2 gap-4">
