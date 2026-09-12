@@ -2,7 +2,12 @@
 
 import { useMemo } from "react";
 import { BlueprintData, Assessments } from "@/types";
-import { LAYER_COLORS, STAGE_NAMES } from "@/lib/constants";
+import { STAGE_NAMES } from "@/lib/constants";
+
+const PWC_ORANGE = "#C74E23";
+const PWC_GOLD = "#FFB600";
+const PWC_BLACK = "#2D2D2D";
+const LAYER_BAR_COLORS = [PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE];
 
 interface Props {
   data: BlueprintData;
@@ -67,8 +72,9 @@ export default function ScorecardView({ data, assessments }: Props) {
   return (
     <div className="animate-fade-in max-w-[900px]">
       <div className="mb-8">
-        <h2 className="text-[22px] font-semibold tracking-tight mb-2">Assessment Scorecard</h2>
-        <p className="text-[14px] text-tx2">
+        <div className="eyebrow mb-3">Results</div>
+        <h2 className="text-[26px] font-semibold tracking-tight mb-2" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Assessment Scorecard</h2>
+        <p className="text-[16px] text-tx2">
           {hasData
             ? `Summary of ${summary.assessed} assessed capabilities across the architecture.`
             : "Complete assessments in the Assess tab to see your scorecard."}
@@ -78,8 +84,8 @@ export default function ScorecardView({ data, assessments }: Props) {
       {!hasData ? (
         <div className="bg-surface border border-bd rounded-xl p-12 text-center">
           <div className="text-4xl mb-4 opacity-30">◈</div>
-          <div className="text-[15px] text-tx2 mb-2">No assessments yet</div>
-          <div className="text-[13px] text-tx3">
+          <div className="text-[17px] text-tx2 mb-2">No assessments yet</div>
+          <div className="text-[15px] text-tx3">
             Switch to the <strong>Assess</strong> tab to rate your capabilities.
           </div>
         </div>
@@ -114,10 +120,12 @@ export default function ScorecardView({ data, assessments }: Props) {
 
           {/* Layer breakdown */}
           <section>
-            <h3 className="text-[16px] font-semibold mb-4">Layer Breakdown</h3>
+            <div className="eyebrow mb-3">By Layer</div>
+            <h3 className="text-[18px] font-semibold mb-4" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Layer Breakdown</h3>
             <div className="space-y-3">
               {summary.layerSummaries.map(({ layer, assessed, total, avgCurrent, avgTarget, avgGap }) => {
-                const color = LAYER_COLORS[layer.id] || "#888";
+                const layerIdx = data.layers.findIndex((l) => l.id === layer.id);
+                const color = LAYER_BAR_COLORS[layerIdx % LAYER_BAR_COLORS.length];
 
                 return (
                   <div
@@ -130,13 +138,13 @@ export default function ScorecardView({ data, assessments }: Props) {
                         style={{ background: color }}
                       />
                       <div className="flex-1">
-                        <div className="text-[14px] font-medium">{layer.name}</div>
-                        <div className="text-[12px] text-tx3">
+                        <div className="text-[16px] font-medium">{layer.name}</div>
+                        <div className="text-[14px] text-tx3">
                           {assessed}/{total} assessed
                         </div>
                       </div>
                       {assessed > 0 && (
-                        <div className="flex items-center gap-4 text-[13px]">
+                        <div className="flex items-center gap-4 text-[15px]">
                           <span className="text-tx2">
                             Current: <strong>{avgCurrent.toFixed(1)}</strong>
                           </span>
@@ -197,13 +205,13 @@ function SummaryCard({
 }) {
   return (
     <div className="bg-surface border border-bd rounded-xl p-5">
-      <div className="text-[12px] text-tx3 font-medium uppercase tracking-wide mb-2">
+      <div className="text-[13px] text-tx3 font-medium uppercase tracking-wide mb-2">
         {label}
       </div>
-      <div className="text-[28px] font-bold" style={{ color: valueColor }}>
+      <div className="text-[32px] font-bold" style={{ color: valueColor }}>
         {value}
       </div>
-      <div className="text-[12px] text-tx3 mt-1">{detail}</div>
+      <div className="text-[14px] text-tx3 mt-1">{detail}</div>
     </div>
   );
 }

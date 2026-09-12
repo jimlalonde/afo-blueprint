@@ -3,7 +3,6 @@
 import { useState, useCallback, useMemo } from "react";
 import { BlueprintData, Assessments, Layer, L1Component, L2Capability } from "@/types";
 import HeroHeader from "./v2/HeroHeader";
-import ViewTabs from "./v2/ViewTabs";
 import ExploreView from "./v2/ExploreView";
 import CoverageView from "./v2/CoverageView";
 import AssessView from "./v2/AssessView";
@@ -59,10 +58,8 @@ export default function BlueprintV2({ data }: Props) {
 
   return (
     <div className="min-h-screen bg-bg">
-      <div className="max-w-[1400px] mx-auto">
+      <div>
         <HeroHeader stats={stats} activeView={activeView} onChangeView={setActiveView} />
-
-        <ViewTabs activeView={activeView} onChangeView={setActiveView} />
 
         <main className="px-6 pb-16">
           {activeView === "explore" && (
@@ -84,11 +81,20 @@ export default function BlueprintV2({ data }: Props) {
           )}
         </main>
 
-        <footer className="border-t border-bd px-6 py-8 text-center">
-          <p className="text-[13px] text-tx3 leading-relaxed">
+        <footer
+          className="px-6 py-16 text-center relative overflow-hidden"
+          style={{ background: "radial-gradient(120% 140% at 85% 100%, #221C17 0%, #14110F 60%)", color: "#EDE8E1" }}
+        >
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "radial-gradient(60% 140% at 105% 85%, rgba(199,78,35,0.42) 0%, rgba(199,78,35,0.10) 30%, rgba(199,78,35,0) 55%)",
+            }}
+          />
+          <p className="text-[13px] leading-relaxed relative z-10" style={{ color: "#8F857A" }}>
             &copy; {new Date().getFullYear()} PwC. All rights reserved. PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity.
           </p>
-          <p className="text-[11px] text-tx3 mt-2 opacity-60">
+          <p className="text-[11.5px] mt-3 relative z-10" style={{ color: "#5F574D" }}>
             This tool is proprietary to PwC and intended for internal and client use only.
           </p>
         </footer>

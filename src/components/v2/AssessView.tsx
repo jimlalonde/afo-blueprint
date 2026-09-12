@@ -2,7 +2,12 @@
 
 import { useState, useMemo } from "react";
 import { BlueprintData, Layer, L1Component, Assessments, AssessmentEntry } from "@/types";
-import { LAYER_COLORS, STAGE_NAMES } from "@/lib/constants";
+import { STAGE_NAMES } from "@/lib/constants";
+
+const PWC_ORANGE = "#C74E23";
+const PWC_GOLD = "#FFB600";
+const PWC_BLACK = "#2D2D2D";
+const LAYER_BAR_COLORS = [PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE, PWC_GOLD, PWC_BLACK, PWC_ORANGE];
 
 interface Props {
   data: BlueprintData;
@@ -36,16 +41,17 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
     <div className="animate-fade-in">
       {/* Progress header */}
       <div className="mb-8">
-        <h2 className="text-[22px] font-semibold tracking-tight mb-2">Maturity Assessment</h2>
-        <p className="text-[14px] text-tx2 mb-4">
+        <div className="eyebrow mb-3">Assess</div>
+        <h2 className="text-[26px] font-semibold tracking-tight mb-2" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Maturity Assessment</h2>
+        <p className="text-[16px] text-tx2 mb-4">
           Rate current and target maturity for each capability.
         </p>
 
         {/* Progress bar */}
         <div className="bg-surface border border-bd rounded-xl p-5">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[13px] text-tx2">Assessment progress</span>
-            <span className="text-[14px] font-semibold text-accent">
+            <span className="text-[15px] text-tx2">Assessment progress</span>
+            <span className="text-[16px] font-semibold text-accent">
               {assessedCount} / {totalCaps}
             </span>
           </div>
@@ -64,7 +70,8 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
           <div className="space-y-1">
             {data.layers.map((layer) => {
               const isActive = layer.id === selectedLayerId;
-              const color = LAYER_COLORS[layer.id] || "#888";
+              const layerIdx = data.layers.findIndex((l) => l.id === layer.id);
+              const color = LAYER_BAR_COLORS[layerIdx % LAYER_BAR_COLORS.length];
               const layerAssessed = layer.l1_components.reduce(
                 (s, c) =>
                   s +
@@ -96,10 +103,10 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
                     style={{ background: color, opacity: isActive ? 1 : 0.4 }}
                   />
                   <div className="flex-1 min-w-0">
-                    <div className={`text-[13px] font-medium ${isActive ? "text-tx" : "text-tx2"}`}>
+                    <div className={`text-[15px] font-medium ${isActive ? "text-tx" : "text-tx2"}`}>
                       {layer.name}
                     </div>
-                    <div className="text-[11px] text-tx3 mt-0.5">
+                    <div className="text-[13px] text-tx3 mt-0.5">
                       {layerAssessed}/{layerTotal} assessed
                     </div>
                   </div>
@@ -115,7 +122,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
           <div className="flex flex-wrap gap-2 mb-5">
             <button
               onClick={() => setSelectedL1Id(null)}
-              className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium cursor-pointer transition-all border ${
+                className={`px-3.5 py-1.5 rounded-lg text-[15px] font-medium cursor-pointer transition-all border ${
                 !selectedL1Id
                   ? "bg-accent text-white border-accent"
                   : "bg-surface border-bd text-tx2 hover:border-bd2"
@@ -127,7 +134,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
               <button
                 key={comp.id}
                 onClick={() => setSelectedL1Id(comp.id)}
-                className={`px-3.5 py-1.5 rounded-lg text-[13px] font-medium cursor-pointer transition-all border ${
+                className={`px-3.5 py-1.5 rounded-lg text-[15px] font-medium cursor-pointer transition-all border ${
                   selectedL1Id === comp.id
                     ? "bg-accent text-white border-accent"
                     : "bg-surface border-bd text-tx2 hover:border-bd2"
@@ -143,7 +150,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
             {(selectedL1 ? [selectedL1] : selectedLayer.l1_components).map((comp) => (
               <div key={comp.id}>
                 {!selectedL1 && (
-                  <h3 className="text-[15px] font-semibold mb-2 mt-4 first:mt-0">{comp.name}</h3>
+                  <h3 className="text-[17px] font-semibold mb-2 mt-4 first:mt-0">{comp.name}</h3>
                 )}
                 <div className="space-y-2">
                   {comp.l2_capabilities.map((cap) => {
@@ -190,12 +197,12 @@ function AssessmentCard({
     <div className="bg-surface border border-bd rounded-xl p-5 transition-all hover:border-bd2">
       <div className="flex items-start justify-between gap-4 mb-4">
         <div>
-          <div className="text-[14px] font-medium">{cap.name}</div>
-          <div className="text-[12px] text-tx3 mt-0.5 line-clamp-1">{cap.description}</div>
+          <div className="text-[16px] font-medium">{cap.name}</div>
+          <div className="text-[14px] text-tx3 mt-0.5 line-clamp-1">{cap.description}</div>
         </div>
         <button
           onClick={() => setShowNotes(!showNotes)}
-          className="text-[11px] text-tx3 hover:text-accent cursor-pointer flex-shrink-0 transition-colors"
+          className="text-[13px] text-tx3 hover:text-accent cursor-pointer flex-shrink-0 transition-colors"
         >
           {showNotes ? "Hide notes" : "Notes"}
         </button>
@@ -285,7 +292,7 @@ function StageSelector({
             <button
               key={s}
               onClick={() => onChange(s)}
-              className={`flex-1 py-1.5 rounded-lg text-[12px] font-medium cursor-pointer transition-all border ${
+              className={`flex-1 py-1.5 rounded-lg text-[14px] font-medium cursor-pointer transition-all border ${
                 isSelected
                   ? isTarget
                     ? "bg-accent text-white border-accent"

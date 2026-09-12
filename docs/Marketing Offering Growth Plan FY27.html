@@ -1,0 +1,2409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSX Marketing — Unified Growth Plan FY27</title>
+<style>
+:root {
+  --pwc-orange: #FD5108;
+  --pwc-orange-mid: #FE7C39;
+  --pwc-orange-light: #FFAA72;
+  --pwc-orange-hover: #E04600;
+  --pwc-orange-dim: rgba(253,81,8,0.10);
+  --pwc-yellow: #FF9F00;
+  --pwc-black: #000000;
+  --pwc-white: #FFFFFF;
+  --pwc-grey-500: #8B847A;
+  --pwc-grey-400: #A8A097;
+  --pwc-grey-300: #C8C0B5;
+  --pwc-grey-200: #E2DBD0;
+  --pwc-grey-100: #EFE9DE;
+  --pwc-grey-50: #F6F4EF;
+  --fg-1: #111113;
+  --fg-2: #2D3339;
+  --fg-3: #424242;
+  --fg-4: #4C5056;
+  --fg-5: #626771;
+  --fg-6: #787E8A;
+  --fg-on-dark: #FFFFFF;
+  --success: #18AE80;
+  --warning: #FF9F00;
+  --info: #2563EB;
+  --blue: #2563EB;
+  --purple: #7C3AED;
+  --green: #18AE80;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: 'Arial Nova', Arial, Helvetica, sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,.10);
+  --shadow-subtle: 0 6px 18px rgba(0,0,0,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--pwc-grey-100);
+  font-family: var(--font-body);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+.kicker {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pwc-orange);
+}
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--fg-1); font-weight: 400; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.25; margin-bottom: 16px; }
+h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: 12px; }
+
+a { color: var(--pwc-orange); text-decoration: none; }
+
+/* Hero - dark like the Agentic Service plan */
+.hero {
+  position: relative;
+  background: var(--pwc-black);
+  color: var(--fg-on-dark);
+  padding: 190px 0 60px;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 95% at 100% -10%,
+    rgba(253,81,8,.42) 0%, rgba(253,81,8,.10) 38%, rgba(253,81,8,0) 62%);
+  pointer-events: none;
+}
+.hero > .container { position: relative; z-index: 1; }
+.hero__mark {
+  position: absolute;
+  top: 20px;
+  left: calc((100% - 1200px) / 2 + 62px);
+  width: 580px;
+  height: auto;
+  opacity: 0.10;
+  pointer-events: none;
+  filter: brightness(0) invert(1);
+  z-index: 0;
+}
+.hero-banner {
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+}
+.hero-banner svg.banner-logo {
+  position: relative;
+  width: 80px;
+  height: auto;
+}
+.hero h1 { color: var(--fg-on-dark); }
+.hero .kicker { color: var(--pwc-orange-light); }
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 720px;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+.hero-big-number {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 10vw, 8rem);
+  color: var(--pwc-orange);
+  line-height: 1;
+  margin: 32px 0 8px;
+}
+.hero-big-label {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.6);
+}
+
+/* Stat cards in hero (dark) */
+.hero .stat-row .stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+}
+.hero .stat-card .value { color: var(--fg-on-dark); }
+.hero .stat-card .label { color: rgba(255,255,255,0.6); }
+
+/* Stat cards - light sections */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 40px 0;
+}
+.stat-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.stat-card .value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--fg-1);
+  line-height: 1.1;
+}
+.stat-card .label {
+  font-size: 0.85rem;
+  color: var(--fg-5);
+  margin-top: 6px;
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--pwc-grey-200);
+}
+
+/* Play cards */
+.play-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-top: 3px solid var(--pwc-orange);
+  border-radius: var(--radius);
+  margin-bottom: 32px;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+}
+.play-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 28px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.play-header:hover { background: var(--pwc-grey-50); }
+.play-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--pwc-orange);
+  line-height: 1;
+  min-width: 48px;
+}
+.play-title-group { flex: 1; }
+.play-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--fg-1);
+}
+.play-tagline {
+  font-size: 0.9rem;
+  color: var(--fg-5);
+  margin-top: 2px;
+}
+.play-chevron {
+  font-size: 1.5rem;
+  color: var(--fg-6);
+  transition: transform 0.3s;
+}
+.play-card.open .play-chevron { transform: rotate(180deg); }
+.play-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.play-card.open .play-body { max-height: 5000px; }
+.play-content {
+  padding: 0 28px 28px;
+  border-top: 1px solid var(--pwc-grey-200);
+}
+
+/* Stats within plays */
+.play-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+.play-stat {
+  background: var(--pwc-grey-50);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  text-align: center;
+}
+.play-stat .val {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--pwc-orange);
+}
+.play-stat .lbl {
+  font-size: 0.75rem;
+  color: var(--fg-5);
+  margin-top: 4px;
+}
+
+/* Sub sections inside plays */
+.sub-section { margin-top: 24px; }
+.sub-section h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-5);
+  margin-bottom: 12px;
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 12px 0;
+}
+.data-table th {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--pwc-grey-200);
+  color: var(--fg-5);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.data-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--pwc-grey-100);
+  color: var(--fg-2);
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table .highlight { color: var(--fg-1); font-weight: 600; }
+.data-table .orange { color: var(--pwc-orange); font-weight: 600; }
+.data-table .sector-break td {
+  padding: 0;
+  height: 12px;
+  border-bottom: 2px solid var(--pwc-grey-200);
+}
+
+/* Sector cards */
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+.sector-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-top: 3px solid var(--pwc-orange);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow 0.2s;
+}
+.sector-card:hover { box-shadow: var(--shadow-soft); }
+.sector-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.sector-card .sector-why {
+  font-size: 0.85rem;
+  color: var(--pwc-orange);
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.sector-card p { font-size: 0.85rem; margin-bottom: 8px; color: var(--fg-3); }
+.sector-card .sector-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-6);
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin: 2px 4px 2px 0;
+}
+.tag-ico { background: rgba(255,159,0,0.10); color: var(--pwc-yellow); }
+.tag-aeo { background: rgba(45,51,57,0.08); color: var(--fg-2); }
+.tag-green { background: rgba(24,174,128,0.08); color: var(--green); }
+
+/* Quarter timeline */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+@media (max-width: 768px) { .timeline { grid-template-columns: 1fr; } }
+.quarter-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: relative;
+  box-shadow: var(--shadow-subtle);
+}
+.quarter-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--pwc-orange);
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+.quarter-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--fg-1);
+  margin-bottom: 2px;
+}
+.quarter-theme {
+  font-size: 0.8rem;
+  color: var(--pwc-orange);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.quarter-rev {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--fg-1);
+}
+.quarter-rev-label {
+  font-size: 0.75rem;
+  color: var(--fg-5);
+  margin-bottom: 12px;
+}
+.quarter-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.quarter-items li {
+  font-size: 0.8rem;
+  color: var(--fg-3);
+  padding: 4px 0;
+  padding-left: 14px;
+  position: relative;
+}
+.quarter-items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--pwc-grey-300);
+}
+
+/* Flip cards */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+.flip-card {
+  perspective: 1000px;
+  height: 220px;
+  cursor: pointer;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.flip-card-front {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px 22px;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.2s;
+}
+.flip-card:hover .flip-card-front {
+  border-color: var(--pwc-orange-mid);
+}
+.flip-card-front .fc-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pwc-orange);
+  background: var(--pwc-orange-dim);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.flip-card-front h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--fg-1);
+  margin: 0 0 8px;
+}
+.flip-card-front .fc-tagline {
+  font-size: 0.78rem;
+  color: var(--fg-4);
+  margin: 0;
+  flex: 1;
+}
+.flip-card-front .fc-hint {
+  font-size: 0.65rem;
+  color: var(--pwc-grey-400);
+  margin-top: auto;
+  padding-top: 8px;
+  text-align: right;
+}
+.flip-card-back {
+  background: linear-gradient(135deg, var(--fg-2), var(--pwc-black));
+  color: var(--fg-on-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 22px;
+  transform: rotateY(180deg);
+}
+.flip-card-back h4 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--pwc-orange);
+  margin: 0 0 10px;
+}
+.flip-card-back p {
+  font-size: 0.78rem;
+  color: var(--pwc-grey-200);
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+.flip-card-back .fc-hint {
+  font-size: 0.6rem;
+  color: var(--pwc-grey-500);
+  margin-top: auto;
+  padding-top: 8px;
+  text-align: right;
+}
+
+/* Horizon cards (flip) */
+.horizon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+.horizon-flip {
+  perspective: 1000px;
+  height: 360px;
+  cursor: pointer;
+}
+.horizon-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+.horizon-flip.flipped .horizon-flip-inner {
+  transform: rotateY(180deg);
+}
+.horizon-flip-front, .horizon-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.horizon-flip-front {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-top: 3px solid var(--pwc-orange);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.2s;
+}
+.horizon-flip:hover .horizon-flip-front {
+  border-color: var(--pwc-orange-mid);
+}
+.horizon-flip-front h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--fg-1);
+  margin: 0 0 12px;
+}
+.horizon-flip-front p {
+  font-size: 0.85rem;
+  color: var(--fg-3);
+  line-height: 1.6;
+  flex: 1;
+}
+.horizon-flip-front .hf-hint {
+  font-size: 0.65rem;
+  color: var(--pwc-grey-400);
+  margin-top: auto;
+  padding-top: 10px;
+  text-align: right;
+}
+.horizon-flip-back {
+  background: linear-gradient(135deg, var(--fg-2), var(--pwc-black));
+  color: var(--fg-on-dark);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  transform: rotateY(180deg);
+}
+.horizon-flip-back h4 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  color: var(--pwc-orange);
+  margin: 0 0 12px;
+}
+.horizon-flip-back .bullet-list li {
+  color: var(--pwc-grey-200);
+  font-size: 0.78rem;
+}
+.horizon-flip-back .bullet-list li strong {
+  color: var(--fg-on-dark);
+}
+.horizon-flip-back .hf-hint {
+  font-size: 0.6rem;
+  color: var(--pwc-grey-500);
+  margin-top: auto;
+  padding-top: 8px;
+  text-align: right;
+}
+
+/* Bullet lists */
+.bullet-list {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.bullet-list li {
+  font-size: 0.85rem;
+  padding: 5px 0 5px 16px;
+  position: relative;
+  color: var(--fg-2);
+}
+.bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 2px;
+  background: var(--pwc-orange);
+}
+
+/* Mix bar */
+.mix-bar {
+  display: flex;
+  height: 32px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.mix-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--pwc-white);
+  transition: width 0.6s ease;
+}
+.mix-advisory { background: var(--fg-2); }
+.mix-implementation { background: var(--pwc-orange); }
+.mix-ms { background: var(--pwc-yellow); }
+.mix-legend {
+  display: flex;
+  gap: 20px;
+  font-size: 0.75rem;
+  color: var(--fg-5);
+}
+.mix-legend span::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.mix-legend .leg-adv::before { background: var(--fg-2); }
+.mix-legend .leg-impl::before { background: var(--pwc-orange); }
+.mix-legend .leg-ms::before { background: var(--pwc-yellow); }
+
+/* Investment category cards */
+.invest-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+.invest-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-left: 4px solid var(--pwc-orange);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-subtle);
+}
+.invest-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--fg-1);
+  margin: 0 0 4px;
+}
+.invest-card .invest-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--pwc-orange);
+  margin-bottom: 12px;
+}
+.invest-card .invest-rationale {
+  font-size: 0.88rem;
+  color: var(--fg-3);
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.invest-summary {
+  background: var(--pwc-black);
+  color: var(--fg-on-dark);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-top: 32px;
+  box-shadow: var(--shadow-soft);
+}
+.invest-summary h3 {
+  font-family: var(--font-display);
+  color: var(--fg-on-dark);
+  font-size: 1.25rem;
+  margin: 0 0 20px;
+}
+.invest-summary .data-table th {
+  color: rgba(255,255,255,0.5);
+  border-bottom-color: rgba(255,255,255,0.15);
+}
+.invest-summary .data-table td {
+  color: rgba(255,255,255,0.85);
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+.invest-summary .data-table .highlight {
+  color: var(--fg-on-dark);
+}
+.invest-summary .data-table .orange {
+  color: var(--pwc-orange);
+}
+.invest-summary .invest-note {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+/* Next steps */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.step-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-top: 3px solid var(--pwc-orange);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-subtle);
+}
+.step-card .step-days {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--pwc-orange);
+  line-height: 1;
+}
+.step-card .step-period {
+  font-size: 0.85rem;
+  color: var(--fg-5);
+  margin-bottom: 16px;
+}
+
+/* Footer */
+footer {
+  padding: 40px 0;
+  text-align: center;
+  color: var(--fg-6);
+  font-size: 0.8rem;
+}
+footer .pwc-mark {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--pwc-orange);
+  margin-bottom: 8px;
+}
+
+/* Ecosystem stack */
+.eco-stack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+.eco-item {
+  background: var(--pwc-grey-50);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  border-left: 3px solid var(--pwc-orange);
+}
+.eco-item .eco-partner {
+  font-weight: 700;
+  color: var(--fg-1);
+  font-size: 0.85rem;
+}
+.eco-item .eco-role {
+  font-size: 0.8rem;
+  color: var(--fg-3);
+  margin-top: 4px;
+}
+
+/* Info box */
+.info-box {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 24px;
+}
+.info-box h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--fg-5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Revenue bridge box */
+.bridge-box {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-top: 32px;
+  box-shadow: var(--shadow-subtle);
+}
+.bridge-box h4 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--fg-5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--pwc-grey-200);
+  padding: 12px 0;
+}
+nav .nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+nav .nav-inner::-webkit-scrollbar { height: 0; }
+nav a {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-6);
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.2s, background 0.2s;
+}
+nav a:hover { color: var(--fg-2); background: var(--pwc-grey-50); }
+nav a.active { color: var(--pwc-orange); background: var(--pwc-orange-dim); }
+nav .nav-brand {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--pwc-orange);
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-brand">PwC</span>
+    <a href="#story">Ambition</a>
+    <a href="#afo">North Star</a>
+    <a href="#offering">Our Offering</a>
+    <a href="#plays">Plays</a>
+    <a href="#aria">ARIA</a>
+    <a href="#sectors">Sectors</a>
+    <a href="#alliances">Alliances</a>
+    <a href="#gtm">Go to Market</a>
+    <a href="#ramp">Ramp</a>
+    <a href="#risks">Considerations</a>
+    <a href="#investment">Investment</a>
+    <a href="#nextsteps">Next Steps</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <svg class="hero__mark" viewBox="260 0 300 75" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path fill="#000" d="M389.24 69.47 266.27 69.47 287.22 34.74 410.19 34.74 389.24 69.47Z"/>
+    <path fill="#000" d="M554.12 0 431.15 0 410.2 34.73 533.17 34.73 554.12 0Z"/>
+  </svg>
+  <div class="container">
+    <div class="hero-banner">
+      <svg class="banner-logo" viewBox="0 0 555 270" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#FFFFFF" d="M410.2 113.89C390.7 117.04 380.74 131.44 380.74 156.78 380.74 182.12 394.02 199.33 414.37 199.33 423.84 199.33 432.45 196.18 450.54 187.31L450.54 207.94C428.83 217.9 416.05 220.98 398.55 220.98 379.61 220.98 366.28 215.95 355.4 204.86 344.25 193.7 338.67 178.97 338.67 162.56 338.67 126.06 365.69 101.37 405.15 101.37 431.36 101.37 449.39 113.35 449.39 130.93 449.39 142.25 441 150.05 428.55 150.05 422.16 150.05 416.91 148.38 410.19 144.48L410.19 113.88ZM313.98 162.57C331.46 140.53 337.63 131.65 337.63 120.83 337.63 110.01 329.08 101.38 317.65 101.38 310.61 101.38 304.28 104.7 301.18 108.16L301.18 153.05 272.54 191.21 272.54 104.2 245.31 104.2 200.04 179.25 200.04 104.2 184.39 104.2 143.3 114.22 143.3 124.72 165.71 126.99 165.71 219.03 194.68 219.03 238.1 147.68 238.1 219.03 269.83 219.03 313.97 162.56ZM56.79 127.6C63.45 126.79 66.75 126.41 69.9 126.41 88.79 126.41 99.03 138.97 99.03 162.58 99.03 190.47 86.52 205.02 63.18 205.02 61.23 205.02 59.88 205.02 56.79 204.87L56.79 127.6ZM56.79 217.91C64.32 218.77 71.62 219.04 76.02 219.04 114.84 219.04 139.47 194.2 139.47 157.27 139.47 125.33 121.01 102.26 95.99 102.26 85.16 102.26 77.9 104.48 56.79 117.05L56.79 101.67 45.09 101.67 0 115.36 0 126.4 18.67 126.4 18.67 255.16 1.87 259.34 1.87 270 75.57 270 75.57 259.34C75.57 259.34 56.78 255.16 56.78 255.16L56.78 217.91Z"/>
+        <path fill="#FD5108" d="M389.24 69.47 266.27 69.47 287.22 34.74 410.19 34.74 389.24 69.47ZM554.12 0 431.15 0 410.2 34.73 533.17 34.73 554.12 0Z"/>
+      </svg>
+    </div>
+    <h1>Marketing Technology &amp; Operations<br>Unified Growth Plan</h1>
+    <p class="hero-subtitle">From strong foundations to a structured, AFO-aligned growth engine. Three offerings consolidated. Three service archetypes. One shared map.</p>
+    <div class="hero-big-number">$80M</div>
+    <div class="hero-big-label">FY27 aspirational target &middot; +19% vs FY26 actual &middot; Path to $250M by FY29</div>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="value">36</div>
+        <div class="label">AFO capabilities owned across AEO, Marketing &amp; ICO</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">3</div>
+        <div class="label">Service archetypes: Advise, Implement, Operate</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">13</div>
+        <div class="label">ARIA micro-journeys across 4 priority sectors</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">4</div>
+        <div class="label">Priority sectors: HLS, Tech, Industrial, FinServ</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">25&rarr;50</div>
+        <div class="label">Tech practice scaling in FY27</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OUR OFFERING -->
+<section id="offering">
+  <div class="container">
+    <div class="kicker">Our Offering</div>
+    <h2>Marketing Technology &amp; Operations</h2>
+    <p>End-to-end marketing operations and technology enablement &mdash; from strategy and operating model design through platform implementation and managed delivery. We implement and configure marketing technology platforms, including Adobe and Salesforce, to enable the intelligent enterprise.</p>
+    <h3 style="margin-top:32px;">Why this market, why now</h3>
+    <p>We operate at the intersection of a $90 billion digital experience services market and a $37 billion marketing consulting market. The first covers platform implementation, content operations, and managed delivery on Adobe, Salesforce, and adjacent technologies. The second covers the strategic advisory, operating model design, and organizational transformation that precede and follow every technology decision. Few practices span both. That positioning is our advantage.</p>
+    <p>Marketing budgets are flat at 7.8% of revenue, yet CMOs are allocating 15% of those budgets to AI. Only 30% report the readiness to scale it. Stack utilization has fallen to 33%. Organizations are over-tooled and under-enabled, spending more but extracting less. The demand for partners who can connect platform investment to business outcomes has never been higher.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0 28px;">
+      <div class="stat-card">
+        <div class="value">$90B</div>
+        <div class="label">Digital experience services market (Gartner 2025 MQ, 17 assessed providers)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">$37B</div>
+        <div class="label">Marketing consulting market (Mordor Intelligence 2026)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">33%</div>
+        <div class="label">MarTech stack utilization, down from 58% in 2020 (Gartner)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">70 / 30</div>
+        <div class="label">CMOs who say AI leadership is critical vs. those with readiness to scale (Gartner 2026)</div>
+      </div>
+    </div>
+
+    <p style="margin-bottom:24px;">Our four core sub-offerings are built to close this gap, from rationalizing the stack to operationalizing AI-powered content and experience delivery. Click any card to learn more.</p>
+
+    <div class="flip-grid">
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="fc-tag">#Strategy</div>
+            <h4>MarTech Strategy &amp; Assessment</h4>
+            <p class="fc-tagline">Help clients understand what marketing technology they have, what they need, and what to do next.</p>
+            <div class="fc-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="flip-card-back">
+            <h4>What We Do</h4>
+            <p>We evaluate the full marketing technology landscape, identify what&rsquo;s working and what&rsquo;s not, and build a clear roadmap for where to invest.</p>
+            <div class="fc-hint">Click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="fc-tag">#OpModel</div>
+            <h4>Marketing Operating Model</h4>
+            <p class="fc-tagline">Design how marketing teams are organized, how they work, and how they use technology to get results.</p>
+            <div class="fc-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="flip-card-back">
+            <h4>What We Do</h4>
+            <p>We assess how the marketing organization is structured and redesign it so the right people, processes, and tools are in place to deliver.</p>
+            <div class="fc-hint">Click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="fc-tag">#ICO</div>
+            <h4>Intelligent Content Operations</h4>
+            <p class="fc-tagline">Modernize how organizations create, manage, and deliver marketing content at speed and scale.</p>
+            <div class="fc-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="flip-card-back">
+            <h4>What We Do</h4>
+            <p>We help clients streamline content production, put governance in place, and use AI to create, tag, and localize content faster.</p>
+            <div class="fc-hint">Click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="fc-tag">#AEO</div>
+            <h4>Autonomous Experience Orchestration</h4>
+            <p class="fc-tagline">Deliver the right message to the right customer at the right time, across every channel.</p>
+            <div class="fc-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="flip-card-back">
+            <h4>What We Do</h4>
+            <p>We design and build the systems that personalize customer experiences in real time, from email and web to mobile and beyond.</p>
+            <div class="fc-hint">Click to flip back</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- THE TRANSFORMATION STORY -->
+<section id="story">
+  <div class="container">
+    <div class="kicker">01 &mdash; The Ambition</div>
+    <h2>From $67M to $250M in three years</h2>
+    <p style="margin-bottom:24px;">We&rsquo;ve built a robust practice through strong client relationships and deep partner expertise across marketing strategy, operations, and technology. The opportunity now is to channel that strength into a unified growth engine.</p>
+    <p style="margin-bottom:24px;">The market is moving toward agentic, AI-powered marketing at a pace that creates a window for the firm that gets there first with a structured offering. We have the relationships, the sector depth, and the advisory credibility. What we&rsquo;re adding is the shared framework (AFO), the productized entry points (ARIA), the technical capacity to deliver at scale, and the recurring revenue model that compounds over time.</p>
+    <p style="margin-bottom:32px;">FY27 is the pivot year &mdash; build the engine, prove the model, set the foundation. FY28 and FY29 are the rapid scaling years where the compounding effects of structured advisory, a scaled tech practice, and recurring managed services drive toward $250M.</p>
+
+    <h3>Revenue trajectory: FY26 &rarr; FY29</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:20px 0 12px;">
+      <div>
+        <div style="font-size:0.75rem;color:var(--fg-6);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">FY26 (Actual)</div>
+        <div class="mix-bar">
+          <div class="mix-segment mix-advisory" style="width:51%">51%</div>
+          <div class="mix-segment mix-implementation" style="width:49%">49%</div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--fg-5);">$67M &middot; Balanced mix, tech momentum building</div>
+      </div>
+      <div>
+        <div style="font-size:0.75rem;color:var(--fg-6);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">FY27 (Pivot)</div>
+        <div class="mix-bar">
+          <div class="mix-segment mix-advisory" style="width:49%">49%</div>
+          <div class="mix-segment mix-implementation" style="width:49%">49%</div>
+          <div class="mix-segment mix-ms" style="width:2%"></div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--fg-5);">$80M &middot; Engine built, MS pivot begins</div>
+      </div>
+      <div>
+        <div style="font-size:0.75rem;color:var(--fg-6);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">FY28 (Scale)</div>
+        <div class="mix-bar">
+          <div class="mix-segment mix-advisory" style="width:36%">36%</div>
+          <div class="mix-segment mix-implementation" style="width:50%">50%</div>
+          <div class="mix-segment mix-ms" style="width:14%">14%</div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--fg-5);">~$160M &middot; Rapid scaling begins</div>
+      </div>
+      <div>
+        <div style="font-size:0.75rem;color:var(--fg-6);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">FY29 (Target State)</div>
+        <div class="mix-bar">
+          <div class="mix-segment mix-advisory" style="width:35%">35%</div>
+          <div class="mix-segment mix-implementation" style="width:45%">45%</div>
+          <div class="mix-segment mix-ms" style="width:20%">20%</div>
+        </div>
+        <div style="font-size:0.8rem;color:var(--fg-5);">~$250M &middot; Balanced &amp; recurring</div>
+      </div>
+    </div>
+    <div class="mix-legend">
+      <span class="leg-adv">Advisory</span>
+      <span class="leg-impl">Implementation</span>
+      <span class="leg-ms">Managed Services</span>
+    </div>
+
+    <table class="data-table" style="margin-top:32px;">
+      <thead>
+        <tr><th>Archetype</th><th>FY26 Actual</th><th>FY27 Pivot</th><th>FY28 Scale</th><th>FY29 Target</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="highlight">Advisory</td><td>$34M (51%)</td><td class="orange">~$39M (49%)</td><td>~$58M (36%)</td><td>~$88M (35%)</td></tr>
+        <tr><td class="highlight">Implementation</td><td>$33M (49%)</td><td class="orange">~$39M (49%)</td><td>~$80M (50%)</td><td>~$112M (45%)</td></tr>
+        <tr><td class="highlight">Managed Services</td><td>$0 (0%)</td><td class="orange">~$2M (2%)</td><td>~$22M (14%)</td><td>~$50M (20%)</td></tr>
+        <tr style="border-top:2px solid var(--pwc-grey-300);"><td class="highlight" style="font-weight:700;">Total</td><td style="font-weight:700;">$67M</td><td class="orange" style="font-size:1.05rem;">$80M</td><td style="font-weight:700;">~$160M</td><td class="orange" style="font-size:1.05rem;">~$250M</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin:24px 0;padding:20px 24px;background:var(--pwc-orange-dim);border-left:4px solid var(--pwc-orange);border-radius:var(--radius-sm);">
+      <strong style="color:var(--fg-1);font-size:0.95rem;">Advisory grows and becomes more valuable.</strong>
+      <p style="font-size:0.88rem;color:var(--fg-2);margin:8px 0 0;line-height:1.65;">Advisory is not standing still. It grows from $34M to $39M in FY27 and continues to scale ($58M, $88M) across the horizon. The difference is purpose: every assessment and strategy engagement is now designed to open the door to a broader transformation where PwC is the strategic partner for implementation and managed services, not just the advisor. The strategy and advisory work helps clients move to a modernized front office that takes advantage of the latest innovations across humans, agentic AI, and platforms. Advisory becomes more valuable per engagement because every assessment creates a multi-year, multi-workstream relationship. We are thinking bigger.</p>
+    </div>
+
+    <div class="bridge-box">
+      <h4>FY27 revenue bridge: where the incremental $13M comes from</h4>
+      <table class="data-table">
+        <thead><tr><th>Source</th><th style="min-width:120px;white-space:nowrap;">Delta</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight">Advisory growth</td><td class="orange">+$5M</td><td>From $34M to ~$39M as senior capacity expands origination and AFO assessments drive structured pull-through</td></tr>
+          <tr><td class="highlight">Adobe (MarTech)</td><td class="orange">+$1&ndash;4M</td><td>From $29M to $30.1&ndash;32.8M; consolidating the strong FY26 base while adding ARIA Scale conversions and AC-supported delivery</td></tr>
+          <tr><td class="highlight">Salesforce (SFMC)</td><td class="orange">+$2&ndash;2.3M</td><td>From $4M to $6&ndash;6.3M via cross-sell into ICE SF installed base</td></tr>
+          <tr><td class="highlight">Managed Services (stretch)</td><td class="orange">+~$2M</td><td>1&ndash;2 anchor Content Ops contracts; stretch objective to begin the pivot toward recurring revenue</td></tr>
+          <tr style="border-top:2px solid var(--pwc-grey-300);"><td class="highlight" style="font-weight:700;">Net incremental</td><td class="orange" style="font-weight:700;">~$13M</td><td>$67M &rarr; $80M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- AFO NORTH STAR -->
+<section id="afo">
+  <div class="container">
+    <div class="kicker">02 &mdash; The North Star</div>
+    <h2>AFO: 36 capabilities, one shared map</h2>
+    <p style="margin-bottom:24px;">The Agentic Front Office capability blueprint is both the client-facing assessment tool and the internal alignment mechanism. The marketing offering owns <strong>36 of the 123 AFO capabilities</strong> across three architectural layers.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;">
+      <div class="stat-card" style="border-left:3px solid var(--fg-2);">
+        <div class="value" style="color:var(--fg-2);">12</div>
+        <div class="label"><strong>AEO</strong> &mdash; Autonomous Experience Orchestration</div>
+        <div class="label" style="margin-top:8px;">Journey orchestration, personalization, segmentation, agent coordination &mdash; the brain above the marketing function</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-orange);">
+        <div class="value" style="color:var(--pwc-orange);">10</div>
+        <div class="label"><strong>Marketing Pillar</strong></div>
+        <div class="label" style="margin-top:8px;">Campaign orchestration, ABM, audience intelligence, attribution, GEO &mdash; the domain expertise</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-yellow);">
+        <div class="value" style="color:var(--pwc-yellow);">14</div>
+        <div class="label"><strong>ICO</strong> &mdash; Intelligent Content Operations</div>
+        <div class="label" style="margin-top:8px;">Content creation, governance, supply chain, GenAI content &mdash; the fuel for everything</div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;">Based on initial client assessments, the majority of these 36 capabilities tend to sit at early maturity stages across the client base, representing significant opportunity for structured growth. PwC is uniquely positioned to assess, implement, and operate the full marketing capability stack through a single, platform-agnostic lens.</p>
+
+    <div class="info-box" style="margin-top:24px;">
+      <h4>What AFO does for this practice internally</h4>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">Shared language</div>
+          <div style="font-size:0.8rem;color:var(--fg-3);">Every partner articulates what we do using the same 36-capability framework</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">Structured scoping</div>
+          <div style="font-size:0.8rem;color:var(--fg-3);">Assessment outputs translate directly to implementation SOWs &mdash; the advisory output IS the implementation pipeline</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">Repeatable methodology</div>
+          <div style="font-size:0.8rem;color:var(--fg-3);">ARIA Sprints give partners a productized thing to sell rather than scoping bespoke from scratch</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PLAYS -->
+<section id="plays">
+  <div class="container">
+    <div class="kicker">03 &mdash; Three Plays</div>
+    <h2>Advisory &middot; Implementation &middot; Managed Services</h2>
+    <p style="margin-bottom:32px;">Three archetypes compound: Advisory finds and scopes the work. Implementation builds it. Managed Services runs it &mdash; and creates the recurring revenue that changes the business model.</p>
+
+    <!-- PLAY 1 -->
+    <div class="play-card" id="play1">
+      <div class="play-header" onclick="togglePlay('play1')">
+        <div class="play-number">01</div>
+        <div class="play-title-group">
+          <div class="play-title">Advisory</div>
+          <div class="play-tagline">From strong foundations to structured pull-through</div>
+        </div>
+        <div class="play-stats" style="margin:0;flex-shrink:0;">
+          <div class="play-stat" style="padding:10px 14px;">
+            <div class="val" style="font-size:1.2rem;">~$39M</div>
+            <div class="lbl">revenue</div>
+          </div>
+        </div>
+        <div class="play-chevron">&#9662;</div>
+      </div>
+      <div class="play-body">
+        <div class="play-content">
+          <p style="margin:16px 0;">Transform ~71 advisory people from bespoke engagement scoping into a structured demand engine. Partners keep their specializations but gain a shared front door and methodology.</p>
+
+          <div class="play-stats">
+            <div class="play-stat"><div class="val">15-25</div><div class="lbl">advisory engagements (AFO + ARIA)</div></div>
+            <div class="play-stat"><div class="val">50%+</div><div class="lbl">overall advisory-to-impl conversion</div></div>
+            <div class="play-stat"><div class="val">13</div><div class="lbl">ARIA micro-journeys ready</div></div>
+            <div class="play-stat"><div class="val">4</div><div class="lbl">sector pods</div></div>
+          </div>
+
+          <div class="sub-section">
+            <h4>Two structured advisory motions</h4>
+            <table class="data-table">
+              <thead><tr><th></th><th>AFO Marketing Assessment</th><th>ARIA Sprint</th></tr></thead>
+              <tbody>
+                <tr><td class="highlight">Owner</td><td>PwC-led, platform-agnostic</td><td>PwC &times; Adobe co-funded</td></tr>
+                <tr><td class="highlight">Duration</td><td>2&ndash;6 weeks</td><td>8&ndash;12 weeks</td></tr>
+                <tr><td class="highlight">Pricing</td><td>Flexible: free &ndash; $500K</td><td>$0&ndash;$1M (co-funded)</td></tr>
+                <tr><td class="highlight">Output</td><td>36-capability maturity map + roadmap</td><td>Working prototype + business case</td></tr>
+                <tr><td class="highlight">Pull-through</td><td>Roadmap scopes implementation SOWs</td><td>75-85% Sprint-to-Scale conversion rate</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-section">
+            <h4>Partner model</h4>
+            <ul class="bullet-list">
+              <li><strong>4&ndash;6 sector pod leads</strong> deeply trained on AFO + ARIA &mdash; they run the structured motions and own account targets (larger sectors like HLS and FinServ may warrant co-leads for sub-sector depth)</li>
+              <li><strong>Broader partner network</strong> keeps sub-offering specializations (MarTech strategy, op model, content supply chain, etc.) and plugs into pods as subject matter experts</li>
+              <li><strong>Existing sub-offerings evolve naturally</strong> &mdash; some map tightly to AFO layers, others (loyalty, commerce media) sit as Growth Horizon exploratory plays</li>
+            </ul>
+          </div>
+
+          <div class="sub-section">
+            <h4>Proof points</h4>
+            <ul class="bullet-list">
+              <li><strong>Southwest:</strong> 36-capability assessment &rarr; $455M&ndash;$1.2B identified value</li>
+              <li><strong>Global Payments:</strong> 12-week C-suite program &rarr; $16M CDP business case approved</li>
+              <li><strong>Discover:</strong> Current-state assessment &rarr; $250M revenue uplift estimated</li>
+              <li><strong>Nordstrom:</strong> Customer-first assessment &rarr; $110M value identified</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAY 2 -->
+    <div class="play-card" id="play2">
+      <div class="play-header" onclick="togglePlay('play2')">
+        <div class="play-number">02</div>
+        <div class="play-title-group">
+          <div class="play-title">Implementation</div>
+          <div class="play-tagline">Scale the tech practice, absorb the pipeline</div>
+        </div>
+        <div class="play-stats" style="margin:0;flex-shrink:0;">
+          <div class="play-stat" style="padding:10px 14px;">
+            <div class="val" style="font-size:1.2rem;">~$39M</div>
+            <div class="lbl">revenue</div>
+          </div>
+        </div>
+        <div class="play-chevron">&#9662;</div>
+      </div>
+      <div class="play-body">
+        <div class="play-content">
+          <p style="margin:16px 0;">Scale the US tech practice from ~27 to 52&ndash;57 practitioners and scale the India AC proportionally. Front-load hiring in Q1&ndash;Q2 so capacity is ready when ARIA Scale deals and AFO assessment conversions land. AC hiring needs to start early given longer lead times for India onboarding. Adobe-heavy with deliberate Salesforce cross-sell.</p>
+
+          <div style="padding:16px 20px;background:var(--pwc-orange-dim);border-left:4px solid var(--pwc-orange);border-radius:var(--radius-sm);margin-bottom:20px;">
+            <strong style="color:var(--fg-1);">Core enabler:</strong>
+            <span style="font-size:0.88rem;color:var(--fg-2);"> H1 hiring, both US and AC, is the single biggest dependency in the plan. Every H2 revenue line in implementation depends on having capacity in place by Q2. AC lead times are longer than US, so India hiring must begin immediately to have resources productive by Q2.  If hiring slips on either side, the ARIA conversion flywheel stalls and $24M+ in H2 implementation revenue is at risk. This is not a staffing exercise; it is the gating condition for the FY27 pivot. See <a href="#investment">Investment Asks, Category 4</a> for the full pyramid breakdown.</span>
+          </div>
+
+          <div class="play-stats">
+            <div class="play-stat"><div class="val">25&rarr;50</div><div class="lbl">US tech practitioners</div></div>
+            <div class="play-stat"><div class="val">15-20</div><div class="lbl">implementation deals</div></div>
+            <div class="play-stat"><div class="val">$1.5-3M</div><div class="lbl">average deal size</div></div>
+            <div class="play-stat"><div class="val">40-50%</div><div class="lbl">AC leverage target</div></div>
+          </div>
+
+          <div class="sub-section">
+            <h4>Revenue by platform</h4>
+            <table class="data-table">
+              <thead><tr><th>Platform</th><th>FY26 Actual</th><th>FY27 Target</th><th>Growth Driver</th></tr></thead>
+              <tbody>
+                <tr><td class="highlight">Adobe (MarTech)</td><td>$29M</td><td class="orange">$30.1M (stretch $32.8M)</td><td>ARIA Scale conversions + AFO pull-through</td></tr>
+                <tr><td class="highlight">Salesforce (SFMC)</td><td>$4M</td><td class="orange">$6M (stretch $6.3M)</td><td>Cross-sell from ICE SF installed base</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="sub-section">
+            <h4>Customer data domain</h4>
+            <p style="font-size:0.85rem;color:var(--fg-3);margin-bottom:12px;">Customer data is the connective tissue across every implementation we deliver. We are building deliberate domain strength in customer data design, architecture, and activation as a core pillar of the practice, not a byproduct of platform work.</p>
+            <table class="data-table">
+              <thead><tr><th>Capability</th><th>What We Deliver</th><th>Platform Context</th></tr></thead>
+              <tbody>
+                <tr><td class="highlight">Data architecture &amp; identity resolution</td><td>Unified customer profiles, identity graphs, schema design, governance models</td><td>AEP, RT-CDP, Data Cloud</td></tr>
+                <tr><td class="highlight">Migration &amp; unification</td><td>Legacy CDP to modern platform migration, data cleansing, source consolidation</td><td>AEP, Data Cloud, SFMC</td></tr>
+                <tr><td class="highlight">Integration patterns</td><td>Real-time data ingestion, event-driven architecture, API orchestration across MarTech stacks</td><td>AEP, AJO, Agentforce</td></tr>
+                <tr><td class="highlight">Domain-led delivery</td><td>Marketing owns the domain strategy, data model design, and activation logic. CEDA provides the engineering layer for heavy data pipeline and infrastructure work.</td><td>Cross-platform</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.8rem;color:var(--fg-5);margin-top:8px;font-style:italic;">Proof points: Citi CDP (170M+ unified profiles), Global Payments ($16M CDP business case), Chipotle RT-CDP ($200M+ revenue growth).</p>
+          </div>
+
+          <div class="sub-section">
+            <h4>Content supply chain domain</h4>
+            <p style="font-size:0.85rem;color:var(--fg-3);margin-bottom:12px;">Content is the other foundational pillar. As organizations scale personalization and move toward autonomous experience delivery, the ability to plan, produce, manage, and distribute content at velocity becomes a platform-level capability, not a creative services function.</p>
+            <table class="data-table">
+              <thead><tr><th>Capability</th><th>What We Deliver</th><th>Platform Context</th></tr></thead>
+              <tbody>
+                <tr><td class="highlight">Asset management &amp; governance</td><td>Enterprise DAM strategy, taxonomy design, metadata models, rights management, and asset lifecycle workflows</td><td>AEM Assets</td></tr>
+                <tr><td class="highlight">Production workflow orchestration</td><td>End-to-end work management, intake-to-publish automation, resource planning, and cross-team coordination</td><td>Workfront</td></tr>
+                <tr><td class="highlight">AI-powered content creation</td><td>Brand-governed generative content at scale, template systems, variant generation, and tone/compliance guardrails</td><td>GenStudio, Writer</td></tr>
+                <tr><td class="highlight">Content operations acceleration</td><td>Automated content assembly, intelligent tagging, translation workflows, and channel-specific adaptation</td><td>Gradial</td></tr>
+                <tr><td class="highlight">End-to-end integration</td><td>Connecting planning (Workfront) to creation (GenStudio, Writer) to management (AEM Assets) to delivery (AEM Sites, AJO) as a unified pipeline</td><td>Cross-platform</td></tr>
+              </tbody>
+            </table>
+            <p style="font-size:0.8rem;color:var(--fg-5);margin-top:8px;font-style:italic;">Proof points: Lilly enterprise AEM ($7M+ cost reduction, 35% faster approvals), Trimble E2E MarTech transformation (80% automation).</p>
+          </div>
+
+          <div class="sub-section">
+            <h4>Hiring ramp</h4>
+            <table class="data-table">
+              <thead><tr><th>Quarter</th><th>Hires</th><th>Focus</th></tr></thead>
+              <tbody>
+                <tr><td class="highlight">Q1 (Jul&ndash;Sep)</td><td class="orange">+8&ndash;10</td><td>Experienced architects &amp; leads + AC capacity</td></tr>
+                <tr><td class="highlight">Q2 (Oct&ndash;Dec)</td><td class="orange">+8&ndash;10</td><td>Developers &amp; specialists as pipeline confirms</td></tr>
+                <tr><td class="highlight">Q3&ndash;Q4</td><td>+5&ndash;7</td><td>Fill gaps based on platform demand mix</td></tr>
+              </tbody>
+            </table>
+            <h4 style="margin-top:16px;">Priority skill areas</h4>
+            <ul class="bullet-list">
+              <li><strong>AEP / RT-CDP architects:</strong> Schema design, identity resolution, audience activation</li>
+              <li><strong>AJO journey specialists:</strong> Orchestration, decisioning, real-time personalization</li>
+              <li><strong>Data Cloud / SFMC engineers:</strong> Marketing Cloud configuration, Data Cloud integration, automation</li>
+              <li><strong>Integration developers:</strong> API orchestration, event-driven pipelines, cross-platform connectors</li>
+              <li><strong>Content operations leads:</strong> AEM, GenStudio, DAM workflows, content supply chain delivery</li>
+            </ul>
+          </div>
+
+          <div class="sub-section">
+            <h4>Proof points</h4>
+            <ul class="bullet-list">
+              <li><strong>Chipotle:</strong> RT-CDP &rarr; $200M+ revenue growth, 20M+ personalized experiences</li>
+              <li><strong>Trimble:</strong> E2E MarTech transformation &rarr; 40% campaign effectiveness, 80% automation</li>
+              <li><strong>Citi:</strong> CDP implementation &rarr; 170M+ unified profiles, 42% campaign lift</li>
+              <li><strong>Lilly:</strong> Enterprise AEM &rarr; $7M+ cost reduction, 35% faster approvals</li>
+              <li><strong>SHRM:</strong> AEP + AEM + Commerce &rarr; 100M abandoned carts recaptured</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAY 3 -->
+    <div class="play-card" id="play3">
+      <div class="play-header" onclick="togglePlay('play3')">
+        <div class="play-number">03</div>
+        <div class="play-title-group">
+          <div class="play-title">Managed Services</div>
+          <div class="play-tagline">Plant the recurring revenue seed</div>
+        </div>
+        <div class="play-stats" style="margin:0;flex-shrink:0;">
+          <div class="play-stat" style="padding:10px 14px;">
+            <div class="val" style="font-size:1.2rem;">~$2M</div>
+            <div class="lbl">revenue (stretch)</div>
+          </div>
+        </div>
+        <div class="play-chevron">&#9662;</div>
+      </div>
+      <div class="play-body">
+        <div class="play-content">
+          <p style="margin:16px 0;">Build from zero. The smallest FY27 revenue line but the most important strategic move &mdash; it plants the seed for a revenue stream that reaches 20% of the business by FY29.</p>
+
+          <div class="play-stats">
+            <div class="play-stat"><div class="val">2-3</div><div class="lbl">anchor contracts</div></div>
+            <div class="play-stat"><div class="val">Q1</div><div class="lbl">offering defined</div></div>
+            <div class="play-stat"><div class="val">Q2</div><div class="lbl">first SOW signed</div></div>
+            <div class="play-stat"><div class="val">20%</div><div class="lbl">of revenue by FY29</div></div>
+          </div>
+
+          <div class="sub-section">
+            <h4>Lead offering: Content Operations as a Service</h4>
+            <p style="font-size:0.85rem;margin-bottom:16px;">Content ops is the strongest initial candidate: ongoing, high-volume, compliance-heavy, and naturally sticky. The ecosystem stack makes it viable without a massive delivery team.</p>
+            <div class="eco-stack">
+              <div class="eco-item">
+                <div class="eco-partner">Adobe</div>
+                <div class="eco-role">Enterprise content platform &mdash; AEM, GenStudio, Workfront, Firefly. The system of record.</div>
+              </div>
+              <div class="eco-item">
+                <div class="eco-partner">Gradial / Writer</div>
+                <div class="eco-role">AI/GenAI content production engine. Automates variant generation, localization, format adaptation at volume. Brand-governed content creation at scale.</div>
+              </div>
+              <div class="eco-item">
+                <div class="eco-partner">PwC RCO</div>
+                <div class="eco-role">Regulated Content Orchestrator. Compliance governance &mdash; MLR routing, audit trails, approval checkpoints. The defensible moat.</div>
+              </div>
+              <div class="eco-item">
+                <div class="eco-partner">PwC People</div>
+                <div class="eco-role">Strategy, oversight, optimization. Senior-led, thin team &mdash; the brain trust, not a production floor.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sub-section">
+            <h4>FY28&ndash;29 trajectory</h4>
+            <ul class="bullet-list">
+              <li><strong>FY28:</strong> Scale to ~$22M (14%) &mdash; expand Content Ops client base, launch MarTech Platform Ops MS</li>
+              <li><strong>FY29:</strong> Reach ~$50M (20%) &mdash; full MS portfolio, outcomes-based pricing, ties to CSX Agentic Service Play 4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARIA ENGINE -->
+<section id="aria">
+  <div class="container">
+    <div class="kicker">04 &mdash; The ARIA Engine</div>
+    <h2>13 micro-journeys. Sprint &rarr; Scale &rarr; Enterprise.</h2>
+    <p style="margin-bottom:24px;">ARIA (Agentic Revenue &amp; Intelligence Accelerator) is the joint PwC &times; Adobe investment model. Pre-wired Sprint infrastructure compresses time-to-value. Proven micro-journeys accelerate results in 90 days.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;">
+      <div class="stat-card" style="text-align:center;">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-6);margin-bottom:8px;">Sprint</div>
+        <div class="value" style="font-size:1.5rem;">$0&ndash;$1M</div>
+        <div class="label">8&ndash;12 weeks. Prove the use case. Trial environment.</div>
+      </div>
+      <div class="stat-card" style="text-align:center;">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-6);margin-bottom:8px;">Scale</div>
+        <div class="value" style="font-size:1.5rem;color:var(--pwc-orange);">$5&ndash;$15M</div>
+        <div class="label">12&ndash;16 weeks. Full deployment. PwC implementation revenue.</div>
+      </div>
+      <div class="stat-card" style="text-align:center;">
+        <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-6);margin-bottom:8px;">Enterprise</div>
+        <div class="value" style="font-size:1.5rem;">$15M+</div>
+        <div class="label">Multi-year. Managed services. Recurring revenue.</div>
+      </div>
+    </div>
+
+    <div class="sub-section" style="margin-top:32px;">
+      <h4>Micro-journey inventory by sector</h4>
+      <table class="data-table">
+        <thead><tr><th>Sector</th><th>Sprint</th><th>Layer</th><th>Outcome</th></tr></thead>
+        <tbody>
+          <tr><td class="highlight" rowspan="3">Health / Life Sciences</td><td>HCP content production cycles</td><td><span class="tag tag-ico">ICO</span></td><td>60% faster HCP content, 4-6x variant output</td></tr>
+          <tr><td>Signal-driven HCP engagement</td><td><span class="tag tag-aeo">AEO</span></td><td>20-35% HCP engagement lift</td></tr>
+          <tr><td>Patient/member journey orchestration</td><td><span class="tag tag-aeo">AEO</span></td><td>15-25% engagement &amp; completion improvement</td></tr>
+
+          <tr class="sector-break"><td colspan="4"></td></tr>
+
+          <tr><td class="highlight" rowspan="2">Insurance</td><td>Compliance content cycles</td><td><span class="tag tag-ico">ICO</span></td><td>60-70% faster compliance production</td></tr>
+          <tr><td>At-risk renewal recovery</td><td><span class="tag tag-aeo">AEO</span></td><td>10-15% retention improvement</td></tr>
+
+          <tr class="sector-break"><td colspan="4"></td></tr>
+
+          <tr><td class="highlight" rowspan="2">Mid-Market Banks</td><td>10-person-to-40 content ops</td><td><span class="tag tag-ico">ICO</span></td><td>3-5x content output increase</td></tr>
+          <tr><td>Cross-sell signal detection</td><td><span class="tag tag-aeo">AEO</span></td><td>10-20% cross-sell conversion improvement</td></tr>
+
+          <tr class="sector-break"><td colspan="4"></td></tr>
+
+          <tr><td class="highlight" rowspan="3">Technology / Telecom</td><td>Content fragmentation tax</td><td><span class="tag tag-ico">ICO</span></td><td>40-60% reduction in duplication</td></tr>
+          <tr><td>Signal-driven ABM</td><td><span class="tag tag-aeo">AEO</span></td><td>25-35% engagement lift over batch ABM</td></tr>
+          <tr><td>Retention-as-continuous-system</td><td><span class="tag tag-aeo">AEO</span></td><td>15-20% NRR improvement</td></tr>
+
+          <tr class="sector-break"><td colspan="4"></td></tr>
+
+          <tr><td class="highlight" rowspan="3">Industrial Products</td><td>Technical content unification</td><td><span class="tag tag-ico">ICO</span></td><td>50-60% faster technical updates</td></tr>
+          <tr><td>Channel partner enablement</td><td><span class="tag tag-ico">ICO</span> <span class="tag tag-aeo">AEO</span></td><td>20-30% partner content engagement lift</td></tr>
+          <tr><td>Continuous B2B engagement</td><td><span class="tag tag-aeo">AEO</span></td><td>15-25% sales cycle reduction</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-box" style="margin-top:24px;">
+      <h4>ARIA co-investment model</h4>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">Co-Invest</div>
+          <div style="font-size:0.8rem;color:var(--fg-3);">Pre-wired Sprint infrastructure per sector: AEP schemas, GenStudio configs, PwC&rsquo;s RCO, integration adapters, journey templates</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">Co-Innovate</div>
+          <div style="font-size:0.8rem;color:var(--fg-3);">Every Sprint generates enterprise deployment data fed back to Adobe product team via quarterly insight reports</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:6px;">Co-Deliver</div>
+          <div style="font-size:0.8rem;color:var(--fg-3);">Jointly-funded Value Architect in each Sprint builds CFO-grade business case driving client expansion decisions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTOR STRATEGY -->
+<section id="sectors">
+  <div class="container">
+    <div class="kicker">05 &mdash; Sector Strategy</div>
+    <h2>Four priority sectors. Unique strengths where others aren&rsquo;t.</h2>
+    <p style="margin-bottom:8px;">These are where we concentrate incremental investment and ARIA activation. Work continues across all sectors &mdash; CPG/Retail, Travel &amp; Hospitality, and others remain active through existing partner relationships.</p>
+
+    <div class="sector-grid">
+      <div class="sector-card">
+        <h3>Health / Life Sciences</h3>
+        <div class="sector-why">&ldquo;Compliance is the door opener&rdquo;</div>
+        <p>Deep regulatory expertise and compliance credibility with CCOs and Medical Affairs opens doors beyond the CMO. RCO is purpose-built for this sector&rsquo;s unique content governance requirements.</p>
+        <div class="sector-label">ARIA Sprints</div>
+        <div><span class="tag tag-ico">ICO</span> HCP content<br><span class="tag tag-aeo">AEO</span> HCP engagement<br><span class="tag tag-aeo">AEO</span> Patient journeys</div>
+        <div class="sector-label">Proven</div>
+        <p>Lilly, AbbVie, HCSC, Moderna</p>
+        <div class="sector-label">MS opportunity</div>
+        <p>Content Ops as a Service &mdash; strongest candidate for RCO + Gradial/Writer + Adobe</p>
+      </div>
+
+      <div class="sector-card">
+        <h3>Technology / Telecom B2B</h3>
+        <div class="sector-why">&ldquo;NRR and content efficiency&rdquo;</div>
+        <p>Deep B2B sales cycle and ABM expertise. Enterprise buying committee complexity requires a different approach than B2C-focused firms. Sophisticated orgs overwhelmed by volume and complexity.</p>
+        <div class="sector-label">ARIA Sprints</div>
+        <div><span class="tag tag-ico">ICO</span> Content fragmentation<br><span class="tag tag-aeo">AEO</span> Signal ABM<br><span class="tag tag-aeo">AEO</span> Retention</div>
+        <div class="sector-label">Proven</div>
+        <p>Trimble, Esri, CCI</p>
+      </div>
+
+      <div class="sector-card">
+        <h3>Industrial / Manufacturing</h3>
+        <div class="sector-why">&ldquo;Biggest proportional gains&rdquo;</div>
+        <p>An underserved sector for marketing technology. Digital maturity is lower, meaning proportionally larger gains. PwC has deep industrial relationships. Channel/distributor complexity is a core competence.</p>
+        <div class="sector-label">ARIA Sprints</div>
+        <div><span class="tag tag-ico">ICO</span> Technical content<br><span class="tag tag-ico">ICO</span> <span class="tag tag-aeo">AEO</span> Channel enablement<br><span class="tag tag-aeo">AEO</span> B2B engagement</div>
+        <div class="sector-label">Proven</div>
+        <p>Cencora ($200M+), Wabash, Honeywell</p>
+      </div>
+
+      <div class="sector-card">
+        <h3>Financial Services / Insurance</h3>
+        <div class="sector-why">&ldquo;Regulatory heritage opens doors&rdquo;</div>
+        <p>PwC&rsquo;s regulatory and risk heritage provides access that digital-first firms lack. Insurance remains underserved in marketing technology. Mid-market banks need right-sized solutions.</p>
+        <div class="sector-label">ARIA Sprints</div>
+        <div><span class="tag tag-ico">ICO</span> Compliance content<br><span class="tag tag-aeo">AEO</span> Renewal recovery<br><span class="tag tag-ico">ICO</span> Bank content ops<br><span class="tag tag-aeo">AEO</span> Cross-sell</div>
+        <div class="sector-label">Proven</div>
+        <p>Citi, Discover, US Bank, Global Payments</p>
+      </div>
+    </div>
+
+    <div style="margin-top:24px;padding:16px 20px;background:var(--pwc-grey-50);border-left:3px solid var(--pwc-grey-400);border-radius:var(--radius-sm);font-size:0.85rem;color:var(--fg-4);">
+      <strong style="color:var(--fg-2);">Why not Consumer Markets?</strong> &nbsp; CM/CPG remains an active market and partners with existing relationships continue to pursue opportunities. However, it is the most contested territory among digital-first SIs. Our FY27 priority investment &mdash; pod structure, ARIA sprint assets, and landmark win targets &mdash; concentrates in sectors where PwC holds structural differentiation that competitors cannot replicate. CM is sequenced for FY28 priority investment once the operating model is proven.
+    </div>
+
+    <div style="margin-top:16px;padding:16px 20px;background:var(--pwc-grey-50);border-left:3px solid var(--pwc-orange);border-radius:var(--radius-sm);font-size:0.85rem;color:var(--fg-4);">
+      <strong style="color:var(--fg-2);">Strategy&amp; collaboration in CM.</strong> &nbsp; The Strategy&amp; marketing strategy team (3 partners, all CM-focused) is a natural complement as we shift priority investment to other sectors. We need to do a better job of collaboration and pull-through between our teams. Their strategic advisory work creates upstream demand for our implementation and managed services capabilities, and our delivery proof points strengthen their client relationships. While we focus on the four priority sectors, this partnership keeps CM growing. FY27 priority: formalize the collaboration model and establish joint pipeline visibility.
+    </div>
+  </div>
+</section>
+
+<!-- ALLIANCE STRATEGY -->
+<section id="alliances">
+  <div class="container">
+    <div class="kicker">06 &mdash; Alliance Strategy</div>
+    <h2>Adobe (via ARIA) &amp; Salesforce</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:24px;">
+      <div class="stat-card" style="border-top:3px solid #FF0000;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+          <h3 style="margin:0;">Adobe</h3>
+          <span class="tag" style="background:rgba(253,81,8,0.10);color:var(--pwc-orange);font-size:0.75rem;">ARIA-powered</span>
+        </div>
+        <p style="font-size:0.85rem;margin-bottom:16px;color:var(--fg-3);">Adobe is the primary platform bet. ARIA is the co-investment vehicle that creates mutual commitment and shared pipeline.</p>
+        <div class="sector-label">Platform stack</div>
+        <p style="font-size:0.8rem;">AEP, AJO, RT-CDP, AEM, GenStudio, Workfront, Firefly, Commerce, Agent Orchestrator</p>
+        <div class="sector-label">FY27 implementation target</div>
+        <p style="font-size:0.8rem;"><strong style="color:var(--pwc-orange);">$30.1M (stretch $32.8M)</strong> &nbsp; (up from $29M)</p>
+        <div class="sector-label">Flywheel</div>
+        <p style="font-size:0.8rem;">ARIA Sprint (co-funded) &rarr; Scale (PwC impl revenue) &rarr; Enterprise (MS recurring)</p>
+        <div class="sector-label">Mechanics</div>
+        <ul class="bullet-list">
+          <li>Joint quarterly pipeline reviews with Adobe field teams</li>
+          <li>ARIA Sprint nominations per sector per quarter</li>
+          <li>Co-funded Value Architect builds CFO-grade business case</li>
+          <li>Sprint infrastructure pre-built per sector</li>
+        </ul>
+      </div>
+
+      <div class="stat-card" style="border-top:3px solid #00A1E0;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+          <h3 style="margin:0;">Salesforce</h3>
+          <span class="tag" style="background:rgba(0,161,224,0.10);color:#00A1E0;font-size:0.75rem;">Deliberate cross-sell</span>
+        </div>
+        <p style="font-size:0.85rem;margin-bottom:16px;color:var(--fg-3);">Salesforce is the cross-sell motion. CSX already has a massive SF installed base &mdash; the marketing offering plugs Marketing Cloud, Data Cloud, and Agentforce into existing relationships.</p>
+        <div class="sector-label">Platform stack</div>
+        <p style="font-size:0.8rem;">Marketing Cloud (Engagement, Personalization, Intelligence), Data Cloud, Agentforce</p>
+        <div class="sector-label">FY27 implementation target</div>
+        <p style="font-size:0.8rem;"><strong style="color:#00A1E0;">$6M (stretch $6.3M)</strong> &nbsp; (up from $4M)</p>
+        <div class="sector-label">Growth plays</div>
+        <ul class="bullet-list">
+          <li>Cross-sell Marketing Cloud into existing CSX Salesforce accounts</li>
+          <li>Data Cloud unification &mdash; joint CDP/marketing analytics value prop</li>
+          <li>Agentforce integration &mdash; agentic marketing automation (aligns to AEO layer)</li>
+          <li>AFO assessment identifies SF-native implementation paths</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GO TO MARKET MOTIONS -->
+<section id="gtm">
+  <div class="container">
+    <div class="kicker">07 &mdash; Go to Market Motions</div>
+    <h2>Pods &middot; Tech conviction &middot; One motion</h2>
+    <p style="margin-bottom:24px;">Structure determines outcomes. Three interlocking elements turn strategy into pipeline: sector-aligned pods that own the number, tech-backed pursuits that lead with platform conviction from day one, and a single AFO-led motion that connects advisory to implementation to managed services.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;">
+      <div class="stat-card" style="border-left:3px solid var(--fg-2);">
+        <div class="value" style="color:var(--fg-2);">01</div>
+        <div class="label"><strong>Structure &mdash; Sector-aligned pods</strong></div>
+        <div class="label" style="margin-top:8px;">Pair an advisory lead with a technical lead per priority sector. The advisory lead runs AFO assessments and owns the relationship; the technical lead scopes implementation and owns delivery.</div>
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:var(--pwc-grey-50);border-radius:var(--radius-sm);padding:10px;font-size:0.8rem;text-align:center;"><strong>Advisory Lead</strong><br>Relationship + Assessment</div>
+          <div style="background:var(--pwc-grey-50);border-radius:var(--radius-sm);padding:10px;font-size:0.8rem;text-align:center;"><strong>Technical Lead</strong><br>Scoping + Delivery</div>
+        </div>
+        <div style="margin-top:12px;font-size:0.78rem;color:var(--fg-5);font-style:italic;">Two roles per pod, names TBD.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-orange);">
+        <div class="value" style="color:var(--pwc-orange);">02</div>
+        <div class="label"><strong>Leverage &mdash; Tech-backed pursuits</strong></div>
+        <div class="label" style="margin-top:8px;">Lead with a point of view on the right platform from day one. Pick the partner we believe is the right answer and go to market with that conviction. If the client or solution dictates a pivot, we adjust. But waiting until the end of discovery to recommend a platform slows the deal, increases our cost to sell, and puts us at a disadvantage against competitors who pick a side early.</div>
+        <div style="margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="background:var(--pwc-grey-50);border-radius:var(--radius-sm);padding:10px;font-size:0.8rem;text-align:center;"><strong>Adobe</strong><br>Default for ARIA + content/experience</div>
+          <div style="background:var(--pwc-grey-50);border-radius:var(--radius-sm);padding:10px;font-size:0.8rem;text-align:center;"><strong>Salesforce</strong><br>Default for CRM-native + Data Cloud</div>
+        </div>
+        <div style="margin-top:12px;font-size:0.78rem;color:var(--fg-5);font-style:italic;">Conviction on platform early; pivot only when the solution demands it.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-yellow);">
+        <div class="value" style="color:var(--pwc-yellow);">03</div>
+        <div class="label"><strong>Motion &mdash; AFO-led land and expand</strong></div>
+        <div class="label" style="margin-top:8px;">The AFO Blueprint Assessment is the universal door opener. Advisory sells the assessment; ARIA provides the sprint-to-scale conversion engine; Implementation delivers the platform work.</div>
+        <div style="margin-top:16px;background:var(--pwc-grey-50);border-radius:var(--radius-sm);padding:12px;font-size:0.8rem;text-align:center;">
+          <strong>AFO Assessment</strong> &rarr; <strong>ARIA Sprint</strong> &rarr; <strong>Platform SOW</strong> &rarr; <strong>Managed Service</strong>
+        </div>
+        <div style="margin-top:12px;font-size:0.78rem;color:var(--fg-5);font-style:italic;">One motion, three archetypes pulling together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WIN -->
+<section id="win">
+  <div class="container">
+    <div class="kicker">08 &mdash; How We Win</div>
+    <h2>Account focus &middot; Compounding advantage</h2>
+    <p style="margin-bottom:24px;">Two structural edges that digital-first SIs cannot replicate. These aren&rsquo;t aspirational &mdash; they&rsquo;re already working in our highest-performing accounts.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:24px 0;">
+      <div class="stat-card" style="border-left:3px solid var(--pwc-orange);">
+        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-5);margin-bottom:4px;">Edge 01</div>
+        <div class="label" style="margin-bottom:12px;"><strong style="font-size:1.05rem;">Regulatory heritage opens the room</strong></div>
+        <p style="font-size:0.88rem;color:var(--fg-4);line-height:1.6;margin:0;">Unlike digital-first SIs, PwC has trust with CCOs, Chief Medical Officers, and Chief Risk Officers. We access the C-suite through compliance, risk, and transformation &mdash; then pull marketing technology through. Others pitch MarTech to the CMO alone; we arrive through the boardroom.</p>
+        <div style="margin-top:20px;padding:12px;background:var(--pwc-grey-50);border-radius:var(--radius-sm);font-size:0.82rem;text-align:center;color:var(--fg-3);">
+          <strong>Compliance &amp; Risk access</strong> &rarr; <strong>C-suite trust</strong> &rarr; <strong>MarTech pull-through</strong>
+        </div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-orange);">
+        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--fg-5);margin-bottom:4px;">Edge 02</div>
+        <div class="label" style="margin-bottom:12px;"><strong style="font-size:1.05rem;">Advisory-to-implementation compounding</strong></div>
+        <p style="font-size:0.88rem;color:var(--fg-4);line-height:1.6;margin:0;">Every AFO assessment creates a qualified implementation pipeline. The advisory credibility from 90+ practitioners and deep sector relationships means we don&rsquo;t compete on rate cards &mdash; we compete on insight. Advisory sells the vision; implementation delivers it; managed services makes it recurring.</p>
+        <div style="margin-top:20px;padding:12px;background:var(--pwc-grey-50);border-radius:var(--radius-sm);font-size:0.82rem;text-align:center;color:var(--fg-3);">
+          <strong>Advisory insight</strong> &rarr; <strong>Implementation SOW</strong> &rarr; <strong>Recurring MS revenue</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE REALIZE ROI -->
+<section id="roi">
+  <div class="container">
+    <div class="kicker">09 &mdash; How We Realize ROI</div>
+    <h2>$5M+ landmark win per sector &middot; Four-step conversion</h2>
+    <p style="margin-bottom:24px;">The math is simple: at a minimum, repeat what we did this year ($67M), then land one $5M+ full-cycle engagement per priority sector. Four landmark wins at $5M+ each puts us well above the $80M mark and builds the proof points that unlock FY28 scale. A deliberately small target list that proves the motion and creates the momentum.</p>
+
+    <h3>FY27 sector targets &mdash; one $5M+ landmark win each</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:16px 0 32px;">
+      <div class="stat-card" style="border-top:3px solid var(--pwc-orange);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--pwc-orange);margin-bottom:2px;">Health / Life Sciences</div>
+        <div style="font-family:var(--font-display);font-size:1.6rem;color:var(--fg-2);margin-bottom:6px;">$5M+</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">End-to-end content ops with RCO &mdash; compliance-governed content at scale</div>
+      </div>
+      <div class="stat-card" style="border-top:3px solid var(--pwc-orange);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--pwc-orange);margin-bottom:2px;">Technology</div>
+        <div style="font-family:var(--font-display);font-size:1.6rem;color:var(--fg-2);margin-bottom:6px;">$5M+</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">Large AEP/AJO implementation via ARIA conversion</div>
+      </div>
+      <div class="stat-card" style="border-top:3px solid var(--pwc-orange);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--pwc-orange);margin-bottom:2px;">Industrial Products</div>
+        <div style="font-family:var(--font-display);font-size:1.6rem;color:var(--fg-2);margin-bottom:6px;">$5M+</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">AFO-to-ARIA full-cycle win &mdash; assessment through Scale</div>
+      </div>
+      <div class="stat-card" style="border-top:3px solid var(--pwc-orange);text-align:center;">
+        <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--pwc-orange);margin-bottom:2px;">FSI</div>
+        <div style="font-family:var(--font-display);font-size:1.6rem;color:var(--fg-2);margin-bottom:6px;">$5M+</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">Compliance-led content + journey orchestration deal</div>
+      </div>
+    </div>
+
+    <h3>The conversion motion</h3>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:16px 0;">
+      <div class="stat-card" style="border-left:3px solid var(--fg-2);">
+        <div class="value" style="color:var(--fg-2);font-size:1.8rem;">01</div>
+        <div class="label"><strong>Pick where we have presence</strong></div>
+        <div class="label" style="margin-top:8px;">Target 2&ndash;3 accounts per sector where PwC already has an active advisory or platform relationship.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-orange);">
+        <div class="value" style="color:var(--pwc-orange);font-size:1.8rem;">02</div>
+        <div class="label"><strong>Lead with the AFO Blueprint</strong></div>
+        <div class="label" style="margin-top:8px;">A structured, no-cost maturity assessment that maps their gaps to our 36 capabilities &mdash; not a generic pitch.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-orange-mid);">
+        <div class="value" style="color:var(--pwc-orange-mid);font-size:1.8rem;">03</div>
+        <div class="label"><strong>Prove it with an ARIA Sprint</strong></div>
+        <div class="label" style="margin-top:8px;">A fast, sector-specific micro-journey that delivers measurable results in weeks, not months.</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid var(--pwc-yellow);">
+        <div class="value" style="color:var(--pwc-yellow);font-size:1.8rem;">04</div>
+        <div class="label"><strong>Convert to platform + operate</strong></div>
+        <div class="label" style="margin-top:8px;">Land the implementation SOW and plant the seed for managed services. One proof point per sector pulls the pipeline.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;padding:16px;background:var(--pwc-grey-50);border-radius:var(--radius);text-align:center;font-size:0.88rem;color:var(--fg-3);">
+      <strong>FY26 repeat ($67M) + 4 landmark wins ($20M+) = $87M+.</strong> &nbsp; Match this year&rsquo;s performance, add one full-cycle conversion per sector, and we clear $80M with room to spare. Everything else the growth engine generates is upside.
+    </div>
+  </div>
+</section>
+
+<!-- QUARTERLY RAMP -->
+<section id="ramp">
+  <div class="container">
+    <div class="kicker">10 &mdash; Quarterly Ramp</div>
+    <h2>FY27: July 2026 &ndash; June 2027</h2>
+
+    <div class="timeline">
+      <div class="quarter-card">
+        <div class="quarter-name">Q1</div>
+        <div class="quarter-theme">&ldquo;Stand It Up&rdquo;</div>
+        <div class="quarter-rev">~$16M</div>
+        <div class="quarter-rev-label">carry-forward + early wins</div>
+        <ul class="quarter-items">
+          <li>Launch AFO Marketing Assessment</li>
+          <li>ARIA infrastructure for HLS &amp; Tech</li>
+          <li>Define Content Ops MS offering</li>
+          <li>Formalize Gradial partnership</li>
+          <li>+8&ndash;10 tech hires (wave 1)</li>
+          <li>3&ndash;4 AFO assessments started</li>
+        </ul>
+      </div>
+
+      <div class="quarter-card">
+        <div class="quarter-name">Q2</div>
+        <div class="quarter-theme">&ldquo;First Conversions&rdquo;</div>
+        <div class="quarter-rev">~$18M</div>
+        <div class="quarter-rev-label">Sprints converting to Scale</div>
+        <ul class="quarter-items">
+          <li>First ARIA Sprint-to-Scale conversion</li>
+          <li>First MS SOW signed</li>
+          <li>+8&ndash;10 tech hires (wave 2)</li>
+          <li>ARIA extended to Industrial &amp; FinServ</li>
+          <li>SF cross-sell pipeline development</li>
+          <li>8&ndash;12 advisory engagements complete</li>
+        </ul>
+      </div>
+
+      <div class="quarter-card">
+        <div class="quarter-name">Q3</div>
+        <div class="quarter-theme">&ldquo;Pipeline Compounds&rdquo;</div>
+        <div class="quarter-rev">~$22M</div>
+        <div class="quarter-rev-label">implementation ramp accelerates</div>
+        <ul class="quarter-items">
+          <li>5&ndash;8 implementation deals in delivery</li>
+          <li>2 MS engagements running</li>
+          <li>Tech practice approaching ~50 practitioners</li>
+          <li>First conversion rate data available</li>
+          <li>+5&ndash;7 tech hires (fill gaps)</li>
+          <li>SFMC implementations beginning</li>
+        </ul>
+      </div>
+
+      <div class="quarter-card">
+        <div class="quarter-name">Q4</div>
+        <div class="quarter-theme">&ldquo;Exit Run-Rate&rdquo;</div>
+        <div class="quarter-rev">~$24M</div>
+        <div class="quarter-rev-label">$80M full-year aspirational</div>
+        <ul class="quarter-items">
+          <li>Pipeline compounding across all sources</li>
+          <li>2&ndash;3 MS contracts active</li>
+          <li>Tech practice at 50 practitioners</li>
+          <li>50%+ conversion rate demonstrated</li>
+          <li>Begin FY28 scaling plan</li>
+          <li>Define next MS offering for FY28</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RISKS -->
+<section id="risks">
+  <div class="container">
+    <div class="kicker">11 &mdash; Key Risks</div>
+    <h2>What could go wrong and how we manage it</h2>
+
+    <table class="data-table" style="margin-top:24px;">
+      <thead><tr><th style="width:28%;">Risk</th><th style="width:10%;">Likelihood</th><th style="width:10%;">Impact</th><th>Mitigation</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="highlight">Tech hiring falls behind pace</td>
+          <td class="orange">Med-High</td>
+          <td class="orange">High</td>
+          <td>Front-load hiring in Q1; build AC/offshore leverage from day one; contractor bridge if needed</td>
+        </tr>
+        <tr>
+          <td class="highlight">Overall advisory-to-implementation conversion misses 50%+ target</td>
+          <td>Medium</td>
+          <td class="orange">High</td>
+          <td>Co-funded Value Architect builds business case during the Sprint, not after &mdash; conversion is designed into the engagement itself</td>
+        </tr>
+        <tr>
+          <td class="highlight">Partner adoption of AFO is uneven</td>
+          <td class="orange">High</td>
+          <td>Medium</td>
+          <td>Start with willing 5&ndash;6 pod leads; prove the model with early wins; don&rsquo;t mandate, attract &mdash; better tools, not a different job</td>
+        </tr>
+        <tr>
+          <td class="highlight">MS offering takes longer to land</td>
+          <td class="orange">Med-High</td>
+          <td>Medium</td>
+          <td>Keep MS target conservative ($5&ndash;7M range); focus on 1&ndash;2 anchor clients in HLS where RCO is strongest</td>
+        </tr>
+        <tr>
+          <td class="highlight">Adobe alliance priorities shift</td>
+          <td>Low-Med</td>
+          <td class="orange">High</td>
+          <td>Diversify: AFO assessment is platform-agnostic and works without Adobe; Salesforce cross-sell provides second vector</td>
+        </tr>
+        <tr>
+          <td class="highlight">Economic headwinds reduce client budgets</td>
+          <td>Low-Med</td>
+          <td>Medium</td>
+          <td>ARIA Sprints are low-cost entry ($0&ndash;1M, co-funded); advisory assessment is a downturn play &mdash; clients assess before they spend</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- INVESTMENT ASKS -->
+<section id="investment">
+  <div class="container">
+    <div class="kicker">12 &mdash; Investment Asks</div>
+    <h2>What we need to execute the plan</h2>
+    <p style="margin-bottom:24px;">Reaching $80M in FY27 requires targeted investment across seven categories. These asks are designed to seed the growth engine, not fund a full buildout. Year 1 is intentionally measured: 38&ndash;46 net new hires (including 7 Partners/MDs), margin protection on early ARIA deals, and utilization relief for a small group of sales-focused leaders. AC scaling is additive to the US numbers below.</p>
+
+    <h3>Practice staffing overview</h3>
+    <p style="font-size:0.88rem;color:var(--fg-3);margin-bottom:12px;">Current headcount, planned additions, and FY27 end-state by level across both practices (US onshore). AC additions (26&ndash;35 net new) are covered separately in Category 5.</p>
+    <div style="overflow-x:auto;margin-bottom:32px;">
+      <table class="data-table" style="font-size:0.85rem;">
+        <thead>
+          <tr>
+            <th>Practice</th>
+            <th>Level</th>
+            <th style="text-align:center;">Current</th>
+            <th style="text-align:center;">FY27 Add (low)</th>
+            <th style="text-align:center;">FY27 Add (high)</th>
+            <th style="text-align:center;">FY27 Target (low)</th>
+            <th style="text-align:center;">FY27 Target (high)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="highlight" rowspan="7" style="vertical-align:top;font-weight:700;">CSX Tech</td><td>Partner</td><td style="text-align:center;">4</td><td style="text-align:center;">3</td><td style="text-align:center;">3</td><td style="text-align:center;">7</td><td style="text-align:center;">7</td></tr>
+          <tr><td>Director</td><td style="text-align:center;">6</td><td style="text-align:center;">4</td><td style="text-align:center;">5</td><td style="text-align:center;">10</td><td style="text-align:center;">11</td></tr>
+          <tr><td>Senior Manager</td><td style="text-align:center;">5</td><td style="text-align:center;">4</td><td style="text-align:center;">5</td><td style="text-align:center;">9</td><td style="text-align:center;">10</td></tr>
+          <tr><td>Manager</td><td style="text-align:center;">9</td><td style="text-align:center;">6</td><td style="text-align:center;">7</td><td style="text-align:center;">15</td><td style="text-align:center;">16</td></tr>
+          <tr><td>Senior Associate</td><td style="text-align:center;">1</td><td style="text-align:center;">5</td><td style="text-align:center;">6</td><td style="text-align:center;">6</td><td style="text-align:center;">7</td></tr>
+          <tr><td>Associate</td><td style="text-align:center;">2</td><td style="text-align:center;">3</td><td style="text-align:center;">4</td><td style="text-align:center;">5</td><td style="text-align:center;">6</td></tr>
+          <tr style="background:var(--pwc-grey-50);font-weight:700;"><td>Total</td><td style="text-align:center;">27</td><td style="text-align:center;">25</td><td style="text-align:center;">30</td><td style="text-align:center;">52</td><td style="text-align:center;">57</td></tr>
+
+          <tr><td class="highlight" rowspan="8" style="vertical-align:top;font-weight:700;">SS&amp;M</td><td>Partner</td><td style="text-align:center;">10</td><td style="text-align:center;">4</td><td style="text-align:center;">4</td><td style="text-align:center;">14</td><td style="text-align:center;">14</td></tr>
+          <tr><td>Managing Director</td><td style="text-align:center;">2</td><td style="text-align:center;">0</td><td style="text-align:center;">0</td><td style="text-align:center;">2</td><td style="text-align:center;">2</td></tr>
+          <tr><td>Director</td><td style="text-align:center;">10</td><td style="text-align:center;">0</td><td style="text-align:center;">0</td><td style="text-align:center;">10</td><td style="text-align:center;">10</td></tr>
+          <tr><td>Senior Manager</td><td style="text-align:center;">7</td><td style="text-align:center;">3</td><td style="text-align:center;">4</td><td style="text-align:center;">10</td><td style="text-align:center;">11</td></tr>
+          <tr><td>Manager</td><td style="text-align:center;">11</td><td style="text-align:center;">4</td><td style="text-align:center;">5</td><td style="text-align:center;">15</td><td style="text-align:center;">16</td></tr>
+          <tr><td>Senior Associate</td><td style="text-align:center;">21</td><td style="text-align:center;">2</td><td style="text-align:center;">3</td><td style="text-align:center;">23</td><td style="text-align:center;">24</td></tr>
+          <tr><td>Associate</td><td style="text-align:center;">10</td><td style="text-align:center;">0</td><td style="text-align:center;">0</td><td style="text-align:center;">10</td><td style="text-align:center;">10</td></tr>
+          <tr style="background:var(--pwc-grey-50);font-weight:700;"><td>Total</td><td style="text-align:center;">71</td><td style="text-align:center;">13</td><td style="text-align:center;">16</td><td style="text-align:center;">84</td><td style="text-align:center;">87</td></tr>
+
+          <tr style="border-top:2px solid var(--pwc-grey-300);font-weight:700;"><td class="highlight" style="font-weight:700;">Grand Total</td><td></td><td style="text-align:center;">98</td><td style="text-align:center;">38</td><td style="text-align:center;">46</td><td style="text-align:center;">136</td><td style="text-align:center;">144</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="invest-grid">
+
+      <!-- 1. Margin Relief -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 1</div>
+        <h3>Margin Relief &mdash; ARIA Deals (up to 25 deals)</h3>
+        <p class="invest-rationale">ARIA Sprints are demand-generation vehicles priced at $0&ndash;$1M with Adobe co-funding. They are margin-dilutive by design, but 75&ndash;85% convert to Scale deals. Protecting margin expectations on early Sprint and Scale deals preserves the conversion flywheel that drives downstream revenue.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Deal Type</th>
+              <th>Deals</th>
+              <th>Avg. Revenue</th>
+              <th>Margin Relief Ask</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">ARIA Sprint</td>
+              <td>Up to 15&ndash;18</td>
+              <td>$0&ndash;$1M</td>
+              <td>Full margin relief (cost-recovery basis)</td>
+              <td>Demand gen vehicle; 75&ndash;85% convert to Scale</td>
+            </tr>
+            <tr>
+              <td class="highlight">Early ARIA Scale</td>
+              <td>Up to 7&ndash;10</td>
+              <td>$5&ndash;$15M</td>
+              <td>Reduced margin target (e.g., 20% vs. standard)</td>
+              <td>Front-loaded delivery investment; margin normalizes at Enterprise</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 2. Utilization Relief -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 2</div>
+        <h3>Utilization Relief &mdash; Sales Capture Leaders</h3>
+        <p class="invest-rationale">A small group of Directors and Senior Managers need dedicated time for account development, AFO assessments, ARIA origination, and alliance co-selling. Lowering their utilization targets lets them focus on building pipeline instead of billing hours.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Role</th>
+              <th>Count</th>
+              <th>Utilization Target</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">Directors (sales-focused)</td>
+              <td>3&ndash;5</td>
+              <td class="orange">25&ndash;30%</td>
+              <td>Account development, AFO assessments, ARIA origination, alliance co-sell</td>
+            </tr>
+            <tr>
+              <td class="highlight">Senior Managers (hybrid)</td>
+              <td>3&ndash;5</td>
+              <td class="orange">55&ndash;60%</td>
+              <td>Sprint delivery leadership + pipeline development</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 3. Headcount: Advise -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 3</div>
+        <h3>Headcount &mdash; Advise Practice (9&ndash;12 new resources)</h3>
+        <p class="invest-rationale">Net new hires to strengthen advisory capacity, focused on filling the middle of the pyramid where delivery leadership lives. These are not partner or MD additions.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Count</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">Senior Managers</td>
+              <td>3&ndash;4</td>
+              <td>AFO assessment leads, sector pod delivery, Sprint design</td>
+            </tr>
+            <tr>
+              <td class="highlight">Managers</td>
+              <td>4&ndash;5</td>
+              <td>Assessment delivery, ARIA Sprint workstream leads, proposal support</td>
+            </tr>
+            <tr>
+              <td class="highlight">Senior Associates</td>
+              <td>2&ndash;3</td>
+              <td>Assessment execution, research, deliverable production</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4. Headcount: MarTech -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 4</div>
+        <h3>Headcount &mdash; MarTech Practice (+25&ndash;30 new resources)</h3>
+        <p class="invest-rationale">The practice has 27 people today. These 25&ndash;30 net new hires nearly double the team and fill gaps across the pyramid, with an emphasis on senior delivery leadership. Hiring is front-loaded to Q1&ndash;Q2 so the team is at full strength before the ARIA pipeline converts.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Count</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">Directors</td>
+              <td>4&ndash;5</td>
+              <td>Solution architecture leads, platform practice leads (Adobe, Salesforce)</td>
+            </tr>
+            <tr>
+              <td class="highlight">Senior Managers</td>
+              <td>4&ndash;5</td>
+              <td>Delivery leads, India pod management, client workstream ownership</td>
+            </tr>
+            <tr>
+              <td class="highlight">Managers</td>
+              <td>6&ndash;7</td>
+              <td>Technical leads, integration specialists, ARIA Scale execution</td>
+            </tr>
+            <tr>
+              <td class="highlight">Senior Associates</td>
+              <td>5&ndash;6</td>
+              <td>Platform developers, configuration, testing</td>
+            </tr>
+            <tr>
+              <td class="highlight">Associates</td>
+              <td>3&ndash;4</td>
+              <td>Junior developers, QA, documentation</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- 5. Acceleration Center (India) Scaling -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 5</div>
+        <h3>Acceleration Center (India) Scaling</h3>
+        <p class="invest-rationale">The AC team needs to scale proportionally to support onshore growth across both MarTech and Advisory. With a target of 25&ndash;35% efficiency gains through agentic tooling (AI-assisted development, automated testing, code generation), the effective capacity of the AC scales faster than headcount alone. AC additions are primarily Manager and below with a select number of Senior Managers for delivery leadership, mirroring the same skill focus areas being built onshore. AC hiring must begin early given longer lead times for India onboarding.</p>
+
+        <p style="font-size:0.8rem;font-weight:700;color:var(--fg-4);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">MarTech AC Pyramid (21&ndash;30 net new)</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Count</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">Senior Managers</td>
+              <td>1&ndash;2</td>
+              <td>AC delivery leads across simultaneous implementation projects</td>
+            </tr>
+            <tr>
+              <td class="highlight">Managers</td>
+              <td>4&ndash;6</td>
+              <td>Technical leads, integration specialists, delivery workstream ownership</td>
+            </tr>
+            <tr>
+              <td class="highlight">Senior Associates</td>
+              <td>8&ndash;10</td>
+              <td>AEP / RT-CDP development, Data Cloud / SFMC configuration, AJO journey builds</td>
+            </tr>
+            <tr>
+              <td class="highlight">Associates</td>
+              <td>8&ndash;12</td>
+              <td>Platform development, content operations (AEM, Workfront, GenStudio), QA, automation</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:0.8rem;font-weight:700;color:var(--fg-4);text-transform:uppercase;letter-spacing:0.06em;margin:16px 0 6px;">Advisory AC Pyramid (5 net new)</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Count</th>
+              <th>Focus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">Managers</td>
+              <td>1</td>
+              <td>Assessment delivery support, research coordination, workstream management</td>
+            </tr>
+            <tr>
+              <td class="highlight">Senior Associates</td>
+              <td>3</td>
+              <td>AFO assessment execution, benchmarking research, deliverable production</td>
+            </tr>
+            <tr>
+              <td class="highlight">Associates</td>
+              <td>1</td>
+              <td>Data gathering, analysis support, documentation</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px;">
+          <div class="play-stat"><div class="val">~20</div><div class="lbl">current AC headcount</div></div>
+          <div class="play-stat"><div class="val">46&ndash;55</div><div class="lbl">FY27 target (26&ndash;35 net new)</div></div>
+          <div class="play-stat"><div class="val">25&ndash;35%</div><div class="lbl">efficiency gain via agentic tooling</div></div>
+        </div>
+      </div>
+
+      <!-- 6. Partner / MD Additions -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 6</div>
+        <h3>Partner / MD Additions (7 total)</h3>
+        <p class="invest-rationale">Several of our priority sectors have thin or no dedicated marketing partner coverage today. These additions close that gap on the advisory side and add senior capacity to the MarTech practice to support deal origination, client relationships, and delivery oversight as volume scales.</p>
+
+        <h4 style="font-family:var(--font-body);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-5);margin:16px 0 8px;">Advisory (4 Partners / MDs)</h4>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Sector / Focus</th>
+              <th>Count</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">IPS (Industrial Products &amp; Services)</td>
+              <td>1</td>
+              <td>Add depth in a sector with limited marketing coverage today</td>
+            </tr>
+            <tr>
+              <td class="highlight">TMT (Tech, Media &amp; Telecom)</td>
+              <td>1</td>
+              <td>Add depth in a sector with limited marketing coverage today</td>
+            </tr>
+            <tr>
+              <td class="highlight">CM (Consumer Markets)</td>
+              <td>1</td>
+              <td>Add depth in a sector with limited marketing coverage today</td>
+            </tr>
+            <tr>
+              <td class="highlight">Cross-Industry</td>
+              <td>1</td>
+              <td>Horizontal coverage across sectors; AFO methodology, cross-sector deal support</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="font-family:var(--font-body);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--fg-5);margin:20px 0 8px;">MarTech (3 Partners / MDs)</h4>
+        <p style="font-size:0.88rem;color:var(--fg-3);line-height:1.6;">Three additions to provide senior capacity for deal origination, client relationship ownership, and delivery quality as the practice scales from current state to 50+ practitioners.</p>
+      </div>
+
+      <!-- 7. Certification & Credentialing -->
+      <div class="invest-card">
+        <div class="invest-tag">Category 7</div>
+        <h3>Certification &amp; Credentialing</h3>
+        <p class="invest-rationale">Platform credentialing is a non-negotiable for client credibility and alliance partner standing. FY27 sets baseline expectations across both practices.</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Population</th>
+              <th>Expectation</th>
+              <th>Rationale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="highlight">MarTech (Director and below)</td>
+              <td>Attain or renew at least one Adobe practitioner certification per year</td>
+              <td>Delivery credibility, alliance partner requirements, client confidence in technical depth</td>
+            </tr>
+            <tr>
+              <td class="highlight">Advisory + MarTech (Director, MD, Partner)</td>
+              <td>Attain or renew at least one sales certification per year</td>
+              <td>Origination fluency, alliance co-sell readiness, structured capture methodology</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FY28-29 BRIDGE -->
+<section id="bridge">
+  <div class="container">
+    <div class="kicker">13 &mdash; What Needs to Be True</div>
+    <h2>The conditions for $160M and $250M</h2>
+    <p style="margin-bottom:24px;">FY27 is prescriptive. FY28 and FY29 are ambition. But ambition needs conditions &mdash; here&rsquo;s what has to be true for the numbers to work.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;">
+      <div class="stat-card" style="border-top:3px solid var(--pwc-orange);">
+        <div style="font-family:var(--font-display);font-size:2rem;color:var(--pwc-orange);margin-bottom:4px;">$160M</div>
+        <div style="font-size:0.85rem;color:var(--fg-5);margin-bottom:16px;">FY28 &mdash; Rapid scaling begins</div>
+        <ul class="bullet-list">
+          <li>The FY27 flywheel is proven: AFO assessments converting to implementation SOWs at 50%+</li>
+          <li>ARIA is active in all 4 priority sectors, not just HLS and Tech</li>
+          <li>Tech practice is at 50+ and productively utilized (75%+ client utilization)</li>
+          <li>2&ndash;3 MS contracts are live, generating recurring revenue and referenceable case studies</li>
+          <li>Implementation deal sizes are growing as clients move from single-platform to multi-platform</li>
+          <li>Salesforce cross-sell is a real pipeline source, not just a concept</li>
+          <li>Partner network is using AFO language consistently &mdash; the shared map is working</li>
+          <li>At least 1&ndash;2 Growth Horizon plays have graduated into formalized offerings</li>
+        </ul>
+      </div>
+
+      <div class="stat-card" style="border-top:3px solid var(--pwc-orange);">
+        <div style="font-family:var(--font-display);font-size:2rem;color:var(--pwc-orange);margin-bottom:4px;">$250M</div>
+        <div style="font-size:0.85rem;color:var(--fg-5);margin-bottom:16px;">FY29 &mdash; Balanced &amp; recurring</div>
+        <ul class="bullet-list">
+          <li>MS portfolio expands beyond Content Ops into MarTech Platform Ops and Campaign Ops as a Service</li>
+          <li>Implementation is repeatable at scale &mdash; playbooks, accelerators, and AC leverage reduce delivery cost</li>
+          <li>Advisory is systematically generating 2&ndash;3x its own revenue in implementation pull-through</li>
+          <li>ARIA Enterprise (multi-year, $15M+) deals are landing</li>
+          <li>Tech practice is 100+ (or equivalent via AC leverage) to support $112M in implementation revenue</li>
+          <li>New sectors or Growth Horizon offerings are contributing incremental revenue</li>
+          <li>MS contracts are renewing and expanding &mdash; proving the recurring model</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH HORIZON -->
+<section id="horizon">
+  <div class="container">
+    <div class="kicker">14 &mdash; Growth Horizon</div>
+    <h2>Exploratory plays &mdash; partner latitude, upside revenue</h2>
+    <p style="margin-bottom:8px;">Not in the financial plan. Each gets a named partner champion, a 90-day thesis, and permission to pursue 1&ndash;2 engagements. If something catches, it gets formalized into FY28.</p>
+
+    <div class="horizon-grid">
+
+      <div class="horizon-flip" onclick="this.classList.toggle('flipped')">
+        <div class="horizon-flip-inner">
+          <div class="horizon-flip-front">
+            <h3>Edge Lab</h3>
+            <p>Dedicated applied AI team with freedom to experiment at the frontier. As marketing platforms evolve into systems of record, this team explores next-generation delivery patterns and turns emerging tech into practice-ready accelerators.</p>
+            <div class="hf-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="horizon-flip-back">
+            <h4>Edge Lab</h4>
+            <ul class="bullet-list">
+              <li><strong>Next-gen delivery patterns:</strong> Agentic workflows, autonomous campaign orchestration, AI-native implementation accelerators</li>
+              <li><strong>Emerging tech evaluation:</strong> Rapid prototyping on research previews (Gemini, Claude, Managed Agents) in a safe sandbox</li>
+              <li><strong>Practice-ready productization:</strong> Turning experiments into reusable assets, frameworks, and delivery kits</li>
+              <li><strong>Scaling path:</strong> FY27 incubation (5 resources), FY28 scale in Marketing (20), FY29 scale to ICE</li>
+            </ul>
+            <div class="hf-hint">Click to flip back &rarr;</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizon-flip" onclick="this.classList.toggle('flipped')">
+        <div class="horizon-flip-inner">
+          <div class="horizon-flip-front">
+            <h3>Deals &amp; PE Pull-Through</h3>
+            <p>PwC executes 7,500+ transactions per year. We embed marketing capabilities into the transaction lifecycle: diligence, platform rationalization, newco standup, and downstream implementation across PE and corporate M&amp;A.</p>
+            <div class="hf-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="horizon-flip-back">
+            <h4>Deals &amp; PE Pull-Through</h4>
+            <ul class="bullet-list">
+              <li><strong>PE diligence:</strong> MarTech stack assessment, CDP evaluation, digital maturity scoring during pre-close. Proven proof points exist today.</li>
+              <li><strong>Corporate M&amp;A:</strong> Platform rationalization, brand architecture, customer data unification. An underdeveloped opportunity we are currently ceding.</li>
+              <li><strong>Carve-out / divestiture:</strong> Newco marketing stack design and standup, including CRM, automation, and content platforms.</li>
+              <li><strong>Downstream implementation:</strong> Post-transaction platform buildout, ARIA conversion from diligence, managed services for portfolio companies.</li>
+            </ul>
+            <div class="hf-hint">Click to flip back &rarr;</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizon-flip" onclick="this.classList.toggle('flipped')">
+        <div class="horizon-flip-inner">
+          <div class="horizon-flip-front">
+            <h3>GEO</h3>
+            <p>Generative Engine Optimization. As AI-mediated discovery replaces traditional search, brands need to optimize for how LLMs surface and recommend them. No established methodology exists, making this a first-mover opportunity.</p>
+            <div class="hf-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="horizon-flip-back">
+            <h4>Generative Engine Optimization</h4>
+            <ul class="bullet-list">
+              <li><strong>Brand visibility in AI answers:</strong> Audit and optimize how brands appear in ChatGPT, Gemini, Perplexity, and other generative surfaces</li>
+              <li><strong>Content strategy for LLMs:</strong> Structured data, entity-level optimization, authority signals that influence AI recommendations</li>
+              <li><strong>Measurement framework:</strong> Define metrics and tracking for a channel without industry standards</li>
+              <li><strong>Advisory-first entry:</strong> Assessment-led motion that pulls through to content and platform implementation</li>
+            </ul>
+            <div class="hf-hint">Click to flip back &rarr;</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="horizon-flip" onclick="this.classList.toggle('flipped')">
+        <div class="horizon-flip-inner">
+          <div class="horizon-flip-front">
+            <h3>Commerce Media</h3>
+            <p>Retail media networks and data monetization advisory. A rapidly growing channel where retailers and brands are building ad businesses on top of first-party transaction data. Proven at United (~$500M potential) and Bain Capital ($10M+ annual).</p>
+            <div class="hf-hint">Click to flip &rarr;</div>
+          </div>
+          <div class="horizon-flip-back">
+            <h4>Commerce Media</h4>
+            <ul class="bullet-list">
+              <li><strong>Network strategy &amp; standup:</strong> Help retailers design, build, and operationalize retail media networks from scratch</li>
+              <li><strong>Advertiser optimization:</strong> Help brands allocate spend, measure incrementality, integrate retail media into broader mix</li>
+              <li><strong>Data monetization advisory:</strong> First-party data valuation, clean room strategy, audience packaging</li>
+              <li><strong>Proof points:</strong> United Airlines (~$500M media revenue potential), Bain Capital ($10M+ annual)</li>
+            </ul>
+            <div class="hf-hint">Click to flip back &rarr;</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="nextsteps">
+  <div class="container">
+    <div class="kicker">15 &mdash; Next Steps</div>
+    <h2>Stand up the plan</h2>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-days">1&ndash;30</div>
+        <div class="step-period">July 2026</div>
+        <ul class="bullet-list">
+          <li>Socialize the plan with the partner group</li>
+          <li>Identify and confirm sector pod leads</li>
+          <li>Begin front-loaded tech hiring</li>
+          <li>Finalize ARIA Sprint infrastructure for HLS &amp; Tech</li>
+          <li>Initiate Gradial partnership formalization</li>
+          <li>Build AFO Marketing Assessment delivery kit</li>
+          <li>Launch certification program: Adobe practitioner + sales cert expectations communicated</li>
+        </ul>
+      </div>
+      <div class="step-card">
+        <div class="step-days">31&ndash;60</div>
+        <div class="step-period">August 2026</div>
+        <ul class="bullet-list">
+          <li>First AFO assessments in market (2&ndash;3 starts)</li>
+          <li>First ARIA Sprint nominations to Adobe (3&ndash;4)</li>
+          <li>Content Ops MS offering definition complete</li>
+          <li>Adobe co-sell activated &mdash; joint pipeline reviews</li>
+          <li>Salesforce cross-sell conversations initiated</li>
+          <li>First wave tech hires onboarding</li>
+        </ul>
+      </div>
+      <div class="step-card">
+        <div class="step-days">61&ndash;90</div>
+        <div class="step-period">September 2026</div>
+        <ul class="bullet-list">
+          <li>ARIA Sprints in active delivery</li>
+          <li>First capability gap reports delivered</li>
+          <li>MS offering ready for market &mdash; 4&ndash;6 candidate accounts</li>
+          <li>Growth Horizon champions present 90-day theses</li>
+          <li>Q1 checkpoint: advisory pipeline converting? Hiring on track?</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="pwc-mark">PwC</div>
+    <div>CSX Marketing Technology &amp; Operations &middot; Unified Growth Plan FY27</div>
+    <div style="margin-top:4px;">Jim LaLonde &middot; Brad Herndon &middot; Pete Choo &middot; Michael Kornstein &middot; June 2026</div>
+    <div style="margin-top:12px;font-size:0.7rem;color:var(--fg-6);">PwC Confidential</div>
+  </div>
+</footer>
+
+<script>
+function togglePlay(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+(function() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.remove('active'));
+        const link = document.querySelector('nav a[href="#' + entry.target.id + '"]');
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => observer.observe(s));
+})();
+</script>
+</body>
+</html>

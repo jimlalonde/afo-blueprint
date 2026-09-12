@@ -52,7 +52,7 @@ export default function ExploreView({ data }: Props) {
   return (
     <div className="animate-fade-in">
       {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 mb-5 text-[13px]">
+      <div className="flex items-center gap-1.5 mb-5 text-[15px]">
         {crumbs.map((c, i) => (
           <span key={i} className="flex items-center gap-1.5">
             {i > 0 && <span className="text-tx3">›</span>}
@@ -91,12 +91,12 @@ export default function ExploreView({ data }: Props) {
               <div className="mb-5">
                 <button
                   onClick={handleBack}
-                  className="text-[13px] text-tx3 hover:text-accent mb-3 cursor-pointer flex items-center gap-1 transition-colors"
+                  className="text-[15px] text-tx3 hover:text-accent mb-3 cursor-pointer flex items-center gap-1 transition-colors"
                 >
                   ← Back to {selectedLayer.name}
                 </button>
-                <h2 className="text-[22px] font-semibold tracking-tight">{selectedL1.name}</h2>
-                <p className="text-[14px] text-tx2 mt-1 max-w-[600px]">{selectedL1.description}</p>
+                <h2 className="text-[26px] font-semibold tracking-tight" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>{selectedL1.name}</h2>
+                <p className="text-[16px] text-tx2 mt-1 max-w-[600px]">{selectedL1.description}</p>
               </div>
 
               {/* L2 capability list */}
@@ -107,16 +107,16 @@ export default function ExploreView({ data }: Props) {
                     onClick={() => handleSelectL2(cap)}
                     className="w-full text-left bg-surface border border-bd rounded-xl px-5 py-4 hover:border-bd2 hover:shadow-sm cursor-pointer transition-all duration-200 group"
                   >
-                    <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-center justify-between gap-4">
                       <div className="flex-1 min-w-0">
-                        <div className="text-[15px] font-medium group-hover:text-accent transition-colors">
+                        <div className="text-[17px] font-medium group-hover:text-accent transition-colors">
                           {cap.name}
                         </div>
-                        <div className="text-[13px] text-tx2 mt-1 line-clamp-2 leading-relaxed">
+                        <div className="text-[15px] text-tx2 mt-1 line-clamp-2 leading-relaxed">
                           {cap.description}
                         </div>
                       </div>
-                      <CoverageDotsCompact coverage={cap.platform_coverage} />
+                      <span className="text-[18px] text-tx3 group-hover:text-accent transition-colors flex-shrink-0">›</span>
                     </div>
                   </button>
                 ))}
@@ -126,7 +126,7 @@ export default function ExploreView({ data }: Props) {
             <div className="animate-slide-in">
               <button
                 onClick={handleBack}
-                className="text-[13px] text-tx3 hover:text-accent mb-4 cursor-pointer flex items-center gap-1 transition-colors"
+                className="text-[15px] text-tx3 hover:text-accent mb-4 cursor-pointer flex items-center gap-1 transition-colors"
               >
                 ← Back to {selectedL1.name}
               </button>
@@ -139,17 +139,3 @@ export default function ExploreView({ data }: Props) {
   );
 }
 
-function CoverageDotsCompact({ coverage }: { coverage: Record<string, { rating: string }> }) {
-  const entries = Object.values(coverage);
-  const strong = entries.filter((e) => e.rating === "strong").length;
-  const partial = entries.filter((e) => e.rating === "partial").length;
-  const gap = entries.filter((e) => e.rating === "gap").length;
-
-  return (
-    <div className="flex items-center gap-1 flex-shrink-0 mt-1">
-      {strong > 0 && <div className="cov-dot cov-dot-strong" title={`${strong} strong`} />}
-      {partial > 0 && <div className="cov-dot cov-dot-partial" title={`${partial} partial`} />}
-      {gap > 0 && <div className="cov-dot cov-dot-gap" title={`${gap} gap`} />}
-    </div>
-  );
-}

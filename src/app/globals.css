@@ -1,38 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #ffffff;
-  --color-bg2: #fafaf8;
-  --color-bg3: #f5f4f0;
+  --color-bg: #F7F5F1;
+  --color-bg2: #EFECE6;
+  --color-bg3: #E8E4DD;
   --color-surface: #ffffff;
-  --color-tx: #1a1a18;
-  --color-tx2: #5f5e5a;
-  --color-tx3: #999891;
-  --color-bd: rgba(0, 0, 0, 0.08);
-  --color-bd2: rgba(0, 0, 0, 0.15);
-  --color-accent: #D04A02;
-  --color-accent-light: #FFF3ED;
-  --color-accent-hover: #B03E02;
-  --color-accent-subtle: rgba(208, 74, 2, 0.08);
+  --color-tx: #1C1A17;
+  --color-tx2: #6B6560;
+  --color-tx3: #9A9188;
+  --color-bd: #E3DFD8;
+  --color-bd2: #D4CFC6;
+  --color-accent: #C74E23;
+  --color-accent-light: #FBEDE6;
+  --color-accent-hover: #A8401B;
+  --color-accent-subtle: rgba(199, 78, 35, 0.07);
+  --color-accent-soft: #E9C4B4;
+  --color-deep: #14110F;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #141413;
-    --color-bg2: #1e1e1c;
-    --color-bg3: #282826;
-    --color-surface: #1e1e1c;
-    --color-tx: #e8e6df;
-    --color-tx2: #b4b2a9;
-    --color-tx3: #888780;
-    --color-bd: rgba(255, 255, 255, 0.08);
-    --color-bd2: rgba(255, 255, 255, 0.15);
-    --color-accent: #E8621A;
-    --color-accent-light: #2A1A0E;
-    --color-accent-hover: #F07A3A;
-    --color-accent-subtle: rgba(232, 98, 26, 0.1);
-  }
-}
+/* Dark mode disabled — forcing PwC light theme */
 
 @theme inline {
   --color-bg: var(--color-bg);
@@ -48,6 +34,8 @@
   --color-accent-light: var(--color-accent-light);
   --color-accent-hover: var(--color-accent-hover);
   --color-accent-subtle: var(--color-accent-subtle);
+  --color-accent-soft: var(--color-accent-soft);
+  --color-deep: var(--color-deep);
 
   --color-cov-strong: #0F6E56;
   --color-cov-strong-bg: #E8F5F0;
@@ -57,28 +45,29 @@
   --color-cov-gap-bg: #FEF0F0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-cov-strong: #4ABA94;
-    --color-cov-strong-bg: #0D2E24;
-    --color-cov-partial: #E0A040;
-    --color-cov-partial-bg: #2A1E0A;
-    --color-cov-gap: #E06060;
-    --color-cov-gap-bg: #2A1010;
-  }
-}
+/* Dark coverage overrides disabled */
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', 'DM Sans', system-ui, -apple-system, sans-serif;
   background: var(--color-bg);
   color: var(--color-tx);
+  font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Source Serif 4', 'Georgia', serif;
 }
 
 /* Smooth transitions for interactive elements */
@@ -135,13 +124,23 @@ button, a, [role="button"] {
 
 /* Subtle highlight pulse for navigation */
 @keyframes highlight-pulse {
-  0% { box-shadow: 0 0 0 0 rgba(208, 74, 2, 0.3); }
-  50% { box-shadow: 0 0 0 6px rgba(208, 74, 2, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(208, 74, 2, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(199, 78, 35, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(199, 78, 35, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(199, 78, 35, 0); }
 }
 
 .highlight-target {
   animation: highlight-pulse 1.5s ease-out;
+}
+
+/* Eyebrow label pattern */
+.eyebrow {
+  font-family: 'Inter', 'DM Sans', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
 }
 
 /* Coverage dot indicators */
@@ -151,9 +150,9 @@ button, a, [role="button"] {
   border-radius: 50%;
   flex-shrink: 0;
 }
-.cov-dot-strong { background: var(--color-cov-strong); }
-.cov-dot-partial { background: var(--color-cov-partial); }
-.cov-dot-gap { background: var(--color-cov-gap); border: 1.5px solid var(--color-cov-gap); background: transparent; }
+.cov-dot-strong { background: #C74E23; }
+.cov-dot-partial { background: #FFB600; }
+.cov-dot-gap { background: #E8E4DD; border: 1.5px solid #1C1A17; }
 
 /* Assessment stage bars */
 .stage-bar {

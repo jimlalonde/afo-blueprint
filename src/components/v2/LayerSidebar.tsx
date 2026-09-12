@@ -1,7 +1,6 @@
 "use client";
 
 import { Layer } from "@/types";
-import { LAYER_COLORS } from "@/lib/constants";
 
 interface Props {
   layers: Layer[];
@@ -9,17 +8,16 @@ interface Props {
   onSelectLayer: (layer: Layer) => void;
 }
 
+const PWC_ORANGE = "#C74E23";
+const INACTIVE_BAR = "#D4CFC6";
+
 export default function LayerSidebar({ layers, selectedLayerId, onSelectLayer }: Props) {
   return (
     <aside className="w-[240px] flex-shrink-0 sticky top-[52px] max-h-[calc(100vh-80px)] overflow-y-auto">
       <div className="space-y-1">
-        {layers.map((layer) => {
+        {layers.map((layer, i) => {
           const isActive = layer.id === selectedLayerId;
-          const color = LAYER_COLORS[layer.id] || "#888";
-          const l2Count = layer.l1_components.reduce(
-            (s, c) => s + c.l2_capabilities.length,
-            0
-          );
+          const barColor = isActive ? PWC_ORANGE : INACTIVE_BAR;
 
           return (
             <button
@@ -32,22 +30,20 @@ export default function LayerSidebar({ layers, selectedLayerId, onSelectLayer }:
               }`}
             >
               <div
-                className="w-[3px] h-8 rounded-full flex-shrink-0 transition-opacity"
+                className="w-[3px] h-8 rounded-full flex-shrink-0 transition-all duration-200"
                 style={{
-                  background: color,
-                  opacity: isActive ? 1 : 0.4,
+                  background: barColor,
+                  opacity: isActive ? 1 : 0.6,
                 }}
               />
               <div className="flex-1 min-w-0">
                 <div
-                  className={`text-[13px] font-medium leading-snug transition-colors ${
+                  className={`text-[15px] font-semibold leading-snug transition-colors ${
                     isActive ? "text-tx" : "text-tx2 group-hover:text-tx"
                   }`}
+                  style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}
                 >
                   {layer.name}
-                </div>
-                <div className="text-[11px] text-tx3 mt-0.5">
-                  {layer.l1_components.length} components · {l2Count} capabilities
                 </div>
               </div>
             </button>

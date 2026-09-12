@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARIA — Agentic Revenue & Intelligence Accelerator | PwC × Adobe</title>
+<style>
+:root {
+  --pwc-orange: #FD5108;
+  --pwc-orange-mid: #FE7C39;
+  --pwc-orange-light: #FFAA72;
+  --pwc-orange-hover: #E04600;
+  --pwc-orange-dim: rgba(253,81,8,0.10);
+  --pwc-yellow: #FF9F00;
+  --pwc-black: #000000;
+  --pwc-white: #FFFFFF;
+  --pwc-grey-500: #8B847A;
+  --pwc-grey-400: #A8A097;
+  --pwc-grey-300: #C8C0B5;
+  --pwc-grey-200: #E2DBD0;
+  --pwc-grey-100: #EFE9DE;
+  --pwc-grey-50: #F6F4EF;
+  --fg-1: #111113;
+  --fg-2: #2D3339;
+  --fg-3: #424242;
+  --fg-4: #4C5056;
+  --fg-5: #626771;
+  --fg-6: #787E8A;
+  --fg-on-dark: #FFFFFF;
+  --teal: #0D8B8B;
+  --blue: #2563EB;
+  --purple: #7C3AED;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: 'Arial Nova', Arial, Helvetica, sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 10px 30px rgba(0,0,0,.10);
+  --shadow-subtle: 0 6px 18px rgba(0,0,0,.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--pwc-grey-100);
+  font-family: var(--font-body);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+.kicker {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--pwc-orange);
+}
+
+h1, h2, h3 { font-family: var(--font-display); color: var(--fg-1); font-weight: 400; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.25; margin-bottom: 16px; }
+h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: 12px; }
+
+/* Progress bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, var(--pwc-orange), var(--pwc-orange-mid), var(--pwc-orange-light));
+  z-index: 1000;
+  transition: width 0.15s;
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  top: 3px;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-brand .brand-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.nav-brand .brand-divider { color: rgba(255,255,255,0.2); }
+.nav-brand .brand-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--pwc-orange);
+  letter-spacing: 1.5px;
+}
+.nav-links { display: flex; gap: 24px; }
+.nav-links a {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--pwc-white); }
+
+/* Hero */
+.hero {
+  position: relative;
+  background: var(--pwc-black);
+  color: var(--fg-on-dark);
+  padding: 180px 0 80px;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(120% 95% at 100% -10%,
+    rgba(253,81,8,.42) 0%, rgba(253,81,8,.10) 38%, rgba(253,81,8,0) 62%);
+  pointer-events: none;
+}
+.hero > .container { position: relative; z-index: 1; }
+.hero .kicker { color: var(--pwc-orange-light); margin-bottom: 16px; display: block; }
+.hero h1 { color: var(--fg-on-dark); margin-bottom: 16px; }
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  max-width: 720px;
+  margin-top: 16px;
+  line-height: 1.7;
+}
+.hero-subtitle strong { color: var(--fg-on-dark); }
+.hero .stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+  max-width: 500px;
+}
+.hero .stat-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.hero .stat-card .value {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--pwc-orange);
+  line-height: 1;
+}
+.hero .stat-card .label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Sections */
+section { padding: 60px 0; border-bottom: 1px solid var(--pwc-grey-200); }
+section.dark { background: var(--pwc-black); color: var(--fg-on-dark); border-bottom: none; }
+section.dark h2 { color: var(--fg-on-dark); }
+section.dark .kicker { color: var(--pwc-orange-light); }
+
+/* Opportunity */
+.opportunity-text {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  max-width: 800px;
+}
+.opportunity-text strong { color: var(--fg-on-dark); font-weight: 600; }
+
+/* Pillar cards */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.pillar-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-top: 3px solid var(--pwc-orange);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.pillar-card:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+.pillar-card.teal { border-top-color: var(--teal); }
+.pillar-card.purple { border-top-color: var(--purple); }
+.pillar-card .pillar-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.pillar-card .pillar-kicker { color: var(--pwc-orange); }
+.pillar-card.teal .pillar-kicker { color: var(--teal); }
+.pillar-card.purple .pillar-kicker { color: var(--purple); }
+.pillar-card h3 { font-size: 1.2rem; margin-bottom: 12px; }
+.pillar-card .pillar-desc {
+  font-size: 0.88rem;
+  color: var(--fg-4);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.pillar-card .pillar-value {
+  background: var(--pwc-grey-50);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: var(--fg-2);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.pillar-card .pillar-invest {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--fg-6);
+}
+
+/* Revenue Impact */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 40px 0;
+}
+.metric-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.metric-card .value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--pwc-orange);
+  line-height: 1.1;
+}
+.metric-card .label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+/* Growth chart */
+.growth-chart {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius);
+  padding: 32px;
+}
+.growth-chart h3 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 28px;
+}
+.chart-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.chart-col { text-align: center; }
+.bar-stack { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.bar {
+  border-radius: var(--radius-sm);
+  padding: 12px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pwc-white);
+  text-align: center;
+}
+.bar-sprint { background: var(--pwc-orange); }
+.bar-scale { background: var(--blue); }
+.bar-enterprise { background: var(--fg-4); }
+.chart-col .year-label {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--fg-on-dark);
+  margin-bottom: 4px;
+}
+.chart-col .year-arr { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.legend-dot { width: 12px; height: 12px; border-radius: 3px; }
+.legend-dot.sprint { background: var(--pwc-orange); }
+.legend-dot.scale { background: var(--blue); }
+.legend-dot.enterprise { background: var(--fg-4); }
+
+/* Journeys section */
+.journeys-section { background: var(--pwc-grey-50); }
+
+/* Filters */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.filter-btn {
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid var(--pwc-grey-200);
+  background: var(--pwc-white);
+  color: var(--fg-4);
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: var(--font-body);
+}
+.filter-btn:hover { border-color: var(--pwc-grey-300); }
+.filter-btn.active {
+  background: var(--fg-1);
+  color: var(--pwc-white);
+  border-color: var(--fg-1);
+}
+.filter-btn.active-teal { background: var(--teal); color: var(--pwc-white); border-color: var(--teal); }
+.filter-btn.active-blue { background: var(--blue); color: var(--pwc-white); border-color: var(--blue); }
+.filter-btn.active-purple { background: var(--purple); color: var(--pwc-white); border-color: var(--purple); }
+.filter-count { margin-left: 4px; opacity: 0.6; font-size: 0.7rem; }
+
+.sector-desc {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  color: var(--fg-4);
+}
+.sector-desc strong { color: var(--fg-1); }
+.results-count { font-size: 0.88rem; color: var(--fg-5); margin-bottom: 16px; }
+.results-count strong { color: var(--fg-1); font-weight: 600; }
+
+/* Journey cards */
+.journey-card {
+  background: var(--pwc-white);
+  border: 1px solid var(--pwc-grey-200);
+  border-top: 3px solid var(--pwc-orange);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-subtle);
+  transition: box-shadow 0.2s;
+}
+.journey-card:hover { box-shadow: var(--shadow-soft); }
+.journey-card.expanded { border-top-color: var(--pwc-orange-hover); }
+.journey-header {
+  padding: 24px 28px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.journey-header:hover { background: var(--pwc-grey-50); }
+.journey-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+.journey-id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--pwc-orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-right: 12px;
+}
+.engine-tag {
+  display: inline-flex;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.engine-tag.ico { background: rgba(13,139,139,0.08); color: var(--teal); }
+.engine-tag.aeo { background: rgba(37,99,235,0.08); color: var(--blue); }
+.engine-tag.hybrid { background: rgba(124,58,237,0.08); color: var(--purple); }
+.journey-toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pwc-grey-50);
+  transition: all 0.3s;
+}
+.journey-card.expanded .journey-toggle {
+  background: var(--pwc-orange);
+  transform: rotate(180deg);
+}
+.journey-toggle svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--fg-6);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.journey-card.expanded .journey-toggle svg { stroke: var(--pwc-white); }
+.journey-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--fg-1);
+  line-height: 1.3;
+  margin: 8px 0 4px;
+}
+.journey-subtitle { font-size: 0.82rem; color: var(--fg-5); }
+.journey-metrics { display: flex; gap: 24px; margin-top: 16px; }
+.journey-metric { flex: 1; }
+.journey-metric .jm-value {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--fg-1);
+}
+.journey-metric .jm-label { font-size: 0.7rem; color: var(--fg-5); line-height: 1.4; }
+
+/* Expanded body */
+.journey-body {
+  display: none;
+  padding: 0 28px 28px;
+  border-top: 1px solid var(--pwc-grey-200);
+}
+.journey-card.expanded .journey-body { display: block; }
+.journey-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+.journey-block h4 {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-5);
+  margin-bottom: 8px;
+}
+.journey-block p { font-size: 0.88rem; color: var(--fg-3); line-height: 1.6; }
+
+/* Engagement path */
+.engagement-path {
+  display: flex;
+  border: 1px solid var(--pwc-grey-200);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 20px;
+}
+.path-step {
+  flex: 1;
+  padding: 16px 18px;
+  border-right: 1px solid var(--pwc-grey-200);
+}
+.path-step:last-child { border-right: none; }
+.path-step .step-phase { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.path-step .step-dot { width: 8px; height: 8px; border-radius: 50%; }
+.path-step.sprint .step-dot { background: var(--pwc-orange); }
+.path-step.scale .step-dot { background: var(--blue); }
+.path-step.enterprise .step-dot { background: var(--fg-2); }
+.path-step .step-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+.path-step .step-duration { font-size: 0.7rem; color: var(--fg-5); margin-bottom: 6px; }
+.path-step .step-detail { font-size: 0.78rem; color: var(--fg-4); line-height: 1.5; }
+.path-step .step-invest { font-size: 0.9rem; font-weight: 600; color: var(--fg-1); margin-top: 8px; }
+
+/* Commercial note */
+.commercial-note {
+  background: var(--pwc-orange-dim);
+  border-left: 4px solid var(--pwc-orange);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 14px 18px;
+  margin-top: 20px;
+}
+.commercial-note .note-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pwc-orange);
+  margin-bottom: 4px;
+}
+.commercial-note .note-text { font-size: 0.82rem; color: var(--fg-3); line-height: 1.5; }
+
+/* Why Now */
+.why-now-section { background: var(--pwc-white); }
+.why-now-section p {
+  font-size: 1.05rem;
+  color: var(--fg-4);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.why-now-section p strong { color: var(--fg-1); font-weight: 600; }
+
+/* Lighthouse / CTA */
+.lighthouse-section {
+  background: var(--pwc-black);
+  color: var(--fg-on-dark);
+  padding: 80px 0;
+  border-bottom: none;
+}
+.lighthouse-section h2 { color: var(--fg-on-dark); }
+.lighthouse-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+.lighthouse-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.lighthouse-card .lh-value {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--pwc-orange);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.lighthouse-card .lh-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 8px;
+}
+.lighthouse-card .lh-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.5;
+}
+.shark-tank-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin: 40px auto;
+  max-width: 900px;
+}
+.shark-tank-box .st-kicker {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--pwc-orange);
+  margin-bottom: 16px;
+}
+.shark-tank-cols {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.shark-tank-cols > div { flex: 1; min-width: 240px; }
+.shark-tank-cols .big-number {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--fg-on-dark);
+  margin-bottom: 4px;
+}
+.shark-tank-cols .big-label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+.shark-tank-cols p {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+}
+.criteria-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--fg-on-dark);
+  margin-bottom: 12px;
+}
+.criteria-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.criteria-list li {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.65);
+  padding: 6px 0 6px 18px;
+  position: relative;
+  line-height: 1.5;
+}
+.criteria-list li::before {
+  content: '\25B8';
+  position: absolute;
+  left: 0;
+  color: var(--pwc-orange);
+}
+.lighthouse-closing {
+  text-align: center;
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 40px;
+}
+.lighthouse-closing strong { color: var(--fg-on-dark); font-weight: 600; }
+
+/* Footer */
+.footer {
+  background: var(--fg-2);
+  padding: 24px;
+  text-align: center;
+  border-bottom: none;
+}
+.footer .footer-brand { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+.footer .footer-conf { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+  .metrics-row { grid-template-columns: repeat(2, 1fr); }
+  .chart-grid { grid-template-columns: 1fr; }
+  .lighthouse-grid { grid-template-columns: 1fr; }
+  .hero .stat-row { grid-template-columns: repeat(3, 1fr); }
+  .journey-grid { grid-template-columns: 1fr; }
+  .engagement-path { flex-direction: column; }
+  .path-step { border-right: none; border-bottom: 1px solid var(--pwc-grey-200); }
+  .path-step:last-child { border-bottom: none; }
+  .nav-links { display: none; }
+  .journey-metrics { flex-wrap: wrap; }
+  .shark-tank-cols { flex-direction: column; }
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav class="nav">
+  <div class="nav-brand">
+    <span class="brand-text">PwC &times; Adobe</span>
+    <span class="brand-divider">|</span>
+    <span class="brand-name">ARIA</span>
+  </div>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#pillars">How It Works</a>
+    <a href="#impact">Impact</a>
+    <a href="#journeys">Micro-Journeys</a>
+    <a href="#lighthouse">Lighthouse</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="overview" style="border-bottom:none;">
+  <div class="container">
+    <span class="kicker">PwC &times; Adobe &nbsp;&bull;&nbsp; Sales Enablement</span>
+    <h1>Agentic Revenue &amp;<br>Intelligence Accelerator</h1>
+    <p class="hero-subtitle">
+      The joint program that connects <strong>AI-driven commercial decisions</strong> to the real-time, personalized experiences that win — and keep — customers. 13 industry-specific micro-journeys. Measurable outcomes in 90 days.
+    </p>
+    <div class="stat-row" style="max-width:680px;grid-template-columns:repeat(4,1fr);">
+      <div class="stat-card">
+        <div class="value">310%</div>
+        <div class="label">ROI on Content<br>Supply Chain</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">10x</div>
+        <div class="label">Content Output<br>with Agentic AI</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">15–25%</div>
+        <div class="label">Shorter<br>Sales Cycles</div>
+      </div>
+      <div class="stat-card">
+        <div class="value">37%</div>
+        <div class="label">Faster Time<br>to Market</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY NOW -->
+<section class="dark" style="padding:60px 0;">
+  <div class="container">
+    <span class="kicker">The Market Moment</span>
+    <h2 style="color:var(--fg-on-dark);margin-bottom:8px;">Why Now</h2>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:32px;font-family:var(--font-display);">"AI doesn't wait for your quarterly campaign cycle. Neither does your competition."</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px;">
+        <h3 style="color:var(--pwc-orange);font-size:1rem;margin-bottom:12px;">The Buyer Has Changed</h3>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.8;">
+          <li style="padding-left:16px;position:relative;margin-bottom:6px;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>AI-mediated buyers are making decisions before your sales team can engage</li>
+          <li style="padding-left:16px;position:relative;margin-bottom:6px;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>The path to purchase is now real-time, contextual, and non-linear</li>
+          <li style="padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>B2B procurement agents are already buying autonomously — organizations not built for agent-to-agent commerce will be invisible at the moment of decision</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px;">
+        <h3 style="color:var(--pwc-orange);font-size:1rem;margin-bottom:12px;">The Content Gap Is Breaking the Front Office</h3>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.8;">
+          <li style="padding-left:16px;position:relative;margin-bottom:6px;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>Organizations generate real-time intelligence signals they can't act on</li>
+          <li style="padding-left:16px;position:relative;margin-bottom:6px;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>Creatives spend 21 hours per week on repetitive tasks that GenAI can automate</li>
+          <li style="padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>Content shelf life drops dramatically after one week — quarterly campaign cycles are structurally broken</li>
+        </ul>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:24px;">
+        <h3 style="color:var(--pwc-orange);font-size:1rem;margin-bottom:12px;">The Investment Is There. The Value Isn't.</h3>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.8;">
+          <li style="padding-left:16px;position:relative;margin-bottom:6px;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>75% of executives cite AI as a top-3 priority, yet 3 in 4 see no tangible value</li>
+          <li style="padding-left:16px;position:relative;margin-bottom:6px;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>~30% of revenue consumed by sales, marketing &amp; service operating costs</li>
+          <li style="padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8226;</span>Only 30% of CEOs are confident in organic revenue growth over the next 12 months</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROGRAM -->
+<section style="background:var(--pwc-white);">
+  <div class="container">
+    <span class="kicker">The Program</span>
+    <h2>What ARIA Is</h2>
+    <p style="font-size:1.05rem;color:var(--fg-4);max-width:780px;margin-bottom:32px;line-height:1.7;">ARIA connects PwC's <strong>Intelligent Customer Edge transformation architecture</strong> with Adobe's <strong>Customer Experience Orchestration platform</strong>. Together, we close the gap between AI-driven commercial decisions and the real-time, personalized experiences required to win — and keep — customers.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+      <div style="background:var(--pwc-grey-50);border:1px solid var(--pwc-grey-200);border-radius:var(--radius);padding:24px;">
+        <h3 style="font-size:1rem;color:var(--fg-1);margin-bottom:14px;">What PwC Brings</h3>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.88rem;color:var(--fg-3);line-height:2;">
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Commercial transformation architecture and delivery</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Intelligent Customer Edge operating model design</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Cross-functional orchestration: Marketing &times; Sales &times; Commerce &times; Service</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Micro-journey use case design and outcome measurement</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>India engineering pods: integration, Agent Ops, reusable assets</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Dedicated revenue-accountable growth leadership per sector</li>
+        </ul>
+      </div>
+      <div style="background:var(--pwc-grey-50);border:1px solid var(--pwc-grey-200);border-radius:var(--radius);padding:24px;">
+        <h3 style="font-size:1rem;color:var(--fg-1);margin-bottom:14px;">What Adobe Brings</h3>
+        <ul style="list-style:none;padding:0;margin:0;font-size:0.88rem;color:var(--fg-3);line-height:2;">
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>GenStudio — end-to-end content supply chain: plan, create, manage, activate, measure</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Adobe Firefly — commercially safe GenAI for on-brand content at scale</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Adobe Experience Platform (AEP) — real-time customer data foundation</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>AEP Agent Orchestrator — coordinates Adobe + third-party agents across workflows</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Adobe Journey Optimizer — real-time, cross-channel journey activation</li>
+          <li style="padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:var(--pwc-orange);">&#8594;</span>Adobe Real-Time CDP — unified profiles, identity resolution, audience activation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT PATHS -->
+<section id="pillars">
+  <div class="container">
+    <span class="kicker">The Path to Value</span>
+    <h2>Three Ways to Engage</h2>
+    <div class="pillars-grid fade-in">
+      <div class="pillar-card teal">
+        <div class="pillar-kicker">Entry Point</div>
+        <h3>ARIA Sprint</h3>
+        <div style="display:flex;gap:16px;margin-bottom:12px;">
+          <div><span style="font-size:0.7rem;color:var(--fg-5);text-transform:uppercase;letter-spacing:0.08em;">Timeline</span><br><strong style="font-size:0.95rem;">8–12 Weeks</strong></div>
+          <div><span style="font-size:0.7rem;color:var(--fg-5);text-transform:uppercase;letter-spacing:0.08em;">Investment</span><br><strong style="font-size:0.95rem;">$0–$1M</strong></div>
+        </div>
+        <div class="pillar-desc">A rapid diagnostic and live micro-journey delivering an actual business outcome. We identify the highest-value use case, deploy it with measurable KPIs, and build the business case for scale — all before significant commitment.</div>
+        <div class="pillar-value">AI maturity diagnostic &bull; 1 live micro-journey delivering a real business outcome &bull; Outcome KPI baseline and business case for scale &bull; Named account team from both PwC and Adobe</div>
+        <div class="pillar-invest">This is what we're funding in the Lighthouse program</div>
+      </div>
+      <div class="pillar-card purple">
+        <div class="pillar-kicker">Core Program</div>
+        <h3>ARIA Scale</h3>
+        <div style="display:flex;gap:16px;margin-bottom:12px;">
+          <div><span style="font-size:0.7rem;color:var(--fg-5);text-transform:uppercase;letter-spacing:0.08em;">Timeline</span><br><strong style="font-size:0.95rem;">12–16 Weeks</strong></div>
+          <div><span style="font-size:0.7rem;color:var(--fg-5);text-transform:uppercase;letter-spacing:0.08em;">Investment</span><br><strong style="font-size:0.95rem;">$5M–$15M</strong></div>
+        </div>
+        <div class="pillar-desc">2–4 connected use cases across the full content-decisioning-experience stack. Moves from proven outcome to full production. Begins building the compounding advantage.</div>
+        <div class="pillar-value">Full Content Supply Chain (GenStudio + Firefly + AEM) &bull; AEP Real-Time CDP + Journey Optimizer activation &bull; PwC commercial architecture + delivery pods &bull; Outcome-based commercial model</div>
+        <div class="pillar-invest">Where Sprint conversions land</div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-kicker">Full Transformation</div>
+        <h3>ARIA Enterprise</h3>
+        <div style="display:flex;gap:16px;margin-bottom:12px;">
+          <div><span style="font-size:0.7rem;color:var(--fg-5);text-transform:uppercase;letter-spacing:0.08em;">Timeline</span><br><strong style="font-size:0.95rem;">Multi-Year</strong></div>
+          <div><span style="font-size:0.7rem;color:var(--fg-5);text-transform:uppercase;letter-spacing:0.08em;">Investment</span><br><strong style="font-size:0.95rem;">$15M–$50M+</strong></div>
+        </div>
+        <div class="pillar-desc">Complete Intelligent Customer Edge activation with Adobe as the experience layer. Multi-year programs with managed services and recurring revenue. Adobe embedded as the permanent activation layer of the commercial engine.</div>
+        <div class="pillar-value">End-to-end Intelligent Customer Edge operating model transformation &bull; Adobe CXO platform fully integrated &bull; Managed services + Agent Ops &bull; Compounding returns through continuous optimization</div>
+        <div class="pillar-invest">Adobe becomes permanent infrastructure</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section class="dark" id="impact">
+  <div class="container">
+    <span class="kicker">License Revenue Impact</span>
+    <h2 style="color:var(--fg-on-dark);">Sprints Prove the Platform. Scale Locks in the License.</h2>
+    <div class="metrics-row fade-in">
+      <div class="metric-card">
+        <div class="value">15–25</div>
+        <div class="label">ARIA Sprints<br>Year 1</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">$2–5M</div>
+        <div class="label">Net-New ARR<br>Per Scale Conversion</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">75–85%</div>
+        <div class="label">Sprint-to-Scale<br>Conversion Target</div>
+      </div>
+      <div class="metric-card">
+        <div class="value">$50–60M</div>
+        <div class="label">Projected Net-New<br>ARR (Year 1)</div>
+      </div>
+    </div>
+    <div class="growth-chart fade-in">
+      <h3>3-Year License Growth: How Sprints Compound into Enterprise Commitments</h3>
+      <div class="chart-grid">
+        <div class="chart-col">
+          <div class="bar-stack">
+            <div class="bar bar-sprint">15–25 Sprints</div>
+            <div class="bar bar-scale">8–15 Scale</div>
+          </div>
+          <div class="year-label">Year 1</div>
+          <div class="year-arr">$50–60M net-new ARR</div>
+        </div>
+        <div class="chart-col">
+          <div class="bar-stack">
+            <div class="bar bar-sprint">20–30 Sprints</div>
+            <div class="bar bar-scale">12–20 Scale</div>
+            <div class="bar bar-enterprise">2–4 Enterprise</div>
+          </div>
+          <div class="year-label">Year 2</div>
+          <div class="year-arr">$80–110M cumulative ARR</div>
+        </div>
+        <div class="chart-col">
+          <div class="bar-stack">
+            <div class="bar bar-sprint">25–35 Sprints</div>
+            <div class="bar bar-scale">18–28 Scale</div>
+            <div class="bar bar-enterprise">5–10 Enterprise</div>
+          </div>
+          <div class="year-label">Year 3</div>
+          <div class="year-arr">$130–180M cumulative ARR</div>
+        </div>
+      </div>
+      <div class="chart-legend">
+        <div class="legend-item"><div class="legend-dot sprint"></div>Sprint ($0–$1M)</div>
+        <div class="legend-item"><div class="legend-dot scale"></div>Scale ($5–$15M)</div>
+        <div class="legend-item"><div class="legend-dot enterprise"></div>Enterprise ($15–$50M+)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEYS -->
+<section class="journeys-section" id="journeys">
+  <div class="container">
+    <span class="kicker">Where We Focus First</span>
+    <h2>Priority Sectors &amp; Micro-Journeys</h2>
+    <p style="font-size:0.95rem;color:var(--fg-4);margin-bottom:28px;max-width:700px;">Each micro-journey leads with a business outcome the client is already trying to solve. Filter by sector and engine type, then expand to see the full Sprint brief — use these to match to your account's pain.</p>
+
+    <div class="filter-row" id="sectorFilters">
+      <button class="filter-btn active" data-sector="all" onclick="filterSector('all')">All Sectors</button>
+      <button class="filter-btn" data-sector="insurance" onclick="filterSector('insurance')">Insurance <span class="filter-count">(2)</span></button>
+      <button class="filter-btn" data-sector="mmb" onclick="filterSector('mmb')">Mid-Market Banks <span class="filter-count">(2)</span></button>
+      <button class="filter-btn" data-sector="tmt" onclick="filterSector('tmt')">Telecom &amp; Tech <span class="filter-count">(3)</span></button>
+      <button class="filter-btn" data-sector="industrial" onclick="filterSector('industrial')">Industrial Products <span class="filter-count">(3)</span></button>
+      <button class="filter-btn" data-sector="hls" onclick="filterSector('hls')">Healthcare &amp; Pharma <span class="filter-count">(3)</span></button>
+    </div>
+
+    <div class="filter-row" id="engineFilters">
+      <button class="filter-btn active" data-engine="all" onclick="filterEngine('all')">All Engines</button>
+      <button class="filter-btn" data-engine="ICO" onclick="filterEngine('ICO')">ICO</button>
+      <button class="filter-btn" data-engine="AEO" onclick="filterEngine('AEO')">AEO</button>
+      <button class="filter-btn" data-engine="ICO+AEO" onclick="filterEngine('ICO+AEO')">Hybrid</button>
+    </div>
+
+    <div id="sectorDesc" class="sector-desc" style="display:none;"></div>
+    <div class="results-count" id="resultsCount"></div>
+    <div id="journeysList"></div>
+  </div>
+</section>
+
+<!-- THE SYSTEM -->
+<section class="why-now-section">
+  <div class="container fade-in">
+    <span class="kicker">The System</span>
+    <h2>The Intelligence Loop That Compounds</h2>
+    <p style="max-width:700px;margin-bottom:32px;">Every Sprint builds a compounding advantage. The system gets smarter with each interaction — content performance feeds decisioning, decisioning optimizes orchestration, orchestration generates new signals.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:24px;">
+      <div style="background:var(--pwc-grey-50);border:1px solid var(--pwc-grey-200);border-radius:var(--radius-sm);padding:16px 20px;text-align:center;flex:1;min-width:160px;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pwc-orange);margin-bottom:4px;">PwC Commercial Brain</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">Intelligence + Decisions</div>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--pwc-grey-300);font-size:1.5rem;">&#8594;</div>
+      <div style="background:var(--pwc-grey-50);border:1px solid var(--pwc-grey-200);border-radius:var(--radius-sm);padding:16px 20px;text-align:center;flex:1;min-width:160px;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pwc-orange);margin-bottom:4px;">Adobe Content Supply Chain</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">GenStudio + Firefly + AEM</div>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--pwc-grey-300);font-size:1.5rem;">&#8594;</div>
+      <div style="background:var(--pwc-grey-50);border:1px solid var(--pwc-grey-200);border-radius:var(--radius-sm);padding:16px 20px;text-align:center;flex:1;min-width:160px;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pwc-orange);margin-bottom:4px;">AEP Agent Orchestrator</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">Real-Time CDP + Journey Optimizer</div>
+      </div>
+      <div style="display:flex;align-items:center;color:var(--pwc-grey-300);font-size:1.5rem;">&#8594;</div>
+      <div style="background:var(--pwc-grey-50);border:1px solid var(--pwc-grey-200);border-radius:var(--radius-sm);padding:16px 20px;text-align:center;flex:1;min-width:160px;">
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--pwc-orange);margin-bottom:4px;">Customer Experience</div>
+        <div style="font-size:0.82rem;color:var(--fg-4);">Real-time, relevant, compounding</div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:24px;font-size:0.88rem;color:var(--fg-5);font-style:italic;font-family:var(--font-display);">"PwC orchestrates the transformation. Adobe operationalizes the experience."</p>
+  </div>
+</section>
+
+<!-- LIGHTHOUSE -->
+<section class="lighthouse-section" id="lighthouse">
+  <div class="container">
+    <span class="kicker" style="color:var(--pwc-orange-light);">Today's Session</span>
+    <h2>5 Lighthouse Clients. $400K Each. 90 Days to Prove It.</h2>
+    <p style="font-size:1rem;color:rgba(255,255,255,0.6);max-width:720px;margin-top:8px;">We're selecting 5 accounts to pilot ARIA — one from each priority sector. Joint investment. Measurable outcomes. The playbook we build together becomes the template for the industry.</p>
+
+    <div class="lighthouse-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="lighthouse-card">
+        <div class="lh-value">$400K</div>
+        <div class="lh-label">Joint Investment per Lighthouse Client</div>
+        <div class="lh-desc">Combined PwC and Adobe investment — platform access, senior consulting, strategy, and Sprint delivery.</div>
+      </div>
+      <div class="lighthouse-card">
+        <div class="lh-value">5</div>
+        <div class="lh-label">Lighthouse Clients</div>
+        <div class="lh-desc">One per priority sector. Proving one or more micro-journeys in 90 days. Building the replicable playbook for the industry.</div>
+      </div>
+      <div class="lighthouse-card">
+        <div class="lh-value">90 Days</div>
+        <div class="lh-label">Sprint to Measurable Outcome</div>
+        <div class="lh-desc">Not a prototype — an actual business outcome. Measurable results that build the case for Scale commitment.</div>
+      </div>
+    </div>
+
+    <div class="shark-tank-box">
+      <div class="st-kicker">What Happens Next: Account Planning Shark Tank</div>
+      <div class="shark-tank-cols">
+        <div>
+          <div class="big-number">30 min</div>
+          <div class="big-label">Breakout session</div>
+          <p>By industry group, identify your strongest account candidate for a lighthouse Sprint. Which client has the pain? Which has the executive access? Which will move in 90 days?</p>
+        </div>
+        <div>
+          <div class="criteria-title">We're selecting accounts based on:</div>
+          <ul class="criteria-list">
+            <li>Clear, urgent business pain that maps to a micro-journey</li>
+            <li>Executive sponsorship at the client (CMO, CCO, or CFO)</li>
+            <li>Ability to start within 30 days</li>
+            <li>Scale potential — the playbook replicates across the sector</li>
+            <li>Existing or imminent Adobe platform relationship</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <p class="lighthouse-closing">5 lighthouse clients. 5 sectors. 90-day Sprints that write the playbook for everyone else.<br><strong>Pitch your best account. The strongest 5 get funded.</strong></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" style="border-bottom:none;padding:24px;">
+  <div class="footer-brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA: Co-Invest. Co-Innovate. Co-Deliver.</div>
+  <div class="footer-conf">PwC Confidential</div>
+</footer>
+
+<script>
+const journeys = [
+  { id:"INS-01", sector:"insurance", sectorName:"Insurance", engine:"ICO", title:"Cut Compliance Content Cycles from Weeks to Days", subtitle:"Modular content architecture for multi-product, multi-jurisdiction insurance operations", metrics:[{v:"60-70%",l:"Faster Compliance Content Production"},{v:"3-5x",l:"Variant Output Without Adding Headcount"},{v:"30-40%",l:"Reduction in Cost Per Compliant Asset"}], problem:"Carriers produce thousands of content variants annually across product lines, state jurisdictions, and distribution channels. Each variant requires legal and compliance review, creating production cycles measured in weeks. Marketing teams spend more time managing the variant production process than driving customer engagement.", outcome:"One high-volume content stream is restructured into modular, reusable components with compliance rules encoded at the component level. Production time drops dramatically. Compliance review cycles shrink because only new or modified components enter the review queue.", howItWorks:"ARIA Sprint uses GenStudio and AEM Assets in a trial environment to build the modular content hub with compliance-aware metadata. PwC's Regulated Content Orchestrator (RCO) governs the compliance workflow. Firefly Custom Models accelerate variant generation within brand and compliance guardrails.", pwcRole:"Insurance regulatory expertise ensures the compliance encoding is accurate and defensible. This is compliance operations modernization with marketing efficiency as a co-benefit.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one content stream. Trial environment. Live prototype with compliance team validation.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"All product lines. Full GenStudio + AEM licensing. Compliance workflow integration.",invest:"$5-$10M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full content ops transformation across all distribution channels. Managed services.",invest:"$15M+"}], commercial:"Compliance content pain is acute enough that the business case for Scale typically writes itself from Sprint findings. Consider outcome-based pricing tied to production cycle reduction." },
+  { id:"INS-02", sector:"insurance", engine:"AEO", title:"Recover At-Risk Renewals 90 Days Before the Decision Window", subtitle:"Signal-driven retention orchestration aligned to predictable policy renewal cycles", metrics:[{v:"90 Days",l:"Earlier Identification of At-Risk Renewals"},{v:"10-15%",l:"Retention Improvement for Flagged Cohort"},{v:"$$$",l:"Retained Premium Revenue, Quantified"}], problem:"Renewal dates are known in advance, yet most carriers still rely on batch renewal campaigns sent at fixed intervals. Behavioral indicators like engagement decay and quote-shopping behavior are scattered across systems. By the time someone flags the risk, the policyholder has already started shopping.", outcome:"A behavioral early warning system identifies at-risk policies based on engagement signal patterns, not just renewal proximity. Tiered retention journeys are triggered when behavior matches historical churn patterns. The 90-day outcome is retained premium revenue measured in dollars.", howItWorks:"ARIA Sprint uses AEP in a sandbox or limited deployment to ingest behavioral signals and build the risk score. AJO orchestrates retention journeys. Marketo handles execution where an existing instance is available.", pwcRole:"Insurance domain expertise to interpret behavioral signals in the context of policy economics and distribution dynamics. The risk score reflects how policyholders actually behave before lapsing.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove risk score and retention model on one policy book. Limited AEP deployment.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full book. AEP + AJO + Real-Time CDP. Agency management and claims integration.",invest:"$5-$12M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full customer lifecycle: acquisition, servicing, renewal. Managed services.",invest:"$15M+"}], commercial:"Strongest candidate for gain-sharing. Retained premium revenue is directly measurable. Consider a base fee plus performance component tied to retention rate improvement." },
+  { id:"MMB-01", sector:"mmb", engine:"ICO", title:"Make a 10-Person Team Produce Like a 40-Person Team", subtitle:"Modular content operations for resource-constrained bank marketing teams", metrics:[{v:"3-5x",l:"Content Output Increase"},{v:"50%",l:"Reduction in Per-Campaign Production Cost"},{v:"40%",l:"Faster Time-to-Market"}], problem:"Marketing teams manage content across deposit products, lending, wealth, commercial banking, and community engagement with fewer than 20 people. Every campaign starts from scratch. Your team spends its time on production, not strategy. You're not losing on strategy. You're losing on capacity.", outcome:"One product line's content operations transforms from campaign-by-campaign production to modular, component-based assembly. The team produces 3-5x the output without adding headcount, at roughly half the per-campaign cost.", howItWorks:"ARIA Sprint uses GenStudio and AEM Assets in a trial configuration to build the modular content hub. Firefly accelerates variant generation. PwC's Regulated Content Orchestrator (RCO) manages compliance workflows for deposit disclosures and lending materials.", pwcRole:"Operating model design: not just the tools, but how the team's roles and workflows change to sustain the new model. A 10-person team can't absorb a complex technology deployment. The operating model has to be right-sized.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove the model on one product line. Trial environment. Measurable output and cost improvement.",invest:"$250K-$500K"},{phase:"Scale",dur:"12-16 Weeks",detail:"All product lines and channels. Full licensing. Core banking content integration.",invest:"$3-$8M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full marketing ops transformation. Managed services.",invest:"$10M+"}], commercial:"Mid-market banks are cost-sensitive. Right-size the Sprint to $250K-$500K with a clear self-funding path. Consider subscription-based managed services for Scale." },
+  { id:"MMB-02", sector:"mmb", engine:"AEO", title:"Detect Cross-Sell Signals and Act on Them in Real Time", subtitle:"Signal-driven lifecycle orchestration for deposit deepening and lending growth", metrics:[{v:"10-20%",l:"Cross-Sell Conversion Improvement"},{v:"Real-Time",l:"Signal Detection Replaces Batch Targeting"},{v:"$$$",l:"Incremental Revenue From Activated Signals"}], problem:"You sit on a goldmine of behavioral signals you can't act on. A checking customer increases their direct deposit. A business client's transaction volume spikes. These signals indicate readiness for the next product, but your team is running quarterly campaigns targeting static segments defined months ago.", outcome:"For one product pairing, a signal-driven system detects behavioral readiness and triggers personalized outreach in real time. The 90-day outcome is a measurable increase in cross-sell conversion, backed by clear data.", howItWorks:"ARIA Sprint uses AEP in a limited deployment to ingest behavioral signals from available sources. AJO or Marketo orchestrates signal-driven journeys. Target optimizes digital touchpoints.", pwcRole:"Signal model and journey logic design based on banking domain expertise. Which transaction patterns actually predict product readiness? This is commercial intelligence design grounded in how mid-market banking customers actually behave.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one product pairing. Limited AEP. Head-to-head vs. batch campaigns.",invest:"$250K-$500K"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full product portfolio. AEP + AJO + Real-Time CDP. Core banking and CRM integration.",invest:"$5-$10M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full lifecycle orchestration. Predictive models. Managed services.",invest:"$10M+"}], commercial:"Incremental cross-sell revenue is directly measurable. Strong candidate for performance-linked pricing where a portion of the fee is tied to conversion improvement." },
+  { id:"TMT-01", sector:"tmt", engine:"ICO", title:"End the Content Fragmentation Tax", subtitle:"Unified content operations across product lines, verticals, and buyer personas", metrics:[{v:"40-60%",l:"Reduction in Content Duplication"},{v:"50%",l:"Faster Time-to-Market"},{v:"3-4x",l:"Variant Output Per Content Investment"}], problem:"You accumulate content debt the way engineering accumulates technical debt. Every product launch, vertical campaign, and partner program produces its own content. The cost isn't just production. It's brand inconsistency, slow time-to-market, and an inability to personalize at the account level.", outcome:"One product line or vertical's content is restructured from campaign-specific assets into a modular, component-based architecture. Duplication is identified and eliminated. Production workflow redesigned for assembly rather than creation.", howItWorks:"ARIA Sprint uses GenStudio and AEM Assets in a trial environment. Firefly Custom Models generate brand-consistent variants. Workfront orchestrates production. Sprint leverages existing licenses where possible.", pwcRole:"Content strategy and operating model design that turns a technology deployment into a sustainable capability. Content architecture, taxonomy design, team restructuring, and workflow redesign.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one product line or vertical. Trial environment. Duplication audit + modular prototype.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Enterprise-wide. Full GenStudio + AEM + Workfront licensing.",invest:"$5-$12M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Global content ops. AI-driven creation. Managed services.",invest:"$15M+"}], commercial:"Production cost reduction and time-to-market improvement are directly measurable. Sprint should leverage existing licenses where possible and demonstrate incremental value." },
+  { id:"TMT-02", sector:"tmt", engine:"AEO", title:"Replace Batch ABM with Signal-Driven Account Engagement", subtitle:"Real-time orchestration for enterprise accounts with complex buying committees", metrics:[{v:"25-35%",l:"Engagement Lift Over Batch ABM"},{v:"20-30%",l:"Faster Buying Stage Progression"},{v:"Pipeline",l:"Measurable Deal Velocity Improvement"}], problem:"You've invested heavily in ABM, but it still operates in batch mode. The committee has 6-12 members with different roles and concerns. A batch campaign treats the account as a monolith. Sales can't tell which accounts are genuinely in-market.", outcome:"For 15-25 target accounts, ABM shifts from batch to signal-driven. Individual buying committee members receive engagement tailored to their role, triggered by behavior rather than calendar.", howItWorks:"ARIA Sprint uses AEP (limited deployment) for account and individual behavioral signals. AJO orchestrates role-specific journeys. Marketo handles execution. Analytics closes the loop.", pwcRole:"Signal model and buying committee engagement architecture based on B2B sales cycle expertise. This is an engagement architecture built on how enterprise deals actually unfold.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on 15-25 accounts. Limited AEP. Head-to-head vs. batch ABM.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full target account portfolio. AEP + AJO + Real-Time CDP. CRM and intent data integration.",invest:"$8-$15M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full account-based revenue orchestration. Managed services.",invest:"$15M+"}], commercial:"Pipeline acceleration resonates with both CMO and CRO. Consider a performance component tied to engagement lift or pipeline velocity." },
+  { id:"TMT-03", sector:"tmt", engine:"AEO", title:"Turn Retention from a Renewal Campaign into a Continuous System", subtitle:"Signal-driven churn detection and orchestrated retention for B2B subscriptions", metrics:[{v:"15-20%",l:"Net Revenue Retention Improvement"},{v:"60-90 Days",l:"Earlier Churn Risk Detection"},{v:"$$$",l:"ARR Preserved, Quantified"}], problem:"Net revenue retention drives your valuation. Despite this, retention efforts concentrate in the final 90 days before renewal. Disengagement signals were visible months earlier. Nobody synthesizes them into a real-time picture of account health.", outcome:"A behavioral early warning system detects disengagement 60-90 days before your current process would flag a risk. Automated retention plays intervene at the moment of signal detection.", howItWorks:"ARIA Sprint uses AEP (sandbox/limited) to ingest marketing and engagement signals. AJO orchestrates tiered retention journeys. Scale integrates product usage and support data through full AEP deployment.", pwcRole:"Retention economics modeling and intervention design based on B2B SaaS lifecycle expertise. The health score reflects how B2B customers actually disengage: gradually, across multiple channels.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one segment. Marketing-owned signals. Limited AEP. Measurable ARR impact.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full customer base. AEP + AJO + Real-Time CDP. Product usage integration.",invest:"$5-$12M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full lifecycle orchestration. Predictive churn models. Expansion detection.",invest:"$15M+"}], commercial:"ARR preserved is the clearest outcome metric in B2B tech. Strongest candidate for gain-sharing: base fee plus percentage of ARR preserved above baseline." },
+  { id:"IND-01", sector:"industrial", engine:"ICO", title:"Unify the Technical Content Chaos Across Your Product Portfolio", subtitle:"Modular content operations for specs, configurators, and dealer enablement", metrics:[{v:"50-60%",l:"Faster Technical Content Updates"},{v:"70%+",l:"Reduction in Cross-Channel Inconsistency"},{v:"3x",l:"Dealer-Ready Content Output"}], problem:"Your product portfolio generates thousands of technical assets produced in silos by product line. When a product changes, the update cascade takes weeks. Dealers work with outdated materials.", outcome:"One product family's technical content is restructured into modular, component-based architecture. A single source update cascades automatically across all formats and channels.", howItWorks:"ARIA Sprint uses GenStudio and AEM Assets in a trial environment. Workfront orchestrates production workflows. PwC's Regulated Content Orchestrator (RCO) provides compliance-aware governance for safety documentation.", pwcRole:"Industrial product expertise to design content architecture that accounts for technical specifications, regulatory requirements, and multi-tier channel distribution.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one product family. Trial environment. Live prototype with real data.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full portfolio. AEM + GenStudio licensing. PIM/PLM integration.",invest:"$5-$10M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Global technical content ops. AI-driven generation. Commerce integration.",invest:"$15M+"}], commercial:"Often the strongest door opener where no Adobe Experience Cloud exists. Anchor value on update cycle time and dealer satisfaction." },
+  { id:"IND-02", sector:"industrial", engine:"ICO+AEO", title:"Arm Your Channel Partners to Sell Like Your Best Direct Team", subtitle:"Personalized dealer and distributor enablement with intelligent content delivery", metrics:[{v:"20-30%",l:"Increase in Partner Content Engagement"},{v:"Personalized",l:"Content by Partner Segment & Focus"},{v:"Real-Time",l:"Partners Always Access Current Content"}], problem:"Your dealers and distributors sell your products, but they're working with outdated, generic materials. Every partner gets the same content regardless of segment or specialization.", outcome:"For one partner segment, enablement shifts from batch distribution to personalized, signal-responsive delivery. Partners receive content tailored to their product focus, market, and selling patterns.", howItWorks:"ARIA Sprint combines AEM Assets (modular content hub) with AJO or Marketo (personalized delivery) in a trial environment. Partner portal integrates with existing platforms.", pwcRole:"Partner segmentation and enablement architecture informed by how industrial distribution actually works. Channel strategy, content mapping, and engagement design.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove personalized enablement on one partner segment. Real engagement data.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"All partner segments. Full licensing. Partner management and CRM integration.",invest:"$5-$8M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full partner experience platform. AI content recommendations. Managed services.",invest:"$15M+"}], commercial:"ROI measured through partner engagement and partner-attributed revenue. Consider co-funding the Sprint with the channel organization." },
+  { id:"IND-03", sector:"industrial", engine:"AEO", title:"Turn Long-Cycle B2B Sales from Quarterly Check-Ins to Continuous Engagement", subtitle:"Signal-driven account orchestration for complex, multi-stakeholder industrial deals", metrics:[{v:"15-25%",l:"Reduction in Sales Cycle Length"},{v:"30%+",l:"Increase in Multi-Stakeholder Engagement"},{v:"Pipeline",l:"Measurable Deal Velocity Improvement"}], problem:"Sales cycles run 6-18 months with engineering, procurement, operations, finance, and executive stakeholders. Between quarterly reviews and trade shows, the account goes dark.", outcome:"For 10-20 target accounts, engagement shifts from episodic to continuous. Individual stakeholders receive content matched to their role. Sales gets real-time intelligence.", howItWorks:"ARIA Sprint uses AEP (limited deployment) for account and stakeholder signals. AJO orchestrates role-specific journeys. Marketo handles execution. Analytics closes the loop.", pwcRole:"Signal models that reflect how complex B2B decisions actually unfold in industrial markets. Multi-stakeholder buying committee dynamics and relationship-driven selling patterns.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on 10-20 accounts. Limited AEP. Real-time intelligence dashboards for sales.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full target portfolio. AEP + AJO + Real-Time CDP. CRM and intent data integration.",invest:"$8-$15M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full account-based revenue orchestration. Predictive scoring. Commerce integration.",invest:"$15M+"}], commercial:"Deal velocity is directly measurable and high-impact where individual deals are worth millions." },
+  { id:"HLS-01", sector:"hls", engine:"ICO", title:"Cut HCP Content Production Cycles by 60% Without Compromising Compliance", subtitle:"Modular, compliance-governed content operations for HCP engagement", metrics:[{v:"60%",l:"Faster HCP Content Production"},{v:"4-6x",l:"Compliant Variant Output"},{v:"Zero",l:"Increase in Compliance Exceptions"}], problem:"You produce thousands of HCP-facing assets annually across therapeutic areas. Every asset requires MLR review, adding weeks or months. HCPs expect personalized content. You deliver generic assets on a quarterly cycle.", outcome:"One therapeutic area's HCP content is restructured into modular, compliance-governed components. MLR-approved elements assemble into compliant variants without re-reviewing the entire asset.", howItWorks:"ARIA Sprint uses GenStudio and AEM Assets in trial environment. PwC's Regulated Content Orchestrator (RCO) governs the MLR workflow with automated routing and variant-level compliance tracking. Firefly generates compliant variants.", pwcRole:"Deep healthcare regulatory expertise ensures compliance encoding is rigorous and defensible. Position as compliance modernization with marketing efficiency as a co-benefit.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one TA. Trial environment. Compliance team validation.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"All TAs and geographies. Full GenStudio + AEM with RCO. Veeva/PromoMats integration.",invest:"$8-$15M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Global HCP content ops. AI-driven generation. Omnichannel orchestration.",invest:"$15M+"}], commercial:"The compliance angle opens doors beyond the CMO. CFOs and CCOs care about risk reduction. Position Sprint as compliance modernization." },
+  { id:"HLS-02", sector:"hls", engine:"AEO", title:"From Batch HCP Campaigns to Signal-Driven Engagement That Respects the Rules", subtitle:"Compliant, personalized HCP journey orchestration across channels", metrics:[{v:"20-35%",l:"HCP Engagement Lift"},{v:"Compliant",l:"Full Regulatory Governance Maintained"},{v:"Real-Time",l:"Signal-Driven Replaces Batch Cadence"}], problem:"Regulatory complexity has pushed most pharma organizations toward batch engagement: scheduled campaigns, fixed cadences. The result is compliant but generic and increasingly ineffective.", outcome:"For one TA and one HCP segment, engagement shifts from batch to signal-driven with compliance governance built into the journey architecture. Measurable engagement lift with zero increase in compliance exceptions.", howItWorks:"ARIA Sprint uses AEP (limited deployment) for HCP engagement signals. AJO orchestrates signal-driven journeys. PwC's RCO governs the content compliance layer.", pwcRole:"Compliance-governed journey architectures that satisfy medical affairs and legal requirements. A compliant engagement system with marketing intelligence built in.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one TA, one HCP segment. Limited AEP. Head-to-head vs. batch.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full therapeutic portfolio. AEP + AJO + Real-Time CDP. CRM integration.",invest:"$8-$15M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full omnichannel HCP engagement. AI-driven personalization. Managed services.",invest:"$15M+"}], commercial:"Pharma requires rigorous proof before scaling. Position Sprint as a joint PwC-Adobe investment to reduce client risk." },
+  { id:"HLS-03", sector:"hls", engine:"AEO", title:"Orchestrate Patient and Member Journeys That Actually Drive Outcomes", subtitle:"Signal-driven engagement for adherence, onboarding, and wellness programs", metrics:[{v:"15-25%",l:"Engagement & Completion Rate Improvement"},{v:"Personalized",l:"Journeys Adapted to Individual Behavior"},{v:"Outcomes",l:"Measurable Health or Utilization Impact"}], problem:"You invest heavily in patient and member programs. Most run on fixed schedules with generic content. Engagement rates are low and declining. Patients who need the most support are often the least engaged.", outcome:"One program transforms from fixed-schedule to signal-driven. The journey adapts to individual behavior. Patients showing disengagement get proactive intervention. HIPAA governance embedded.", howItWorks:"ARIA Sprint uses AEP (limited, HIPAA-compliant deployment) for behavioral signals. AJO orchestrates adaptive journeys with compliance governance embedded.", pwcRole:"Journeys aligned with clinical protocols and regulatory requirements. Framed as clinical engagement improvement to secure sponsorship from clinical and operations leadership.", path:[{phase:"Sprint",dur:"8-12 Weeks",detail:"Prove on one program or condition. Limited AEP. Measurable completion rate improvement.",invest:"$0-$1M"},{phase:"Scale",dur:"12-16 Weeks",detail:"Full program portfolio. AEP + AJO + Real-Time CDP. EHR and claims integration.",invest:"$8-$15M"},{phase:"Enterprise",dur:"Multi-Year",detail:"Full patient/member engagement platform. Predictive models. Managed services.",invest:"$15M+"}], commercial:"Frame around health outcomes and utilization impact, not marketing metrics." }
+];
+
+const sectorDescriptions = {
+  insurance: "Regulatory complexity creates massive content operations burden — compliance variants, localization, product disclosures at scale. Real-time personalization at the policy and product level is a category differentiator; agent-to-agent commerce is emerging in institutional markets.",
+  mmb: "Same competitive pressures as the largest institutions, a fraction of the marketing resources. Efficiency gains from ICO and AEO are proportionally larger because the baseline is so much lower. Mid-market banks that solve content velocity and signal-driven engagement first will punch well above their weight.",
+  tmt: "Content velocity demands are existential — TMT brands manage thousands of SKUs, promotions, and segments simultaneously. Churn economics make retention orchestration high-stakes; B2B tech companies face intense pressure to personalize at account level.",
+  industrial: "Complex product portfolios, multi-tier distribution, and long B2B sales cycles create massive content fragmentation across technical specs, configurators, and dealer networks. Personalized account engagement and AI-driven content operations at scale are structural competitive advantages in markets where digital maturity lags.",
+  hls: "The regulatory environment makes content governance and compliance tracking a major unsolved pain point. HCP personalization at scale — compliant, segmented, jurisdictionally appropriate — is a massive opportunity; patient and member engagement journeys benefit from orchestrated, personalized experiences."
+};
+const sectorNames = { insurance:"Insurance", mmb:"Mid-Market Banks", tmt:"Telecom & Technology (B2B)", industrial:"Industrial Products", hls:"Healthcare, Life Sciences & Pharma" };
+
+let activeSector = 'all';
+let activeEngine = 'all';
+let expandedId = null;
+
+function filterSector(sector) {
+  activeSector = sector;
+  document.querySelectorAll('#sectorFilters .filter-btn').forEach(b => b.classList.toggle('active', b.dataset.sector === sector));
+  renderJourneys();
+}
+function filterEngine(engine) {
+  activeEngine = engine;
+  document.querySelectorAll('#engineFilters .filter-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.engine === engine);
+    b.classList.remove('active-teal','active-blue','active-purple');
+    if (b.dataset.engine === engine && engine !== 'all') {
+      if (engine === 'ICO') b.classList.add('active-teal');
+      else if (engine === 'AEO') b.classList.add('active-blue');
+      else b.classList.add('active-purple');
+    }
+  });
+  renderJourneys();
+}
+function toggleJourney(id) { expandedId = expandedId === id ? null : id; renderJourneys(); }
+function getEngineClass(e) { return e === 'ICO' ? 'ico' : e === 'AEO' ? 'aeo' : 'hybrid'; }
+function getEngineLabel(e) { return e === 'ICO' ? 'Intelligent Content Ops' : e === 'AEO' ? 'Autonomous Experience Orch.' : 'ICO + AEO'; }
+
+function renderJourneys() {
+  const filtered = journeys.filter(j => {
+    return (activeSector === 'all' || j.sector === activeSector) && (activeEngine === 'all' || j.engine === activeEngine);
+  });
+  const descEl = document.getElementById('sectorDesc');
+  if (activeSector !== 'all') { descEl.style.display = 'block'; descEl.innerHTML = '<strong>' + sectorNames[activeSector] + ':</strong> ' + sectorDescriptions[activeSector]; }
+  else { descEl.style.display = 'none'; }
+  document.getElementById('resultsCount').innerHTML = 'Showing <strong>' + filtered.length + '</strong> micro-journey' + (filtered.length !== 1 ? 's' : '');
+
+  let html = '';
+  filtered.forEach(j => {
+    const expanded = expandedId === j.id;
+    html += '<div class="journey-card' + (expanded ? ' expanded' : '') + '">';
+    html += '<div class="journey-header" onclick="toggleJourney(\'' + j.id + '\')">';
+    html += '<div class="journey-top"><div style="flex:1;min-width:0">';
+    html += '<div style="display:flex;align-items:center;gap:12px;margin-bottom:8px">';
+    html += '<span class="journey-id">' + j.id + '</span>';
+    html += '<span class="engine-tag ' + getEngineClass(j.engine) + '">' + getEngineLabel(j.engine) + '</span>';
+    html += '</div>';
+    html += '<div class="journey-title">' + j.title + '</div>';
+    html += '<div class="journey-subtitle">' + j.subtitle + '</div>';
+    html += '</div>';
+    html += '<div class="journey-toggle"><svg viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg></div></div>';
+    html += '<div class="journey-metrics">';
+    j.metrics.forEach(m => { html += '<div class="journey-metric"><div class="jm-value">' + m.v + '</div><div class="jm-label">' + m.l + '</div></div>'; });
+    html += '</div></div>';
+    html += '<div class="journey-body"><div class="journey-grid">';
+    html += '<div class="journey-block"><h4>The Problem</h4><p>' + j.problem + '</p></div>';
+    html += '<div class="journey-block"><h4>What Changes in 90 Days</h4><p>' + j.outcome + '</p></div></div>';
+    html += '<div class="journey-grid">';
+    html += '<div class="journey-block"><h4>How the Sprint Works</h4><p>' + j.howItWorks + '</p></div>';
+    html += '<div class="journey-block"><h4>PwC\'s Role</h4><p>' + j.pwcRole + '</p></div></div>';
+    html += '<div class="engagement-path">';
+    j.path.forEach(s => {
+      html += '<div class="path-step ' + s.phase.toLowerCase() + '"><div class="step-phase"><div class="step-dot"></div><span class="step-name">' + s.phase + '</span></div>';
+      html += '<div class="step-duration">' + s.dur + '</div><div class="step-detail">' + s.detail + '</div><div class="step-invest">' + s.invest + '</div></div>';
+    });
+    html += '</div>';
+    html += '<div class="commercial-note"><div class="note-label">Commercial Model</div><div class="note-text">' + j.commercial + '</div></div>';
+    html += '</div></div>';
+  });
+  if (filtered.length === 0) html = '<div style="text-align:center;padding:60px 0;color:var(--fg-5)"><p>No micro-journeys match the current filters.</p><button onclick="filterSector(\'all\');filterEngine(\'all\')" style="margin-top:12px;color:var(--pwc-orange);font-weight:500;cursor:pointer;border:none;background:none;font-size:14px;font-family:var(--font-body)">Clear filters</button></div>';
+  document.getElementById('journeysList').innerHTML = html;
+}
+
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  document.getElementById('progressBar').style.width = (p * 100) + '%';
+}, { passive: true });
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+renderJourneys();
+</script>
+</body>
+</html>

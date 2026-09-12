@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARIA: Co-Invest. Co-Innovate. Co-Deliver.</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue: #2E75B6;
+    --teal: #0D8B8B;
+    --orange: #E87722;
+    --dark: #1a1a2e;
+    --mid: #4a4a5a;
+    --light: #f7f8fa;
+    --white: #ffffff;
+    --purple: #7B5EA7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--light); -webkit-font-smoothing: antialiased; }
+
+  .page {
+    width: 8.5in;
+    height: 11in;
+    margin: 0.5in auto;
+    background: var(--white);
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .top-bar {
+    background: var(--navy);
+    padding: 0.18in 0.45in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .top-bar .brand { font-size: 10px; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+  .top-bar .label { font-size: 9px; color: var(--orange); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+
+  .hero {
+    padding: 0.2in 0.45in 0.15in;
+    border-bottom: 3px solid var(--orange);
+    flex-shrink: 0;
+  }
+  .hero h1 { font-family: 'DM Serif Display', serif; font-size: 27px; color: var(--navy); line-height: 1.15; font-weight: 400; margin-bottom: 4px; }
+  .hero .sub { font-size: 10.5px; color: var(--mid); line-height: 1.4; }
+
+  .body {
+    padding: 0.15in 0.45in;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.13in;
+  }
+
+  .label-bar {
+    font-size: 7.5px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--navy); font-weight: 700; padding-bottom: 2px;
+    border-bottom: 1.5px solid var(--navy); display: inline-block; margin-bottom: 4px;
+  }
+  .body-text { font-size: 10px; color: var(--dark); line-height: 1.55; }
+  .body-text strong { color: var(--navy); }
+
+  .three-col { display: flex; gap: 0.15in; }
+  .col-card {
+    flex: 1; background: var(--light); border-radius: 3px;
+    padding: 0.1in 0.13in; border-top: 3px solid var(--blue);
+  }
+  .col-card.teal { border-top-color: var(--teal); }
+  .col-card.purple { border-top-color: var(--purple); }
+  .col-card.orange { border-top-color: var(--orange); }
+  .col-card .card-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; }
+  .col-card.teal .card-title { color: var(--teal); }
+  .col-card.purple .card-title { color: var(--purple); }
+  .col-card.orange .card-title { color: var(--orange); }
+  .col-card .card-text { font-size: 9px; color: var(--mid); line-height: 1.45; }
+  .col-card .card-invest { margin-top: 4px; font-size: 8px; font-weight: 600; color: var(--dark); }
+
+  .return-box {
+    background: var(--navy); border-radius: 4px; padding: 0.1in 0.2in;
+    display: flex; gap: 0.2in; align-items: center;
+  }
+  .return-box .ret-col { flex: 1; text-align: center; }
+  .return-box .ret-num { font-size: 17px; font-weight: 700; color: var(--orange); line-height: 1; margin-bottom: 2px; }
+  .return-box .ret-label { font-size: 7px; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.25; }
+  .return-box .ret-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.15); flex-shrink: 0; }
+
+  .growth-section {
+    display: flex;
+    gap: 0.25in;
+    height: 2in;
+    flex-shrink: 0;
+  }
+  .growth-chart {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+  }
+  .growth-chart .chart-area {
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.3in;
+    padding: 0.06in 0.2in 0;
+    justify-content: center;
+  }
+  .year-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+    max-width: 2in;
+  }
+  .bar-stack {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: stretch;
+  }
+  .bar {
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8.5px;
+    font-weight: 600;
+    color: var(--white);
+    min-height: 16px;
+  }
+  .bar-sprint { background: var(--orange); }
+  .bar-scale { background: var(--blue); }
+  .bar-enterprise { background: var(--navy); }
+  .year-label { font-size: 10px; font-weight: 700; color: var(--navy); }
+  .year-arr { font-size: 9px; color: var(--mid); font-weight: 600; margin-top: 1px; }
+
+  .growth-legend {
+    flex: 0.7;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 0.22in;
+    gap: 0.1in;
+  }
+  .legend-item { display: flex; align-items: flex-start; gap: 7px; }
+  .legend-dot { width: 11px; height: 11px; border-radius: 2px; flex-shrink: 0; margin-top: 1px; }
+  .legend-dot.sprint { background: var(--orange); }
+  .legend-dot.scale { background: var(--blue); }
+  .legend-dot.enterprise { background: var(--navy); }
+  .legend-text { font-size: 8.5px; color: var(--mid); line-height: 1.4; }
+  .legend-text strong { color: var(--dark); }
+
+  .growth-total {
+    text-align: center;
+    padding: 0.06in 0;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 0.04in;
+  }
+  .growth-total span { font-size: 9px; color: var(--navy); font-weight: 700; }
+
+  .footer-strip {
+    background: var(--navy);
+    padding: 0.1in 0.45in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .footer-strip .cta { font-size: 9px; color: var(--white); font-weight: 600; line-height: 1; }
+  .footer-strip .conf { font-size: 7px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; line-height: 1; }
+
+  @media print { body { background: white; } .page { box-shadow: none; margin: 0; } }
+</style>
+</head>
+<body>
+
+<div class="page">
+  <div class="top-bar">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA</span>
+    <span class="label">Conversation Draft</span>
+  </div>
+
+  <div class="hero">
+    <h1>ARIA: Co-Invest. Co-Innovate. Co-Deliver.</h1>
+    <div class="sub">Putting Adobe at the heart of the Agentic Front Office. PwC has built the most comprehensive commercial model for how the enterprise front office transforms in the age of AI, and Adobe is the activation platform at its center. ARIA is the joint investment model to take it to market.</div>
+  </div>
+
+  <div class="body">
+
+    <div>
+      <div class="label-bar">The Opportunity</div>
+      <div class="body-text">
+        Adobe wins enterprise CX deals. The challenge is what happens after the signature. Sales cycles are long, value realization is slow, and adoption gaps create attrition risk at renewal. Change management remains the hardest part of every deployment. Meanwhile, the democratization of content creation through AI is reshaping the agency model, with more organizations bringing content operations in-house. This creates both urgency and opportunity: Adobe needs clients realizing value faster, scaling adoption deeper, and seeing measurable returns well before the renewal conversation. ARIA is designed to do exactly that. Pre-wired Sprint infrastructure compresses time-to-value. Proven micro-journeys accelerate adoption by showing results in 90 days, not 18 months. And the business case architecture builds the CFO-grade evidence that makes renewal and expansion decisions straightforward. The faster clients see value, the faster they commit, expand, and stay.
+      </div>
+    </div>
+
+    <div>
+      <div class="label-bar">Three Ways We Accelerate Together</div>
+      <div class="three-col">
+        <div class="col-card teal">
+          <div class="card-title">Co-Invest: Sprint Infrastructure</div>
+          <div class="card-text">Pre-wired foundations per sector fusing PwC assets with Adobe's platform: AEP schemas, GenStudio configurations, PwC's Regulated Content Orchestrator (RCO) for compliance workflows, integration adapters, and journey templates. Eliminates cold-start friction. Clients see value faster. Sprints convert to license commitments at a higher rate.</div>
+          <div class="card-invest">Recurring investment per sector</div>
+        </div>
+        <div class="col-card purple">
+          <div class="card-title">Co-Innovate: Product Intelligence</div>
+          <div class="card-text">Every ARIA Sprint generates enterprise deployment data: how AEP performs in regulated environments, where Agent Orchestrator and Adobe's agentic capabilities land with clients, and what patterns drive adoption. Quarterly insight reports give Adobe's product team a direct line to enterprise reality as these offerings mature.</div>
+          <div class="card-invest">Joint insight program</div>
+        </div>
+        <div class="col-card orange">
+          <div class="card-title">Co-Deliver: Client Conversion</div>
+          <div class="card-text">A jointly-funded Value Architect in each Sprint builds the CFO-grade business case that drives the client's license decision. The Scale Investment Brief is the document that turns a successful prototype into a signed license agreement.</div>
+          <div class="card-invest">Per-Sprint joint funding</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="label-bar">License Revenue Impact</div>
+      <div class="return-box">
+        <div class="ret-col">
+          <div class="ret-num">15-25</div>
+          <div class="ret-label">ARIA Sprints<br>Year 1</div>
+        </div>
+        <div class="ret-divider"></div>
+        <div class="ret-col">
+          <div class="ret-num">$2-5M</div>
+          <div class="ret-label">Net-New ARR<br>Per Scale Conversion</div>
+        </div>
+        <div class="ret-divider"></div>
+        <div class="ret-col">
+          <div class="ret-num">75-85%</div>
+          <div class="ret-label">Sprint-to-Scale<br>Conversion Target</div>
+        </div>
+        <div class="ret-divider"></div>
+        <div class="ret-col">
+          <div class="ret-num">$50-60M</div>
+          <div class="ret-label">Projected Net-New<br>ARR (Year 1)</div>
+        </div>
+        <div class="ret-divider"></div>
+        <div class="ret-col">
+          <div class="ret-num">Compounds</div>
+          <div class="ret-label">Every Sprint Improves<br>the Foundation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="growth-section">
+      <div class="growth-chart">
+        <div class="label-bar">3-Year License Growth: How Sprints Compound into Enterprise Commitments</div>
+        <div class="chart-area">
+          <div class="year-col">
+            <div class="bar-stack">
+              <div class="bar bar-sprint" style="height: 50px;">15-25 Sprints</div>
+              <div class="bar bar-scale" style="height: 30px;">8-15 Scale</div>
+            </div>
+            <div class="year-label">Year 1</div>
+            <div class="year-arr">$50-60M net-new ARR</div>
+          </div>
+          <div class="year-col">
+            <div class="bar-stack">
+              <div class="bar bar-sprint" style="height: 42px;">20-30 Sprints</div>
+              <div class="bar bar-scale" style="height: 40px;">12-20 Scale</div>
+              <div class="bar bar-enterprise" style="height: 20px;">2-4 Enterprise</div>
+            </div>
+            <div class="year-label">Year 2</div>
+            <div class="year-arr">$80-110M cumulative ARR</div>
+          </div>
+          <div class="year-col">
+            <div class="bar-stack">
+              <div class="bar bar-sprint" style="height: 38px;">25-35 Sprints</div>
+              <div class="bar bar-scale" style="height: 46px;">18-28 Scale</div>
+              <div class="bar bar-enterprise" style="height: 32px;">5-10 Enterprise</div>
+            </div>
+            <div class="year-label">Year 3</div>
+            <div class="year-arr">$130-180M cumulative ARR</div>
+          </div>
+        </div>
+        <div class="growth-total"><span>Sprints prove the platform. Scale locks in the license. Enterprise makes Adobe permanent.</span></div>
+      </div>
+
+      <div class="growth-legend">
+        <div class="legend-item">
+          <div class="legend-dot sprint"></div>
+          <div class="legend-text"><strong>Sprint ($0-$1M)</strong><br>Prove the use case. Minimal license. Client sees Adobe in action.</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot scale"></div>
+          <div class="legend-text"><strong>Scale ($5-$15M)</strong><br>Full license commitment. AEP + GenStudio deployed. $2-5M net-new ARR per account.</div>
+        </div>
+        <div class="legend-item">
+          <div class="legend-dot enterprise"></div>
+          <div class="legend-text"><strong>Enterprise ($15-$50M+)</strong><br>Multi-year. Adobe embedded as the permanent activation layer of the commercial engine.</div>
+        </div>
+        <div style="margin-top: 6px; padding-top: 6px; border-top: 1px solid #e0e0e0;">
+          <div class="legend-text"><strong>The flywheel:</strong> Sprint proves it. Scale commits to it. Enterprise makes it permanent. Product Intelligence makes the platform better with every engagement.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: auto;">
+      <div class="label-bar">Why This Matters Now</div>
+      <div class="body-text">
+        We are at an inflection point. The shift to an Agentic Front Office will reshape how software and consulting companies compete, and the organizations that move fastest won't just capture the market, they'll set it. The platforms that have won enterprise deals through deep partner ecosystems offer a clear lesson: Salesforce built that model and scaled it. Microsoft built it with Azure and is now extending it through Copilot. But the model that worked in the last era won't simply repeat in the next one. The next era requires a different approach. The enterprise front office sale is more complex, more cross-functional, and more outcome-driven than the platform sale that defined the last decade. It demands a partner model built for that complexity. PwC brings the Agentic Front Office vision, deep relationships with the CFO suite, B2B expertise, and regulated industry knowledge that Adobe does not have internally. Adobe brings the activation platform that PwC's architecture requires. Together, there is a unique opportunity to define how the enterprise front office transforms, not follow someone else's playbook for it.
+      </div>
+    </div>
+
+    <div style="margin-top: auto;">
+      <div class="label-bar">The Conversation We Want to Have</div>
+      <div class="body-text">
+        How do we structure the commercial investment so it works for both sides? Which two sectors do we activate first? What's the right mechanism: retainers, co-funded roles, joint development? We have a point of view on all of these. We'd rather build the answers together.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-strip">
+    <div class="cta">PwC &times; Adobe &nbsp;&nbsp;|&nbsp;&nbsp; ARIA: Co-Invest. Co-Innovate. Co-Deliver.</div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+</body>
+</html>

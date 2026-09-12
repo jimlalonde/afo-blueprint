@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARIA Sprint Briefs — All Sectors</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --blue: #2E75B6;
+    --teal: #0D8B8B;
+    --orange: #E87722;
+    --dark: #1a1a2e;
+    --mid: #4a4a5a;
+    --light: #f7f8fa;
+    --lighter: #eef1f5;
+    --white: #ffffff;
+    --purple: #7B5EA7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    max-height: 11in;
+    margin: 0.5in auto;
+    background: var(--white);
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    position: relative;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+  .header-strip {
+    background: var(--navy);
+    padding: 0.3in 0.5in 0.25in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-strip .brand {
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .header-strip .badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .badge-ico { background: var(--teal); color: var(--white); }
+  .badge-aeo { background: var(--blue); color: var(--white); }
+  .badge-hybrid { background: var(--purple); color: var(--white); }
+  .hero {
+    padding: 0.32in 0.5in 0.22in;
+    border-bottom: 3px solid var(--orange);
+  }
+  .hero .sector-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 25px;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 6px;
+    font-weight: 400;
+  }
+  .hero .subtitle {
+    font-size: 12.5px;
+    color: var(--mid);
+    line-height: 1.4;
+    font-style: italic;
+  }
+  .metrics-row {
+    display: flex;
+    gap: 0;
+    padding: 0;
+    background: var(--lighter);
+    border-bottom: 1px solid #dde2ea;
+  }
+  .metric-card {
+    flex: 1;
+    text-align: center;
+    padding: 0.18in 0.12in;
+    border-right: 1px solid #dde2ea;
+  }
+  .metric-card:last-child { border-right: none; }
+  .metric-card .number {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--blue);
+    line-height: 1;
+    margin-bottom: 3px;
+  }
+  .metric-card .label {
+    font-size: 9px;
+    color: var(--mid);
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  .body-content {
+    padding: 0.22in 0.5in;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.16in;
+  }
+  .section-label {
+    font-size: 8.5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 3px;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid var(--navy);
+    display: inline-block;
+  }
+  .section-text {
+    font-size: 11px;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+  .two-col {
+    display: flex;
+    gap: 0.3in;
+  }
+  .two-col .col { flex: 1; }
+  .aria-path {
+    display: flex;
+    gap: 0;
+    background: var(--lighter);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #dde2ea;
+  }
+  .aria-step {
+    flex: 1;
+    padding: 0.12in 0.15in;
+    border-right: 1px solid #dde2ea;
+  }
+  .aria-step:last-child { border-right: none; }
+  .aria-step .step-label {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .step-sprint .step-label { color: var(--orange); }
+  .step-scale .step-label { color: var(--blue); }
+  .step-enterprise .step-label { color: var(--navy); }
+  .aria-step .step-detail {
+    font-size: 9.5px;
+    color: var(--mid);
+    line-height: 1.35;
+  }
+  .aria-step .step-invest {
+    font-size: 8.5px;
+    font-weight: 600;
+    color: var(--dark);
+    margin-top: 3px;
+  }
+  .footer-strip {
+    background: var(--navy);
+    padding: 0.13in 0.5in;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+  }
+  .footer-strip .cta {
+    font-size: 11px;
+    color: var(--white);
+    font-weight: 600;
+  }
+  .footer-strip .cta-sub {
+    font-size: 9px;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-strip .conf {
+    font-size: 8px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .commercial-note {
+    background: #fef7f0;
+    border-left: 3px solid var(--orange);
+    padding: 0.08in 0.15in;
+    border-radius: 0 3px 3px 0;
+  }
+  .commercial-note .note-label {
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--orange);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+  }
+  .commercial-note .note-text {
+    font-size: 9.5px;
+    color: var(--mid);
+    line-height: 1.4;
+  }
+
+  /* Sector divider */
+  .sector-divider {
+    width: 8.5in;
+    margin: 0.5in auto;
+    background: var(--navy);
+    padding: 2.5in 0.8in;
+    text-align: center;
+    page-break-after: always;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  }
+  .sector-divider h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    color: var(--white);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+  .sector-divider .divider-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    max-width: 5in;
+    margin: 0 auto;
+  }
+  .sector-divider .divider-count {
+    margin-top: 30px;
+    font-size: 11px;
+    color: var(--orange);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  @media print {
+    body { background: white; }
+    .page, .sector-divider, .title-page, .toc-page { box-shadow: none; margin: 0; page-break-after: always; }
+  }
+
+  /* Title page */
+  .title-page {
+    width: 8.5in;
+    min-height: 11in;
+    max-height: 11in;
+    margin: 0.5in auto;
+    background: var(--navy);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1in;
+    page-break-after: always;
+  }
+  .title-page .tp-brand {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.6in;
+  }
+  .title-page h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 42px;
+    color: var(--white);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .title-page .tp-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.5;
+    max-width: 5.5in;
+    margin-bottom: 0.8in;
+  }
+  .title-page .tp-engines {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+    margin-bottom: 0.6in;
+  }
+  .title-page .tp-meta {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    line-height: 1.8;
+  }
+  .title-page .tp-bar {
+    width: 60px;
+    height: 3px;
+    background: var(--orange);
+    margin: 0 auto 0.4in;
+  }
+
+  /* TOC page */
+  .toc-page {
+    width: 8.5in;
+    min-height: 11in;
+    max-height: 11in;
+    margin: 0.5in auto;
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    padding: 0.6in 0.7in;
+    page-break-after: always;
+    display: flex;
+    flex-direction: column;
+  }
+  .toc-page h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    color: var(--navy);
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+  .toc-intro {
+    font-size: 11.5px;
+    color: var(--mid);
+    line-height: 1.6;
+    margin-bottom: 0.35in;
+    padding-bottom: 0.2in;
+    border-bottom: 2px solid var(--orange);
+  }
+  .toc-sector {
+    margin-bottom: 0.2in;
+  }
+  .toc-sector-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .toc-item {
+    display: flex;
+    align-items: baseline;
+    padding: 5px 0;
+    text-decoration: none;
+    color: var(--dark);
+    transition: color 0.15s;
+  }
+  .toc-item:hover { color: var(--blue); }
+  .toc-id {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--orange);
+    width: 55px;
+    flex-shrink: 0;
+  }
+  .toc-engine {
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 40px;
+    flex-shrink: 0;
+    margin-right: 8px;
+  }
+  .toc-engine.ico { color: var(--teal); }
+  .toc-engine.aeo { color: var(--blue); }
+  .toc-engine.both { color: var(--purple); }
+  .toc-name {
+    font-size: 12px;
+    flex: 1;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!-- TITLE PAGE                                                    -->
+<!-- ============================================================ -->
+<div class="title-page">
+  <div class="tp-brand">PwC &times; Adobe &nbsp;&nbsp;|&nbsp;&nbsp; ARIA</div>
+  <h1>ARIA Sprint Brief<br>Collection</h1>
+  <div class="tp-bar"></div>
+  <div class="tp-sub">13 industry-specific micro-journeys designed to prove the Agentic Front Office through measurable 90-day outcomes. Each brief is built to leave behind after an account conversation.</div>
+  <div class="tp-engines">Intelligent Content Operations &nbsp;&nbsp;|&nbsp;&nbsp; Autonomous Experience Orchestration</div>
+  <div class="tp-meta">
+    Agentic Revenue &amp; Intelligence Accelerator<br>
+    PwC &nbsp;|&nbsp; Customer, Strategy &amp; Experience<br>
+    CONFIDENTIAL DRAFT &nbsp;|&nbsp; April 2026
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- TABLE OF CONTENTS + INTRODUCTION                              -->
+<!-- ============================================================ -->
+<div class="toc-page">
+  <h2>Contents</h2>
+  <div class="toc-intro">
+    This collection contains one-page Sprint Briefs for each of ARIA's 13 micro-journeys across five industry sub-segments. Each brief is designed to be used as a leave-behind after an account conversation. It leads with a business outcome the client is already trying to solve, positions Adobe as the enabling platform (not the headline), and maps the path from Sprint to Scale to Enterprise. The briefs are organized by sector, with each sector preceded by a context page. Use them selectively: pick the 1-2 briefs that match the account's industry and presenting pain, and leave the rest behind.
+  </div>
+
+  <div class="toc-sector">
+    <div class="toc-sector-title">Financial Services: Insurance</div>
+    <a class="toc-item" href="#ins01"><span class="toc-id">INS-01</span><span class="toc-engine ico">ICO</span><span class="toc-name">Cut Compliance Content Cycles from Weeks to Days</span></a>
+    <a class="toc-item" href="#ins02"><span class="toc-id">INS-02</span><span class="toc-engine aeo">AEO</span><span class="toc-name">Recover At-Risk Renewals 90 Days Before the Decision Window</span></a>
+  </div>
+
+  <div class="toc-sector">
+    <div class="toc-sector-title">Financial Services: Mid-Market Banks</div>
+    <a class="toc-item" href="#mmb01"><span class="toc-id">MMB-01</span><span class="toc-engine ico">ICO</span><span class="toc-name">Make a 10-Person Team Produce Like a 40-Person Team</span></a>
+    <a class="toc-item" href="#mmb02"><span class="toc-id">MMB-02</span><span class="toc-engine aeo">AEO</span><span class="toc-name">Detect Cross-Sell Signals and Act on Them in Real Time</span></a>
+  </div>
+
+  <div class="toc-sector">
+    <div class="toc-sector-title">Telecom &amp; Technology (B2B)</div>
+    <a class="toc-item" href="#tmt01"><span class="toc-id">TMT-01</span><span class="toc-engine ico">ICO</span><span class="toc-name">End the Content Fragmentation Tax</span></a>
+    <a class="toc-item" href="#tmt02"><span class="toc-id">TMT-02</span><span class="toc-engine aeo">AEO</span><span class="toc-name">Replace Batch ABM with Signal-Driven Account Engagement</span></a>
+    <a class="toc-item" href="#tmt03"><span class="toc-id">TMT-03</span><span class="toc-engine aeo">AEO</span><span class="toc-name">Turn Retention from a Renewal Campaign into a Continuous System</span></a>
+  </div>
+
+  <div class="toc-sector">
+    <div class="toc-sector-title">Industrial Products</div>
+    <a class="toc-item" href="#ind01"><span class="toc-id">IND-01</span><span class="toc-engine ico">ICO</span><span class="toc-name">Unify the Technical Content Chaos Across Your Product Portfolio</span></a>
+    <a class="toc-item" href="#ind02"><span class="toc-id">IND-02</span><span class="toc-engine both">ICO+AEO</span><span class="toc-name">Arm Your Channel Partners to Sell Like Your Best Direct Team</span></a>
+    <a class="toc-item" href="#ind03"><span class="toc-id">IND-03</span><span class="toc-engine aeo">AEO</span><span class="toc-name">Turn Long-Cycle B2B Sales from Quarterly Check-Ins to Continuous Engagement</span></a>
+  </div>
+
+  <div class="toc-sector">
+    <div class="toc-sector-title">Healthcare, Life Sciences &amp; Pharma</div>
+    <a class="toc-item" href="#hls01"><span class="toc-id">HLS-01</span><span class="toc-engine ico">ICO</span><span class="toc-name">Cut HCP Content Production Cycles by 60% Without Compromising Compliance</span></a>
+    <a class="toc-item" href="#hls02"><span class="toc-id">HLS-02</span><span class="toc-engine aeo">AEO</span><span class="toc-name">From Batch HCP Campaigns to Signal-Driven Engagement That Respects the Rules</span></a>
+    <a class="toc-item" href="#hls03"><span class="toc-id">HLS-03</span><span class="toc-engine aeo">AEO</span><span class="toc-name">Orchestrate Patient and Member Journeys That Actually Drive Outcomes</span></a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTOR: INSURANCE                                            -->
+<!-- ============================================================ -->
+<div class="sector-divider" id="sector-ins">
+  <h2>Financial Services: Insurance</h2>
+  <div class="divider-sub">Regulatory complexity creates massive content operations burden. Predictable renewal cycles create the cleanest environment for signal-driven retention orchestration in any industry.</div>
+  <div class="divider-count">2 Micro-Journeys</div>
+</div>
+
+<!-- INS-01 -->
+<div class="page" id="ins01">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-ico">Intelligent Content Operations</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Insurance</div>
+    <h1>Cut Compliance Content Cycles from Weeks to Days</h1>
+    <div class="subtitle">Modular content architecture for multi-product, multi-jurisdiction insurance operations</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">60-70%</div><div class="label">Faster Compliance Content Production</div></div>
+    <div class="metric-card"><div class="number">3-5x</div><div class="label">Variant Output Without Adding Headcount</div></div>
+    <div class="metric-card"><div class="number">30-40%</div><div class="label">Reduction in Cost Per Compliant Asset</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Your carriers produce thousands of content variants annually across product lines, state jurisdictions, and distribution channels. Each variant requires legal and compliance review, creating production cycles measured in weeks. When regulatory changes hit, the cascade of updates across existing materials is slow, expensive, and error-prone. Marketing teams spend more time managing the variant production process than driving customer engagement. Small and mid-size carriers feel this disproportionately: same compliance burden, fraction of the resources.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">One high-volume content stream is restructured into modular, reusable components with compliance rules encoded at the component level. Instead of rebuilding each variant from scratch, the system assembles compliant variants from approved components. Production time drops dramatically. Compliance review cycles shrink because only new or modified components enter the review queue. The output is a production model that scales across product lines without scaling headcount.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses GenStudio and AEM Assets in a trial environment to build the modular content hub with compliance-aware metadata. PwC's Regulated Content Orchestrator (RCO), a proprietary accelerator for regulated industries, governs the compliance workflow: automated routing, approval checkpoints, and audit trails. Firefly Custom Models accelerate variant generation within brand and compliance guardrails. No full license required. Prove the model on one content stream; license deployment at Scale.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We bring insurance regulatory expertise that ensures the compliance encoding is accurate and defensible. This is not a content management implementation. It is a compliance operations modernization with marketing efficiency as a co-benefit. PwC's credibility with compliance and legal teams is what makes this land.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one content stream. Trial environment. Live prototype with compliance team validation.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">All product lines. Full GenStudio + AEM licensing. Compliance workflow integration.</div><div class="step-invest">$5-$10M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full content ops transformation across all distribution channels. Managed services.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Compliance content pain is acute enough that the business case for Scale typically writes itself from Sprint findings. Consider outcome-based pricing tied to production cycle reduction or cost-per-variant targets. Position the Sprint as a compliance modernization initiative to secure CCO sponsorship alongside the CMO.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="78190a111938080f1b561b1715">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- INS-02 -->
+<div class="page" id="ins02">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Insurance</div>
+    <h1>Recover At-Risk Renewals 90 Days Before the Decision Window</h1>
+    <div class="subtitle">Signal-driven retention orchestration aligned to predictable policy renewal cycles</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">90 Days</div><div class="label">Earlier Identification of At-Risk Renewals</div></div>
+    <div class="metric-card"><div class="number">10-15%</div><div class="label">Retention Improvement for Flagged Cohort</div></div>
+    <div class="metric-card"><div class="number">$$$</div><div class="label">Retained Premium Revenue, Quantified</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Renewal dates are known in advance. Despite this, most carriers still rely on batch renewal campaigns sent at fixed intervals regardless of the policyholder's engagement pattern or risk signals. Behavioral indicators like engagement decay, quote-shopping behavior, claim dissatisfaction, and payment changes are scattered across systems. No one watches them in aggregate. By the time someone flags the risk, the policyholder has already started shopping. Retention efforts become reactive discounting rather than proactive value delivery.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">A behavioral early warning system identifies at-risk policies based on engagement signal patterns, not just renewal proximity. When a policyholder's behavior matches historical churn patterns, the system triggers tiered retention journeys: tailored content, proactive agent/broker outreach, escalation for high-value accounts. The 90-day outcome is retained premium revenue measured in dollars, compared against a control group still receiving the standard renewal campaign.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP in a sandbox or limited deployment to ingest behavioral signals and build the risk score. AJO orchestrates retention journeys. Marketo handles execution where an existing instance is available. Sprint proves the signal-to-intervention model with limited data; Scale deploys full AEP + AJO licensing with comprehensive data feeds.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We bring insurance domain expertise to interpret behavioral signals in the context of policy economics and distribution dynamics. The risk score is not a generic engagement metric. It reflects how policyholders actually behave before lapsing, informed by actuarial thinking and distribution channel realities that pure-play digital firms cannot match.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove risk score and retention model on one policy book. Limited AEP deployment. Measurable retention lift.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full book. AEP + AJO + Real-Time CDP. Agency management and claims integration.</div><div class="step-invest">$5-$12M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full customer lifecycle: acquisition, servicing, renewal. Managed services.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Strongest candidate for gain-sharing. Retained premium revenue is directly measurable. Consider a base fee plus performance component tied to retention rate improvement or premium revenue preserved. This aligns incentives and de-risks the client's investment decision.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f8998a9199b8888f9bd69b9795">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTOR: MID-MARKET BANKS                                     -->
+<!-- ============================================================ -->
+<div class="sector-divider" id="sector-mmb">
+  <h2>Financial Services: Mid-Market Banks</h2>
+  <div class="divider-sub">Same competitive pressures as the largest institutions, a fraction of the marketing resources. Underserved by the big SIs. The efficiency gains from ICO and AEO are proportionally larger because the baseline is so much lower.</div>
+  <div class="divider-count">2 Micro-Journeys</div>
+</div>
+
+<!-- MMB-01 -->
+<div class="page" id="mmb01">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-ico">Intelligent Content Operations</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Mid-Market Banks</div>
+    <h1>Make a 10-Person Team Produce Like a 40-Person Team</h1>
+    <div class="subtitle">Modular content operations for resource-constrained bank marketing teams</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">3-5x</div><div class="label">Content Output Increase</div></div>
+    <div class="metric-card"><div class="number">50%</div><div class="label">Reduction in Per-Campaign Production Cost</div></div>
+    <div class="metric-card"><div class="number">40%</div><div class="label">Faster Time-to-Market</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Your marketing team manages content across deposit products, lending, wealth, commercial banking, and community engagement with fewer than 20 people. Every campaign starts from scratch. Every channel requires custom assets. Every product update triggers a manual cascade. Your team spends its time on production, not strategy. Personalization is aspirational. Meanwhile, digital-first competitors and larger banks with 10x your headcount are moving faster and looking sharper. You're not losing on strategy. You're losing on capacity.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">One product line's content operations transforms from campaign-by-campaign production to modular, component-based assembly. The team produces 3-5x the output without adding headcount, at roughly half the per-campaign cost. Content is structured for personalization, creating the foundation for experience orchestration. For a mid-market bank, this is the difference between playing defense and actually competing.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses GenStudio and AEM Assets in a trial configuration to build the modular content hub. Firefly accelerates variant generation within brand guidelines. For compliance-governed content (deposit disclosures, lending materials), PwC's Regulated Content Orchestrator (RCO) manages approval workflows and compliance tracking. Minimal license investment at Sprint. Full deployment at Scale, funded by proven efficiency gains.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We bring operating model design: not just the tools, but how the team's roles and workflows change to sustain the new model. A 10-person team can't absorb a complex technology deployment. The operating model has to be right-sized for the team that's going to run it every day.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove the model on one product line. Trial environment. Measurable output and cost improvement.</div><div class="step-invest">$250K-$500K</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">All product lines and channels. Full licensing. Core banking content integration.</div><div class="step-invest">$3-$8M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full marketing ops transformation. Managed services. Operate at the scale of a much larger institution.</div><div class="step-invest">$10M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Mid-market banks are cost-sensitive. Right-size the Sprint to $250K-$500K with a clear self-funding path. Consider a subscription-based managed services model for Scale that aligns with how mid-market banks budget (OpEx over CapEx).</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a0c1d2c9c1e0d0d7c38ec3cfcd">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- MMB-02 -->
+<div class="page" id="mmb02">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Mid-Market Banks</div>
+    <h1>Detect Cross-Sell Signals and Act on Them in Real Time</h1>
+    <div class="subtitle">Signal-driven lifecycle orchestration for deposit deepening and lending growth</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">10-20%</div><div class="label">Cross-Sell Conversion Improvement</div></div>
+    <div class="metric-card"><div class="number">Real-Time</div><div class="label">Signal Detection Replaces Batch Targeting</div></div>
+    <div class="metric-card"><div class="number">$$$</div><div class="label">Incremental Revenue From Activated Signals</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">You sit on a goldmine of behavioral signals you can't act on. A checking customer increases their direct deposit. A business client's transaction volume spikes. A wealth prospect attends three webinars in a week. These signals indicate readiness for the next product, but your team is running quarterly campaigns targeting static segments defined months ago. The signals expire before the campaign reaches the customer. Your own data is telling you exactly who to talk to and when. Nobody is listening in real time.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">For one product pairing (e.g., checking-to-savings, deposit-to-lending, or business banking-to-treasury), a signal-driven system detects behavioral readiness and triggers personalized outreach in real time rather than waiting for the next campaign cycle. The 90-day outcome is a measurable increase in cross-sell conversion, backed by clear data showing signal-driven outperforms batch campaigns for this pairing.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP in a limited deployment to ingest behavioral signals from available sources (digital banking, CRM, email engagement). AJO or Marketo orchestrates signal-driven journeys. Target optimizes digital touchpoints. Sprint works with available data; full Real-Time CDP deployment at Scale.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We design the signal model and journey logic based on banking domain expertise. Which transaction patterns actually predict product readiness? Which life events are detectable in the data? This is not a technology configuration exercise. It is a commercial intelligence design grounded in how mid-market banking customers actually behave.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove the model on one product pairing. Limited AEP. Head-to-head vs. batch campaigns.</div><div class="step-invest">$250K-$500K</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full product portfolio. AEP + AJO + Real-Time CDP. Core banking and CRM integration.</div><div class="step-invest">$5-$10M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full lifecycle orchestration. Predictive models. Managed services. Continuous optimization.</div><div class="step-invest">$10M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Incremental cross-sell revenue is directly measurable. Strong candidate for performance-linked pricing where a portion of the fee is tied to conversion improvement. De-risks the investment and aligns PwC's incentive with the bank's outcome.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3c5d4e555d7c4c4b5f125f5351">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTOR: TELECOM & TECHNOLOGY (B2B)                           -->
+<!-- ============================================================ -->
+<div class="sector-divider" id="sector-tmt">
+  <h2>Telecom &amp; Technology (B2B)</h2>
+  <div class="divider-sub">Massive content fragmentation, complex enterprise sales cycles, and net revenue retention as the metric that drives valuation. Sophisticated marketing orgs that are overwhelmed by volume and complexity.</div>
+  <div class="divider-count">3 Micro-Journeys</div>
+</div>
+
+<!-- TMT-01 -->
+<div class="page" id="tmt01">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-ico">Intelligent Content Operations</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">B2B Technology &amp; Telecom</div>
+    <h1>End the Content Fragmentation Tax</h1>
+    <div class="subtitle">Unified content operations across product lines, verticals, and buyer personas</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">40-60%</div><div class="label">Reduction in Content Duplication</div></div>
+    <div class="metric-card"><div class="number">50%</div><div class="label">Faster Time-to-Market</div></div>
+    <div class="metric-card"><div class="number">3-4x</div><div class="label">Variant Output Per Content Investment</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">You accumulate content debt the way engineering accumulates technical debt. Every product launch, vertical campaign, partner program, and regional initiative produces its own content. Over time: thousands of assets, massive overlap, no shared components, inconsistent messaging, and no way to know what's current, compliant, or effective. Teams recreate content that already exists but can't be found, adapted, or trusted. The cost isn't just production. It's brand inconsistency, slow time-to-market, and an inability to personalize at the account level.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">One product line or vertical's content is restructured from campaign-specific assets into a modular, component-based architecture. Duplication is identified and eliminated. Reusable components are cataloged. The production workflow is redesigned for assembly rather than creation. Result: faster production, lower cost, and content structured for the account-level personalization that ABM programs actually require.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses GenStudio and AEM Assets in a trial environment. Firefly Custom Models generate brand-consistent variants. Workfront orchestrates production. Sprint proves the model on limited scope; Scale deploys enterprise-wide. Many B2B tech companies have partial Adobe deployments. Sprint leverages existing licenses where possible.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We bring the content strategy and operating model design that turns a technology deployment into a sustainable capability. Content architecture, taxonomy design, team restructuring, and workflow redesign. The technology is the enabler. The operating model change is what makes it stick.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one product line or vertical. Trial environment. Duplication audit + modular prototype.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Enterprise-wide. Full GenStudio + AEM + Workfront licensing. All product lines.</div><div class="step-invest">$5-$12M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Global content ops. AI-driven creation. Managed services. Experience orchestration integration.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Production cost reduction and time-to-market improvement are directly measurable. Sprint should leverage existing licenses where possible and demonstrate incremental value justifying the Experience Cloud expansion. Outcome-based components work well here.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1071627971506067733e737f7d">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- TMT-02 -->
+<div class="page" id="tmt02">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">B2B Technology &amp; Telecom</div>
+    <h1>Replace Batch ABM with Signal-Driven Account Engagement</h1>
+    <div class="subtitle">Real-time orchestration for enterprise accounts with complex buying committees</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">25-35%</div><div class="label">Engagement Lift Over Batch ABM</div></div>
+    <div class="metric-card"><div class="number">20-30%</div><div class="label">Faster Buying Stage Progression</div></div>
+    <div class="metric-card"><div class="number">Pipeline</div><div class="label">Measurable Deal Velocity Improvement</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">You've invested heavily in ABM, but it still operates in batch mode: static lists, quarterly themes, content personalized by company name rather than buying signals. The committee has 6-12 members with different roles and concerns. A batch campaign treats the account as a monolith. The result: engagement that feels generic to each decision-maker, slow progression, and sales unable to tell which accounts are genuinely in-market versus passively consuming content.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">For 15-25 target accounts, ABM shifts from batch to signal-driven. Individual buying committee members receive engagement tailored to their role, interests, and position in the decision process, triggered by behavior rather than calendar. Sales receives real-time account intelligence. The 90-day outcome is measurable engagement lift and pipeline acceleration vs. the batch ABM control group.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP (limited deployment) for account and individual behavioral signals. AJO orchestrates role-specific journeys. Marketo handles execution. Analytics closes the loop. Sprint works with existing data infrastructure; full AEP deployment at Scale.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We design the signal model and buying committee engagement architecture based on B2B sales cycle expertise. Which behaviors indicate stage progression vs. stall? How do different committee roles engage differently? This isn't a generic ABM overlay. It's an engagement architecture built on how enterprise deals actually unfold.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on 15-25 accounts. Limited AEP. Head-to-head vs. batch ABM with real pipeline data.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full target account portfolio. AEP + AJO + Real-Time CDP. CRM and intent data integration.</div><div class="step-invest">$8-$15M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full account-based revenue orchestration. Managed services. Marketing + sales + CS.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Pipeline acceleration resonates with both CMO and CRO. Consider a performance component tied to engagement lift or pipeline velocity. B2B tech companies are accustomed to outcome-linked vendor arrangements.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a8c9dac1c9e8d8dfcb86cbc7c5">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- TMT-03 -->
+<div class="page" id="tmt03">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">B2B Technology &amp; Telecom</div>
+    <h1>Turn Retention from a Renewal Campaign into a Continuous System</h1>
+    <div class="subtitle">Signal-driven churn detection and orchestrated retention for B2B subscriptions and contracts</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">15-20%</div><div class="label">Net Revenue Retention Improvement</div></div>
+    <div class="metric-card"><div class="number">60-90 Days</div><div class="label">Earlier Churn Risk Detection</div></div>
+    <div class="metric-card"><div class="number">$$$</div><div class="label">ARR Preserved, Quantified</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Net revenue retention drives your valuation. Despite this, retention efforts concentrate in the final 90 days before renewal: a campaign, a discount, an exec call. By then, the customer has decided. Disengagement signals were visible months earlier in content consumption decline, email responsiveness, event absence, and executive sponsor engagement. These signals sit in separate systems. Nobody synthesizes them into a real-time picture of account health. Your retention campaign is an expensive, reactive intervention applied too late.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">For one customer segment, a behavioral early warning system detects disengagement 60-90 days before your current process would flag a risk. Automated retention plays intervene at the moment of signal detection, not at renewal. The 90-day outcome is a measurable improvement in retention for the flagged cohort and a quantified dollar amount of ARR preserved vs. the standard renewal campaign control group.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP (sandbox/limited) to ingest marketing and engagement signals. AJO orchestrates tiered retention journeys. Marketo handles execution. Analytics provides the signal layer. Sprint works with marketing-owned signals; Scale integrates product usage and support data through full AEP deployment.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We bring retention economics modeling and intervention design based on B2B SaaS lifecycle expertise. The health score isn't a generic engagement metric. It reflects how B2B customers actually disengage: gradually, across multiple channels, often invisible until it's too late. We design the detection and intervention model, not just the technology.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one segment. Marketing-owned signals. Limited AEP. Measurable ARR impact.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full customer base. AEP + AJO + Real-Time CDP. Product usage and support data integration.</div><div class="step-invest">$5-$12M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full lifecycle orchestration. Predictive churn models. Expansion detection. Managed services.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">ARR preserved is the clearest outcome metric in B2B tech. Strongest candidate for gain-sharing: base fee plus a percentage of ARR preserved above historical baseline. Aligns PwC's incentive directly with the client's most important metric.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="94f5e6fdf5d4e4e3f7baf7fbf9">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTOR: INDUSTRIAL PRODUCTS                                  -->
+<!-- ============================================================ -->
+<div class="sector-divider" id="sector-ind">
+  <h2>Industrial Products</h2>
+  <div class="divider-sub">Massive, technically complex product portfolios. Content fragmented across dealer networks, distributor channels, and direct sales. Digital maturity lags, which means efficiency gains from ICO and AEO are proportionally larger.</div>
+  <div class="divider-count">3 Micro-Journeys</div>
+</div>
+
+<!-- IND-01 -->
+<div class="page" id="ind01">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-ico">Intelligent Content Operations</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Industrial Products</div>
+    <h1>Unify the Technical Content Chaos Across Your Product Portfolio</h1>
+    <div class="subtitle">Modular content operations for specs, configurators, and dealer/distributor enablement</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">50-60%</div><div class="label">Faster Technical Content Updates</div></div>
+    <div class="metric-card"><div class="number">70%+</div><div class="label">Reduction in Cross-Channel Inconsistency</div></div>
+    <div class="metric-card"><div class="number">3x</div><div class="label">Dealer-Ready Content Output</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Your product portfolio generates thousands of technical assets: specs, configuration guides, dealer collateral, safety docs. They're produced in silos by product line. When a product changes, the update cascade takes weeks. Dealers work with outdated materials. Your team spends more time hunting for the right version than creating value. The cost is brand inconsistency, slow time-to-market, and content that can't be personalized for different channel partners.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">One product family's technical content is restructured into modular, component-based architecture. A single source update cascades automatically across all formats and channels. Dealer and distributor content is personalized from shared components rather than manually produced. Production time drops by half. Inconsistencies are eliminated at the source.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses GenStudio and AEM Assets in a trial environment. Workfront orchestrates production workflows. For safety documentation and regulatory-governed technical content, PwC's Regulated Content Orchestrator (RCO) provides compliance-aware governance and audit trails. Firefly assists with format-specific variant generation. No full license required at Sprint. Prove the model on a limited product family; license deployment at Scale.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We bring industrial product expertise to design content architecture that accounts for technical specifications, regulatory requirements, and multi-tier channel distribution. This has to work for engineering, marketing, and channel teams simultaneously. Operating model, not just technology.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one product family. Trial environment. Live prototype with real data.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full portfolio. AEM + GenStudio licensing. PIM/PLM integration.</div><div class="step-invest">$5-$10M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Global technical content ops. AI-driven generation. Commerce and configurator integration.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Often the strongest door opener where no Adobe Experience Cloud exists. Anchor value on update cycle time, inconsistency count, and dealer satisfaction. Consider phased licensing expanding as product lines are onboarded.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0766756e66477770642964686a">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- IND-02 -->
+<div class="page" id="ind02">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-hybrid">ICO + AEO</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Industrial Products</div>
+    <h1>Arm Your Channel Partners to Sell Like Your Best Direct Team</h1>
+    <div class="subtitle">Personalized dealer and distributor enablement with intelligent content delivery</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">20-30%</div><div class="label">Increase in Partner Content Engagement</div></div>
+    <div class="metric-card"><div class="number">Personalized</div><div class="label">Content by Partner Segment &amp; Focus</div></div>
+    <div class="metric-card"><div class="number">Real-Time</div><div class="label">Partners Always Access Current Content</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Your dealers and distributors sell your products, but they're working with outdated, generic materials. Every partner gets the same content regardless of segment, specialization, or customer base. Product launch materials arrive late. Training is annual and static. Your strongest dealers figure it out on their own. The rest default to price competition. The channel underperforms not because partners are weak, but because you haven't equipped them to win.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">For one partner segment, enablement shifts from batch distribution to personalized, signal-responsive delivery. Partners receive content tailored to their product focus, market, and selling patterns. When products launch or specs change, the right content reaches the right partners automatically. The 90-day outcome is measurable improvement in partner engagement and early indicators of downstream sales impact.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint combines AEM Assets (modular content hub) with AJO or Marketo (personalized delivery) in a trial environment. Partner portal or feed integrates with existing platforms. No full licensing at Sprint. Prove personalized delivery on one segment; Scale deploys the full enablement platform.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We design partner segmentation and enablement architecture informed by how industrial distribution actually works. Channel strategy, content mapping, and engagement design. The Sprint should be co-sponsored by marketing and the channel organization to secure adoption and broader executive backing.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove personalized enablement on one partner segment. Real engagement data.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">All partner segments. Full licensing. Partner management and CRM integration.</div><div class="step-invest">$5-$8M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full partner experience platform. AI content recommendations. Performance analytics. Managed services.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">ROI measured through partner engagement and partner-attributed revenue. Consider co-funding the Sprint with the channel organization (not just marketing) to secure broader sponsorship and faster adoption.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5534273c34152522367b363a38">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- IND-03 -->
+<div class="page" id="ind03">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Industrial Products</div>
+    <h1>Turn Long-Cycle B2B Sales from Quarterly Check-Ins to Continuous Engagement</h1>
+    <div class="subtitle">Signal-driven account orchestration for complex, multi-stakeholder industrial deals</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">15-25%</div><div class="label">Reduction in Sales Cycle Length</div></div>
+    <div class="metric-card"><div class="number">30%+</div><div class="label">Increase in Multi-Stakeholder Engagement</div></div>
+    <div class="metric-card"><div class="number">Pipeline</div><div class="label">Measurable Deal Velocity Improvement</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Your sales cycles run 6-18 months with engineering, procurement, operations, finance, and executive stakeholders. Between quarterly reviews and trade shows, the account goes dark. No visibility into whether the committee is evaluating, stalled, or talking to your competitor. Marketing runs awareness campaigns disconnected from where any account actually is. Deals take longer than they should, stall without warning, and you sometimes lose without knowing a competitor was in the room.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">For 10-20 target accounts, engagement shifts from episodic to continuous. Individual stakeholders receive content matched to their role, interests, and buying stage. Sales gets real-time intelligence on account activity. When an account stalls, the system triggers intervention automatically. The 90-day outcome is measurable cycle time reduction and deal velocity improvement.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP (limited deployment) for account and stakeholder signals. AJO orchestrates role-specific journeys. Marketo handles execution. Analytics closes the loop. Sprint works with available data; full AEP + Real-Time CDP at Scale.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We design signal models that reflect how complex B2B decisions actually unfold in industrial markets. Multi-stakeholder buying committee dynamics, long evaluation cycles, and relationship-driven selling patterns. Not a generic ABM overlay. An engagement architecture built for how industrial deals actually work.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on 10-20 accounts. Limited AEP. Real-time intelligence dashboards for sales.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full target portfolio. AEP + AJO + Real-Time CDP. CRM and intent data integration.</div><div class="step-invest">$8-$15M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full account-based revenue orchestration. Predictive scoring. Commerce and pricing integration.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Deal velocity is directly measurable and high-impact where individual deals are worth millions. Modest Sprint fee with Scale including a performance component tied to pipeline acceleration or conversion improvement.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7a1b08131b3a0a0d1954191517">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- SECTOR: HEALTHCARE, LIFE SCIENCES & PHARMA                   -->
+<!-- ============================================================ -->
+<div class="sector-divider" id="sector-hls">
+  <h2>Healthcare, Life Sciences &amp; Pharma</h2>
+  <div class="divider-sub">The most complex content and engagement challenge of any sector. Regulatory requirements make every piece of content a compliance event. The organizations that solve this within regulatory constraints will have a structural advantage.</div>
+  <div class="divider-count">3 Micro-Journeys</div>
+</div>
+
+<!-- HLS-01 -->
+<div class="page" id="hls01">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-ico">Intelligent Content Operations</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Healthcare, Life Sciences &amp; Pharma</div>
+    <h1>Cut HCP Content Production Cycles by 60% Without Compromising Compliance</h1>
+    <div class="subtitle">Modular, compliance-governed content operations for multi-therapeutic, multi-jurisdiction HCP engagement</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">60%</div><div class="label">Faster HCP Content Production</div></div>
+    <div class="metric-card"><div class="number">4-6x</div><div class="label">Compliant Variant Output</div></div>
+    <div class="metric-card"><div class="number">Zero</div><div class="label">Increase in Compliance Exceptions</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">You produce thousands of HCP-facing assets annually across therapeutic areas, geographies, and channels. Every asset requires medical-legal-regulatory review, adding weeks or months. When clinical data updates, the cascade is slow and manually tracked. Your team navigates the approval process more than they develop engagement strategy. HCPs expect relevant, timely, personalized content. You deliver generic assets on a quarterly cycle. Meanwhile, competitors who solve this first will command disproportionate HCP attention.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">One therapeutic area's HCP content is restructured into modular, compliance-governed components where MLR-approved elements assemble into compliant variants without re-reviewing the entire asset. Production cycles drop 60%+. Variant output increases 4-6x. The compliance team has better visibility and control because compliance rules are encoded in the architecture. Speed and governance improve simultaneously.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses GenStudio and AEM Assets in trial environment. PwC's Regulated Content Orchestrator (RCO) governs the MLR workflow: automated routing, approval stage management, audit trails, and variant-level compliance tracking purpose-built for pharma regulatory requirements. Firefly generates compliant variants within approved guardrails. No full licensing at Sprint. Prove on one TA; Scale deploys across the portfolio with Veeva/PromoMats integration.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">Deep healthcare regulatory expertise ensures compliance encoding is rigorous and defensible. We design the operating model change: how the MLR process, creative team workflows, and content governance adapt. Position this as compliance modernization with marketing efficiency as a co-benefit to secure Medical Affairs and CCO sponsorship.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one TA. Trial environment. Compliance team validation. Measurable cycle reduction.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">All TAs and geographies. Full GenStudio + AEM with RCO. Veeva/PromoMats integration.</div><div class="step-invest">$8-$15M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Global HCP content ops. AI-driven generation. Omnichannel orchestration. Managed services.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">The compliance angle opens doors beyond the CMO. CFOs and CCOs care about risk reduction and process improvement. Position Sprint as compliance modernization to secure multi-stakeholder sponsorship. License investment at Scale is significant; Sprint evidence must be undeniable.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aecfdcc7cfeeded9cd80cdc1c3">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- HLS-02 -->
+<div class="page" id="hls02">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Healthcare, Life Sciences &amp; Pharma</div>
+    <h1>From Batch HCP Campaigns to Signal-Driven Engagement That Respects the Rules</h1>
+    <div class="subtitle">Compliant, personalized HCP journey orchestration across channels and therapeutic areas</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">20-35%</div><div class="label">HCP Engagement Lift</div></div>
+    <div class="metric-card"><div class="number">Compliant</div><div class="label">Full Regulatory Governance Maintained</div></div>
+    <div class="metric-card"><div class="number">Real-Time</div><div class="label">Signal-Driven Replaces Batch Cadence</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">Regulatory complexity has pushed most pharma organizations toward batch engagement: scheduled campaigns, periodic rep-triggered content, fixed cadences. The result is compliant but generic and increasingly ineffective as HCPs are overwhelmed by volume from multiple companies. HCPs who do engage aren't receiving content aligned to their prescribing patterns, patient population, or demonstrated interests. Organizations that deliver personalized, signal-driven engagement within compliance guardrails will command disproportionate attention.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">For one TA and one HCP segment, engagement shifts from batch to signal-driven with compliance governance built into the journey architecture. HCPs receive content triggered by their engagement signals rather than the campaign calendar. Every touchpoint governed by encoded compliance rules: channel restrictions, frequency caps, content approvals, mandatory disclosures. The outcome is measurable engagement lift with zero increase in compliance exceptions.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP (limited deployment) for HCP engagement signals. AJO orchestrates signal-driven journeys. PwC's Regulated Content Orchestrator (RCO) governs the content compliance layer within the journeys, ensuring every communication variant meets regulatory requirements with full audit trails. Marketo handles execution. Analytics measures. Sprint proves on narrow scope; Scale deploys full AEP + AJO with CRM and HCP data platform integration.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We design compliance-governed journey architectures that satisfy medical affairs and legal requirements. This is not a marketing automation project with a compliance layer bolted on. It is a compliant engagement system with marketing intelligence built in. PwC's regulatory depth is what makes the compliance team say yes.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one TA, one HCP segment. Limited AEP. Head-to-head vs. batch with compliance validation.</div><div class="step-invest">$0-$1M</div></div>
+        <div class="aria-step step-scale"><div class="step-label">Scale (12-16 Weeks)</div><div class="step-detail">Full therapeutic portfolio. AEP + AJO + Real-Time CDP. CRM and HCP data integration.</div><div class="step-invest">$8-$15M</div></div>
+        <div class="aria-step step-enterprise"><div class="step-label">Enterprise (Multi-Year)</div><div class="step-detail">Full omnichannel HCP engagement. AI-driven personalization. Medical affairs integration. Managed services.</div><div class="step-invest">$15M+</div></div>
+      </div>
+    </div>
+    <div class="commercial-note">
+      <div class="note-label">Commercial Model</div>
+      <div class="note-text">Pharma requires rigorous proof before scaling. Position Sprint as a joint PwC-Adobe investment to reduce client risk and accelerate the path to Scale licensing. Engagement lift and compliance integrity must both be demonstrated to unlock the expansion.</div>
+    </div>
+  </div>
+  <div class="footer-strip">
+    <div><div class="cta">Ready to start? Nominate this account for an ARIA Sprint.</div><div class="cta-sub"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9afbe8f3fbdaeaedf9b4f9f5f7">[email&#160;protected]</a></div></div>
+    <div class="conf">PwC Confidential</div>
+  </div>
+</div>
+
+<!-- HLS-03 -->
+<div class="page" id="hls03">
+  <div class="header-strip">
+    <span class="brand">PwC &times; Adobe &nbsp;|&nbsp; ARIA Sprint Brief</span>
+    <span class="badge badge-aeo">Autonomous Experience Orchestration</span>
+  </div>
+  <div class="hero">
+    <div class="sector-label">Healthcare, Life Sciences &amp; Pharma</div>
+    <h1>Orchestrate Patient and Member Journeys That Actually Drive Outcomes</h1>
+    <div class="subtitle">Signal-driven engagement for adherence, onboarding, and wellness programs</div>
+  </div>
+  <div class="metrics-row">
+    <div class="metric-card"><div class="number">15-25%</div><div class="label">Engagement &amp; Completion Rate Improvement</div></div>
+    <div class="metric-card"><div class="number">Personalized</div><div class="label">Journeys Adapted to Individual Behavior</div></div>
+    <div class="metric-card"><div class="number">Outcomes</div><div class="label">Measurable Health or Utilization Impact</div></div>
+  </div>
+  <div class="body-content">
+    <div>
+      <div class="section-label">The Problem You're Living With</div>
+      <div class="section-text">You invest heavily in patient and member programs: medication adherence, post-discharge follow-up, chronic condition management, wellness incentives, onboarding. Most run on fixed schedules with generic content. Engagement rates are low and declining. Patients who need the most support are often the least engaged. The programs can't distinguish between someone on track and someone who has disengaged. The result is programs that cost significant money and produce minimal measurable health or utilization impact.</div>
+    </div>
+    <div>
+      <div class="section-label">What Changes in 90 Days</div>
+      <div class="section-text">One program transforms from fixed-schedule to signal-driven. The journey adapts to individual behavior: engagement signals trigger personalized next steps. Patients showing disengagement get proactive intervention. Those on track get reinforcement without unnecessary contact. HIPAA governance is embedded in the architecture. The 90-day outcome is measurable improvement in engagement and program completion rates.</div>
+    </div>
+    <div class="two-col">
+      <div class="col">
+        <div class="section-label">How the Sprint Works</div>
+        <div class="section-text">ARIA Sprint uses AEP (limited, HIPAA-compliant deployment) for behavioral signals. AJO orchestrates adaptive journeys with compliance governance embedded. Marketo handles communication execution. Analytics measures. Sprint works within existing data; Scale deploys full AEP + AJO with EHR and claims integration.</div>
+      </div>
+      <div class="col">
+        <div class="section-label">PwC's Role</div>
+        <div class="section-text">We design journeys that align with clinical protocols and regulatory requirements, not just marketing engagement patterns. This is framed as a clinical engagement improvement initiative to secure sponsorship from clinical and operations leadership alongside marketing. The outcome measurement ties to health and utilization impact, not just clicks.</div>
+      </div>
+    </div>
+    <div>
+      <div class="section-label">ARIA Engagement Path</div>
+      <div class="aria-path">
+        <div class="aria-step step-sprint"><div class="step-label">Sprint (8-12 Weeks)</div><div class="step-detail">Prove on one program o
