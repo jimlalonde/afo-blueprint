@@ -23,7 +23,7 @@ export default function PrioritizeView({
   onBeginAssessment,
 }: Props) {
   const [entryMode, setEntryMode] = useState<EntryMode>(null);
-  const [selectedUseCaseId, setSelectedUseCaseId] = useState<string | null>(null);
+  const [selectedUseCaseIds, setSelectedUseCaseIds] = useState<Set<string>>(new Set());
   const [searchText, setSearchText] = useState("");
   const [expandedLayer, setExpandedLayer] = useState<string | null>(null);
   const [expandedL1, setExpandedL1] = useState<string | null>(null);
@@ -64,12 +64,26 @@ export default function PrioritizeView({
 
   // ── Handlers ──
 
-  const handleSelectUseCase = (id: string) => {
-    setSelectedUseCaseId(id);
-    const template = USE_CASE_TEMPLATES.find((t) => t.id === id);
-    if (template) {
-      onSetPrioritizedCapIds(new Set(template.capabilityIds.filter((cid) => allCapIds.has(cid))));
+  const handleToggleUseCase = (id: string) => {
+    const next = new Set(selectedUseCaseIds);
+    if (next.has(id)) {
+      next.delete(id);
+    } else {
+      next.add(id);
     }
+    setSelectedUseCaseIds(next);
+
+    // Union all capability IDs from selected templates
+    const merged = new Set<string>();
+    next.forEach((ucId) => {
+      const template = USE_CASE_TEMPLATES.find((t) => t.id === ucId);
+      if (template) {
+        template.capabilityIds.forEach((cid) => {
+          if (allCapIds.has(cid)) merged.add(cid);
+        });
+      }
+    });
+    onSetPrioritizedCapIds(merged);
   };
 
   const handleApplyKeywordMatch = () => {
@@ -101,7 +115,7 @@ export default function PrioritizeView({
 
   const clearAll = () => {
     onSetPrioritizedCapIds(new Set());
-    setSelectedUseCaseId(null);
+    setSelectedUseCaseIds(new Set());
     setSearchText("");
   };
 
@@ -168,9 +182,9 @@ export default function PrioritizeView({
       {/* Entry mode panels */}
       {entryMode === "usecase" && (
         <UseCasePanel
-          selectedId={selectedUseCaseId}
+          selectedIds={selectedUseCaseIds}
           allCapIds={allCapIds}
-          onSelect={handleSelectUseCase}
+          onToggle={handleToggleUseCase}
         />
       )}
 
@@ -282,13 +296,13 @@ function EntryCard({
 // ── Use Case Panel ──
 
 function UseCasePanel({
-  selectedId,
+  selectedIds,
   allCapIds,
-  onSelect,
+  onToggle,
 }: {
-  selectedId: string | null;
+  selectedIds: Set<string>;
   allCapIds: Set<string>;
-  onSelect: (id: string) => void;
+  onToggle: (id: string) => void;
 }) {
   return (
     <div className="animate-fade-in">
@@ -296,21 +310,21 @@ function UseCasePanel({
         className="text-[18px] font-semibold mb-2"
         style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}
       >
-        Choose a use case
+        Choose one or more use cases
       </h3>
       <p className="text-[14px] text-tx3 mb-4">
-        Each template selects a curated set of capabilities relevant to that transformation goal.
+        Select multiple templates to combine their capabilities into a single assessment scope.
       </p>
 
       <div className="grid grid-cols-2 gap-3">
         {USE_CASE_TEMPLATES.map((uc) => {
-          const isSelected = selectedId === uc.id;
+          const isSelected = selectedIds.has(uc.id);
           const validCount = uc.capabilityIds.filter((id) => allCapIds.has(id)).length;
 
           return (
             <button
               key={uc.id}
-              onClick={() => onSelect(uc.id)}
+              onClick={() => onToggle(uc.id)}
               className={`text-left rounded-xl px-5 py-4 border cursor-pointer transition-all duration-200 ${
                 isSelected
                   ? "border-accent bg-accent-light"
