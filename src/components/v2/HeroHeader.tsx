@@ -15,8 +15,8 @@ const MODE_CARDS: {
 }[] = [
   { key: "explore", title: "Explore", description: "Browse the capability blueprint" },
   { key: "coverage", title: "Coverage", description: "Analyze platform fit & gaps" },
-  { key: "assess", title: "Assess", description: "Rate your current maturity" },
-  { key: "scorecard", title: "Scorecard", description: "Review assessment results" },
+  { key: "prioritize", title: "Prioritize", description: "Focus your assessment scope" },
+  { key: "assess", title: "Assess", description: "Rate maturity & view results" },
 ];
 
 export default function HeroHeader({ stats, activeView, onChangeView }: Props) {

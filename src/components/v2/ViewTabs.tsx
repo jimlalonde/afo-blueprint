@@ -10,8 +10,8 @@ interface Props {
 const TABS: { key: ViewMode; label: string }[] = [
   { key: "explore", label: "Explore" },
   { key: "coverage", label: "Coverage" },
+  { key: "prioritize", label: "Prioritize" },
   { key: "assess", label: "Assess" },
-  { key: "scorecard", label: "Scorecard" },
 ];
 
 export default function ViewTabs({ activeView, onChangeView }: Props) {

@@ -12,19 +12,84 @@ interface Props {
   assessments: Assessments;
   onSetStage: (capId: string, type: "current" | "target", stage: number) => void;
   onSetNotes: (capId: string, notes: string) => void;
+  prioritizedCapIds: Set<string>;
 }
 
-export default function AssessView({ data, assessments, onSetStage, onSetNotes }: Props) {
+export default function AssessView({ data, assessments, onSetStage, onSetNotes, prioritizedCapIds }: Props) {
   const [selectedLayerId, setSelectedLayerId] = useState<string>(data.layers[0].id);
   const [selectedL1Id, setSelectedL1Id] = useState<string | null>(null);
+  const [showScorecard, setShowScorecard] = useState(false);
+
+  const hasPrioritized = prioritizedCapIds.size > 0;
 
   const selectedLayer = data.layers.find((l) => l.id === selectedLayerId)!;
 
-  // Count assessed capabilities
-  const assessedCount = Object.values(assessments).filter(
-    (a) => a.current !== null || a.target !== null
-  ).length;
-  const totalCaps = data.metadata.total_l2_capabilities;
+  // Filter layers/components based on prioritization
+  const filteredLayers = useMemo(() => {
+    if (!hasPrioritized) return data.layers;
+    return data.layers
+      .map((layer) => ({
+        ...layer,
+        l1_components: layer.l1_components
+          .map((comp) => ({
+            ...comp,
+            l2_capabilities: comp.l2_capabilities.filter((cap) => prioritizedCapIds.has(cap.id)),
+          }))
+          .filter((comp) => comp.l2_capabilities.length > 0),
+      }))
+      .filter((layer) => layer.l1_components.length > 0);
+  }, [data, prioritizedCapIds, hasPrioritized]);
+
+  // Count assessed capabilities (only within prioritized scope)
+  const scopeCapIds = useMemo(() => {
+    if (!hasPrioritized) {
+      const ids = new Set<string>();
+      data.layers.forEach((l) => l.l1_components.forEach((c) => c.l2_capabilities.forEach((cap) => ids.add(cap.id))));
+      return ids;
+    }
+    return prioritizedCapIds;
+  }, [data, prioritizedCapIds, hasPrioritized]);
+
+  const assessedCount = [...scopeCapIds].filter((id) => {
+    const a = assessments[id];
+    return a && (a.current !== null || a.target !== null);
+  }).length;
+  const totalCaps = scopeCapIds.size;
+
+  // Scorecard summary data
+  const scorecardSummary = useMemo(() => {
+    let assessed = 0;
+    let currentSum = 0;
+    let targetSum = 0;
+    let maxGap = 0;
+
+    scopeCapIds.forEach((capId) => {
+      const a = assessments[capId];
+      if (a && a.current !== null && a.target !== null) {
+        assessed++;
+        currentSum += a.current;
+        targetSum += a.target;
+        const gap = a.target - a.current;
+        if (gap > maxGap) maxGap = gap;
+      }
+    });
+
+    return {
+      assessed,
+      total: totalCaps,
+      avgCurrent: assessed > 0 ? currentSum / assessed : 0,
+      avgTarget: assessed > 0 ? targetSum / assessed : 0,
+      avgGap: assessed > 0 ? (targetSum - currentSum) / assessed : 0,
+      maxGap,
+    };
+  }, [assessments, scopeCapIds, totalCaps]);
+
+  // Ensure selectedLayerId is valid for filtered layers
+  const activeLayerId = filteredLayers.find((l) => l.id === selectedLayerId)
+    ? selectedLayerId
+    : filteredLayers[0]?.id || data.layers[0].id;
+
+  const activeLayer = filteredLayers.find((l) => l.id === activeLayerId) || filteredLayers[0];
 
   const selectLayer = (id: string) => {
     setSelectedLayerId(id);
@@ -32,17 +97,64 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
   };
 
   const selectedL1 = selectedL1Id
-    ? selectedLayer.l1_components.find((c) => c.id === selectedL1Id)
+    ? activeLayer?.l1_components.find((c) => c.id === selectedL1Id)
     : null;
 
   return (
     <div className="animate-fade-in">
-      {/* Progress header */}
+      {/* Header */}
       <div className="mb-8">
         <h2 className="text-[26px] font-semibold tracking-tight mb-2" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Maturity Assessment</h2>
         <p className="text-[16px] text-tx2 mb-4">
-          Rate current and target maturity for each capability.
+          {hasPrioritized
+            ? `Assessing ${totalCaps} prioritized capabilities. Rate current and target maturity.`
+            : "Rate current and target maturity for each capability."}
         </p>
+
+        {/* Scorecard summary (collapsible) */}
+        {scorecardSummary.assessed > 0 && (
+          <div className="mb-4">
+            <button
+              onClick={() => setShowScorecard(!showScorecard)}
+              className="flex items-center gap-2 text-[14px] font-medium text-tx3 hover:text-tx2 transition-colors cursor-pointer mb-3"
+            >
+              <span
+                className="text-[10px] transition-transform duration-200 inline-block"
+                style={{ transform: showScorecard ? "rotate(90deg)" : "none" }}
+              >
+                ▶
+              </span>
+              Assessment Summary
+            </button>
+
+            {showScorecard && (
+              <div className="grid grid-cols-4 gap-3 mb-4 animate-fade-in">
+                <ScorecardCard
+                  label="Assessed"
+                  value={`${scorecardSummary.assessed}/${scorecardSummary.total}`}
+                  detail={`${Math.round((scorecardSummary.assessed / scorecardSummary.total) * 100)}% complete`}
+                />
+                <ScorecardCard
+                  label="Avg. Current"
+                  value={scorecardSummary.avgCurrent.toFixed(1)}
+                  detail={STAGE_NAMES[Math.round(scorecardSummary.avgCurrent)] || "—"}
+                />
+                <ScorecardCard
+                  label="Avg. Target"
+                  value={scorecardSummary.avgTarget.toFixed(1)}
+                  detail={STAGE_NAMES[Math.round(scorecardSummary.avgTarget)] || "—"}
+                  valueColor="var(--color-accent)"
+                />
+                <ScorecardCard
+                  label="Avg. Gap"
+                  value={`+${scorecardSummary.avgGap.toFixed(1)}`}
+                  detail={`Max gap: +${scorecardSummary.maxGap}`}
+                  valueColor="var(--color-cov-partial)"
+                />
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Progress bar */}
         <div className="bg-surface border border-bd rounded-xl p-5">
@@ -55,7 +167,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
           <div className="h-2 rounded-full bg-bg3 overflow-hidden">
             <div
               className="h-full rounded-full bg-accent transition-all duration-500"
-              style={{ width: `${(assessedCount / totalCaps) * 100}%` }}
+              style={{ width: `${totalCaps > 0 ? (assessedCount / totalCaps) * 100 : 0}%` }}
             />
           </div>
         </div>
@@ -65,8 +177,8 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
         {/* Layer/L1 picker sidebar */}
         <aside className="w-[240px] flex-shrink-0 sticky top-[52px]">
           <div className="space-y-1">
-            {data.layers.map((layer) => {
-              const isActive = layer.id === selectedLayerId;
+            {filteredLayers.map((layer) => {
+              const isActive = layer.id === activeLayerId;
               const barColor = isActive ? PWC_ORANGE : INACTIVE_BAR;
               const layerAssessed = layer.l1_components.reduce(
                 (s, c) =>
@@ -129,7 +241,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
             >
               All components
             </button>
-            {selectedLayer.l1_components.map((comp) => (
+            {activeLayer?.l1_components.map((comp) => (
               <button
                 key={comp.id}
                 onClick={() => setSelectedL1Id(comp.id)}
@@ -146,7 +258,7 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
 
           {/* Capability assessment cards */}
           <div className="space-y-3">
-            {(selectedL1 ? [selectedL1] : selectedLayer.l1_components).map((comp) => (
+            {(selectedL1 ? [selectedL1] : activeLayer?.l1_components || []).map((comp) => (
               <div key={comp.id}>
                 {!selectedL1 && (
                   <h3 className="text-[17px] font-semibold mb-2 mt-4 first:mt-0">{comp.name}</h3>
@@ -361,6 +473,30 @@ function StageSelector({
           );
         })}
       </div>
+    </div>
+  );
+}
+
+function ScorecardCard({
+  label,
+  value,
+  detail,
+  valueColor,
+}: {
+  label: string;
+  value: string;
+  detail: string;
+  valueColor?: string;
+}) {
+  return (
+    <div className="bg-surface border border-bd rounded-xl p-5">
+      <div className="text-[13px] text-tx3 font-medium uppercase tracking-wide mb-2">
+        {label}
+      </div>
+      <div className="text-[32px] font-bold" style={{ color: valueColor }}>
+        {value}
+      </div>
+      <div className="text-[14px] text-tx3 mt-1">{detail}</div>
     </div>
   );
 }

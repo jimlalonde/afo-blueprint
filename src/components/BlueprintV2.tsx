@@ -5,10 +5,10 @@ import { BlueprintData, Assessments, Layer, L1Component, L2Capability } from "@/
 import HeroHeader from "./v2/HeroHeader";
 import ExploreView from "./v2/ExploreView";
 import CoverageView from "./v2/CoverageView";
+import PrioritizeView from "./v2/PrioritizeView";
 import AssessView from "./v2/AssessView";
-import ScorecardView from "./v2/ScorecardView";
 
-export type ViewMode = "explore" | "coverage" | "assess" | "scorecard";
+export type ViewMode = "explore" | "coverage" | "prioritize" | "assess";
 
 interface Props {
   data: BlueprintData;
@@ -17,6 +17,7 @@ interface Props {
 export default function BlueprintV2({ data }: Props) {
   const [activeView, setActiveView] = useState<ViewMode>("explore");
   const [assessments, setAssessments] = useState<Assessments>({});
+  const [prioritizedCapIds, setPrioritizedCapIds] = useState<Set<string>>(new Set());
 
   const allCapabilities = useMemo(() => {
     const caps: { cap: L2Capability; l1: L1Component; layer: Layer }[] = [];
@@ -68,16 +69,22 @@ export default function BlueprintV2({ data }: Props) {
           {activeView === "coverage" && (
             <CoverageView data={data} allCapabilities={allCapabilities} />
           )}
+          {activeView === "prioritize" && (
+            <PrioritizeView
+              data={data}
+              prioritizedCapIds={prioritizedCapIds}
+              onSetPrioritizedCapIds={setPrioritizedCapIds}
+              onBeginAssessment={() => setActiveView("assess")}
+            />
+          )}
           {activeView === "assess" && (
             <AssessView
               data={data}
               assessments={assessments}
               onSetStage={handleSetStage}
               onSetNotes={handleSetNotes}
+              prioritizedCapIds={prioritizedCapIds}
             />
-          )}
-          {activeView === "scorecard" && (
-            <ScorecardView data={data} assessments={assessments} />
           )}
         </main>
 
