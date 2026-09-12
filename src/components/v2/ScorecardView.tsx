@@ -72,7 +72,6 @@ export default function ScorecardView({ data, assessments }: Props) {
   return (
     <div className="animate-fade-in max-w-[900px]">
       <div className="mb-8">
-        <div className="eyebrow mb-3">Results</div>
         <h2 className="text-[26px] font-semibold tracking-tight mb-2" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Assessment Scorecard</h2>
         <p className="text-[16px] text-tx2">
           {hasData

@@ -5,15 +5,12 @@ import { BlueprintData, Layer, L1Component, L2Capability } from "@/types";
 import { VENDORS } from "@/lib/constants";
 
 const PWC_EMBER = "#C74E23";
-const PWC_GOLD = "#FFB600";
 const PWC_INK = "#1C1A17";
 const PWC_DEEP = "#14110F";
 const PWC_CREAM = "#F2EEE8";
 const PWC_PEACH = "#FBEDE6";
 const PWC_PEACH_BORDER = "#E9C4B4";
-const PWC_GOLD_LIGHT = "#FEF3D6";
 const PWC_LINE = "#E3DFD8";
-const LAYER_BAR_COLORS = [PWC_EMBER, PWC_GOLD, PWC_INK, PWC_EMBER, PWC_GOLD, PWC_INK, PWC_EMBER];
 
 interface CapEntry {
   cap: L2Capability;
@@ -85,7 +82,6 @@ export default function CoverageView({ data, allCapabilities }: Props) {
     <div className="animate-fade-in">
       {/* Vendor selector */}
       <div className="mb-8">
-        <div className="eyebrow mb-3">What We Cover</div>
         <h2 className="text-[26px] font-semibold tracking-tight mb-2" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Platform Coverage Analysis</h2>
         <p className="text-[16px] text-tx2 mb-5">
           Select platforms to analyze combined coverage across all {totalCaps} capabilities.
@@ -140,27 +136,21 @@ export default function CoverageView({ data, allCapabilities }: Props) {
             />
           </div>
 
-          {/* Gap & partial details */}
-          <div className="grid grid-cols-2 gap-6 mb-10">
-            <CapabilityList
-              title="Coverage Gaps"
-              description="Capabilities not covered by selected platforms"
-              entries={analysis.gaps}
-              accentColor={PWC_INK}
-            />
-            <CapabilityList
-              title="Partial Coverage"
-              description="Capabilities with limited platform support"
-              entries={analysis.partials}
-              accentColor="#A38200"
-            />
-          </div>
+          {/* Coverage criteria legend */}
+          <CriteriaLegend />
+
+          {/* Layer health gauges */}
+          <LayerHealthGauges
+            layers={data.layers}
+            gaps={analysis.gaps}
+            partials={analysis.partials}
+            strong={analysis.strong}
+          />
         </>
       )}
 
       {/* Vendor comparison bars */}
       <section>
-        <div className="eyebrow mb-3">Benchmarks</div>
         <h3 className="text-[18px] font-semibold mb-4" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Vendor Comparison</h3>
 
         {/* Legend */}
@@ -257,80 +247,276 @@ function StatCard({
   );
 }
 
-function CapabilityList({
-  title,
-  description,
-  entries,
-  accentColor,
+function LayerHealthGauges({
+  layers,
+  gaps,
+  partials,
+  strong,
 }: {
-  title: string;
-  description: string;
-  entries: CapEntry[];
-  accentColor: string;
+  layers: Layer[];
+  gaps: CapEntry[];
+  partials: CapEntry[];
+  strong: CapEntry[];
 }) {
-  const [expandedLayers, setExpandedLayers] = useState<Set<string>>(new Set());
+  const [expandedLayer, setExpandedLayer] = useState<string | null>(null);
 
-  // Group by layer
-  const grouped = entries.reduce((acc, e) => {
-    if (!acc[e.layer.id]) acc[e.layer.id] = { layer: e.layer, caps: [] };
-    acc[e.layer.id].caps.push(e);
-    return acc;
-  }, {} as Record<string, { layer: Layer; caps: CapEntry[] }>);
+  // Build per-layer stats from the three arrays
+  const layerStats = useMemo(() => {
+    const stats = new Map<string, { gaps: CapEntry[]; partials: CapEntry[]; strong: CapEntry[] }>();
+    layers.forEach((l) => stats.set(l.id, { gaps: [], partials: [], strong: [] }));
+    gaps.forEach((e) => stats.get(e.layer.id)?.gaps.push(e));
+    partials.forEach((e) => stats.get(e.layer.id)?.partials.push(e));
+    strong.forEach((e) => stats.get(e.layer.id)?.strong.push(e));
+    return stats;
+  }, [layers, gaps, partials, strong]);
 
   const toggleLayer = (id: string) => {
-    setExpandedLayers((prev) => {
-      const next = new Set(prev);
-      if (next.has(id)) next.delete(id);
-      else next.add(id);
-      return next;
-    });
+    setExpandedLayer((prev) => (prev === id ? null : id));
   };
 
   return (
-    <div>
-      <h4 className="text-[17px] font-semibold mb-1">{title}</h4>
-      <p className="text-[14px] text-tx3 mb-3">{description}</p>
+    <div className="mb-10">
+      <h3
+        className="text-[18px] font-semibold mb-4"
+        style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}
+      >
+        Coverage by Layer
+      </h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        {layers.map((layer) => {
+          const data = layerStats.get(layer.id);
+          if (!data) return null;
+          const gapCount = data.gaps.length;
+          const partialCount = data.partials.length;
+          const strongCount = data.strong.length;
+          const total = gapCount + partialCount + strongCount;
+          if (total === 0) return null;
 
-      {entries.length === 0 ? (
-        <div className="text-[13px] text-tx3 italic py-4">No items</div>
-      ) : (
-        <div className="space-y-1.5">
-          {Object.values(grouped).map(({ layer, caps }) => {
-            const isExpanded = expandedLayers.has(layer.id);
-            const layerIndex = Object.keys(grouped).indexOf(layer.id);
-            const color = LAYER_BAR_COLORS[layerIndex % LAYER_BAR_COLORS.length];
+          const coveragePct = Math.round(((strongCount + partialCount * 0.5) / total) * 100);
+          const isExpanded = expandedLayer === layer.id;
+          const hasIssues = gapCount > 0 || partialCount > 0;
 
-            return (
-              <div key={layer.id} className="border border-bd rounded-lg overflow-hidden">
-                <button
-                  onClick={() => toggleLayer(layer.id)}
-                  className="w-full text-left px-4 py-2.5 flex items-center gap-2 cursor-pointer hover:bg-bg2 transition-colors"
-                >
-                  <div
-                    className="w-[3px] h-4 rounded-full flex-shrink-0"
-                    style={{ background: color }}
-                  />
-                  <span className="text-[15px] font-medium flex-1">{layer.name}</span>
-                  <span className="text-[14px] font-medium" style={{ color: accentColor }}>
-                    {caps.length}
-                  </span>
-                  <span className={`text-[10px] text-tx3 transition-transform ${isExpanded ? "rotate-90" : ""}`}>
-                    ▶
-                  </span>
-                </button>
-                {isExpanded && (
-                  <div className="border-t border-bd">
-                    {caps.map((e) => (
-                      <div key={e.cap.id} className="px-4 py-2.5 text-[15px] border-b border-bd last:border-b-0">
-                        <div className="font-medium">{e.cap.name}</div>
-                        <div className="text-[13px] text-tx3 mt-0.5">{e.l1.name}</div>
-                      </div>
-                    ))}
+          // Gauge color based on coverage health
+          const gaugeColor = coveragePct >= 80 ? PWC_EMBER : coveragePct >= 50 ? PWC_PEACH_BORDER : PWC_DEEP;
+
+          // SVG gauge dimensions
+          const radius = 32;
+          const circumference = 2 * Math.PI * radius;
+          const dashOffset = circumference * (1 - coveragePct / 100);
+
+          return (
+            <div key={layer.id}>
+              <button
+                onClick={() => hasIssues && toggleLayer(layer.id)}
+                className={`w-full text-left rounded-xl border transition-all duration-200 ${
+                  isExpanded ? "border-accent bg-bg2" : "border-bd hover:border-bd2"
+                } ${hasIssues ? "cursor-pointer" : "cursor-default"}`}
+                style={{ padding: "16px" }}
+              >
+                <div className="flex items-center gap-4">
+                  {/* Circular gauge */}
+                  <svg width={76} height={76} viewBox="0 0 76 76" className="flex-shrink-0">
+                    <circle cx={38} cy={38} r={radius} fill="none" stroke={PWC_LINE} strokeWidth={6} />
+                    <circle
+                      cx={38}
+                      cy={38}
+                      r={radius}
+                      fill="none"
+                      stroke={gaugeColor}
+                      strokeWidth={6}
+                      strokeLinecap="round"
+                      strokeDasharray={circumference}
+                      strokeDashoffset={dashOffset}
+                      transform="rotate(-90 38 38)"
+                      className="transition-all duration-500"
+                    />
+                    <text
+                      x={38}
+                      y={34}
+                      textAnchor="middle"
+                      className="fill-current"
+                      style={{ fontSize: 16, fontWeight: 700 }}
+                    >
+                      {coveragePct}%
+                    </text>
+                    <text
+                      x={38}
+                      y={48}
+                      textAnchor="middle"
+                      className="text-tx3 fill-current"
+                      style={{ fontSize: 9 }}
+                    >
+                      covered
+                    </text>
+                  </svg>
+
+                  {/* Layer info */}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[15px] font-semibold">{layer.name}</span>
+                      {hasIssues && (
+                        <span
+                          className={`text-[10px] text-tx3 transition-transform duration-200 ${
+                            isExpanded ? "rotate-90" : ""
+                          }`}
+                        >
+                          ▶
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Breakdown bar */}
+                    <div className="flex h-2 rounded-full overflow-hidden mb-2">
+                      {strongCount > 0 && (
+                        <div
+                          className="transition-all duration-500"
+                          style={{ width: `${(strongCount / total) * 100}%`, background: PWC_EMBER }}
+                        />
+                      )}
+                      {partialCount > 0 && (
+                        <div
+                          className="transition-all duration-500"
+                          style={{ width: `${(partialCount / total) * 100}%`, background: PWC_PEACH, borderRight: gapCount > 0 ? `1px solid ${PWC_PEACH_BORDER}` : undefined }}
+                        />
+                      )}
+                      {gapCount > 0 && (
+                        <div
+                          className="transition-all duration-500"
+                          style={{ width: `${(gapCount / total) * 100}%`, background: PWC_DEEP }}
+                        />
+                      )}
+                    </div>
+
+                    {/* Counts */}
+                    <div className="flex gap-3 text-[11px] text-tx3">
+                      <span>{strongCount} strong</span>
+                      <span>{partialCount} partial</span>
+                      <span>{gapCount} gaps</span>
+                    </div>
                   </div>
-                )}
+                </div>
+              </button>
+
+              {/* Expanded capability details */}
+              {isExpanded && hasIssues && (
+                <div className="mt-1 rounded-xl border border-bd overflow-hidden">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 divide-x divide-bd">
+                    {/* Partials column */}
+                    {partialCount > 0 && (
+                      <div className="p-4">
+                        <div className="text-[10px] font-semibold tracking-wider text-tx3 mb-3">
+                          PARTIAL ({partialCount})
+                        </div>
+                        <div className="space-y-1.5">
+                          {data.partials.map((e) => (
+                            <div
+                              key={e.cap.id}
+                              className="rounded-lg px-3 py-2.5"
+                              style={{ background: PWC_PEACH, border: `1px solid ${PWC_PEACH_BORDER}` }}
+                            >
+                              <div className="text-[13px] font-medium" style={{ color: PWC_INK }}>
+                                {e.cap.name}
+                              </div>
+                              <div className="text-[11px] mt-0.5" style={{ color: "rgba(28,26,23,0.5)" }}>
+                                {e.l1.name}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Gaps column */}
+                    {gapCount > 0 && (
+                      <div className="p-4">
+                        <div className="text-[10px] font-semibold tracking-wider text-tx3 mb-3">
+                          GAPS ({gapCount})
+                        </div>
+                        <div className="space-y-1.5">
+                          {data.gaps.map((e) => (
+                            <div
+                              key={e.cap.id}
+                              className="rounded-lg px-3 py-2.5"
+                              style={{ background: PWC_DEEP, border: `1px solid #333` }}
+                            >
+                              <div className="text-[13px] font-medium" style={{ color: PWC_CREAM }}>
+                                {e.cap.name}
+                              </div>
+                              <div className="text-[11px] mt-0.5" style={{ color: "rgba(242,238,232,0.5)" }}>
+                                {e.l1.name}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+const CRITERIA_ITEMS = [
+  {
+    label: "Strong",
+    definition: "Vendor offers a native, production-ready capability that covers the full scope with minimal configuration or custom build.",
+    bg: PWC_EMBER,
+    border: PWC_EMBER,
+  },
+  {
+    label: "Partial",
+    definition: "Vendor addresses some aspects but requires supplemental tooling, significant configuration, or only covers a subset of the scope.",
+    bg: PWC_PEACH,
+    border: PWC_PEACH_BORDER,
+  },
+  {
+    label: "Gap",
+    definition: "Vendor does not offer this capability. Requires custom build, third-party integration, or an additional platform to address.",
+    bg: PWC_DEEP,
+    border: "#333",
+  },
+];
+
+function CriteriaLegend() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="mb-6">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 text-[15px] font-medium text-tx3 hover:text-tx2 transition-colors cursor-pointer"
+      >
+        <span
+          className="text-[11px] transition-transform duration-200 inline-block"
+          style={{ transform: isOpen ? "rotate(90deg)" : "none" }}
+        >
+          ▶
+        </span>
+        How we rate coverage
+      </button>
+
+      {isOpen && (
+        <div
+          className="mt-3 flex gap-8 rounded-xl border border-bd px-6 py-5"
+          style={{ background: "var(--color-bg2)" }}
+        >
+          {CRITERIA_ITEMS.map((item) => (
+            <div key={item.label} className="flex-1 flex items-start gap-3">
+              <div
+                className="w-4 h-4 rounded flex-shrink-0 mt-1"
+                style={{ background: item.bg, border: `1px solid ${item.border}` }}
+              />
+              <div>
+                <div className="text-[15px] font-semibold">{item.label}</div>
+                <div className="text-[14px] text-tx3 leading-relaxed mt-1">{item.definition}</div>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       )}
     </div>

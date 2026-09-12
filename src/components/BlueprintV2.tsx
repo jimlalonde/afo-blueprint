@@ -58,10 +58,10 @@ export default function BlueprintV2({ data }: Props) {
 
   return (
     <div className="min-h-screen bg-bg">
-      <div>
+      <div className="min-h-screen flex flex-col">
         <HeroHeader stats={stats} activeView={activeView} onChangeView={setActiveView} />
 
-        <main className="px-6 pb-16">
+        <main className="px-6 pb-16 flex-1">
           {activeView === "explore" && (
             <ExploreView data={data} />
           )}
@@ -82,7 +82,7 @@ export default function BlueprintV2({ data }: Props) {
         </main>
 
         <footer
-          className="px-6 py-16 text-center relative overflow-hidden"
+          className="px-6 py-16 text-center relative overflow-hidden mt-auto"
           style={{ background: "radial-gradient(120% 140% at 85% 100%, #221C17 0%, #14110F 60%)", color: "#EDE8E1" }}
         >
           <div

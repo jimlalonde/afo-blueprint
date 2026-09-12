@@ -39,7 +39,6 @@ export default function AssessView({ data, assessments, onSetStage, onSetNotes }
     <div className="animate-fade-in">
       {/* Progress header */}
       <div className="mb-8">
-        <div className="eyebrow mb-3">Assess</div>
         <h2 className="text-[26px] font-semibold tracking-tight mb-2" style={{ fontFamily: "var(--font-source-serif), 'Source Serif 4', Georgia, serif" }}>Maturity Assessment</h2>
         <p className="text-[16px] text-tx2 mb-4">
           Rate current and target maturity for each capability.
