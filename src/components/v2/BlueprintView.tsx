@@ -116,9 +116,22 @@ export default function BlueprintView({
   );
 
   return (
-    <section className="pt-10 pb-6 w-full px-2">
-      {/* Header row */}
-      <div className="flex items-center gap-4 mb-6">
+    <section className="pb-6 w-full px-2 animate-fade-in">
+      {/* Section heading */}
+      <div className="mb-8">
+        <h2
+          className="text-[26px] font-semibold tracking-tight mb-2"
+          style={{ fontFamily: SERIF }}
+        >
+          The Model
+        </h2>
+        <p className="text-[16px] text-tx2 mb-5">
+          Navigate the full blueprint. Expand layers to see components and capabilities.
+        </p>
+      </div>
+
+      {/* Controls row */}
+      <div className="mb-6">
         <button
           onClick={toggleAll}
           className="text-[15px] font-semibold px-5 py-2.5 rounded-lg cursor-pointer transition-all duration-200"
@@ -131,9 +144,6 @@ export default function BlueprintView({
         >
           {allExpanded ? "Collapse All" : "Expand All"}
         </button>
-        <span className="text-[15px] text-tx3">
-          {data.layers.length} layers · {totalL1} L1 components · {totalL2} L2 capabilities
-        </span>
       </div>
 
       {/* Main layout: horizontal layers + governance sidebar */}
