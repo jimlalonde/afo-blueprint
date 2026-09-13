@@ -3,21 +3,28 @@
 import { useState, useCallback, useMemo } from "react";
 import { BlueprintData, Assessments, Layer, L1Component, L2Capability } from "@/types";
 import HeroHeader from "./v2/HeroHeader";
+import BlueprintView from "./v2/BlueprintView";
 import ExploreView from "./v2/ExploreView";
 import CoverageView from "./v2/CoverageView";
 import PrioritizeView from "./v2/PrioritizeView";
 import AssessView from "./v2/AssessView";
 
-export type ViewMode = "explore" | "coverage" | "prioritize" | "assess";
+export type ViewMode = "blueprint" | "explore" | "coverage" | "prioritize" | "assess";
 
 interface Props {
   data: BlueprintData;
 }
 
 export default function BlueprintV2({ data }: Props) {
-  const [activeView, setActiveView] = useState<ViewMode>("explore");
+  const [activeView, setActiveView] = useState<ViewMode>("blueprint");
   const [assessments, setAssessments] = useState<Assessments>({});
   const [prioritizedCapIds, setPrioritizedCapIds] = useState<Set<string>>(new Set());
+  const [exploreTarget, setExploreTarget] = useState<{ layerId: string; l1Id: string; capId: string } | null>(null);
+
+  // Blueprint accordion state — lifted so it persists across view switches
+  const [bpExpandedLayers, setBpExpandedLayers] = useState<Set<string>>(new Set());
+  const [bpExpandedL1s, setBpExpandedL1s] = useState<Set<string>>(new Set());
+  const [bpGovExpanded, setBpGovExpanded] = useState<Set<string>>(new Set());
 
   const allCapabilities = useMemo(() => {
     const caps: { cap: L2Capability; l1: L1Component; layer: Layer }[] = [];
@@ -63,8 +70,27 @@ export default function BlueprintV2({ data }: Props) {
         <HeroHeader stats={stats} activeView={activeView} onChangeView={setActiveView} />
 
         <main className="px-6 pb-16 flex-1">
+          {activeView === "blueprint" && (
+            <BlueprintView
+              data={data}
+              expandedLayers={bpExpandedLayers}
+              setExpandedLayers={setBpExpandedLayers}
+              expandedL1s={bpExpandedL1s}
+              setExpandedL1s={setBpExpandedL1s}
+              govExpanded={bpGovExpanded}
+              setGovExpanded={setBpGovExpanded}
+              onNavigateToCapability={(layerId, l1Id, capId) => {
+                setExploreTarget({ layerId, l1Id, capId });
+                setActiveView("explore");
+              }}
+            />
+          )}
           {activeView === "explore" && (
-            <ExploreView data={data} />
+            <ExploreView
+              data={data}
+              initialTarget={exploreTarget}
+              onTargetConsumed={() => setExploreTarget(null)}
+            />
           )}
           {activeView === "coverage" && (
             <CoverageView data={data} allCapabilities={allCapabilities} />

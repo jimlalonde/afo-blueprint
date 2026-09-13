@@ -13,6 +13,7 @@ const MODE_CARDS: {
   title: string;
   description: string;
 }[] = [
+  { key: "blueprint", title: "Blueprint", description: "View the full capability model" },
   { key: "explore", title: "Explore", description: "Browse the capability blueprint" },
   { key: "coverage", title: "Coverage", description: "Analyze platform fit & gaps" },
   { key: "prioritize", title: "Prioritize", description: "Focus your assessment scope" },
@@ -79,7 +80,7 @@ export default function HeroHeader({ stats, activeView, onChangeView }: Props) {
 
       {/* Mode cards — sits right below hero */}
       <div className="px-8 pt-8 pb-4">
-        <div className="grid grid-cols-4 gap-3">
+        <div className="grid grid-cols-5 gap-3">
           {MODE_CARDS.map((card) => {
             const isActive = activeView === card.key;
             return (

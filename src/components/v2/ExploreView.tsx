@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { BlueprintData, Layer, L1Component, L2Capability } from "@/types";
 import LayerSidebar from "./LayerSidebar";
 import L1CardGrid from "./L1CardGrid";
@@ -8,12 +8,41 @@ import L2DetailPanel from "./L2DetailPanel";
 
 interface Props {
   data: BlueprintData;
+  initialTarget?: { layerId: string; l1Id: string; capId: string } | null;
+  onTargetConsumed?: () => void;
 }
 
-export default function ExploreView({ data }: Props) {
-  const [selectedLayer, setSelectedLayer] = useState<Layer>(data.layers[0]);
-  const [selectedL1, setSelectedL1] = useState<L1Component | null>(null);
-  const [selectedL2, setSelectedL2] = useState<L2Capability | null>(null);
+export default function ExploreView({ data, initialTarget, onTargetConsumed }: Props) {
+  const didConsumeTarget = useRef(false);
+
+  const resolveTarget = () => {
+    if (initialTarget && !didConsumeTarget.current) {
+      const layer = data.layers.find((l) => l.id === initialTarget.layerId);
+      if (layer) {
+        const l1 = layer.l1_components.find((c) => c.id === initialTarget.l1Id);
+        if (l1) {
+          const cap = l1.l2_capabilities.find((c) => c.id === initialTarget.capId);
+          if (cap) {
+            didConsumeTarget.current = true;
+            return { layer, l1, cap };
+          }
+        }
+      }
+    }
+    return null;
+  };
+
+  const resolved = resolveTarget();
+
+  const [selectedLayer, setSelectedLayer] = useState<Layer>(resolved?.layer || data.layers[0]);
+  const [selectedL1, setSelectedL1] = useState<L1Component | null>(resolved?.l1 || null);
+  const [selectedL2, setSelectedL2] = useState<L2Capability | null>(resolved?.cap || null);
+
+  useEffect(() => {
+    if (resolved && onTargetConsumed) {
+      onTargetConsumed();
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSelectLayer = (layer: Layer) => {
     setSelectedLayer(layer);
