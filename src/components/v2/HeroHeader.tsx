@@ -14,7 +14,7 @@ const MODE_CARDS: {
   description: string;
 }[] = [
   { key: "blueprint", title: "Blueprint", description: "View the full capability model" },
-  { key: "explore", title: "Explore", description: "Browse the capability blueprint" },
+  { key: "explore", title: "Explore", description: "Dive into capability details" },
   { key: "coverage", title: "Coverage", description: "Analyze platform fit & gaps" },
   { key: "prioritize", title: "Prioritize", description: "Focus your assessment scope" },
   { key: "assess", title: "Assess", description: "Rate maturity & view results" },
