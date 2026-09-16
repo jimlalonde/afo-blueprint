@@ -2916,59 +2916,61 @@
         {
           "id": "pillar_commerce",
           "name": "Commerce",
-          "description": "Catalog management, transaction processing, and agent-to-agent commerce readiness",
+          "description": "Catalog management, merchandising, transaction processing, agentic commerce, and commerce analytics across B2B and B2C models",
           "l2_capabilities": [
             {
               "id": "comm_01",
-              "name": "Digital shelf management",
-              "description": "Product content optimization across digital marketplaces, search results, and comparison platforms",
+              "name": "Catalog & product information management",
+              "description": "Centralized product data, specifications, imagery, taxonomy, and structured content management across all commerce channels and agent-accessible endpoints",
               "platform_coverage": {
                 "adobe": {
                   "rating": "partial",
                   "products": [
                     "Adobe Commerce",
-                    "AEM"
+                    "AEM Assets"
                   ],
-                  "notes": "Product content management exists; marketplace-level digital shelf optimization is limited"
+                  "notes": "Product content management through Commerce and AEM; not a standalone PIM platform"
                 },
                 "salesforce": {
                   "rating": "partial",
                   "products": [
                     "Commerce Cloud"
                   ],
-                  "notes": "Commerce platform capabilities; marketplace-level digital shelf less mature"
+                  "notes": "Product catalog within Commerce Cloud; enterprise PIM requires partner integration"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Commerce Cloud"
+                    "SAP Commerce Cloud",
+                    "SAP Product Lifecycle Management"
                   ],
-                  "notes": "Commerce Cloud provides full digital shelf management with product display, search, and merchandising."
+                  "notes": "Enterprise PIM with structured catalog management, taxonomy, and multi-channel syndication"
                 },
                 "microsoft": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No digital shelf management capability"
+                  "rating": "partial",
+                  "products": [
+                    "Dynamics 365 Commerce"
+                  ],
+                  "notes": "Product catalog within Dynamics Commerce; enterprise PIM requires partner integration"
                 },
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Merchant Center",
-                    "Google Shopping"
+                    "Merchant Center"
                   ],
-                  "notes": "Product feed management through Merchant Center; marketplace-level optimization through Shopping"
+                  "notes": "Product feed management for Google surfaces; not a full PIM platform"
                 },
                 "aws": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No digital shelf management"
+                  "notes": "No native PIM or catalog management; partner required"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Manual product listing management per marketplace",
-                "stage_2": "Centralized product content with basic optimization",
-                "stage_3": "AI-optimized product content across marketplaces with competitive positioning and GEO readiness",
-                "stage_4": "Autonomous digital shelf agents continuously optimizing listings based on performance and competitive signals"
+                "stage_1": "Siloed product data across systems with manual synchronization and no structured feeds",
+                "stage_2": "Centralized PIM with basic syndication to commerce channels and marketplace listings",
+                "stage_3": "AI-enriched product data with automated attribute extraction, cross-channel consistency, and agent-readable structured content",
+                "stage_4": "Self-maintaining product catalog with autonomous content generation, quality assurance, and real-time syndication to both human and agent channels"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -2979,57 +2981,61 @@
             },
             {
               "id": "comm_02",
-              "name": "Catalog & product information management",
-              "description": "Centralized management of product data, specifications, imagery, and taxonomy across all commerce channels",
+              "name": "Personalization & merchandising management",
+              "description": "AI-driven product recommendations, dynamic merchandising, assortment planning, and contextual product experiences across digital and physical channels",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
                     "Adobe Commerce",
-                    "AEM Assets"
+                    "Target",
+                    "AEP"
                   ],
-                  "notes": "Product catalog in Commerce; asset management through AEM; no dedicated PIM"
+                  "notes": "Strong merchandising through Commerce with Target personalization and AEP audience integration"
                 },
                 "salesforce": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "Commerce Cloud"
+                    "Commerce Cloud",
+                    "Einstein"
                   ],
-                  "notes": "Product catalog within Commerce Cloud; no dedicated PIM"
+                  "notes": "AI-driven merchandising and product recommendations through Commerce Cloud and Einstein"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
-                    "SAP Commerce Cloud",
-                    "SAP Product Lifecycle Management"
+                    "SAP Commerce Cloud"
                   ],
-                  "notes": "Strong PIM capabilities in Commerce Cloud with deep S/4HANA product master integration."
+                  "notes": "Merchandising, assortment planning, and personalized catalog views for B2B and B2C"
                 },
                 "microsoft": {
                   "rating": "partial",
                   "products": [
                     "Dynamics 365 Commerce"
                   ],
-                  "notes": "Product management within Commerce; not a dedicated PIM"
+                  "notes": "Basic merchandising and recommendations within Dynamics Commerce; less mature AI-driven personalization"
                 },
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Merchant Center"
+                    "Recommendations AI",
+                    "Google Shopping"
                   ],
-                  "notes": "Product feed management; not a full PIM or catalog platform"
+                  "notes": "Product recommendations through Recommendations AI; no full merchandising platform"
                 },
                 "aws": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No catalog/PIM; partner required"
+                  "rating": "partial",
+                  "products": [
+                    "Personalize"
+                  ],
+                  "notes": "ML-driven product recommendations through Personalize; no native merchandising platform"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Siloed product data across systems with manual synchronization",
-                "stage_2": "Centralized PIM with basic syndication to commerce channels",
-                "stage_3": "AI-enriched product data with automated attribute extraction and cross-channel consistency",
-                "stage_4": "Self-maintaining product catalog with autonomous content generation and quality assurance"
+                "stage_1": "Manual merchandising with static category pages and no personalization",
+                "stage_2": "Rule-based merchandising with basic segment-level personalization and A/B-tested layouts",
+                "stage_3": "AI-driven merchandising with 1:1 product recommendations, dynamic assortment, and real-time promotional optimization across channels",
+                "stage_4": "Autonomous merchandising agents optimizing product mix, pricing display, and promotional sequencing based on demand signals, margin targets, and buyer context"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -3040,22 +3046,23 @@
             },
             {
               "id": "comm_03",
-              "name": "Checkout, fulfillment & returns",
-              "description": "End-to-end transaction processing from cart through payment, fulfillment, and returns with AI-optimized conversion",
+              "name": "Transaction & order management",
+              "description": "End-to-end transaction lifecycle from cart through payment, order orchestration, fulfillment, returns, and RMA across all commerce models",
               "platform_coverage": {
                 "adobe": {
                   "rating": "strong",
                   "products": [
                     "Adobe Commerce"
                   ],
-                  "notes": "Full checkout, payment, and fulfillment capabilities through Commerce platform"
+                  "notes": "Full transaction lifecycle: cart, checkout, payment, order management, and returns"
                 },
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Commerce Cloud"
+                    "Commerce Cloud",
+                    "Order Management"
                   ],
-                  "notes": "Full B2B and B2C commerce with checkout, order management, and fulfillment"
+                  "notes": "End-to-end transaction and order management with distributed order orchestration"
                 },
                 "sap": {
                   "rating": "strong",
@@ -3063,31 +3070,31 @@
                     "SAP Commerce Cloud",
                     "SAP S/4HANA"
                   ],
-                  "notes": "End-to-end checkout, order management, fulfillment, and returns with S/4HANA backend integration."
+                  "notes": "Enterprise order management with S/4HANA integration for fulfillment, invoicing, and RMA"
                 },
                 "microsoft": {
                   "rating": "strong",
                   "products": [
                     "Dynamics 365 Commerce"
                   ],
-                  "notes": "Full commerce platform with checkout, payments, and fulfillment management"
+                  "notes": "Full transaction lifecycle with distributed order management and fulfillment orchestration"
                 },
                 "google": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No commerce platform; partner required (Shopify, Adobe Commerce, commercetools)"
+                  "notes": "No transaction or order management; partner required"
                 },
                 "aws": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No commerce platform; partner required (Shopify, commercetools)"
+                  "notes": "No transaction or order management; partner required"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Standard checkout with basic cart functionality",
-                "stage_2": "Optimized checkout with AI-driven conversion improvements",
-                "stage_3": "Intelligent checkout with dynamic pricing, personalized offers, and automated fulfillment routing",
-                "stage_4": "Autonomous commerce operations with self-optimizing conversion paths and predictive inventory management"
+                "stage_1": "Standard checkout with basic cart functionality and manual order processing",
+                "stage_2": "Optimized checkout with AI-driven conversion improvements and automated order routing",
+                "stage_3": "Intelligent transaction management with dynamic pricing, personalized offers, automated fulfillment orchestration, and proactive RMA handling",
+                "stage_4": "Autonomous commerce operations with self-optimizing conversion paths, predictive inventory management, and agent-executed order lifecycle management"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -3098,60 +3105,58 @@
             },
             {
               "id": "comm_04",
-              "name": "Commerce strategy & merchandising",
-              "description": "AI-driven merchandising, assortment planning, and promotional strategy across digital and physical commerce channels",
+              "name": "Agentic commerce & procurement",
+              "description": "Machine-readable commerce infrastructure, agent-to-agent transaction protocols, and autonomous buying and selling capabilities for both B2B procurement and B2C AI-assisted commerce",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "partial",
-                  "products": [
-                    "Adobe Commerce",
-                    "Target"
-                  ],
-                  "notes": "Basic merchandising and product recommendations; advanced AI merchandising still developing"
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native agent-to-agent commerce infrastructure; requires integration and protocol enablement"
                 },
                 "salesforce": {
-                  "rating": "strong",
-                  "products": [
-                    "Commerce Cloud",
-                    "Einstein"
-                  ],
-                  "notes": "AI-driven merchandising and product recommendations through Commerce Cloud + Einstein"
-                },
-                "sap": {
-                  "rating": "strong",
-                  "products": [
-                    "SAP Commerce Cloud"
-                  ],
-                  "notes": "Strong merchandising rules engine, promotions, and commerce strategy tooling."
-                },
-                "microsoft": {
                   "rating": "partial",
                   "products": [
-                    "Dynamics 365 Commerce"
+                    "Commerce Cloud",
+                    "MuleSoft",
+                    "Agentforce"
                   ],
-                  "notes": "Basic merchandising; AI-driven merchandising optimization less mature"
+                  "notes": "Emerging agentic commerce through Agentforce with MuleSoft API infrastructure; structured catalog APIs via Commerce Cloud"
+                },
+                "sap": {
+                  "rating": "partial",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP Ariba"
+                  ],
+                  "notes": "B2B procurement through Ariba network; structured catalog feeds via Commerce Cloud; agent protocol support emerging"
+                },
+                "microsoft": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native agent-to-agent commerce; Copilot integration for commerce is emerging"
                 },
                 "google": {
                   "rating": "partial",
                   "products": [
-                    "Recommendations AI",
-                    "Google Shopping"
+                    "Apigee",
+                    "A2A Protocol"
                   ],
-                  "notes": "AI-driven product recommendations; no native merchandising platform"
+                  "notes": "A2A Protocol support and API management through Apigee; agent commerce patterns emerging"
                 },
                 "aws": {
                   "rating": "partial",
                   "products": [
-                    "Personalize"
+                    "API Gateway",
+                    "Bedrock Agents"
                   ],
-                  "notes": "Product recommendations through Personalize; no merchandising platform"
+                  "notes": "API infrastructure and agent framework; agent commerce patterns require custom implementation"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Manual merchandising with static category pages",
-                "stage_2": "Rule-based merchandising with basic personalization",
-                "stage_3": "AI-driven merchandising with dynamic assortment and real-time promotional optimization",
-                "stage_4": "Autonomous merchandising agents optimizing product mix based on demand signals and margin targets"
+                "stage_1": "No machine-readable commerce interfaces; all transactions require human interaction",
+                "stage_2": "Basic product and pricing APIs for partner integrations with structured catalog feeds",
+                "stage_3": "Agent-commerce APIs supporting programmatic discovery, quoting, and purchasing with trust verification and protocol support",
+                "stage_4": "Full agent-to-agent commerce with autonomous negotiation, dynamic pricing, multi-party transactions, and buyer/seller agent orchestration"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -3162,54 +3167,66 @@
             },
             {
               "id": "comm_05",
-              "name": "Agent-to-agent commerce readiness",
-              "description": "Machine-readable product catalogs, structured pricing APIs, and protocol-enabled endpoints for buyer AI agents to transact programmatically",
+              "name": "Commerce analytics & optimization",
+              "description": "Commerce performance measurement, conversion analytics, channel intelligence, revenue optimization, and experimentation across all commerce models",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No agent-to-agent commerce protocol support yet; APIs exist but not designed for autonomous agent transactions"
+                  "rating": "strong",
+                  "products": [
+                    "Analytics",
+                    "CJA",
+                    "Target"
+                  ],
+                  "notes": "Comprehensive commerce analytics through Analytics and CJA with Target for experimentation"
                 },
                 "salesforce": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
                     "Commerce Cloud",
-                    "MuleSoft"
+                    "Tableau",
+                    "Einstein"
                   ],
-                  "notes": "Commerce APIs exist; purpose-built agent-to-agent commerce still emerging"
+                  "notes": "Commerce analytics and AI-driven insights through Tableau with Einstein recommendations"
                 },
                 "sap": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No native agent-to-agent commerce framework. Commerce Cloud APIs are traditional, not agent-protocol-ready."
+                  "rating": "strong",
+                  "products": [
+                    "SAP Commerce Cloud",
+                    "SAP Analytics Cloud"
+                  ],
+                  "notes": "Commerce performance analytics and reporting through Analytics Cloud with Commerce Cloud data"
                 },
                 "microsoft": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No agent-to-agent commerce readiness"
-                },
-                "google": {
                   "rating": "partial",
                   "products": [
-                    "Apigee",
-                    "A2A Protocol"
+                    "Dynamics 365 Commerce",
+                    "Power BI"
                   ],
-                  "notes": "API infrastructure and agent protocol support; no native commerce transaction handling"
+                  "notes": "Commerce reporting through Power BI; less mature dedicated commerce analytics"
+                },
+                "google": {
+                  "rating": "strong",
+                  "products": [
+                    "GA4",
+                    "Looker",
+                    "BigQuery"
+                  ],
+                  "notes": "Industry-leading commerce analytics through GA4 with Looker dashboards and BigQuery for deep analysis"
                 },
                 "aws": {
                   "rating": "partial",
                   "products": [
-                    "API Gateway",
-                    "Bedrock Agents"
+                    "QuickSight",
+                    "Personalize"
                   ],
-                  "notes": "API infrastructure and agent tooling; no native commerce transaction handling"
+                  "notes": "Analytics through QuickSight; commerce-specific analytics require custom implementation"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "No machine-readable commerce interfaces",
-                "stage_2": "Basic product APIs for partner integrations",
-                "stage_3": "Structured agent-commerce APIs supporting programmatic discovery, quoting, and purchasing",
-                "stage_4": "Full agent-to-agent commerce with autonomous negotiation, dynamic pricing, and multi-party transactions"
+                "stage_1": "Basic revenue reporting with manual data pulls from individual commerce platforms",
+                "stage_2": "Unified commerce dashboards with conversion funnel analytics and A/B testing capabilities",
+                "stage_3": "AI-driven commerce intelligence with predictive revenue modeling, automated margin optimization, and cross-channel attribution",
+                "stage_4": "Autonomous optimization agents continuously tuning pricing, promotions, and channel mix based on real-time performance signals and margin targets"
               },
               "client_assessment": {
                 "current_stage": null,

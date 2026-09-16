@@ -42,11 +42,17 @@ export const KEYWORD_MAP: Record<string, string[]> = {
   // Commerce terms
   commerce: ["comm_01", "comm_02", "comm_03", "comm_04", "comm_05", "exp_conv_02"],
   checkout: ["comm_03"],
-  catalog: ["comm_02"],
-  merchandise: ["comm_04", "aeo_exp_06"],
+  catalog: ["comm_01"],
+  merchandise: ["comm_02", "aeo_exp_06"],
   storefront: ["comm_01", "exp_trad_01"],
   fulfillment: ["comm_03"],
-  marketplace: ["brain_an_04", "comm_05"],
+  marketplace: ["brain_an_04", "comm_04"],
+  pim: ["comm_01"],
+  order: ["comm_03"],
+  rma: ["comm_03"],
+  procurement: ["comm_04"],
+  conversion: ["comm_05", "data_ana_02"],
+  margin: ["comm_05"],
 
   // Pricing terms
   pricing: ["price_01", "price_02", "price_03", "price_04", "price_05"],
