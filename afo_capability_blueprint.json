@@ -5,7 +5,7 @@
     "status": "Released",
     "description": "L1/L2 capability decomposition of the Agentic Front Office reference architecture. Single source of truth for capability assessment, platform mapping, and maturity diagnostics.",
     "total_l1_components": 29,
-    "total_l2_capabilities": 126,
+    "total_l2_capabilities": 127,
     "assessment_schema": {
       "description": "Per-client maturity assessment overlay. Empty in template, populated during Sprint engagements.",
       "fields": {
@@ -2492,12 +2492,72 @@
         {
           "id": "pillar_sales",
           "name": "Sales",
-          "description": "Pipeline management, deal architecture, forecasting, and relationship strategy",
+          "description": "Sales strategy, pipeline generation, account management, deal execution, retention, enablement, and performance operations",
           "l2_capabilities": [
             {
               "id": "sales_01",
-              "name": "Lead & pipeline generator",
-              "description": "AI-driven lead identification, scoring, enrichment, and pipeline development from marketing-qualified signals and intent data",
+              "name": "Sales strategy & planning",
+              "description": "Segmentation, sales model design, coverage strategy, territory planning, capacity modeling, target setting, quota allocation, and resource planning",
+              "platform_coverage": {
+                "adobe": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No native sales strategy or territory planning capabilities"
+                },
+                "salesforce": {
+                  "rating": "strong",
+                  "products": [
+                    "Agentforce Sales",
+                    "Tableau",
+                    "Maps"
+                  ],
+                  "notes": "Territory planning, quota management, and analytics through Sales Cloud and Tableau"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Sales Cloud",
+                    "SAP Analytics Cloud"
+                  ],
+                  "notes": "Territory and quota management with analytics-driven planning"
+                },
+                "microsoft": {
+                  "rating": "strong",
+                  "products": [
+                    "Dynamics 365 Sales",
+                    "Power BI",
+                    "Copilot"
+                  ],
+                  "notes": "Territory, quota, and capacity planning with AI-assisted analytics"
+                },
+                "google": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No CRM or sales planning; partner required"
+                },
+                "aws": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No CRM or sales planning; partner required"
+                }
+              },
+              "maturity_indicators": {
+                "stage_1": "Ad-hoc territory assignments and spreadsheet-based quota setting with limited segmentation",
+                "stage_2": "Data-informed segmentation models with standardized territory and quota planning processes",
+                "stage_3": "AI-optimized territory design, capacity planning, and dynamic quota allocation based on market signals",
+                "stage_4": "Autonomous strategy agents continuously rebalancing coverage, territories, and targets in response to market shifts"
+              },
+              "client_assessment": {
+                "current_stage": null,
+                "target_stage": null,
+                "notes": "",
+                "assessed": false
+              }
+            },
+            {
+              "id": "sales_02",
+              "name": "Lead & pipeline generation",
+              "description": "Lead management, prospecting, qualification, intent and signal detection, prioritization, and pipeline generation from inbound and outbound sources",
               "platform_coverage": {
                 "adobe": {
                   "rating": "partial",
@@ -2514,14 +2574,14 @@
                     "Einstein",
                     "Data 360"
                   ],
-                  "notes": "Core capability: lead scoring, routing, and pipeline development with AI enrichment"
+                  "notes": "Core capability: lead scoring, routing, intent signals, and pipeline development with AI enrichment"
                 },
                 "sap": {
                   "rating": "strong",
                   "products": [
                     "SAP Sales Cloud"
                   ],
-                  "notes": "Agentforce Sales provides lead scoring, pipeline management, and AI-assisted lead generation."
+                  "notes": "Lead scoring, pipeline management, and AI-assisted lead generation"
                 },
                 "microsoft": {
                   "rating": "strong",
@@ -2529,12 +2589,12 @@
                     "Dynamics 365 Sales",
                     "Copilot"
                   ],
-                  "notes": "Lead scoring, qualification, and AI-assisted pipeline development through Dynamics Sales + Copilot"
+                  "notes": "Lead scoring, qualification, intent detection, and AI-assisted pipeline development"
                 },
                 "google": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No CRM or lead management; partner required (Salesforce, HubSpot)"
+                  "notes": "No CRM or lead management; partner required"
                 },
                 "aws": {
                   "rating": "gap",
@@ -2543,68 +2603,10 @@
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Manual lead qualification from marketing handoffs",
-                "stage_2": "AI-scored leads with automated routing to sales reps",
-                "stage_3": "Cross-functional lead intelligence combining marketing, service, and behavioral signals",
-                "stage_4": "Autonomous pipeline development agents sourcing and qualifying leads without human intervention"
-              },
-              "client_assessment": {
-                "current_stage": null,
-                "target_stage": null,
-                "notes": "",
-                "assessed": false
-              }
-            },
-            {
-              "id": "sales_02",
-              "name": "Sales execution & closure",
-              "description": "Deal management capabilities from opportunity creation through negotiation, proposal, and close with AI-assisted deal coaching",
-              "platform_coverage": {
-                "adobe": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No CRM or deal management; partner required (Salesforce, Microsoft Dynamics)"
-                },
-                "salesforce": {
-                  "rating": "strong",
-                  "products": [
-                    "Agentforce Sales",
-                    "Agentforce"
-                  ],
-                  "notes": "Industry-leading CRM with Agentforce deal coaching and next-best-action"
-                },
-                "sap": {
-                  "rating": "strong",
-                  "products": [
-                    "SAP Sales Cloud",
-                    "SAP CPQ"
-                  ],
-                  "notes": "Agentforce Sales provides guided selling, opportunity management; CPQ handles complex deal configuration."
-                },
-                "microsoft": {
-                  "rating": "strong",
-                  "products": [
-                    "Dynamics 365 Sales",
-                    "Copilot"
-                  ],
-                  "notes": "Full opportunity management with Copilot deal coaching and meeting intelligence"
-                },
-                "google": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No deal management or CRM; partner required"
-                },
-                "aws": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No deal management; partner required"
-                }
-              },
-              "maturity_indicators": {
-                "stage_1": "CRM-based opportunity tracking with manual updates",
-                "stage_2": "AI-assisted deal coaching with next-best-action recommendations",
-                "stage_3": "Full deal intelligence with automated proposal generation, competitive positioning, and negotiation support",
-                "stage_4": "Autonomous deal execution for standard transactions with human sellers focused on strategic relationships"
+                "stage_1": "Manual lead qualification from marketing handoffs with basic list-based prospecting",
+                "stage_2": "AI-scored leads with automated routing, intent signal monitoring, and prioritized outreach",
+                "stage_3": "Cross-functional lead intelligence combining marketing, service, and behavioral signals with predictive pipeline modeling",
+                "stage_4": "Autonomous pipeline development agents sourcing, qualifying, and nurturing leads without human intervention"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -2615,55 +2617,56 @@
             },
             {
               "id": "sales_03",
-              "name": "Sales strategy & forecasting",
-              "description": "Pipeline analytics, win/loss analysis, and AI-enhanced forecasting providing accurate revenue projections",
+              "name": "Account & relationship management",
+              "description": "Account planning, account intelligence, stakeholder and buying-group management, relationship mapping, whitespace identification, and account execution",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No native forecasting capability; partner required"
+                  "rating": "partial",
+                  "products": [
+                    "Marketo"
+                  ],
+                  "notes": "ABM campaign support through Marketo; no native account planning or relationship mapping"
                 },
                 "salesforce": {
                   "rating": "strong",
                   "products": [
                     "Agentforce Sales",
-                    "Einstein",
-                    "Tableau"
+                    "Einstein"
                   ],
-                  "notes": "AI-powered forecasting with pipeline analytics and scenario modeling"
+                  "notes": "Account planning, buying group mapping, relationship intelligence, and whitespace analysis"
                 },
                 "sap": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
-                    "SAP Sales Cloud",
-                    "SAP Analytics Cloud"
+                    "SAP Sales Cloud"
                   ],
-                  "notes": "Agentforce Sales provides forecasting; Analytics Cloud adds predictive analytics and planning."
+                  "notes": "Basic account management; limited buying-group and whitespace capabilities"
                 },
                 "microsoft": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
                     "Dynamics 365 Sales",
-                    "Power BI"
+                    "LinkedIn",
+                    "Copilot"
                   ],
-                  "notes": "AI-powered forecasting with pipeline analytics through Dynamics Sales"
+                  "notes": "Account management with LinkedIn relationship intelligence; growing buying-group capabilities"
                 },
                 "google": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No sales forecasting; partner required"
+                  "notes": "No CRM or account management; partner required"
                 },
                 "aws": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No sales forecasting; partner required"
+                  "notes": "No CRM or account management; partner required"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Spreadsheet-based forecasting with manager overrides",
-                "stage_2": "CRM-driven forecasting with basic AI predictions",
-                "stage_3": "Multi-signal forecasting combining pipeline, engagement, and macro-economic indicators",
-                "stage_4": "Autonomous forecasting agents with self-correcting models and scenario simulation"
+                "stage_1": "Single-threaded account relationships with informal planning and no systematic whitespace analysis",
+                "stage_2": "Structured account plans with mapped buying committees, basic engagement tracking, and whitespace identification",
+                "stage_3": "AI-driven account intelligence with multi-threaded engagement, dynamic stakeholder mapping, and prioritized whitespace activation",
+                "stage_4": "Autonomous account strategy agents orchestrating personalized engagement across all stakeholders and proactively surfacing expansion plays"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -2674,16 +2677,13 @@
             },
             {
               "id": "sales_04",
-              "name": "Retention & expansion enabler",
-              "description": "Proactive identification of renewal risk and expansion opportunities with AI-generated renewal briefs and cross-sell recommendations",
+              "name": "Sales execution & closure",
+              "description": "Discovery, opportunity management, consultative selling, buyer engagement, pursuit strategy, proposal development, negotiation, and deal closure",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "partial",
-                  "products": [
-                    "AJO",
-                    "RT-CDP"
-                  ],
-                  "notes": "Can detect churn signals and activate retention journeys; no native renewal management"
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No deal management or sales execution capabilities"
                 },
                 "salesforce": {
                   "rating": "strong",
@@ -2691,38 +2691,40 @@
                     "Agentforce Sales",
                     "Agentforce"
                   ],
-                  "notes": "Renewal management, churn detection through Einstein, and AI-driven retention workflows"
+                  "notes": "Full deal lifecycle: opportunity management, AI coaching, proposal generation, and guided selling"
                 },
                 "sap": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "SAP Sales Cloud"
+                    "SAP Sales Cloud",
+                    "SAP CPQ"
                   ],
-                  "notes": "Agentforce Sales covers account management and renewal tracking. Cross-sell/upsell intelligence is basic."
+                  "notes": "Opportunity management, CPQ-driven proposals, and guided selling workflows"
                 },
                 "microsoft": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "Dynamics 365 Sales"
+                    "Dynamics 365 Sales",
+                    "Copilot"
                   ],
-                  "notes": "Basic renewal tracking; dedicated retention and expansion intelligence less mature"
+                  "notes": "Opportunity management, AI deal coaching, and proposal automation through Copilot"
                 },
                 "google": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No renewal or retention management; partner required"
+                  "notes": "No CRM or deal management; partner required"
                 },
                 "aws": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No renewal management; partner required"
+                  "notes": "No CRM or deal management; partner required"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Reactive renewal process triggered by contract dates",
-                "stage_2": "Proactive renewal alerts with basic churn scoring",
-                "stage_3": "AI-driven retention workflows with cross-functional signal synthesis and personalized renewal briefs",
-                "stage_4": "Autonomous retention agents executing save programs and expansion plays within governed boundaries"
+                "stage_1": "CRM-based opportunity tracking with manual updates and ad-hoc pursuit strategies",
+                "stage_2": "AI-assisted deal coaching with next-best-action, guided discovery, and proposal automation",
+                "stage_3": "Full deal intelligence with competitive positioning, consultative selling frameworks, and negotiation support",
+                "stage_4": "Autonomous deal execution for standard transactions with human sellers focused on complex strategic pursuits"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -2733,54 +2735,55 @@
             },
             {
               "id": "sales_05",
-              "name": "Sales & service talent enabler",
-              "description": "AI-powered coaching, training, and enablement for sales and service teams including conversation intelligence and skill development",
+              "name": "Retention & expansion",
+              "description": "Renewal identification, retention selling, cross-sell, upsell, whitespace activation, and expansion opportunity management (excludes service and customer success)",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "gap",
-                  "products": [],
-                  "notes": "No native sales coaching or enablement; partner required"
+                  "rating": "partial",
+                  "products": [
+                    "AJO",
+                    "RT-CDP"
+                  ],
+                  "notes": "Journey-based retention campaigns; no native renewal or expansion management"
                 },
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Einstein Conversation Insights",
+                    "Agentforce Sales",
                     "Agentforce"
                   ],
-                  "notes": "Conversation intelligence, call coaching, and AI-powered enablement through Einstein"
+                  "notes": "Renewal management, churn prediction, cross-sell/upsell recommendations, and expansion plays"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Sales Cloud",
-                    "SAP SuccessFactors"
+                    "SAP Sales Cloud"
                   ],
-                  "notes": "SuccessFactors provides sales enablement and coaching. Not deeply integrated with Agentforce Sales."
+                  "notes": "Basic renewal tracking; limited AI-driven expansion capabilities"
                 },
                 "microsoft": {
-                  "rating": "strong",
+                  "rating": "partial",
                   "products": [
-                    "Copilot",
-                    "Viva"
+                    "Dynamics 365 Sales"
                   ],
-                  "notes": "Copilot coaching, meeting intelligence, and Viva-based enablement"
+                  "notes": "Renewal and expansion tracking with growing AI-assisted cross-sell recommendations"
                 },
                 "google": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No sales coaching or enablement; partner required"
+                  "notes": "No CRM or retention management; partner required"
                 },
                 "aws": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No sales enablement; partner required"
+                  "notes": "No CRM or retention management; partner required"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Periodic classroom training with generic enablement content",
-                "stage_2": "AI-curated learning paths with conversation intelligence feedback",
-                "stage_3": "Real-time coaching agents providing in-call guidance and post-call skill development",
-                "stage_4": "Autonomous coaching agents adapting development plans to individual rep performance patterns"
+                "stage_1": "Reactive renewal process triggered by contract dates with no systematic expansion identification",
+                "stage_2": "Proactive renewal alerts with churn scoring and basic cross-sell/upsell recommendations",
+                "stage_3": "AI-driven retention workflows with whitespace activation, personalized renewal briefs, and expansion playbooks",
+                "stage_4": "Autonomous retention agents executing save programs and expansion plays within governed boundaries"
               },
               "client_assessment": {
                 "current_stage": null,
@@ -2791,54 +2794,115 @@
             },
             {
               "id": "sales_06",
-              "name": "Account-based selling",
-              "description": "Coordinated account strategy execution with multi-threaded engagement tracking and relationship mapping across buying committees",
+              "name": "Sales talent & enablement",
+              "description": "Seller onboarding, learning and development, sales methodology, playbooks, knowledge and content delivery, coaching, and seller productivity",
               "platform_coverage": {
                 "adobe": {
-                  "rating": "partial",
-                  "products": [
-                    "Marketo"
-                  ],
-                  "notes": "ABM targeting through Marketo; account-based selling execution requires CRM partner"
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No sales enablement or coaching capabilities"
                 },
                 "salesforce": {
                   "rating": "strong",
                   "products": [
-                    "Agentforce Sales"
+                    "Einstein Conversation Insights",
+                    "Agentforce"
                   ],
-                  "notes": "Account teams, buying committee mapping, relationship intelligence, and multi-threaded engagement"
+                  "notes": "Conversation intelligence, AI coaching, enablement content, and methodology reinforcement"
                 },
                 "sap": {
                   "rating": "partial",
                   "products": [
-                    "SAP Sales Cloud"
+                    "SAP Sales Cloud",
+                    "SAP SuccessFactors"
                   ],
-                  "notes": "Agentforce Sales supports account-based selling workflows. Not as mature as dedicated ABM platforms."
+                  "notes": "Basic enablement through Sales Cloud; learning management via SuccessFactors"
                 },
                 "microsoft": {
-                  "rating": "partial",
+                  "rating": "strong",
                   "products": [
-                    "Dynamics 365 Sales",
-                    "LinkedIn"
+                    "Copilot",
+                    "Viva"
                   ],
-                  "notes": "LinkedIn integration for relationship mapping; account-based selling capabilities developing"
+                  "notes": "AI coaching, conversation intelligence, learning paths, and productivity tools through Copilot and Viva"
                 },
                 "google": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No account-based selling; partner required"
+                  "notes": "No sales enablement; partner required"
                 },
                 "aws": {
                   "rating": "gap",
                   "products": [],
-                  "notes": "No account-based selling; partner required"
+                  "notes": "No sales enablement; partner required"
                 }
               },
               "maturity_indicators": {
-                "stage_1": "Single-threaded account relationships managed informally",
-                "stage_2": "Mapped buying committees with basic engagement tracking",
-                "stage_3": "Multi-threaded engagement with AI-coordinated outreach across buying committee members",
-                "stage_4": "Autonomous account strategy agents orchestrating personalized engagement across all stakeholders"
+                "stage_1": "Periodic classroom training with generic enablement content and static playbooks",
+                "stage_2": "AI-curated learning paths with conversation intelligence, methodology-aligned playbooks, and productivity tools",
+                "stage_3": "Real-time coaching agents providing in-call guidance, adaptive onboarding, and post-call skill development",
+                "stage_4": "Autonomous coaching agents adapting development plans, content recommendations, and methodology reinforcement to individual seller patterns"
+              },
+              "client_assessment": {
+                "current_stage": null,
+                "target_stage": null,
+                "notes": "",
+                "assessed": false
+              }
+            },
+            {
+              "id": "sales_07",
+              "name": "Sales performance & operations",
+              "description": "Forecasting, pipeline inspection, performance management, sales analytics, incentive management, operating cadence, process governance, and sales administration",
+              "platform_coverage": {
+                "adobe": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No sales operations or forecasting capabilities"
+                },
+                "salesforce": {
+                  "rating": "strong",
+                  "products": [
+                    "Agentforce Sales",
+                    "Einstein",
+                    "Tableau"
+                  ],
+                  "notes": "AI forecasting, pipeline inspection, performance dashboards, and incentive management"
+                },
+                "sap": {
+                  "rating": "strong",
+                  "products": [
+                    "SAP Sales Cloud",
+                    "SAP Analytics Cloud",
+                    "SAP SuccessFactors"
+                  ],
+                  "notes": "Forecasting, performance management, analytics, and incentive compensation"
+                },
+                "microsoft": {
+                  "rating": "strong",
+                  "products": [
+                    "Dynamics 365 Sales",
+                    "Power BI",
+                    "Copilot"
+                  ],
+                  "notes": "AI-enhanced forecasting, pipeline analytics, performance management, and incentive tracking"
+                },
+                "google": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No sales operations; partner required"
+                },
+                "aws": {
+                  "rating": "gap",
+                  "products": [],
+                  "notes": "No sales operations; partner required"
+                }
+              },
+              "maturity_indicators": {
+                "stage_1": "Spreadsheet-based forecasting with manual pipeline reviews and basic incentive tracking",
+                "stage_2": "CRM-driven forecasting with pipeline inspection dashboards, performance scorecards, and automated incentive calculations",
+                "stage_3": "Multi-signal forecasting with AI-powered pipeline health analytics, dynamic incentive optimization, and governed operating cadence",
+                "stage_4": "Autonomous forecasting and performance agents with self-correcting models, scenario simulation, and adaptive process governance"
               },
               "client_assessment": {
                 "current_stage": null,

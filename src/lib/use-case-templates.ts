@@ -12,7 +12,7 @@ export const USE_CASE_TEMPLATES: UseCaseTemplate[] = [
     description: "Supercharge pipeline velocity with predictive scoring, AI agents, and intelligent knowledge retrieval.",
     capabilityIds: [
       // Sales
-      "sales_01", "sales_02", "sales_03", "sales_04", "sales_05", "sales_06",
+      "sales_01", "sales_02", "sales_03", "sales_04", "sales_05", "sales_06", "sales_07",
       // Knowledge Engine
       "brain_ke_04", "brain_ke_01", "brain_ke_02", "brain_ke_03", "brain_ke_06", "brain_ke_05", "brain_ke_07",
       // Agent Network
